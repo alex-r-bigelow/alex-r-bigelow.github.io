@@ -1,0 +1,49 @@
+---
+layout: default
+title: CV
+permalink: /cv/
+---
+{% assign counter = 0 %}
+<div class="wrapper">
+    <h1>Alex Bigelow</h1>
+    
+    <div>
+        <h2>Education</h2>
+        
+        <h2>Published Papers</h2>
+        
+        <h2>Bachelors Thesis</h2>
+        {% for pub in site.publications %}
+            {% if pub.type == "bachelor" %}
+                <h3>{{ pub.title }}</h3>
+            {% endif %}
+        {% endfor %}
+        <h2>Posters and Talks</h2>
+        
+        <h2>Work Experience</h2>
+        {% for exp in site.experience %}
+            {% assign counter = counter + 1 %}
+            <div id="{{ counter }}_target" class="collapseTarget">
+                <h3>{{ exp.title }}</h3>
+                <span class="date">
+                    {% if exp.start and exp.stop %}
+                        {{ exp.start }}–{{ exp.stop }}
+                    {% else if exp.date %}
+                        {{ exp.date }}
+                    {% endif %}
+                </span>
+            </div>
+            <div>
+                <ul>
+                    {% for m in exp.meta %}
+                        <li>{{ m }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="{{ counter }}_content" class="collapsedContent">
+                <b>{{ exp.reference }}</b>
+                <p>{{ exp.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

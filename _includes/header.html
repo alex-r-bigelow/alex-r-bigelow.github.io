@@ -1,27 +1,45 @@
 <header class="site-header">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
+    <nav id="menu" class="menu">
+        <div id="hamburger" class="logo">
+            <img src="/images/misc/hamburger.svg" width="30px" height="30px" />
+        </div>
+        <div id="menuItems" class="menuItems">
+            {% for page in site.pages %}
+                {% if page.title %}
+                    <div class="menuItem" id="{{ page.title }}menuItem">
+                        <a href="{{ page.url  | prepend: site.baseurl }}/">{{ page.title }}</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="menuItem">
+                <a href="{{ site.baseurl }}/">Blog</a>
+            </div>
+        </div>
     </nav>
-
-  </div>
-
+    {% for page in site.pages %}
+        {% if page.anchors %}
+            <nav class="subMenu" id="{{ page.title }}SubMenu">
+                {% for anchor in page.anchors %}
+                    <div class="subMenuItem">
+                        <a href="{{ page.url | prepend: site.baseurl }}{{ anchor }}.html">{{ anchor }}</a>
+                    </div>
+                {% endfor %}
+            </nav>
+        {% endif %}
+    {% endfor %}
+    {% if page.downloads %}
+        <nav id="downloadMenu" class="menu">
+            <div id="downloadLogo" class="logo">
+                <h3 id="downloadLabel">Download</h3>
+                <img src="/images/misc/download.svg" width="30px" height="30px" />
+            </div>
+            <div id="downloadMenuItems" class="menuItems">
+                {% for download in page.downloads %}
+                    <div class="menuItem">
+                        <a href="{{ download[1] }}">{{ download[0] }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </nav>
+    {% endif %}
 </header>
