@@ -1,6 +1,7 @@
 ---
 title: Teaching Assistant
-date: Fall 2015
+season: Fall
+date: 2015
 meta:
  - CS 5630 / 6630 Visualization
  - University of Utah, Salt Lake City, UT

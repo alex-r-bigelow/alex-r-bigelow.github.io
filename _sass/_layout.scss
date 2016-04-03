@@ -1,56 +1,94 @@
 div.wrapper {
-    position: relative;
+  position: relative;
+}
+
+.post {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $spacing-unit * 25;
 }
 
 /* Menu stuff */
-.menu, .subMenu {
-    position: absolute;
-    text-align: right;
-    cursor: pointer;
-    border: 1px solid black;
-    background-color: rgba(255,255,255,0.75);
-}
-.menu {
-    padding: $spacing-unit;
-}
+
+.menu,
 .subMenu {
-    padding-top: 9px;
-    padding-right: $spacing-unit;
-    padding-bottom: $spacing-unit - 10px;
+  position: absolute;
+  text-align: right;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.75);
 }
+
+.menu {
+  padding: $spacing-unit;
+}
+
+.subMenu {
+  padding-top: 9px;
+  padding-right: $spacing-unit;
+  padding-bottom: $spacing-unit - 10px;
+}
+
 .logo {
-    padding-left: $spacing-unit - 1px;
-    padding-bottom: $spacing-unit - 1px;
+  padding-left: $spacing-unit - 1px;
+  padding-bottom: $spacing-unit - 1px;
 }
+
 .logo img {
-    position: absolute;
-    top: $spacing-unit;
-    right: $spacing-unit - 1;
+  position: absolute;
+  top: $spacing-unit;
+  right: $spacing-unit - 1;
 }
+
 #downloadLabel {
-    position: relative;
-    padding-right: 2 * $spacing-unit;
-    margin-bottom: -1000px;
-    margin-left: -19px;
-    top: -15px;
+  position: relative;
+  padding-right: 2 * $spacing-unit;
+  margin-bottom: -1000px;
+  margin-left: -19px;
+  top: -15px;
 }
+
 .menuItems {
-    margin-top: 10px;
-    margin-bottom: -10px;
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
-.collapseTarget > h3 {
-    display: inline;
+
+.collapsibleList li {
+  position: relative;
+  list-style: none;
 }
-.collapseTarget > span {
-    float: right;
+
+.collapsibleList li > input + * {
+  display: none;
 }
-.collapseTarget > img {
-    position: relative;
-    left: 0px;
-    top: -2px;
-    padding-right: 7px;
-    height: $base-font-size;
+
+.collapsibleList li > input:checked + * {
+  display: block;
 }
-.collapsedContent {
-    display: none;
+
+.collapsibleList li > input {
+  display: none;
+}
+
+.collapsibleList li > label {
+  cursor: pointer;
+}
+
+.collapsibleList li > input + * + label.collapseIcon {
+  position: absolute;
+  background-image: url('../images/misc/plus.svg');
+  width: $spacing-unit / 2;
+  height: $spacing-unit / 2;
+  top: 36px;
+  left: -$spacing-unit;
+  cursor: pointer;
+}
+
+.collapsibleList li > input:checked + * + label.collapseIcon {
+  background-image: url('../images/misc/minus.svg');
+}
+
+li > label span.date {
+  display: inline;
+  float: right;
 }

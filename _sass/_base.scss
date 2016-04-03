@@ -22,7 +22,7 @@ body {
     font-weight: 300;
     color: black;
     background-color: white;
-    background-image: linear-gradient(lighten($cb1, 50%) 1px, transparent 1px), linear-gradient(90deg, lighten($cb1, 50%) 1px, transparent 1px);
+    background-image: linear-gradient(lighten($cb1light, 15%) 1px, transparent 1px), linear-gradient(90deg, lighten($cb1light, 15%) 1px, transparent 1px);
     background-size: $spacing-unit $spacing-unit;
     background-position: 0 -5px;
 }

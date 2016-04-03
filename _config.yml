@@ -18,3 +18,4 @@ highlighter: pygments
 collections:
 - publications
 - experience
+- education

@@ -1,0 +1,170 @@
+/* CSS-only horizontal accordion adapted from:
+    http://www.sitepoint.com/css3-horizontal-accordion-using-target-selector/
+
+   To use, format your html like this:
+
+<article class="accordion">
+    <section id="acc1">
+        <h2><a href="#acc1">Datasets</a></h2>
+        <div class="content">
+            <p>Stuff in here will automatically get scroll bars if needed</p>
+        </div>
+    </section>
+    <section id="acc2">
+        <h2><a href="#acc2">Apply Filters</a></h2>
+        <div class="content">
+            <p>Stuff in here will automatically get scroll bars if needed</p>
+        </div>
+    </section>
+    <section id="acc3">
+        <h2><a href="#acc3">Pick Attributes</a></h2>
+        <div class="content">
+            <p>Stuff in here will automatically get scroll bars if needed</p>
+        </div>
+    </section>
+    <section id="acc4">
+        <h2><a href="#acc4">Visualizations</a></h2>
+        <div class="content">
+            <p>Stuff in here will automatically get scroll bars if needed</p>
+        </div>
+    </section>
+</article>
+
+    If you add / remove sections, add / remove 2em where indicated.
+*/
+body
+{
+	background-color: #e5eaff;
+	margin: 10px;
+	z-index: 0;
+}
+
+article.accordion
+{
+	position: absolute;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #666;
+	overflow: auto;
+	border-radius: 5px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+}
+
+article.accordion section
+{
+	position: relative;
+	display: block;
+	float: left;
+	width: 2em;
+	height: calc(100vh - 1em);
+	margin: 0.5em 0 0.5em 0.5em;
+	color: #333;
+	background-color: #333;
+	overflow: hidden;
+	border-radius: 3px;
+}
+
+article.accordion section h2
+{
+	position: absolute;
+	font-size: 1em;
+	font-weight: bold;
+	width: calc(100vh - 1em);
+	height: 2em;
+	top: calc(100vh - 1em);
+	left: 0;
+	text-indent: 1em;
+	padding: 0;
+	margin: 0;
+	color: #ddd;
+    z-index: 1;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+article.accordion section h2 a
+{
+	display: block;
+	width: 100%;
+	line-height: 2em;
+	text-decoration: none;
+	color: inherit;
+	outline: 0 none;
+}
+
+article.accordion section div.content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 3em);
+    overflow: auto;
+    opacity: 0.0;
+}
+
+article.accordion section,
+article.accordion section h2
+{
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+article.accordion section div.content {
+    -webkit-transition: 0s ease;
+	-moz-transition: 0s ease;
+	-ms-transition: 0s ease;
+	-o-transition: 0s ease;
+	transition: 0s;
+    -webkit-transition-delay: 0s;
+	-moz-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	-o-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+article.accordion section:target
+{
+    /* If you add / remove sections, add / remove 2em
+    from this width for each section. This should be:
+    width: calc(100% - (2.5em + 2*Nem));
+    where N = the number of sections in your document */
+	width: calc(100% - (2.5em + 2*4em));
+	padding: 0 1em;
+	color: #333;
+	background-color: #fff;
+}
+
+article.accordion section:target h2
+{
+	position: static;
+	font-size: 1.3em;
+	text-indent: 0;
+	color: #333;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+article.accordion section:target div.content {
+    opacity : 1.0;
+    -webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+    -webkit-transition-delay: 1s;
+	-moz-transition-delay: 1s;
+	-ms-transition-delay: 1s;
+	-o-transition-delay: 1s;
+	transition-delay: 1s;
+}

@@ -1,6 +1,7 @@
 ---
 title: Research Intern
-date: Summer 2015
+season: Summer
+date: 2015
 meta:
  - IBM Research
  - Cambridge, MA
