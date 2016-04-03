@@ -6,36 +6,91 @@ p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
+    vertical-align: text-bottom;
 }
-
-
 
 /**
  * Basic styling
  */
 body {
+    position: relative;
+    top: $base-fix;
+    padding: $spacing-unit;
     font-family: $base-font-family;
     font-size: $base-font-size;
-    line-height: $base-line-height;
+    line-height: $base-leading;
     font-weight: 300;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
+    color: black;
+    background-color: white;
+    background-image: linear-gradient(lighten($cb1light, 15%) 1px, transparent 1px), linear-gradient(90deg, lighten($cb1light, 15%) 1px, transparent 1px);
+    background-size: $spacing-unit $spacing-unit;
+    background-position: 0 -5px;
 }
 
-
+div.wrapper {
+    position: relative;
+    // Explicitly setting this as relative
+    // means that child absolute positioning will
+    // be relative to this div, instead of something
+    // higher up in the DOM
+}
 
 /**
- * Set `margin-bottom` to maintain vertical rhythm
+ * Headers
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+
+// Sizes, spacing
+h1 {
+    position: relative;
+    font-size: $header-font-size;
+    line-height: $header-leading;
+    top: $header-fix;
+    visibility: hidden;
+}
+h2, h3, h4, h5, h6 {
+    position: relative;
+    font-size: $small-header-font-size;
+    line-height: $small-header-leading;
+    top: $small-header-fix;
 }
 
+// Fonts, styling
+.title, h1 {
+    font-family: $header-font-family;
+    font-style: italic;
+}
+h2, h4, h6 {
+    font-family: $base-font-family;
+    font-weight: 600;
+}
+h3, h5 {
+    font-family: $header-font-family;
+}
 
+// Colors
+.title, h1, h4 {
+    color: $cb6;
+}
+h2, h5 {
+    color: $cb7;
+}
+h3, h6 {
+    color: black;
+}
+
+/**
+ * Other element spacing
+ */
+hr {
+    position: relative;
+    top: $hr-fix;
+    margin-top: $spacing-unit;
+    margin-bottom: $spacing-unit - 2;
+}
+
+p {
+    margin-bottom: $spacing-unit;
+}
 
 /**
  * Images
@@ -44,21 +99,6 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
-
-
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
 
 /**
  * Lists
@@ -74,71 +114,35 @@ li {
     }
 }
 
-
-
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-}
-
-
-
 /**
  * Links
  */
 a {
-    color: $brand-color;
+    color: $cb1;
+    font-weight: 600;
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: darken($cb1, 15%);
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        color: $cb1light;
     }
 }
-
-
-
-/**
- * Blockquotes
- */
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-
 
 /**
  * Code formatting
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
-}
-
-code {
-    padding: 1px 5px;
+    font-size: $base-font-size;
+    line-height: $base-leading;
 }
 
 pre {
-    padding: 8px 12px;
+    background-color: $cb3light;
+    border: 1px solid $cb3;
     overflow-x: scroll;
 
     > code {
@@ -148,29 +152,32 @@ pre {
     }
 }
 
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
+div.highlight {
+    position: relative;
+    top: $highlight-fix;
 }
 
+/**
+ * Alert box formatting
+ */
+div.alert {
+    position: relative;
+    margin-top: $spacing-unit / 2 + 5;
+    margin-bottom: $spacing-unit / 2 - 5;
+    padding: $spacing-unit / 2;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: $cb4light;
+    color: $cb4;
+}
 
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+%vertical-rhythm {
+    margin-bottom: 0;
+}
 
 /**
  * Clearfix
@@ -181,24 +188,5 @@ pre {
         content: "";
         display: table;
         clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
     }
 }

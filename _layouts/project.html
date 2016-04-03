@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<script type="application/javascript" src="/scripts/showdown/showdown.min.js"></script>
+
+<div id="markdownContent" class="post">{{ page.readme }}</div>
+
+<script type="application/javascript">
+var githubConverter = new showdown.Converter();
+
+function embedMarkdown(url, target) {
+    "use strict";
+    jQuery.ajax({
+        url: url,
+        type: 'get',
+        dataType: 'text',
+        async: false,
+        success: function (result) {
+            target.innerHTML = githubConverter.makeHtml(result);
+        },
+        error: function () {
+            target.innerHTML = "<p>Error loading page.</p><br/>";
+        }
+    });
+}
+
+var contentObj = document.getElementById('markdownContent');
+embedMarkdown(contentObj.textContent, contentObj);
+</script>

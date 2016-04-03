@@ -2,22 +2,16 @@
 layout: default
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<div class="wrapper">
+    <h1>Blog</h1>
+        <div class="alert"><b>Annoying construction notice:</b><br/>Being a vis person, I can't resist planning some kind of cool temporal visualization for this meta-page that integrates my blog posts with other data I collect about myself over time. <br/> <br/> In other words, cooler stuff will live here in the future. For now, a boring list:</div>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <div><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
+            <div>{{ post.date | date: "%b %-d, %Y" }}</div>
+        </li>
+        {% endfor %}
+    </ul>
 
 </div>

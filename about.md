@@ -1,11 +1,14 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I'm a PhD student in the [Visualization Design Lab](http://vdl.sci.utah.edu) at the University of Utah's [SCI Institute](http://sci.utah.edu). I am interested in challenging the processes of data visualization, meaning:
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+- How do *people* go about extracting data and integrating it with other data?
+  Are different (more efficient / expressive) workflows possible?
+- How do *people* go about creating visual representations of data?
+  Are different (more efficient / expressive) workflows possible?
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+These interrelated challenges are full of opportunities to develop solutions that enable new kinds of data analysis and visualization.
