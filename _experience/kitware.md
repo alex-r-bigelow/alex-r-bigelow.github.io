@@ -1,7 +1,7 @@
 ---
 title: Research Intern
 season: Spring, Summer
-date: 2016
+year: 2016
 meta:
  - Kitware, Inc.
  - Clifton Park, NY

@@ -12,7 +12,7 @@ permalink: /cv/
   <div class="post-content">
     <h2>Education</h2>
     <ul style="list-style:none">
-      {% assign education = site.education | sort:'date' %}
+      {% assign education = site.education | sort:'year' %}
         {% for edu in education reversed %}
           {% assign counter=counter | plus:1 %}
           <li>
@@ -24,8 +24,8 @@ permalink: /cv/
                 {% endif %}
                 {% if edu.start and edu.stop %}
                     {{ edu.start }}–{{ edu.stop }}
-                {% else if edu.date %}
-                    {{ edu.date }}
+                {% else if edu.year %}
+                    {{ edu.year }}
                 {% endif %}
               </span>
             </label>
@@ -126,7 +126,7 @@ permalink: /cv/
 
     <h2>Work Experience</h2>
     <ul class="collapsibleList">
-      {% assign experiences = site.experience | sort:'date' %}
+      {% assign experiences = site.experience | sort:'year' %}
       {% for exp in experiences reversed %}
         {% assign counter=counter | plus:1 %}
         <li>
@@ -138,8 +138,8 @@ permalink: /cv/
                 {% endif %}
                 {% if exp.start and exp.stop %}
                     {{ exp.start }}–{{ exp.stop }}
-                {% else if exp.date %}
-                    {{ exp.date }}
+                {% else if exp.year %}
+                    {{ exp.year }}
                 {% endif %}
             </span>
           </label>
