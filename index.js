@@ -1,15 +1,24 @@
-var blogLoader = require.context('./blog', true, /\.md$/);
+import Router from './Router';
+import Blog from './Blog';
+import LandingPage from './LandingPage';
+import Menu from './Menu';
+import './.htaccess';
 
-let blogEntries = [];
-blogLoader.keys().forEach(function (key) {
-  let pieces = key.match(/\.\/(\d+-\d+-\d+)-(.*)\.md/);
-  console.log(pieces);
-  blogEntries.push({
-    path: pieces[0],
-    date: new Date(pieces[1]),
-    title: pieces[2].replace(/-/g, ' ')
+window.router = new Router();
+window.views = {};
+window.viewTypes = {
+  '#': LandingPage
+};
+window.blog = new Blog();
+window.menu = new Menu();
+window.render = (targetHash) => {
+  window.menu.render();
+  Object.keys(window.views).forEach(hash => {
+    if (hash !== targetHash) {
+      window.views[hash].$el.hide();
+    }
   });
-});
-console.log(JSON.stringify(blogEntries, null, 2));
-
-console.log(blogLoader(blogEntries[0].path).__content);
+  window.views[targetHash].$el.show();
+  window.views[targetHash].render();
+};
+window.router.navigate(window.router.getHash());

@@ -39,5 +39,7 @@ Thumbs.db
 # Other big files *
 ###################
 *.pdf
+*.ai
 
 node_modules
+build

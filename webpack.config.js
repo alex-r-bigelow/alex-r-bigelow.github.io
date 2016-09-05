@@ -28,6 +28,13 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.htaccess$/,
+        loader: 'file-loader',
+        query: {
+          name: '.htaccess'
+        }
+      },
+      {
         test: /\.md$/,
         loader: 'markdown-with-front-matter'
       },
