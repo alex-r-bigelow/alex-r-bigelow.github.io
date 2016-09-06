@@ -1,8 +1,15 @@
+import './.htaccess';
+
 import Router from './Router';
 import Blog from './Blog';
 import LandingPage from './LandingPage';
 import Menu from './Menu';
-import './.htaccess';
+
+// For debugging, expose d3 and jQuery on the console
+import * as d3 from './lib/d3.min.js';
+import jQuery from 'jquery';
+window.d3 = d3;
+window.jQuery = jQuery;
 
 window.router = new Router();
 window.views = {};

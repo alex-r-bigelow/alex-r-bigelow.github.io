@@ -15,8 +15,14 @@ class Blog {
           return self.markdownLoader(this.path).__content;
         }
       };
-      self.entries[self.getHash(entry)] = entry;
+      entry.hash = self.getHash(entry);
+      self.entries[entry.hash] = entry;
     });
+  }
+  getOrderedEntries () {
+    let result = Object.keys(this.entries).map(hash => this.entries[hash]);
+    result.sort((a, b) => b.date - a.date);
+    return result;
   }
   getHash (entry) {
     return entry.title.replace(/[\s/\.,#:]/, '');

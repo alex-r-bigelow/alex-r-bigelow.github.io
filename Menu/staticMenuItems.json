@@ -1,0 +1,40 @@
+[
+    {
+        "title": "Profile",
+        "hash": "#",
+        "children": [
+            {
+                "title": "CV",
+                "hash": "#cv"
+            },
+            {
+                "title": "Email",
+                "url": "mailto:abigelow@cs.utah.edu"
+            },
+            {
+                "title": "Github",
+                "url": "https://github.com/alex-r-bigelow"
+            },
+            {
+                "title": "Twitter",
+                "url": "https://twitter.com/accidental_PhD"
+            },
+            {
+                "title": "Facebook",
+                "url": "https://www.facebook.com/alex.r.bigelow"
+            },
+            {
+                "title": "YouTube",
+                "url": "https://www.youtube.com/channel/UCygaeDPOqpPTgEGIAioV_VA"
+            },
+            {
+                "title": "StackOverflow",
+                "url": "http://stackoverflow.com/users/1058935/yasashiku?tab=profile"
+            }
+        ]
+    },
+    {
+        "title": "Projects",
+        "children": []
+    }
+]

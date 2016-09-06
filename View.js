@@ -1,5 +1,5 @@
 import jQuery from 'jquery';
-import * as d3 from 'd3';
+import * as d3 from './lib/d3.min.js';
 
 class View {
   constructor (template = '', element = null) {
@@ -16,7 +16,7 @@ class View {
   }
   render () {
     if (this.firstRender) {
-      this.$el.html(this.template);
+      this.d3el.html(this.template);
       this.firstRender = false;
     }
   }
