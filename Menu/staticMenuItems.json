@@ -12,27 +12,33 @@
             },
             {
                 "title": "Email",
-                "url": "mailto:abigelow@cs.utah.edu"
+                "hash": "mailto:abigelow@cs.utah.edu",
+                "icon": "Email"
             },
             {
                 "title": "Github",
-                "url": "https://github.com/alex-r-bigelow"
+                "url": "https://github.com/alex-r-bigelow",
+                "icon": "Github"
             },
             {
                 "title": "Twitter",
-                "url": "https://twitter.com/accidental_PhD"
+                "url": "https://twitter.com/accidental_PhD",
+                "icon": "Twitter"
             },
             {
                 "title": "Facebook",
-                "url": "https://www.facebook.com/alex.r.bigelow"
+                "url": "https://www.facebook.com/alex.r.bigelow",
+                "icon": "Facebook"
             },
             {
                 "title": "YouTube",
-                "url": "https://www.youtube.com/channel/UCygaeDPOqpPTgEGIAioV_VA"
+                "url": "https://www.youtube.com/channel/UCygaeDPOqpPTgEGIAioV_VA",
+                "icon": "YouTube"
             },
             {
                 "title": "StackOverflow",
-                "url": "http://stackoverflow.com/users/1058935/yasashiku?tab=profile"
+                "url": "http://stackoverflow.com/users/1058935/yasashiku?tab=profile",
+                "icon": "StackOverflow"
             }
         ]
     },

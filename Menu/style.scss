@@ -10,47 +10,58 @@ div#overlay {
 }
 
 nav {
-  position: fixed;
-  top: 0px;
-  right: 0px;
+  svg {
+    position: fixed;
+    top: 0px;
+    right: 0px;
 
-  .bubble {
-    cursor: pointer;
+    .bubble {
+      cursor: pointer;
 
-    &.profile path {
-      fill: $ProfileDarkColor;
+      &.profile path {
+        fill: $ProfileDarkColor;
+      }
+      &.profile.repress path {
+        fill: $ProfileLightColor;
+      }
+      &.projects path {
+        fill: $ProjectsDarkColor;
+      }
+      &.projects.repress path {
+        fill: $ProjectsLightColor;
+      }
+      &.blog path {
+        fill: $BlogDarkColor;
+      }
+      &.blog.repress path {
+        fill: $BlogLightColor;
+      }
+      &.history path {
+        fill: $HistoryDarkColor;
+      }
+      &.history.repress path {
+        fill: $HistoryLightColor;
+      }
     }
-    &.profile.repress path {
-      fill: $ProfileLightColor;
-    }
-    &.projects path {
-      fill: $ProjectsDarkColor;
-    }
-    &.projects.repress path {
-      fill: $ProjectsLightColor;
-    }
-    &.blog path {
-      fill: $BlogDarkColor;
-    }
-    &.blog.repress path {
-      fill: $BlogLightColor;
-    }
-    &.history path {
-      fill: $HistoryDarkColor;
-    }
-    &.history.repress path {
-      fill: $HistoryLightColor;
+
+    #Hamburger {
+      cursor: pointer;
+
+      path {
+        fill: $HamburgerDarkColor;
+      }
+      &.repress path {
+        fill: $HamburgerLightColor;
+      }
     }
   }
 
-  #Hamburger {
-    cursor: pointer;
+  #SecondLevel {
+    position: absolute;
+    text-align: right;
 
-    path {
-      fill: $HamburgerDarkColor;
-    }
-    &.repress path {
-      fill: $HamburgerLightColor;
+    .link {
+      margin: 1em;
     }
   }
 }

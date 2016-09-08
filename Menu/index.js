@@ -112,8 +112,8 @@ class Menu extends View {
         resolveLevelAnimation();
       }
     } else {
-      bounds.width = bubblePadding + pillRadius;
-      bounds.height = menuItems.length * bubblePadding + pillRadius;
+      bounds.width = bubblePadding + (2 * pillRadius);
+      bounds.height = (menuItems.length - 1) * bubblePadding + (2 * pillRadius);
       if (topLevel.size() === 0) {
         topLevel = this.d3el.select('svg').insert('g', ':first-child')
           .attrs({
@@ -125,7 +125,7 @@ class Menu extends View {
       topLevel.transition()
         .duration(ANIMATION_SPEED)
         .attr('transform', 'translate(' +
-          (-bubblePadding) + ',0)')
+          (-bubblePadding - pillRadius) + ',0)')
         .on('end', resolveLevelAnimation);
     }
 
@@ -143,7 +143,7 @@ class Menu extends View {
       .attr('transform', 'translate(0, 0)');
     pillsEnter.transition(growPills)
       .attr('transform', (d, i) => 'translate(0,' +
-        ((i + 1) * bubblePadding) + ')');
+        (i * bubblePadding + pillRadius) + ')');
     pillsEnter.append('path')
       .attr('d', smallPillPath)
       .transition(growPills)
@@ -271,6 +271,66 @@ class Menu extends View {
       finishAnimation: Promise.all([levelAnimation, pillAnimation])
     };
   }
+  renderSecondLevel (spaceFromRight, spaceFromTop) {
+    // TODO: for now I do a dumb html listing of everything...
+    // I should do cooler things in the future
+
+    let resolveLevelAnimation;
+    let levelAnimation = new Promise((resolve, reject) => {
+      resolveLevelAnimation = resolve;
+    });
+
+    let secondLevel = this.d3el.select('#SecondLevel');
+
+    let menuItems;
+    if (this.openMenu === null || this.openMenu === 'Hamburger') {
+      // hide / remove the second level
+      menuItems = [];
+      if (secondLevel.size() > 0) {
+        secondLevel.transition()
+          .duration(ANIMATION_SPEED)
+          .style('opacity', 0)
+          .transition()
+          .on('end', resolveLevelAnimation)
+          .remove();
+      } else {
+        // Nothing to animate...
+        resolveLevelAnimation();
+      }
+    } else {
+      menuItems = this.menuItems.find(d => d.title === this.openMenu).children;
+      if (secondLevel.size() === 0) {
+        secondLevel = this.d3el.append('div')
+          .style('right', spaceFromRight + 'px')
+          .style('top', spaceFromTop + 'px')
+          .style('opacity', 0)
+          .attr('id', 'SecondLevel');
+      }
+      secondLevel.transition()
+        .duration(ANIMATION_SPEED)
+        .style('opacity', 1)
+        .on('end', resolveLevelAnimation);
+    }
+
+    let links = secondLevel.selectAll('.link')
+      .data(menuItems, d => d.title);
+    links.exit().remove();
+    let linksEnter = links.enter().append('div')
+      .attr('class', 'link');
+    linksEnter.append('a');
+    linksEnter.merge(links).select('a')
+      .text(d => d.title)
+      .attr('href', d => d.hash || d.url)
+      .attr('target', d => d.url ? '_blank' : null);
+
+    return {
+      bounds: {
+        width: 0,
+        height: 0
+      },
+      finishAnimation: levelAnimation
+    };
+  }
   closeMenu () {
     this.mousedMenu = null;
     this.openMenu = null;
@@ -315,7 +375,8 @@ class Menu extends View {
     bounds.width = Math.max(topRender.bounds.width, bounds.width);
     bounds.height = Math.max(topRender.bounds.height, bounds.height);
 
-    // TODO: Draw the second level menu items
+    // Draw the second level menu items
+    let secondLevelRender = this.renderSecondLevel(bounds.width, 2 * window.emSize);
 
     // Adjust the SVG element to the appropriate width / height
     // with 0,0 in the top-right corner... but if we're shrinking
@@ -328,7 +389,8 @@ class Menu extends View {
     if ((svg.attr('width') || 0) > bounds.width ||
         (svg.attr('height') || 0) > bounds.height) {
       Promise.all([hamburgerRender.finishAnimation,
-                   topRender.finishAnimation]).then(adjustSvgBounds);
+                   topRender.finishAnimation,
+                   secondLevelRender.finishAnimation]).then(adjustSvgBounds);
     } else {
       adjustSvgBounds();
     }
