@@ -5,6 +5,7 @@ body {
   font-family: 'Josefin Slab', serif;
   color: $White;
   font-size: 16pt;
+  line-height: 24pt;
   padding: 2em;
   margin: 0em;
   position: relative;
@@ -16,12 +17,15 @@ h1 {
   letter-spacing: 10pt;
   color: $CBDarkBlueGreen;
 }
-h2 {
+h2, h3 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 24pt;
   text-transform: lowercase;
   font-weight: 700;
   font-style: italic;
+}
+a {
+  color: $LinkColor;
 }
 p {
   margin-left: 1em;
