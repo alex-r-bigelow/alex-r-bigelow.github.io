@@ -1,4 +1,5 @@
 import * as d3 from '../lib/d3.min.js';
+import jQuery from 'jquery';
 import svgTextWrap from '../lib/svgTextWrap.js';
 import View from '../View';
 import staticMenuItems from './staticMenuItems.json';
@@ -53,7 +54,8 @@ class Menu extends View {
   }
   renderHamburger (iconSize, pillRadius) {
     let hamburger = this.d3el.select('#Hamburger')
-      .attr('transform', 'translate(' + (-pillRadius) + ',' + pillRadius + ')');
+      .attr('transform', 'translate(' + (-pillRadius) + ',' + pillRadius + ')')
+      .attr('class', this.openMenu === null ? null : 'repress');
     hamburger.select('path')
       .attr('d', this.drawPill(2 * pillRadius, 2 * pillRadius));
     hamburger.select('image')
@@ -169,7 +171,11 @@ class Menu extends View {
       this.mousedMenu = null;
       this.render();
     }).on('click', d => {
-      this.openMenu = d.title;
+      if (this.openMenu === d.title) {
+        this.openMenu = 'Hamburger';
+      } else {
+        this.openMenu = d.title;
+      }
       this.render();
     });
 
@@ -204,6 +210,7 @@ class Menu extends View {
     let longestText = 0;
     pills.each(function (d) {
       // this refers to the DOM element
+      let $el = jQuery(this);
       let d3el = d3.select(this);
       let textEl = d3el.select('text');
       let pathEl = d3el.select('path');
@@ -211,6 +218,14 @@ class Menu extends View {
       textEl.text(d.title);
 
       if (d.title !== self.openMenu && d.title !== self.mousedMenu) {
+        // If something is selected, but this isn't it, we want to
+        // subdue the appearance a little
+        if (self.openMenu !== 'Hamburger') {
+          $el.addClass('repress');
+        } else {
+          $el.removeClass('repress');
+        }
+
         // The menu isn't open or hovered, so hide the text
         // and then the pill
         textEl.transition(pillRolloverStage1)
@@ -218,6 +233,10 @@ class Menu extends View {
         pathEl.transition(pillRolloverStage2)
           .attr('d', standardPillPath);
       } else {
+        // This item is now selected, so remove the repress class
+        // if it was there
+        $el.removeClass('repress');
+
         // The menu item is either open or hovered, so show the text
         let availableTextWidth = availableWidth - 3 * pillRadius;
         let lineLengths = svgTextWrap(textEl.node(), availableTextWidth);

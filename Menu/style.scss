@@ -20,14 +20,26 @@ nav {
     &.profile path {
       fill: $ProfileDarkColor;
     }
+    &.profile.repress path {
+      fill: $ProfileLightColor;
+    }
     &.projects path {
       fill: $ProjectsDarkColor;
+    }
+    &.projects.repress path {
+      fill: $ProjectsLightColor;
     }
     &.blog path {
       fill: $BlogDarkColor;
     }
+    &.blog.repress path {
+      fill: $BlogLightColor;
+    }
     &.history path {
       fill: $HistoryDarkColor;
+    }
+    &.history.repress path {
+      fill: $HistoryLightColor;
     }
   }
 
@@ -36,6 +48,9 @@ nav {
 
     path {
       fill: $HamburgerDarkColor;
+    }
+    &.repress path {
+      fill: $HamburgerLightColor;
     }
   }
 }
