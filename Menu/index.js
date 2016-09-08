@@ -17,6 +17,8 @@ let ICONS = {
   History
 };
 
+let ANIMATION_SPEED = 300;
+
 class Menu extends View {
   constructor () {
     super(template, d3.select('nav').node());
@@ -83,31 +85,58 @@ class Menu extends View {
   }
   drawTopLevel (iconSize, pillRadius, bubblePadding, availableWidth) {
     let menuItems = this.menuItems;
-    if (this.openMenu === null) {
-      // Don't show the top level if it's hidden
-      menuItems = [];
-    }
-
-    let pills = this.d3el.select('#TopLevel').selectAll('g.toplevel')
-      .data(menuItems, d => d.title);
+    let topLevel = this.d3el.select('#TopLevel');
 
     let bounds = {
       width: 0,
-      height: menuItems.length * bubblePadding
+      height: 0
     };
+
+    if (this.openMenu === null) {
+      // hide / remove the top level
+      menuItems = [];
+      if (topLevel.size() > 0) {
+        console.log(topLevel.attr('transform'));
+        topLevel.transition()
+          .duration(ANIMATION_SPEED)
+          .attr('transform', 'translate(' +
+            (-pillRadius) + ',' + pillRadius + ')')
+          .transition()
+          .remove();
+      }
+    } else {
+      bounds.width = bubblePadding + pillRadius;
+      bounds.height = menuItems.length * bubblePadding + pillRadius;
+      if (topLevel.size() === 0) {
+        topLevel = this.d3el.select('svg').insert('g', ':first-child')
+          .attrs({
+            id: 'TopLevel',
+            transform: 'translate(' +
+              (-pillRadius) + ',' + pillRadius + ')'
+          });
+      }
+      console.log(topLevel.attr('transform'));
+      topLevel.transition()
+        .duration(ANIMATION_SPEED)
+        .attr('transform', 'translate(' +
+          (-bubblePadding) + ',0)');
+    }
+
+    let pills = topLevel.selectAll('g.toplevel')
+      .data(menuItems, d => d.title);
 
     // Start new pills off at 0, 0 with a small bubble
     // and move them into place with a standard-size bubble
     let smallPillPath = this.drawPill(pillRadius / 2, pillRadius / 2);
-    let standardPillPath = this.drawPill(pillRadius, pillRadius);
+    let standardPillPath = this.drawPill(2 * pillRadius, 2 * pillRadius);
     let growPills = d3.transition()
-      .duration(300);
+      .duration(ANIMATION_SPEED);
     let pillsEnter = pills.enter().append('g')
-      .attr('class', 'toplevel bubble')
+      .attr('class', d => 'toplevel bubble ' + d.title.toLowerCase())
       .attr('transform', 'translate(0, 0)');
     pillsEnter.transition(growPills)
       .attr('transform', (d, i) => 'translate(0,' +
-        (i * bubblePadding) + ')');
+        ((i + 1) * bubblePadding) + ')');
     pillsEnter.append('path')
       .attr('d', smallPillPath)
       .transition(growPills)
@@ -116,6 +145,15 @@ class Menu extends View {
       .text(d => d.title);
     pillsEnter.append('image')
       .attr('xlink:href', d => ICONS[d.title]);
+
+    // Shrink and move old pills back to 0, 0
+    let pillsExit = pills.exit();
+    pillsExit.transition(growPills)
+      .attr('transform', 'translate(0, 0)')
+      .select('path')
+        .transition(growPills)
+        .attr('d', smallPillPath);
+
     pills = pillsEnter.merge(pills);
 
     // Handle the icons
@@ -129,6 +167,7 @@ class Menu extends View {
 
     // Handle the text labels (and get their width)
     let self = this;
+    let longestText = 0;
     pills.select('text')
       .each(function (d) {
         // this refers to the DOM element
@@ -147,9 +186,10 @@ class Menu extends View {
           // size in the data item itself
           d.textLength = Math.max(...lineLengths);
         }
-        bounds.width = Math.max(bounds.width, d.textLength);
+        longestText = Math.max(longestText, d.textLength);
       });
 
+    bounds.width += longestText;
     return bounds;
   }
   render () {
@@ -157,29 +197,55 @@ class Menu extends View {
 
     let iconSize = 2 * window.emSize;
     let pillRadius = 2 * window.emSize;
-    let bubblePadding = 2 * window.emSize;
+    let bubblePadding = 4 * window.emSize;
 
     // Update the history
     this.historyItem.graph = window.router.historyGraph();
+
+    // Should we show the overlay?
+    if (this.openMenu === null) {
+      d3.select('#overlay')
+        .transition()
+        .duration(ANIMATION_SPEED)
+        .style('opacity', 0)
+        .transition()
+        .style('display', 'none');
+    } else {
+      d3.select('#overlay')
+        .on('click', () => {
+          this.openMenu = null;
+          this.render();
+        }).style('display', null)
+        .transition()
+        .duration(ANIMATION_SPEED)
+        .style('opacity', 1);
+    }
 
     // Okay, update the Hamburger bubble
     let bounds = this.drawHamburger(iconSize, pillRadius);
 
     // Draw the top menu items
-    this.d3el.select('#TopLevel').attr('transform', 'translate(' +
-      (-bounds.width + bubblePadding) + ',' +
-      (-bounds.height + bubblePadding) + ')');
     let topBounds = this.drawTopLevel(
       iconSize, pillRadius, bubblePadding,
       window.innerWidth - bounds.width + bubblePadding);
-    bounds.width = Math.max(topBounds.width + bubblePadding, bounds.width);
-    bounds.height = Math.max(topBounds.height + bubblePadding, bounds.height);
+    bounds.width = Math.max(topBounds.width, bounds.width);
+    bounds.height = Math.max(topBounds.height, bounds.height);
 
     // Draw the second level menu items
 
     // Adjust the SVG element to the appropriate width / height
-    // with 0,0 in the top-right corner
-    this.d3el.select('svg').attrs(bounds)
+    // with 0,0 in the top-right corner... but if we're shrinking
+    // it, we want to wait until any animations finish first
+    let svg = this.d3el.select('svg');
+    let delay = 0;
+    if ((svg.attr('width') || 0) > bounds.width ||
+        (svg.attr('height') || 0) > bounds.height) {
+      delay = ANIMATION_SPEED;
+    }
+    this.d3el.select('svg')
+      .transition()
+      .delay(delay)
+      .attrs(bounds)
       .attr('viewBox', -bounds.width + ' 0 ' + bounds.width + ' ' + bounds.height);
 
     console.log(this.menuItems);

@@ -1,12 +1,34 @@
 @import '../colors.scss';
 
+div#overlay {
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  bottom: 0em;
+  background-color: $OverlayColor;
+}
+
 nav {
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
 
   .bubble {
     cursor: pointer;
+
+    &.profile path {
+      fill: $ProfileDarkColor;
+    }
+    &.projects path {
+      fill: $ProjectsDarkColor;
+    }
+    &.blog path {
+      fill: $BlogDarkColor;
+    }
+    &.history path {
+      fill: $HistoryDarkColor;
+    }
   }
 
   #Hamburger {
