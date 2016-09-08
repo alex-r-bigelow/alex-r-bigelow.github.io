@@ -5,18 +5,23 @@ Problem: imagine we create an SVG file as a template for a view using webpack:
 <g id="Hamburger">
 	<image xlink:href="../images/menu/Hamburger.svg"/>
 </g>
+
+<!-- we'll use something like D3 to add more stuff/manipulate this file... -->
+
 </svg>
 ```
 
 You can probably see right off the bat that we're going to have problems. We want to load the *outer* SVG file as a DOM tree, but we want to load the *inner* SVG file as an image.
 
-In the file that loads this template, you can get away with doing this:
+## The Simple Way
+
+In the Javascript file that loads this template, you can get away with doing this:
 
 ```javascript
 import template from '-!html?attrs=image:xlink:href!./template.svg';
 ```
 
-Bit of a summary of what's going on here:
+First , a bit of a summary of what's going on here:
 
 The first `-!` tells webpack to ignore the default loaders for SVG files in `webpack.config.js` (imagine it looks something like this):
 
@@ -48,9 +53,10 @@ The middle `?attrs=image:xlink:href` bit is where we tell webpack to follow link
 The final `!./template.svg` bit, of course, tells webpack which file to load.
 
 ## For purists
-Webpack discourages the use of the `-!` override, and it's often not great to have to specify a loader in each import statement (although, this is a case that probably warrants both).
 
-But if inline loader specification bothers you, there's another alternative: we can create a distinct loader for templates in `webpack.config.js`:
+Webpack discourages the use of the `-!` override, and it's often not great to have to specify a loader in each import statement (although, this is one of those rare cases that probably actually warrants the override / inline approach).
+
+But if the first approach bothers you, there's another alternative: we can create a distinct loader for templates in `webpack.config.js`:
 
 ```javascript
 module.exports = {
@@ -77,4 +83,5 @@ module.exports = {
   }
 };
 ```
+
 Now, `import template from './template.svg'` will load the file as a document instead of an image. Actually, *any* file ending in `template.svg` will load this way—which might be handy if you're building an app with lots of SVG template files.

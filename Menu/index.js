@@ -35,12 +35,6 @@ class Menu extends View {
     this.openMenu = null;
     this.mousedMenu = null;
   }
-  attachBubbleListeners (selection) {
-    selection.on('mouseover', function (d) {
-      // this refers to the DOM element
-      console.log(d);
-    });
-  }
   drawPill (width, height) {
     // Draw a pill shape, with the right arc center at 0, 0
     let r = height / 2;
@@ -57,7 +51,7 @@ class Menu extends View {
     path += 'Z';
     return path;
   }
-  drawHamburger (iconSize, pillRadius) {
+  renderHamburger (iconSize, pillRadius) {
     let hamburger = this.d3el.select('#Hamburger')
       .attr('transform', 'translate(' + (-pillRadius) + ',' + pillRadius + ')');
     hamburger.select('path')
@@ -74,16 +68,19 @@ class Menu extends View {
       if (this.openMenu === null) {
         this.openMenu = 'Hamburger';
       } else {
-        this.openMenu = null;
+        this.closeMenu();
       }
       this.render();
     });
     return {
-      width: 2 * pillRadius,
-      height: 2 * pillRadius
+      bounds: {
+        width: 2 * pillRadius,
+        height: 2 * pillRadius
+      },
+      finishAnimation: Promise.resolve()
     };
   }
-  drawTopLevel (iconSize, pillRadius, bubblePadding, availableWidth) {
+  renderTopLevel (iconSize, pillRadius, bubblePadding, availableWidth) {
     let menuItems = this.menuItems;
     let topLevel = this.d3el.select('#TopLevel');
 
@@ -92,17 +89,25 @@ class Menu extends View {
       height: 0
     };
 
+    let resolveLevelAnimation;
+    let levelAnimation = new Promise((resolve, reject) => {
+      resolveLevelAnimation = resolve;
+    });
+
     if (this.openMenu === null) {
       // hide / remove the top level
       menuItems = [];
       if (topLevel.size() > 0) {
-        console.log(topLevel.attr('transform'));
         topLevel.transition()
           .duration(ANIMATION_SPEED)
           .attr('transform', 'translate(' +
             (-pillRadius) + ',' + pillRadius + ')')
           .transition()
+          .on('end', resolveLevelAnimation)
           .remove();
+      } else {
+        // Nothing to animate...
+        resolveLevelAnimation();
       }
     } else {
       bounds.width = bubblePadding + pillRadius;
@@ -115,11 +120,11 @@ class Menu extends View {
               (-pillRadius) + ',' + pillRadius + ')'
           });
       }
-      console.log(topLevel.attr('transform'));
       topLevel.transition()
         .duration(ANIMATION_SPEED)
         .attr('transform', 'translate(' +
-          (-bubblePadding) + ',0)');
+          (-bubblePadding) + ',0)')
+        .on('end', resolveLevelAnimation);
     }
 
     let pills = topLevel.selectAll('g.toplevel')
@@ -142,19 +147,31 @@ class Menu extends View {
       .transition(growPills)
       .attr('d', standardPillPath);
     pillsEnter.append('text')
-      .text(d => d.title);
+      .attrs({
+        'opacity': 0,
+        'text-anchor': 'end',
+        'x': -pillRadius,
+        'y': 0.35 * window.emSize
+      }).text(d => d.title);
     pillsEnter.append('image')
       .attr('xlink:href', d => ICONS[d.title]);
 
-    // Shrink and move old pills back to 0, 0
+    // Get the exit selection
     let pillsExit = pills.exit();
-    pillsExit.transition(growPills)
-      .attr('transform', 'translate(0, 0)')
-      .select('path')
-        .transition(growPills)
-        .attr('d', smallPillPath);
 
     pills = pillsEnter.merge(pills);
+
+    // Attach / update event listeners
+    pills.on('mouseover', d => {
+      this.mousedMenu = d.title;
+      this.render();
+    }).on('mouseout', d => {
+      this.mousedMenu = null;
+      this.render();
+    }).on('click', d => {
+      this.openMenu = d.title;
+      this.render();
+    });
 
     // Handle the icons
     pills.select('image')
@@ -165,32 +182,80 @@ class Menu extends View {
         height: iconSize
       });
 
-    // Handle the text labels (and get their width)
+    // Animate the pill + text rollover effect in separate stages,
+    // and resolve a promise when they're both finished
+    let resolvePillAnimation;
+    let pillAnimation = new Promise((resolve, reject) => {
+      resolvePillAnimation = resolve;
+    });
+
+    let pillRolloverStage1 = d3.transition()
+      .duration(ANIMATION_SPEED / 2);
+    let pillRolloverStage2 = pillRolloverStage1
+      .transition()
+      .duration(ANIMATION_SPEED / 2);
+
+    pillRolloverStage2.on('end', resolvePillAnimation);
+
+    // Wrap the text labels (in case the window was resized
+    // and we have less space available), get their width,
+    // and then animate the elements appropriately
     let self = this;
     let longestText = 0;
-    pills.select('text')
-      .each(function (d) {
-        // this refers to the DOM element
-        this.textContent = d.title;
-        let d3el = d3.select(this);
-        if (d.title !== self.openMenu && d.title !== self.mousedMenu) {
-          // The menu isn't open or hovered, so hide the text
-          d3el.style('display', 'none');
-          d.textLength = 0;
-        } else {
-          // The menu item is either open or hovered, so show the text
-          d3el.style('display', null);
-          let availableTextWidth = availableWidth - 2 * pillRadius;
-          let lineLengths = svgTextWrap(this, availableTextWidth);
-          // For convenience / easy access, store the text block
-          // size in the data item itself
-          d.textLength = Math.max(...lineLengths);
-        }
-        longestText = Math.max(longestText, d.textLength);
-      });
+    pills.each(function (d) {
+      // this refers to the DOM element
+      let d3el = d3.select(this);
+      let textEl = d3el.select('text');
+      let pathEl = d3el.select('path');
+
+      textEl.text(d.title);
+
+      if (d.title !== self.openMenu && d.title !== self.mousedMenu) {
+        // The menu isn't open or hovered, so hide the text
+        // and then the pill
+        textEl.transition(pillRolloverStage1)
+          .attr('opacity', 0);
+        pathEl.transition(pillRolloverStage2)
+          .attr('d', standardPillPath);
+      } else {
+        // The menu item is either open or hovered, so show the text
+        let availableTextWidth = availableWidth - 3 * pillRadius;
+        let lineLengths = svgTextWrap(textEl.node(), availableTextWidth);
+
+        // How much space does the text add?
+        let textLength = Math.max(...lineLengths) + 3 * pillRadius;
+        longestText = Math.max(longestText, textLength);
+
+        // Show the pill first, and then the text
+        pathEl.transition(pillRolloverStage1)
+          .attr('d', self.drawPill(textLength, 2 * pillRadius));
+        textEl.transition(pillRolloverStage2)
+          .attr('opacity', 1);
+      }
+    });
+
+    // Shrink and move old pills back to 0, 0
+    pillsExit.select('text')
+      .transition(pillRolloverStage1)
+      .attr('opacity', 0);
+    pillsExit.select('image')
+      .transition(pillRolloverStage1)
+      .attr('opacity', 0);
+    pillsExit.transition(pillRolloverStage2)
+      .attr('transform', 'translate(0, 0)')
+      .select('path')
+        .attr('d', smallPillPath);
 
     bounds.width += longestText;
-    return bounds;
+    return {
+      bounds,
+      finishAnimation: Promise.all([levelAnimation, pillAnimation])
+    };
+  }
+  closeMenu () {
+    this.mousedMenu = null;
+    this.openMenu = null;
+    this.render();
   }
   render () {
     super.render();
@@ -213,8 +278,7 @@ class Menu extends View {
     } else {
       d3.select('#overlay')
         .on('click', () => {
-          this.openMenu = null;
-          this.render();
+          this.closeMenu();
         }).style('display', null)
         .transition()
         .duration(ANIMATION_SPEED)
@@ -222,34 +286,33 @@ class Menu extends View {
     }
 
     // Okay, update the Hamburger bubble
-    let bounds = this.drawHamburger(iconSize, pillRadius);
+    let hamburgerRender = this.renderHamburger(iconSize, pillRadius);
+    let bounds = hamburgerRender.bounds;
 
     // Draw the top menu items
-    let topBounds = this.drawTopLevel(
+    let topRender = this.renderTopLevel(
       iconSize, pillRadius, bubblePadding,
       window.innerWidth - bounds.width + bubblePadding);
-    bounds.width = Math.max(topBounds.width, bounds.width);
-    bounds.height = Math.max(topBounds.height, bounds.height);
+    bounds.width = Math.max(topRender.bounds.width, bounds.width);
+    bounds.height = Math.max(topRender.bounds.height, bounds.height);
 
-    // Draw the second level menu items
+    // TODO: Draw the second level menu items
 
     // Adjust the SVG element to the appropriate width / height
     // with 0,0 in the top-right corner... but if we're shrinking
     // it, we want to wait until any animations finish first
     let svg = this.d3el.select('svg');
-    let delay = 0;
+    let adjustSvgBounds = () => {
+      svg.attrs(bounds)
+        .attr('viewBox', -bounds.width + ' 0 ' + bounds.width + ' ' + bounds.height);
+    };
     if ((svg.attr('width') || 0) > bounds.width ||
         (svg.attr('height') || 0) > bounds.height) {
-      delay = ANIMATION_SPEED;
+      Promise.all([hamburgerRender.finishAnimation,
+                   topRender.finishAnimation]).then(adjustSvgBounds);
+    } else {
+      adjustSvgBounds();
     }
-    this.d3el.select('svg')
-      .transition()
-      .delay(delay)
-      .attrs(bounds)
-      .attr('viewBox', -bounds.width + ' 0 ' + bounds.width + ' ' + bounds.height);
-
-    console.log(this.menuItems);
-    // TODO: use contactInfo, window.blog.entries, maybe window.router.historyGraph()
   }
 }
 export default Menu;
