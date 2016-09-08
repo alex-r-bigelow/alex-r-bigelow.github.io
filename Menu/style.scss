@@ -1,5 +1,19 @@
+@import '../colors.scss';
+
 nav {
   position: absolute;
   top: 0px;
   right: 0px;
+
+  .bubble {
+    cursor: pointer;
+  }
+
+  #Hamburger {
+    cursor: pointer;
+
+    path {
+      fill: $HamburgerDarkColor;
+    }
+  }
 }

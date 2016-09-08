@@ -24,8 +24,10 @@
     "rollup": "^0.34.13",
     "rollup-plugin-node-resolve": "^2.0.0",
     "sass-loader": "^4.0.1",
+    "sass-variable-loader": "0.0.4",
     "style-loader": "^0.13.0",
     "uglify-js": "^2.7.3",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.14"
   },
   "dependencies": {

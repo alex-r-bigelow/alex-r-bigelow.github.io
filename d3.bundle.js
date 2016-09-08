@@ -5,4 +5,6 @@ export {
   selectAll
 } from 'd3-selection';
 import 'd3-selection-multi';
-import 'd3-transition';
+export {
+  transition
+} from 'd3-transition';

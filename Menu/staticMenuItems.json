@@ -1,8 +1,11 @@
 [
     {
         "title": "Profile",
-        "hash": "#",
         "children": [
+            {
+                "title": "About Me",
+                "hash": "#"
+            },
             {
                 "title": "CV",
                 "hash": "#cv"

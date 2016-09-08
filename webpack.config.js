@@ -47,12 +47,19 @@ module.exports = {
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.html$|\.svg$/,
+        test: /\.html$/,
         loader: 'html?attrs=img:src'
       },
       {
-        test: /\.jpe?g$|\.gif$|\.png$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        test: /\.jpe?g$|\.gif$|\.png$|(?!template\b)\b\w+\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
         loader: 'url'
+      },
+      {
+        test: /template\.svg$/,
+        loader: 'html',
+        query: {
+          attrs: 'image:xlink:href'
+        }
       },
       {
         test: /\.json$/,
