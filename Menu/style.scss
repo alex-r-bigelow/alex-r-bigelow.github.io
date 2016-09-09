@@ -102,45 +102,25 @@ div#overlay {
       .caption {
         color: $ProfileDarkColor;
       }
-      img {
-        -webkit-filter: imgColorFilter($ProfileDarkColor);
-        filter: imgColorFilter($ProfileDarkColor);
-      }
     }
     &.projects .link {
       .caption {
         color: $ProjectsLightColor;
-      }
-      img {
-        -webkit-filter: imgColorFilter($ProjectsLightColor);
-        filter: imgColorFilter($ProjectsLightColor);
       }
     }
     &.projects .link:hover {
       .caption {
         color: $ProjectsDarkColor;
       }
-      img {
-        -webkit-filter: imgColorFilter($ProjectsDarkColor);
-        filter: imgColorFilter($ProjectsDarkColor);
-      }
     }
     &.blog .link {
       .caption {
         color: $BlogLightColor;
       }
-      img {
-        -webkit-filter: imgColorFilter($BlogLightColor);
-        filter: imgColorFilter($BlogLightColor);
-      }
     }
     &.blog .link:hover {
       .caption {
         color: $BlogDarkColor;
-      }
-      img {
-        -webkit-filter: imgColorFilter($BlogDarkColor);
-        filter: imgColorFilter($BlogDarkColor);
       }
     }
   }

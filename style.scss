@@ -34,6 +34,12 @@ p {
   margin-left: 1em;
   max-width: 32em;
 }
+code {
+  /* TODO: npm install --save-dev highlight-loader */
+  color: $CodeColor;
+  font-size: 10.5pt;
+  line-height: 0pt;
+}
 div#content {
   position: relative;
   max-width: 48em;

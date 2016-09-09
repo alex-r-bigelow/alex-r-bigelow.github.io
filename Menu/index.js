@@ -41,10 +41,12 @@ class Menu extends View {
       title: 'Blog',
       children: window.blog.getOrderedEntries()
     });
+    /*
     this.historyItem = {
       title: 'History'
     };
     this.menuItems.push(this.historyItem);
+    */
 
     this.openMenu = null;
     this.mousedMenu = null;
@@ -387,7 +389,7 @@ class Menu extends View {
     let bubblePadding = 4 * window.emSize;
 
     // Update the history
-    this.historyItem.graph = window.router.historyGraph();
+    // this.historyItem.graph = window.router.historyGraph();
 
     // Should we show the overlay?
     if (this.openMenu === null) {
