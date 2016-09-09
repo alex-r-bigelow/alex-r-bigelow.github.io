@@ -9,11 +9,11 @@ div#overlay {
   background-color: $OverlayColor;
 }
 
-nav {
+#menu {
   svg {
     position: fixed;
-    top: 0px;
-    right: 0px;
+    top: 1em;
+    right: 1em;
 
     .bubble {
       cursor: pointer;
@@ -58,14 +58,27 @@ nav {
 
   #SecondLevel {
     position: absolute;
-    text-align: right;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    pointer-events: none;
 
     .link {
+      position: absolute;
+      text-align: right;
       cursor: pointer;
       margin: 1em;
+      pointer-events: all;
 
       .caption {
         display: inline-block;
+
+        .date {
+          position: relative;
+          bottom: 0.75em;
+          font-size: 0.75em;
+        }
       }
 
       img {

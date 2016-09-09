@@ -35,7 +35,7 @@ let ANIMATION_SPEED = 300;
 
 class Menu extends View {
   constructor () {
-    super(template, d3.select('nav').node());
+    super(template, d3.select('#menu').node());
     this.menuItems = staticMenuItems;
     this.menuItems.push({
       title: 'Blog',
@@ -95,7 +95,7 @@ class Menu extends View {
       finishAnimation: Promise.resolve()
     };
   }
-  renderTopLevel (iconSize, pillRadius, bubblePadding, availableWidth) {
+  renderTopLevel (iconSize, pillRadius, bubblePadding) {
     let menuItems = this.menuItems;
     let topLevel = this.d3el.select('#TopLevel');
 
@@ -220,7 +220,7 @@ class Menu extends View {
     // and we have less space available), get their width,
     // and then animate the elements appropriately
     let self = this;
-    let longestText = 0;
+    let longestWidth = bounds.width;
     pills.each(function (d) {
       // this refers to the DOM element
       let $el = jQuery(this);
@@ -251,16 +251,17 @@ class Menu extends View {
         $el.removeClass('repress');
 
         // The menu item is either open or hovered, so show the text
-        let availableTextWidth = availableWidth - 3 * pillRadius;
+        let availableTextWidth = window.innerWidth -
+          (bubblePadding + 3 * pillRadius);
         let lineLengths = svgTextWrap(textEl.node(), availableTextWidth);
 
         // How much space does the text add?
-        let textLength = Math.max(...lineLengths) + 3 * pillRadius;
-        longestText = Math.max(longestText, textLength);
+        let pillLength = Math.max(...lineLengths) + 3 * pillRadius;
+        longestWidth = Math.max(longestWidth, pillLength + bubblePadding);
 
         // Show the pill first, and then the text
         pathEl.transition(pillRolloverStage1)
-          .attr('d', self.drawPill(textLength, 2 * pillRadius));
+          .attr('d', self.drawPill(pillLength, 2 * pillRadius));
         textEl.transition(pillRolloverStage2)
           .attr('opacity', 1);
       }
@@ -278,7 +279,7 @@ class Menu extends View {
       .select('path')
         .attr('d', smallPillPath);
 
-    bounds.width += longestText;
+    bounds.width = longestWidth;
     return {
       bounds,
       finishAnimation: Promise.all([levelAnimation, pillAnimation])
@@ -288,48 +289,24 @@ class Menu extends View {
     // TODO: for now I do a dumb html listing of everything...
     // I should do cooler things in the future
 
-    let resolveLevelAnimation;
-    let levelAnimation = new Promise((resolve, reject) => {
-      resolveLevelAnimation = resolve;
-    });
-
     let secondLevel = this.d3el.select('#SecondLevel');
+    if (secondLevel.size() === 0) {
+      secondLevel = this.d3el.append('div')
+        .attr('id', 'SecondLevel');
+    }
 
     let menuItems;
     if (this.openMenu === null || this.openMenu === 'Hamburger') {
       // hide / remove the second level
       menuItems = [];
-      if (secondLevel.size() > 0) {
-        secondLevel.transition()
-          .duration(ANIMATION_SPEED)
-          .style('opacity', 0)
-          .transition()
-          .on('end', resolveLevelAnimation)
-          .remove();
-      } else {
-        // Nothing to animate...
-        resolveLevelAnimation();
-      }
     } else {
+      secondLevel.attr('class', this.openMenu.toLowerCase());
       menuItems = this.menuItems.find(d => d.title === this.openMenu).children;
-      if (secondLevel.size() === 0) {
-        secondLevel = this.d3el.append('div')
-          .style('right', spaceFromRight + 'px')
-          .style('top', spaceFromTop + 'px')
-          .style('opacity', 0)
-          .attr('id', 'SecondLevel');
-      }
-      secondLevel
-        .attr('class', this.openMenu.toLowerCase())
-        .transition()
-        .duration(ANIMATION_SPEED)
-        .style('opacity', 1)
-        .on('end', resolveLevelAnimation);
     }
 
     let links = secondLevel.selectAll('.link')
       .data(menuItems, d => d.title);
-    links.exit().remove();
+    let linksExit = links.exit();
     let linksEnter = links.enter().append('div')
       .attr('class', 'link');
     linksEnter.append('div')
@@ -351,7 +328,8 @@ class Menu extends View {
       .html(d => {
         let result = d.title;
         if (d.date) {
-          result += '<br/>' + d.date.toLocaleDateString();
+          result += '<br/><span class="date">' +
+            d.date.toLocaleDateString() + '</span>';
         }
         return result;
       });
@@ -366,12 +344,34 @@ class Menu extends View {
     links.filter(d => !!d.hash).select('a')
       .on('click', () => { console.log('two!'); });
 
+    // Animate stuff
+    let resolveLinkAnimation;
+    let linkAnimation = new Promise((resolve, reject) => {
+      resolveLinkAnimation = resolve;
+    });
+    let t = d3.transition()
+      .duration(ANIMATION_SPEED)
+      .on('end', resolveLinkAnimation);
+    linksEnter
+      .style('right', window.innerWidth + 'px')
+      .style('top', (d, i) => spaceFromTop + (i * 3) * window.emSize + 'px')
+      .style('opacity', 0);
+    linksExit.transition(t)
+      .style('right', window.innerWidth + 'px')
+      .style('opacity', 0)
+      .transition()
+      .remove();
+    links.transition(t)
+      .style('right', spaceFromRight + 'px')
+      .style('top', (d, i) => spaceFromTop + (i * 3) * window.emSize + 'px')
+      .style('opacity', 1);
+
     return {
       bounds: {
         width: 0,
         height: 0
       },
-      finishAnimation: levelAnimation
+      finishAnimation: linkAnimation
     };
   }
   closeMenu () {
@@ -412,14 +412,13 @@ class Menu extends View {
     let bounds = hamburgerRender.bounds;
 
     // Draw the top menu items
-    let topRender = this.renderTopLevel(
-      iconSize, pillRadius, bubblePadding,
-      window.innerWidth - bounds.width + bubblePadding);
+    let topRender = this.renderTopLevel(iconSize, pillRadius, bubblePadding);
     bounds.width = Math.max(topRender.bounds.width, bounds.width);
     bounds.height = Math.max(topRender.bounds.height, bounds.height);
 
     // Draw the second level menu items
-    let secondLevelRender = this.renderSecondLevel(bounds.width, 2 * window.emSize);
+    let secondLevelRender = this.renderSecondLevel(bounds.width + window.emSize,
+      window.scrollY + 3 * window.emSize);
 
     // Adjust the SVG element to the appropriate width / height
     // with 0,0 in the top-right corner... but if we're shrinking
