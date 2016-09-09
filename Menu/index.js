@@ -11,11 +11,24 @@ import Blog from '../images/menu/Blog.svg';
 import History from '../images/menu/History.svg';
 import Profile from '../images/menu/Profile.svg';
 
+import Email from '../images/social_logos/Email.svg';
+import Facebook from '../images/social_logos/Facebook.svg';
+import Github from '../images/social_logos/Github.svg';
+import StackOverflow from '../images/social_logos/StackOverflow.svg';
+import YouTube from '../images/social_logos/YouTube.svg';
+import Twitter from '../images/social_logos/Twitter.svg';
+
 let ICONS = {
   Profile,
   Projects,
   Blog,
-  History
+  History,
+  Email,
+  Facebook,
+  Github,
+  StackOverflow,
+  YouTube,
+  Twitter
 };
 
 let ANIMATION_SPEED = 300;
@@ -306,7 +319,9 @@ class Menu extends View {
           .style('opacity', 0)
           .attr('id', 'SecondLevel');
       }
-      secondLevel.transition()
+      secondLevel
+        .attr('class', this.openMenu.toLowerCase())
+        .transition()
         .duration(ANIMATION_SPEED)
         .style('opacity', 1)
         .on('end', resolveLevelAnimation);
@@ -317,11 +332,39 @@ class Menu extends View {
     links.exit().remove();
     let linksEnter = links.enter().append('div')
       .attr('class', 'link');
-    linksEnter.append('a');
-    linksEnter.merge(links).select('a')
-      .text(d => d.title)
-      .attr('href', d => d.hash || d.url)
-      .attr('target', d => d.url ? '_blank' : null);
+    linksEnter.append('div')
+      .attr('class', 'caption');
+    linksEnter.append('img');
+    links = linksEnter.merge(links)
+      .on('click', d => {
+        if (d.url) {
+          if (d.title === 'Email') {
+            window.location.href = d.url;
+          } else {
+            window.open(d.url, '_blank');
+          }
+        } else if (d.hash) {
+          window.location.hash = d.hash;
+        }
+      });
+    links.select('.caption')
+      .html(d => {
+        let result = d.title;
+        if (d.date) {
+          result += '<br/>' + d.date.toLocaleDateString();
+        }
+        return result;
+      });
+    links.select('img')
+      .attr('src', d => ICONS[d.icon] || null)
+      .style('display', d => ICONS[d.icon] ? null : 'none');
+
+    // For hash links, close the menu.
+    // For urls, leave it open.
+    links.filter(d => !d.hash).select('a')
+      .on('click', () => { console.log('fire!'); this.closeMenu(); });
+    links.filter(d => !!d.hash).select('a')
+      .on('click', () => { console.log('two!'); });
 
     return {
       bounds: {

@@ -31,6 +31,7 @@ class Router {
         }
         window.views[newHash] = window.view404;
       }
+      console.log(newHash, window.blog.entries);
 
       this.nodeLookup[newHash] = this.nodes.length;
       this.nodes.push(newHash);

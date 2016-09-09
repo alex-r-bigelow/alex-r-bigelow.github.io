@@ -38,6 +38,7 @@ $PageBackgroundColor: $Black;
 $LinkColor: $CBDarkPurple;
 $OverlayColor: rgba($Black, 0.95);
 $BubbleIconColor: $White;
+$DisclaimerColor: $CBDarkPink;
 
 @function imgColorFilter($colorValue) {
   @return url(#recolorImageTo + str-slice(inspect($colorValue), 2));

@@ -12,7 +12,10 @@ class Blog {
         date: new Date(pieces[1]),
         title: pieces[2].replace(/-/g, ' '),
         load: function () {
-          return self.markdownLoader(this.path).__content;
+          let content = '<h1>' + this.title + '</h1>';
+          content += '<h2>' + this.date.toLocaleDateString() + '</h2>';
+          content += self.markdownLoader(this.path).__content;
+          return content;
         }
       };
       entry.hash = self.getHash(entry);
@@ -25,7 +28,7 @@ class Blog {
     return result;
   }
   getHash (entry) {
-    return entry.title.replace(/[\s/\.,#:]/, '');
+    return '#' + entry.title.replace(/[\s/\.,#:]/g, '');
   }
 }
 export default Blog;

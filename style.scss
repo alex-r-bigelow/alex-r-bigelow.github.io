@@ -13,6 +13,7 @@ body {
 h1 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 40pt;
+  line-height: 48pt;
   text-transform: uppercase;
   letter-spacing: 10pt;
   color: $CBDarkBlueGreen;
@@ -20,6 +21,7 @@ h1 {
 h2, h3 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 24pt;
+  line-height: 32pt;
   text-transform: lowercase;
   font-weight: 700;
   font-style: italic;
@@ -37,6 +39,9 @@ div#content {
   max-width: 48em;
   margin-left: auto;
   margin-right: auto;
+}
+.disclaimer {
+  color: $DisclaimerColor;
 }
 
 svg#createImageRecoloringFilters {

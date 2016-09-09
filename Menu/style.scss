@@ -61,7 +61,74 @@ nav {
     text-align: right;
 
     .link {
+      cursor: pointer;
       margin: 1em;
+
+      .caption {
+        display: inline-block;
+      }
+
+      img {
+        width: 2em;
+        height: 2em;
+        vertical-align: middle;
+        margin-left: 1em;
+      }
+    }
+
+    &.profile .link {
+      .caption {
+        color: $ProfileLightColor;
+      }
+      img {
+        -webkit-filter: imgColorFilter($ProfileLightColor);
+        filter: imgColorFilter($ProfileLightColor);
+      }
+    }
+    &.profile .link:hover {
+      .caption {
+        color: $ProfileDarkColor;
+      }
+      img {
+        -webkit-filter: imgColorFilter($ProfileDarkColor);
+        filter: imgColorFilter($ProfileDarkColor);
+      }
+    }
+    &.projects .link {
+      .caption {
+        color: $ProjectsLightColor;
+      }
+      img {
+        -webkit-filter: imgColorFilter($ProjectsLightColor);
+        filter: imgColorFilter($ProjectsLightColor);
+      }
+    }
+    &.projects .link:hover {
+      .caption {
+        color: $ProjectsDarkColor;
+      }
+      img {
+        -webkit-filter: imgColorFilter($ProjectsDarkColor);
+        filter: imgColorFilter($ProjectsDarkColor);
+      }
+    }
+    &.blog .link {
+      .caption {
+        color: $BlogLightColor;
+      }
+      img {
+        -webkit-filter: imgColorFilter($BlogLightColor);
+        filter: imgColorFilter($BlogLightColor);
+      }
+    }
+    &.blog .link:hover {
+      .caption {
+        color: $BlogDarkColor;
+      }
+      img {
+        -webkit-filter: imgColorFilter($BlogDarkColor);
+        filter: imgColorFilter($BlogDarkColor);
+      }
     }
   }
 }
