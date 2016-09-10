@@ -324,6 +324,7 @@ class Menu extends View {
           }
         } else if (d.hash) {
           window.location.hash = d.hash;
+          this.closeMenu();
         }
       });
     links.select('.caption')
@@ -338,13 +339,6 @@ class Menu extends View {
     links.select('img')
       .attr('src', d => ICONS[d.icon] || null)
       .style('display', d => ICONS[d.icon] ? null : 'none');
-
-    // For hash links, close the menu.
-    // For urls, leave it open.
-    links.filter(d => !d.hash).select('a')
-      .on('click', () => { console.log('fire!'); this.closeMenu(); });
-    links.filter(d => !!d.hash).select('a')
-      .on('click', () => { console.log('two!'); });
 
     // Animate stuff
     let resolveLinkAnimation;
