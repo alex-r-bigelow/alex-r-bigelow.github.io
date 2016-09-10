@@ -8,6 +8,7 @@ import createImageRecoloringFilters from './lib/createImageRecoloringFilters';
 
 import Router from './Router';
 import Blog from './Blog';
+import Projects from './Projects';
 import LandingPage from './LandingPage';
 import Menu from './Menu';
 
@@ -29,6 +30,9 @@ window.views = {};
 
 // Create a blog object that figures out what posts we have
 window.blog = new Blog();
+
+// Create a projects object that pulls info from github
+window.projects = new Projects();
 
 // Create the menu
 window.menu = new Menu();

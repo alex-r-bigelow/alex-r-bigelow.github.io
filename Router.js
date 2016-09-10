@@ -23,6 +23,12 @@ class Router {
     if (!(newHash in window.views)) {
       if (newHash in window.blog.entries) {
         window.views[newHash] = new View(window.blog.entries[newHash].load());
+      } else if (newHash in window.projects.entries) {
+        window.views[newHash] = new View(
+          window.projects.entries[newHash].getLoadingMessage(),
+          null, 'projectPage');
+        window.projects.entries[newHash].load()
+          .then(resp => window.views[newHash].updateContent(resp));
       } else if (newHash in window.viewTypes) {
         window.views[newHash] = new window.viewTypes[newHash]();
       } else {

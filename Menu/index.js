@@ -3,33 +3,9 @@ import jQuery from 'jquery';
 import svgTextWrap from '../lib/svgTextWrap.js';
 import View from '../View';
 import staticMenuItems from './staticMenuItems.json';
+import Images from '../Images';
 import template from './template.svg';
 import './style.scss';
-
-import Projects from '../images/menu/Projects.svg';
-import Blog from '../images/menu/Blog.svg';
-import History from '../images/menu/History.svg';
-import Profile from '../images/menu/Profile.svg';
-
-import Email from '../images/social_logos/Email.svg';
-import Facebook from '../images/social_logos/Facebook.svg';
-import Github from '../images/social_logos/Github.svg';
-import StackOverflow from '../images/social_logos/StackOverflow.svg';
-import YouTube from '../images/social_logos/YouTube.svg';
-import Twitter from '../images/social_logos/Twitter.svg';
-
-let ICONS = {
-  Profile,
-  Projects,
-  Blog,
-  History,
-  Email,
-  Facebook,
-  Github,
-  StackOverflow,
-  YouTube,
-  Twitter
-};
 
 let ANIMATION_SPEED = 300;
 
@@ -37,6 +13,10 @@ class Menu extends View {
   constructor () {
     super(template, d3.select('#menu').node());
     this.menuItems = staticMenuItems;
+    this.menuItems.push({
+      title: 'Projects',
+      children: window.projects.getOrderedEntries()
+    });
     this.menuItems.push({
       title: 'Blog',
       children: window.blog.getOrderedEntries()
@@ -171,7 +151,7 @@ class Menu extends View {
         'y': 0.35 * window.emSize
       }).text(d => d.title);
     pillsEnter.append('image')
-      .attr('xlink:href', d => ICONS[d.title]);
+      .attr('xlink:href', d => Images[d.title]);
 
     // Get the exit selection
     let pillsExit = pills.exit();
@@ -337,8 +317,8 @@ class Menu extends View {
         return result;
       });
     links.select('img')
-      .attr('src', d => ICONS[d.icon] || null)
-      .style('display', d => ICONS[d.icon] ? null : 'none');
+      .attr('src', d => Images[d.icon] || null)
+      .style('display', d => Images[d.icon] ? null : 'none');
 
     // Animate stuff
     let resolveLinkAnimation;
