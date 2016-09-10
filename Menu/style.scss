@@ -15,6 +15,11 @@ div#overlay {
     top: 1em;
     right: 1em;
 
+    pointer-events: none;
+    * {
+      pointer-events: all;
+    }
+
     .bubble {
       cursor: pointer;
 

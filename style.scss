@@ -17,6 +17,15 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 10pt;
   color: $CBDarkBlueGreen;
+  display: inline;
+}
+img.headerImage {
+  width: 5em;
+  height: 5em;
+  margin: 1em;
+  display: inline;
+  position: relative;
+  bottom: -2.75em;
 }
 h2, h3 {
   font-family: 'Josefin Sans', sans-serif;

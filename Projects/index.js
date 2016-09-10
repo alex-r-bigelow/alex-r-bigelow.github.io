@@ -1,7 +1,6 @@
 import jQuery from 'jquery';
 import showdown from 'showdown';
 import Images from '../Images';
-import './style.scss';
 
 class Projects {
   constructor () {
@@ -29,7 +28,7 @@ class Projects {
             success: response => {
               let content = self.markdownLoader.makeHtml(response);
               resolvePromise(
-                `<img class="projectIcon" src="${Images[this.icon]}"/>
+                `<img class="headerImage" src="${Images[this.icon]}"/>
                  ${content}`);
             },
             error: () => {
@@ -39,19 +38,19 @@ class Projects {
         } else {
           // With no README, this means we just want to use the
           // local markdown file's content
-          resolvePromise(`<img class="projectIcon" src="${Images[this.icon]}"/>
+          resolvePromise(`<img class="headerImage" src="${Images[this.icon]}"/>
                           ${this.__content}`);
         }
         return responsePromise;
       };
       entry.getLoadingMessage = function () {
-        return `<img class="projectIcon" src="${Images[this.icon]}"/>
+        return `<img class="headerImage" src="${Images[this.icon]}"/>
                 <h1>${this.title}</h1>
                 <p>Hang on a second... just stealing the page from the
                 <a href="${this.repository}">Github README</a>...`;
       };
       entry.getErrorMessage = function () {
-        return `<img class="projectIcon" src="${Images[this.icon]}"/>
+        return `<img class="headerImage" src="${Images[this.icon]}"/>
                 <h1>${this.title}</h1>
                 <p class="disclaimer">Sorry, for some reason I couldn't load the
                 project README from the repository; try

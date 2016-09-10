@@ -25,8 +25,7 @@ class Router {
         window.views[newHash] = new View(window.blog.entries[newHash].load());
       } else if (newHash in window.projects.entries) {
         window.views[newHash] = new View(
-          window.projects.entries[newHash].getLoadingMessage(),
-          null, 'projectPage');
+          window.projects.entries[newHash].getLoadingMessage());
         window.projects.entries[newHash].load()
           .then(resp => window.views[newHash].updateContent(resp));
       } else if (newHash in window.viewTypes) {

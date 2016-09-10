@@ -1,9 +1,9 @@
 import View from '../View';
-import template from './template.md';
+import template from './template.html';
 
 class LandingPage extends View {
   constructor () {
-    super(template.__content);
+    super(template);
   }
 }
 export default LandingPage;
