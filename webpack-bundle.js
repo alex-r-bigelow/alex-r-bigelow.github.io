@@ -14806,11 +14806,11 @@
 	var map = {
 		"./Calendar-creator.md": 47,
 		"./EFG-lite.md": 48,
-		"./Hanpuku.md": 49,
-		"./Paper-Instruments.md": 50,
-		"./Resonant-Laboratory.md": 51,
-		"./UPDB-Explorer.md": 52,
-		"./expressionTopology.md": 53
+		"./Resonant-Laboratory.md": 49,
+		"./UPDB-Explorer.md": 50,
+		"./expressionTopology.md": 51,
+		"./hanpuku.md": 52,
+		"./paper-instruments.md": 53
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -14842,31 +14842,31 @@
 /* 49 */
 /***/ function(module, exports) {
 
-	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/hanpuku/master/README.md","downloads":{"Illustrator Extension":"http://www.cs.utah.edu/~abigelow/Downloads/hanpuku/hanpuku.0.1.8.zxp"},"repository":"https://github.com/alex-r-bigelow/hanpuku","icon":"Hanpuku","__content":""}
+	module.exports = {"repository":"https://github.com/Kitware/candela/tree/master/app/resonant-laboratory","icon":"ResonantLaboratory","__content":"<h1 id=\"resonant-laboratory\">Resonant Laboratory</h1>\n<p>This is a project I developed while an intern at Kitware, Inc.</p>\n<p>Check out the live site <a href=\"https://resonantlab.kitware.com/\">here</a>.</p>\n"}
 
 /***/ },
 /* 50 */
 /***/ function(module, exports) {
 
-	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/paper-instruments/master/README.md","repository":"https://github.com/alex-r-bigelow/paper-instruments","icon":"paperInstruments","__content":""}
+	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/updb-explorer/master/README.md","repository":"https://github.com/alex-r-bigelow/updb-explorer","icon":"updbExplorer","__content":""}
 
 /***/ },
 /* 51 */
 /***/ function(module, exports) {
 
-	module.exports = {"repository":"https://github.com/Kitware/candela/tree/master/app/resonant-laboratory","icon":"ResonantLaboratory","__content":"<h1 id=\"resonant-laboratory\">Resonant Laboratory</h1>\n<p>This is a project I developed while an intern at Kitware, Inc.</p>\n<p>Check out the live site <a href=\"https://resonantlab.kitware.com/\">here</a>.</p>\n"}
+	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/expressionTopology/master/README.md","repository":"https://github.com/alex-r-bigelow/expressionTopology","icon":"expressionTopology","__content":""}
 
 /***/ },
 /* 52 */
 /***/ function(module, exports) {
 
-	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/updb-explorer/master/README.md","repository":"https://github.com/alex-r-bigelow/updb-explorer","icon":"updbExplorer","__content":""}
+	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/hanpuku/master/README.md","downloads":{"Illustrator Extension":"http://www.cs.utah.edu/~abigelow/Downloads/hanpuku/hanpuku.0.1.8.zxp"},"repository":"https://github.com/alex-r-bigelow/hanpuku","icon":"Hanpuku","__content":""}
 
 /***/ },
 /* 53 */
 /***/ function(module, exports) {
 
-	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/expressionTopology/master/README.md","repository":"https://github.com/alex-r-bigelow/expressionTopology","icon":"expressionTopology","__content":""}
+	module.exports = {"readme":"https://raw.githubusercontent.com/alex-r-bigelow/paper-instruments/master/README.md","repository":"https://github.com/alex-r-bigelow/paper-instruments","icon":"paperInstruments","__content":""}
 
 /***/ },
 /* 54 */
