@@ -11984,7 +11984,7 @@
 	    value: function getOrderedEntries() {
 	      var _this2 = this;
 
-	      return ['#ResonantLaboratory', '#Hanpuku', '#UPDBExplorer', '#EFGlite', '#Calendarcreator', '#PaperInstruments', '#expressionTopology'].map(function (hash) {
+	      return ['#ResonantLaboratory', '#hanpuku', '#UPDBExplorer', '#EFGlite', '#Calendarcreator', '#paperinstruments', '#expressionTopology'].map(function (hash) {
 	        return _this2.entries[hash];
 	      });
 	    }
