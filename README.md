@@ -1,15 +1,21 @@
 Setup:
 ======
+    git clone https://github.com/alex-r-bigelow/alex-r-bigelow.github.io.git
+    cd alex-r-bigelow
     npm install
+    cd ..
+    git clone https://github.com/alex-r-bigelow/alex-r-bigelow.github.io.git alex-r-bigelow-deploy
 
 Development:
 ============
-    webpack-dev-server --progress --colors
+    cd alex-r-bigelow
+    webpack-dev-server --progress --verbose --colors
 
 Deployment:
 ===========
+    cd alex-r-bigelow
     webpack
-Bundles everything into `build/`
-
-    git subtree push --prefix build origin/master
-Make the built site live on gh-pages (TODO: haven't tried this yet... may need some tweaking)
+    cd ../alex-r-bigelow-deploy
+    git add -A
+    git commit -m "some commit message..."
+    git push

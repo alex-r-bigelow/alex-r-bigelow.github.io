@@ -64,11 +64,11 @@ class Projects {
   getOrderedEntries () {
     return [
       '#ResonantLaboratory',
-      '#Hanpuku',
+      '#hanpuku',
       '#UPDBExplorer',
       '#EFGlite',
       '#Calendarcreator',
-      '#PaperInstruments',
+      '#paperinstruments',
       '#expressionTopology'
     ].map(hash => this.entries[hash]);
   }

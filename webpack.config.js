@@ -9,7 +9,7 @@ module.exports = {
 
   output: {
     // Where to build results
-    path: './build',
+    path: '../alex-r-bigelow-deploy',
 
     // Filename to use in HTML
     filename: 'webpack-bundle.js'
@@ -18,8 +18,12 @@ module.exports = {
   devtool: 'cheap-source-map',
   plugins: [
     new CleanWebpackPlugin([
-      './build'
-    ]),
+      '../alex-r-bigelow-deploy'
+    ], {
+      verbose: true,
+      dry: false,
+      exclude: ['.git', '.gitignore']
+    }),
     new HtmlWebpackPlugin({
       template: 'index.html', // Load a custom template
       inject: 'body' // Inject all scripts into the body
