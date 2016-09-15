@@ -1,0 +1,71 @@
+@import '../colors.scss';
+
+.cv {
+  .cvchunk {
+    padding-left: 1em;
+    details {
+      summary {
+        position: relative;
+        width: 100%;
+        outline: none;
+
+        h4 {
+          display: inline;
+          margin-bottom: 0em;
+        }
+        .dates {
+          position: absolute;
+          right: 0em;
+          color: $SubduedColor;
+        }
+        .award,
+        .people {
+          margin-top: 0em;
+          margin-bottom: 0em;
+        }
+        .visible.award {
+          color: $AwardColor;
+
+          &:before {
+            display: inline-block;
+            content: '';
+            background-image: url('../images/cv/award.svg');
+            width: 1em;
+            height: 1em;
+            margin-right: 0.35em;
+          }
+        }
+      }
+      .meta li {
+        list-style: none;
+        color: $SubduedColor;
+      }
+      .download {
+        position: relative;
+        width: 8em;
+        height: 8em;
+        border-radius: 4em;
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $DownloadColor;
+        }
+
+        img {
+          position: absolute;
+          left: 3em;
+          top: 1em;
+          width: 2em;
+          height: 2em;
+        }
+        span {
+          position: absolute;
+          top: 4em;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

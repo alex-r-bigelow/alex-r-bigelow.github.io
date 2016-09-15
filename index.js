@@ -10,6 +10,7 @@ import Router from './Router';
 import Blog from './Blog';
 import Projects from './Projects';
 import LandingPage from './LandingPage';
+import CV from './CV';
 import Menu from './Menu';
 
 // For debugging, expose d3 and jQuery on the console
@@ -24,7 +25,8 @@ window.emSize = parseFloat(jQuery('body').css('font-size'));
 // a place to store instantiated views
 window.router = new Router();
 window.viewTypes = {
-  '#': LandingPage
+  '#': LandingPage,
+  '#cv': CV
 };
 window.views = {};
 

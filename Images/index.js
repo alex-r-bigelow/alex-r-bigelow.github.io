@@ -18,6 +18,11 @@ import expressionTopology from './project_logos/expressionTopology.png';
 import paperInstruments from './project_logos/paper-instruments.png';
 import calendarCreator from './project_logos/calendar-creator.png';
 
+import pdf from './cv/pdf.svg';
+import bib from './cv/bib.png';
+import zip from './cv/zip.png';
+import img from './cv/img.svg';
+
 export default {
   Profile,
   Projects,
@@ -35,5 +40,9 @@ export default {
   updbExplorer,
   expressionTopology,
   paperInstruments,
-  calendarCreator
+  calendarCreator,
+  pdf,
+  bib,
+  zip,
+  png: img
 };

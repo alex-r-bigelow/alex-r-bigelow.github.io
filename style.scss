@@ -25,15 +25,18 @@ img.headerImage {
   margin: 1em;
   display: inline;
   position: relative;
-  bottom: -2.75em;
+  bottom: -2em;
 }
-h2, h3 {
+h2 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 24pt;
   line-height: 32pt;
   text-transform: lowercase;
   font-weight: 700;
   font-style: italic;
+}
+h3 {
+  color: $CBDarkBlueGreen;
 }
 a {
   color: $LinkColor;
