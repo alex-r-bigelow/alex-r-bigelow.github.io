@@ -1,17 +1,26 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="wrapper">
-    <h1>Blog</h1>
-        <div class="alert"><b>Annoying construction notice:</b><br/>Being a vis person, I can't resist planning some kind of cool temporal visualization for this meta-page that integrates my blog posts with other data I collect about myself over time. <br/> <br/> In other words, cooler stuff will live here in the future. For now, a boring list:</div>
-    <ul>
-        {% for post in site.posts %}
-        <li>
-            <div><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
-            <div>{{ post.date | date: "%b %-d, %Y" }}</div>
-        </li>
-        {% endfor %}
-    </ul>
+  <title>Alex Bigelow</title>
+  <meta name="description" content="Alex Bigelow's personal site">
 
-</div>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700i|Josefin+Slab:400,700" rel="stylesheet">
+
+  <!--link href='https://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic' rel='stylesheet' type='text/css'-->
+
+  <!--link rel="alternate" type="application/rss+xml" title="Alex Bigelow" href="/feed.xml" /-->
+</head>
+<body>
+  <div id="content">
+  </div>
+  <div id="overlay">
+  </div>
+  <nav id="menu">
+  </nav>
+<script type="text/javascript" src="webpack-bundle.js"></script></body>
+</html>
