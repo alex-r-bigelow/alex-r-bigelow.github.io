@@ -170,7 +170,6 @@ class CV extends View {
     this.renderPublications('poster');
     this.renderPublications('thesis');
     this.renderExperience();
-    console.log(this.experience, this.publications);
   }
 }
 export default CV;
