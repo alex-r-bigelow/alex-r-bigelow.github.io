@@ -22,7 +22,7 @@ module.exports = {
     ], {
       verbose: true,
       dry: false,
-      exclude: ['.git', '.gitignore']
+      exclude: ['.git']
     }),
     new HtmlWebpackPlugin({
       template: 'index.html', // Load a custom template
