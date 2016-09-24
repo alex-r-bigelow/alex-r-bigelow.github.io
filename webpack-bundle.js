@@ -82,7 +82,7 @@
 
 	var _CV2 = _interopRequireDefault(_CV);
 
-	var _Menu = __webpack_require__(74);
+	var _Menu = __webpack_require__(76);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -15004,7 +15004,7 @@
 	    });
 
 	    _this.experience = [];
-	    loader = __webpack_require__(67);
+	    loader = __webpack_require__(69);
 	    loader.keys().forEach(function (key) {
 	      _this.experience.push(loader(key));
 	    });
@@ -15047,9 +15047,19 @@
 	        return d.authors.join(', ');
 	      });
 	      pubs.select('summary').select('.award').text(function (d) {
-	        return d.award || '';
+	        if (d.award) {
+	          return d.award;
+	        } else if (d.note && d.note.search(/selected/i) !== -1) {
+	          return d.note;
+	        } else {
+	          return '';
+	        }
 	      }).attr('class', function (d) {
-	        return d.award ? 'visible award' : 'award';
+	        if (d.award || d.note && d.note.search(/selected/i) !== -1) {
+	          return 'visible award';
+	        } else {
+	          return 'award';
+	        }
 	      });
 	      pubs.select('.meta').select('.journal').text(function (d) {
 	        return d.journal;
@@ -15212,7 +15222,9 @@
 		"./2012_biovis_comprehengsive.md": 63,
 		"./2012_thesis_bigelow.md": 64,
 		"./2013_biovis_compariseq.md": 65,
-		"./2014_avi_reflections.md": 66
+		"./2014_avi_reflections.md": 66,
+		"./2016_infovis_hanpuku.md": 67,
+		"./2016_vip_resonant_lab.md": 68
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -15232,7 +15244,7 @@
 /* 63 */
 /***/ function(module, exports) {
 
-	module.exports = {"layout":"publication","title":"compreheNGSive: A Tool for Exploring Next-Gen Sequencing Variants","key":"2012_biovis_comprehengsive","permalink":"/publications/2012_biovis_comprehengsive/","type":"poster","shortname":"comprehengsive","image":"2012_biovis_comprehengsive.png","authors":["bigelow","meyer","Nicola J Camp"],"journal":"Proceedings of the IEEE Symposium on Biological Data Visualization (BioVis ’12)","year":2012,"award":"Poster selected for oral presentation","external-project":"http://www.cs.utah.edu/~abigelow/#compreheNGSive","code":"https://github.com/yasashiku/compreheNGSive","pdf":"2012_biovis_comprehengsive.pdf","bibtex":"2012_biovis_comprehengsive.bib","abstract":" <p>In this design study we are collaborating with a group of genetic epidemiology experts who are using NGS data to study breast cancer. To understand our collaborators’ analysis needs we worked with this group for a year, spending four days a week in their lab. From numerous interviews, we developed over ten paper prototypes, five software prototypes, and acquired feedback. Analyzing this feedback revealed necessary visualization tasks and a workflow applicable to their data exploration. Our contributions are an articulation of a workflow and set of visualization tasks needed by our collaborators, and an early prototype of our system: compreheNGSive.</p>","__content":""}
+	module.exports = {"layout":"publication","title":"compreheNGSive: A Tool for Exploring Next-Gen Sequencing Variants","key":"2012_biovis_comprehengsive","permalink":"/publications/2012_biovis_comprehengsive/","type":"poster","shortname":"comprehengsive","image":"2012_biovis_comprehengsive.png","authors":["bigelow","meyer","Nicola J Camp"],"journal":"Proceedings of the IEEE Symposium on Biological Data Visualization (BioVis ’12)","year":2012,"note":"Poster selected for oral presentation","external-project":"http://www.cs.utah.edu/~abigelow/#compreheNGSive","code":"https://github.com/yasashiku/compreheNGSive","pdf":"2012_biovis_comprehengsive.pdf","supplement":null,"bibtex":"2012_biovis_comprehengsive.bib","abstract":" <p>In this design study we are collaborating with a group of genetic epidemiology experts who are using NGS data to study breast cancer. To understand our collaborators’ analysis needs we worked with this group for a year, spending four days a week in their lab. From numerous interviews, we developed over ten paper prototypes, five software prototypes, and acquired feedback. Analyzing this feedback revealed necessary visualization tasks and a workflow applicable to their data exploration. Our contributions are an articulation of a workflow and set of visualization tasks needed by our collaborators, and an early prototype of our system: compreheNGSive.</p>","__content":""}
 
 /***/ },
 /* 64 */
@@ -15244,25 +15256,37 @@
 /* 65 */
 /***/ function(module, exports) {
 
-	module.exports = {"layout":"publication","title":"compariSeq: Rethinking Sequence Logos","key":"2013_biovis_compariseq","permalink":"/publications/2013_biovis_compariseq/","type":"poster","shortname":"compariseq","image":"2013_biovis_compariseq.png","authors":["mckenna","quinan","bigelow"],"journal":"Proceedings of the IEEE Symposium on Biological Data Visualization (BioVis ’13)","year":2013,"note":"BioVis Redesign Contest submission","pdf":"2013_biovis_compariseq.pdf","bibtex":"2013_biovis_compariseq.bib","supplements":[{"name":"Poster","link":"/posters/2013_biovis_compariseq_poster.png","linksym":true}],"abstract":" <p>Comparing Sequence Charts (compariSeq) is a redesign of traditional sequence logos for the task of comparing multiple biological sequences. All relevant data encoded in traditional sequence logos is conserved, however, attention is directed to the most important data, colors are more perceptually accessible, and the task of direct comparison at particular locations is supported.</p>","__content":""}
+	module.exports = {"layout":"publication","title":"compariSeq: Rethinking Sequence Logos","key":"2013_biovis_compariseq","permalink":"/publications/2013_biovis_compariseq/","type":"poster","shortname":"compariseq","image":"2013_biovis_compariseq.png","authors":["mckenna","quinan","bigelow"],"journal":"Proceedings of the IEEE Symposium on Biological Data Visualization (BioVis ’13)","year":2013,"note":"BioVis Redesign Contest submission","pdf":"2013_biovis_compariseq.pdf","bibtex":"2013_biovis_compariseq.bib","supplements":[{"name":"Poster","link":"2013_biovis_compariseq_poster.pdf","linksym":true}],"abstract":" <p>Comparing Sequence Charts (compariSeq) is a redesign of traditional sequence logos for the task of comparing multiple biological sequences. All relevant data encoded in traditional sequence logos is conserved, however, attention is directed to the most important data, colors are more perceptually accessible, and the task of direct comparison at particular locations is supported.</p>","__content":""}
 
 /***/ },
 /* 66 */
 /***/ function(module, exports) {
 
-	module.exports = {"layout":"publication","title":"Reflections on How Designers Design With Data","key":"2014_avi_reflections","permalink":"/publications/2014_avi_reflections/","type":"paper","shortname":"Reflections","image":"2014_avi_reflections.png","authors":["bigelow","Steven Drucker","Danyel Fisher","meyer"],"journal":"AVI 2014 International Working Conference on Advanced Visual Interfaces (AVI ’14)","year":2014,"award":"Best Paper Award","doi":"10.1145/2598153.2598175","publisher":null,"pdf":"2014_avi_reflections.pdf","supplements":[{"name":"Conference Talk Slides","abslink":"http://www.cs.utah.edu/~abigelow/Downloads/papers/avi_slides.pdf","linksym":true},{"name":"Artifacts","abslink":"http://www.cs.utah.edu/~abigelow/Downloads/papers/reflections_artifacts.zip"}],"bibtex":"2014_avi_reflections.bib","abstract":" <p>In recent years many popular data visualizations have emerged that are created largely by designers whose main area of expertise is not computer science. Designers generate these visualizations using a handful of design tools and environments. To better inform the development of tools intended for designers working with data, we set out to understand designers’ challenges and perspectives. We interviewed professional designers, conducted observations of designers working with data in the lab, and observed designers working with data in team settings in the wild. A set of patterns emerged from these observations from which we extract a number of themes that provide a new perspective on design considerations for visualization tool creators, as well as on known engineering problems.</p>","__content":""}
+	module.exports = {"layout":"publication","title":"Reflections on How Designers Design With Data","key":"2014_avi_reflections","permalink":"/publications/2014_avi_reflections/","type":"paper","shortname":"Reflections","image":"2014_avi_reflections.png","authors":["bigelow","Steven Drucker","Danyel Fisher","meyer"],"journal":"AVI 2014 International Working Conference on Advanced Visual Interfaces (AVI ’14)","year":2014,"award":"Best Paper Award","doi":"10.1145/2598153.2598175","publisher":null,"pdf":"2014_avi_reflections.pdf","supplements":[{"name":"Conference Talk Slides","link":"2014_avi_reflections_slides.pdf"},{"name":"Artifacts","link":"2014_avi_reflections_supplement.zip"}],"bibtex":"2014_avi_reflections.bib","abstract":" <p>In recent years many popular data visualizations have emerged that are created largely by designers whose main area of expertise is not computer science. Designers generate these visualizations using a handful of design tools and environments. To better inform the development of tools intended for designers working with data, we set out to understand designers’ challenges and perspectives. We interviewed professional designers, conducted observations of designers working with data in the lab, and observed designers working with data in team settings in the wild. A set of patterns emerged from these observations from which we extract a number of themes that provide a new perspective on design considerations for visualization tool creators, as well as on known engineering problems.</p>","__content":""}
 
 /***/ },
 /* 67 */
+/***/ function(module, exports) {
+
+	module.exports = {"layout":"publication","title":"Iterating Between Tools to Create and Edit Visualizations","key":"2016_infovis_hanpuku","permalink":"/publications/2016_infovis_hanpuku/","type":"paper","shortname":"Hanpuku","image":"2016_infovis_hanpuku.png","authors":["bigelow","Steven Drucker","Danyel Fisher","meyer"],"journal":"IEEE Transactions on Visualization and Computer Graphics (InfoVis ’16)","year":2016,"doi":"10.1109/TVCG.2016.2598609","pdf":"2016_infovis_hanpuku.pdf","video":"2016_infovis_hanpuku_video","supplements":[{"name":"Supplemental Material","link":"2016_infovis_hanpuku_supplemental.zip"}],"bibtex":"2016_infovis_hanpuku.bib","abstract":" <p>A common workflow for visualization designers begins with a generative tool, like D3 or Processing, to create the initial visualization; and proceeds to a drawing tool, like Adobe Illustrator or Inkscape, for editing and cleaning. Unfortunately, this is typically a one-way process: once a visualization is exported from the generative tool into a drawing tool, it is difficult to make further, data-driven changes. In this paper, we propose a bridge model to allow designers to bring their work back from the drawing tool to re-edit in the generative tool. Our key insight is to recast this iteration challenge as a merge problem - similar to when two people are editing a document and changes between them need to reconciled. We also present a specific instantiation of this model, a tool called Hanpuku, which bridges between D3 scripts and Illustrator. We show several examples of visualizations that are iteratively created using Hanpuku in order to illustrate the flexibility of the approach. We further describe several hypothetical tools that bridge between other visualization tools to emphasize the generality of the model.</p>","__content":""}
+
+/***/ },
+/* 68 */
+/***/ function(module, exports) {
+
+	module.exports = {"layout":"publication","title":"Resonant Laboratory and Candela: Spreading Your Visualization Ideas to the Masses","key":"2016_vip_resonant_lab","permalink":"/publications/2016_vip_resonant_lab/","type":"paper","shortname":null,"image":"2016_vip_resonant_lab.png","authors":["bigelow","Roni Choudhury","Jeffrey Baumes"],"journal":"Proceedings of Workshop on Visualization in Practice (VIP '16), 2016","journal-short":"Visualization in Practice","year":2016,"note":"Selected for oral presentation","doi":null,"publisher":null,"project":null,"video":"2016_vip_resonant_lab_video","pdf":"2016_vip_resonant_lab.pdf","supplements":[{"name":"Resonant Laboratory Application","abslink":"http://resonantlab.kitware.com","linksym":true}],"bibtex":"2016_vip_resonant_lab.bib","abstract":" <p>Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.</p>","__content":""}
+
+/***/ },
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./genepi.md": 68,
-		"./ibm.md": 69,
-		"./kitware.md": 70,
-		"./sci.md": 71,
-		"./ta_1.md": 72,
-		"./ta_2.md": 73
+		"./genepi.md": 70,
+		"./ibm.md": 71,
+		"./kitware.md": 72,
+		"./sci.md": 73,
+		"./ta_1.md": 74,
+		"./ta_2.md": 75
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -15275,47 +15299,47 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 67;
+	webpackContext.id = 69;
 
-
-/***/ },
-/* 68 */
-/***/ function(module, exports) {
-
-	module.exports = {"title":"Research Assistant","start":2010,"stop":2012,"meta":["Internal Medicine","Division of Genetic Epidemiology","University of Utah, Salt Lake City, UT"],"reference":"Advisor: Dr. Nicola J. Camp","__content":"<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these are new, rich resources, they truly present wicked problems. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>\n"}
-
-/***/ },
-/* 69 */
-/***/ function(module, exports) {
-
-	module.exports = {"title":"Research Intern","season":"Summer","year":2015,"meta":["IBM Research","Cambridge, MA"],"reference":"Mentor: Dr. Megan Monroe","__content":""}
 
 /***/ },
 /* 70 */
 /***/ function(module, exports) {
 
-	module.exports = {"title":"Research Intern","season":"Spring, Summer","year":2016,"meta":["Kitware, Inc.","Clifton Park, NY"],"reference":"Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury","__content":""}
+	module.exports = {"title":"Research Assistant","start":2010,"stop":2012,"meta":["Internal Medicine","Division of Genetic Epidemiology","University of Utah, Salt Lake City, UT"],"reference":"Advisor: Dr. Nicola J. Camp","__content":"<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these are new, rich resources, they truly present wicked problems. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>\n"}
 
 /***/ },
 /* 71 */
 /***/ function(module, exports) {
 
-	module.exports = {"title":"Research Assistant","start":2013,"stop":"Present","meta":["School of Computing","Scientific Computing and Imaging (SCI) Institute","University of Utah, Salt Lake City, UT"],"reference":"Advisor: Dr. Miriah Meyer","__content":""}
+	module.exports = {"title":"Research Intern","season":"Summer","year":2015,"meta":["IBM Research","Cambridge, MA"],"reference":"Mentor: Dr. Megan Monroe","__content":""}
 
 /***/ },
 /* 72 */
 /***/ function(module, exports) {
 
-	module.exports = {"title":"Teaching Assistant","season":"Fall","year":2014,"meta":["CS 5630 / 6630 Visualization","University of Utah, Salt Lake City, UT"],"reference":"with Dr. Miriah Meyer, using Processing","__content":""}
+	module.exports = {"title":"Research Intern","season":"Spring, Summer","year":2016,"meta":["Kitware, Inc.","Clifton Park, NY"],"reference":"Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury","__content":""}
 
 /***/ },
 /* 73 */
 /***/ function(module, exports) {
 
-	module.exports = {"title":"Teaching Assistant","season":"Fall","year":2015,"meta":["CS 5630 / 6630 Visualization","University of Utah, Salt Lake City, UT"],"reference":"with Dr. Alex Lex, using D3.js","__content":""}
+	module.exports = {"title":"Research Assistant","start":2013,"stop":"Present","meta":["School of Computing","Scientific Computing and Imaging (SCI) Institute","University of Utah, Salt Lake City, UT"],"reference":"Advisor: Dr. Miriah Meyer","__content":""}
 
 /***/ },
 /* 74 */
+/***/ function(module, exports) {
+
+	module.exports = {"title":"Teaching Assistant","season":"Fall","year":2014,"meta":["CS 5630 / 6630 Visualization","University of Utah, Salt Lake City, UT"],"reference":"with Dr. Miriah Meyer, using Processing","__content":""}
+
+/***/ },
+/* 75 */
+/***/ function(module, exports) {
+
+	module.exports = {"title":"Teaching Assistant","season":"Fall","year":2015,"meta":["CS 5630 / 6630 Visualization","University of Utah, Salt Lake City, UT"],"reference":"with Dr. Alex Lex, using D3.js","__content":""}
+
+/***/ },
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15336,7 +15360,7 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _svgTextWrap = __webpack_require__(75);
+	var _svgTextWrap = __webpack_require__(77);
 
 	var _svgTextWrap2 = _interopRequireDefault(_svgTextWrap);
 
@@ -15344,7 +15368,7 @@
 
 	var _View3 = _interopRequireDefault(_View2);
 
-	var _staticMenuItems = __webpack_require__(76);
+	var _staticMenuItems = __webpack_require__(78);
 
 	var _staticMenuItems2 = _interopRequireDefault(_staticMenuItems);
 
@@ -15352,11 +15376,11 @@
 
 	var _Images2 = _interopRequireDefault(_Images);
 
-	var _template = __webpack_require__(77);
+	var _template = __webpack_require__(79);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	__webpack_require__(79);
+	__webpack_require__(81);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15755,7 +15779,7 @@
 	exports.default = Menu;
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -15877,7 +15901,7 @@
 	exports.default = rewrapSvgText;
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -15927,25 +15951,25 @@
 	];
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<svg>\n<g id=\"Hamburger\">\n\t<path/>\n\t<image xlink:href=\"" + __webpack_require__(78) + "\"/>\n</g>\n</svg>\n";
+	module.exports = "<svg>\n<g id=\"Hamburger\">\n\t<path/>\n\t<image xlink:href=\"" + __webpack_require__(80) + "\"/>\n</g>\n</svg>\n";
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIwLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIgoJIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjQgNjQiCgkgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjQgNjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPGc+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjIsMTJjMCwyLjgtMi4yLDUtNSw1SDdjLTIuOCwwLTUtMi4yLTUtNWwwLDBjMC0yLjgsMi4yLTUsNS01aDUwQzU5LjgsNyw2Miw5LjIsNjIsMTJMNjIsMTJ6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjIsMzJjMCwyLjgtMi4yLDUtNSw1SDdjLTIuOCwwLTUtMi4yLTUtNWwwLDBjMC0yLjgsMi4yLTUsNS01aDUwQzU5LjgsMjcuMiw2MiwyOS40LDYyLDMyTDYyLDMyeiIvPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTYyLDUyYzAsMi44LTIuMiw1LTUsNUg3Yy0yLjgsMC01LTIuMi01LTVsMCwwYzAtMi44LDIuMi01LDUtNWg1MEM1OS44LDQ3LjIsNjIsNDkuNCw2Miw1Mkw2Miw1MnoiLz4KPC9nPgo8L3N2Zz4K"
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(80);
+	var content = __webpack_require__(82);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -15965,7 +15989,7 @@
 	}
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
