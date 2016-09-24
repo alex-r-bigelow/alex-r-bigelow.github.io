@@ -85,8 +85,21 @@ class CV extends View {
       .text(d => d.year);
     pubs.select('summary').select('.people').text(d => d.authors.join(', '));
     pubs.select('summary').select('.award')
-      .text(d => d.award || '')
-      .attr('class', d => d.award ? 'visible award' : 'award');
+      .text(d => {
+        if (d.award) {
+          return d.award;
+        } else if (d.note && d.note.search(/selected/i) !== -1) {
+          return d.note;
+        } else {
+          return '';
+        }
+      }).attr('class', d => {
+        if (d.award || (d.note && d.note.search(/selected/i) !== -1)) {
+          return 'visible award';
+        } else {
+          return 'award';
+        }
+      });
     pubs.select('.meta').select('.journal').text(d => d.journal);
     pubs.select('.meta').select('.note').text(d => d.note);
     let downloads = pubs.select('.downloads').selectAll('.download')

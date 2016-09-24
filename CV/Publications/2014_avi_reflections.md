@@ -20,7 +20,7 @@ authors:
 
 journal: AVI 2014 International Working Conference on Advanced Visual Interfaces (AVI ’14)
 year: 2014
-# Add things like "Best Paper Award at InfoVis 2099, selected out of 4000 submissions" 
+# Add things like "Best Paper Award at InfoVis 2099, selected out of 4000 submissions"
 award: Best Paper Award
 
 doi: 10.1145/2598153.2598175
@@ -29,15 +29,13 @@ publisher:
 
 pdf: 2014_avi_reflections.pdf
 
-# Extra supplements, such as talk slides, data sets, etc. 
+# Extra supplements, such as talk slides, data sets, etc.
 supplements:
 - name: Conference Talk Slides
   # use link instead of abslink if you want to link to the master directory
-  abslink: http://www.cs.utah.edu/~abigelow/Downloads/papers/avi_slides.pdf
-  # defaults to a download icon, use this if you want a link-out icon
-  linksym: true
+  link: 2014_avi_reflections_slides.pdf
 - name: Artifacts
-  abslink: http://www.cs.utah.edu/~abigelow/Downloads/papers/reflections_artifacts.zip
+  link: 2014_avi_reflections_supplement.zip
 
 bibtex: 2014_avi_reflections.bib
 

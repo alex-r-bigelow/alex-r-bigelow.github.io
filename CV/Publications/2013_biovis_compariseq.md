@@ -22,7 +22,7 @@ pdf: 2013_biovis_compariseq.pdf
 bibtex: 2013_biovis_compariseq.bib
 supplements:
 - name: Poster
-  link: /posters/2013_biovis_compariseq_poster.png
+  link: 2013_biovis_compariseq_poster.pdf
   # defaults to a download icon, use this if you want a link-out icon
   linksym: true
 

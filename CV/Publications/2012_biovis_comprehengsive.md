@@ -16,12 +16,13 @@ authors:
 
 journal: Proceedings of the IEEE Symposium on Biological Data Visualization (BioVis ’12)
 year: 2012
-award: Poster selected for oral presentation
+note: Poster selected for oral presentation
 
 external-project: http://www.cs.utah.edu/~abigelow/#compreheNGSive
 code: https://github.com/yasashiku/compreheNGSive
 
 pdf: 2012_biovis_comprehengsive.pdf
+supplement: 
 bibtex: 2012_biovis_comprehengsive.bib
 
 abstract: "
