@@ -22,6 +22,7 @@ import pdf from './cv/pdf.svg';
 import bib from './cv/bib.png';
 import zip from './cv/zip.png';
 import img from './cv/img.svg';
+import link from './cv/link.svg';
 
 export default {
   Profile,
@@ -44,5 +45,6 @@ export default {
   pdf,
   bib,
   zip,
-  png: img
+  png: img,
+  link
 };

@@ -106,26 +106,29 @@ class CV extends View {
       .data(d => {
         let result = {};
         if (d.pdf) {
-          result.Paper = d.pdf;
+          result.Paper = { link: d.pdf };
         }
         if (d.bibtex) {
-          result['BibTeX Citation'] = d.bibtex;
+          result['BibTeX Citation'] = { link: d.bibtex };
         }
         if (d.supplement) {
-          result['Supplemental Material'] = d.supplement;
+          result['Supplemental Material'] = { link: d.supplement };
         }
         if (d.supplements) {
           d.supplements.forEach(s => {
-            result[s.name] = s.link || s.abslink;
+            result[s.name] = { link: s.link || s.abslink };
+            if (s.linksym) {
+              result[s.name].linksym = true;
+            }
           });
         }
         Object.keys(result).forEach(k => {
           let v = result[k];
-          if (!(v.startsWith('http'))) {
+          if (!(v.link.startsWith('http'))) {
             // Because I steal my publication markdown files directly
             // from my group's web page, relative links actually refer
             // to that domain...
-            result[k] = 'http://sci.utah.edu/~vdl/papers/' + v;
+            result[k].link = 'http://sci.utah.edu/~vdl/papers/' + v.link;
           }
         });
         return d3.entries(result);
@@ -137,12 +140,16 @@ class CV extends View {
     downloadsEnter.append('span');
     downloads = downloadsEnter.merge(downloads);
     downloads.on('click', d => {
-      window.open(d.value, '_blank');
+      window.open(d.value.link, '_blank');
     });
     downloads.select('img')
       .attr('src', d => {
-        let extension = d.value.match(/\.([^\.]*)$/)[1];
-        return Images[extension];
+        if (d.value.linksym) {
+          return Images.link;
+        } else {
+          let extension = d.value.link.match(/\.([^\.]*)$/)[1];
+          return Images[extension] || Images.link;
+        }
       });
     downloads.select('span')
       .text(d => d.key);
