@@ -16,7 +16,6 @@ Deployment:
     cd alex-r-bigelow
     webpack
     cd ../alex-r-bigelow-deploy
-    git add webpack-bundle.js
-    git add webpack-bundle.js.map
+    git add -A
     git commit -m "some commit message..."
     git push
