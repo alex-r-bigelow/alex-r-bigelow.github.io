@@ -28,7 +28,7 @@ This means that, to use D3 with something like Babel, we have two options:
 
 The first option totally feels wrong—the whole point of using something like Babel, at least for me, is to avoid exactly this way of importing things. ES6 was supposed to save us from this crap. It gets worse if, like me, you're using webpack, and your entry point is a *javascript* file, not an HTML one!
 
-But option two is also pretty annoying—another bloody preprocessing step, where you have to f*ck around with a bunch of cryptic configuration files and remember extra console commands. Ideally, we *should* be able to just import what we need when we need it. But D3 wasn't built that way.
+But option two is also pretty annoying—another bloody preprocessing step, where you have to f\*ck around with a bunch of cryptic configuration files and remember extra console commands. Ideally, we *should* be able to just import what we need when we need it. But D3 wasn't built that way.
 
 Here's what I came up with for option two, in case it helps anyone:
 

@@ -3,7 +3,7 @@ layout: publication
 title: "Resonant Laboratory and Candela: Spreading Your Visualization Ideas to the Masses"
 key: 2016_vip_resonant_lab
 permalink: /publications/2016_vip_resonant_lab/
-type: paper
+type: poster
 
 shortname:
 image: 2016_vip_resonant_lab.png
