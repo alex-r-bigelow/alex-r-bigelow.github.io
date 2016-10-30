@@ -3,7 +3,7 @@ layout: publication
 title: "Resonant Laboratory and Candela: Spreading Your Visualization Ideas to the Masses"
 key: 2016_vip_resonant_lab
 permalink: /publications/2016_vip_resonant_lab/
-type: poster
+type: paper
 
 shortname:
 image: 2016_vip_resonant_lab.png
@@ -16,8 +16,7 @@ authors:
 journal: "Proceedings of Workshop on Visualization in Practice (VIP '16), 2016"
 journal-short: Visualization in Practice
 year: 2016
-# award:
-note: Selected for oral presentation
+award: Best Paper Award
 
 doi:
 # use publisher only if no doi is available
