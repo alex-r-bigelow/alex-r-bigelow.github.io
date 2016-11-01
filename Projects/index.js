@@ -63,7 +63,7 @@ class Projects {
   }
   getOrderedEntries () {
     return [
-      '#ResonantLaboratory',
+      '#ResonantLab',
       '#hanpuku',
       '#UPDBExplorer',
       '#EFGlite',

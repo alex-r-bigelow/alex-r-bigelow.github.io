@@ -11,7 +11,7 @@ import YouTube from './social_logos/YouTube.svg';
 import Twitter from './social_logos/Twitter.svg';
 
 import Hanpuku from './project_logos/Hanpuku.png';
-import ResonantLaboratory from './project_logos/Resonant_Lab_Mark.svg';
+import ResonantLab from './project_logos/Resonant_Lab_Mark.svg';
 import EFGLite from './project_logos/efg-lite.svg';
 import updbExplorer from './project_logos/updb-explorer.png';
 import expressionTopology from './project_logos/expressionTopology.png';
@@ -36,7 +36,7 @@ export default {
   YouTube,
   Twitter,
   Hanpuku,
-  ResonantLaboratory,
+  ResonantLab,
   EFGLite,
   updbExplorer,
   expressionTopology,
