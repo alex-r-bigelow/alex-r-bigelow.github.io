@@ -11984,7 +11984,7 @@
 	    value: function getOrderedEntries() {
 	      var _this2 = this;
 
-	      return ['#ResonantLaboratory', '#hanpuku', '#UPDBExplorer', '#EFGlite', '#Calendarcreator', '#paperinstruments', '#expressionTopology'].map(function (hash) {
+	      return ['#ResonantLab', '#hanpuku', '#UPDBExplorer', '#EFGlite', '#Calendarcreator', '#paperinstruments', '#expressionTopology'].map(function (hash) {
 	        return _this2.entries[hash];
 	      });
 	    }
@@ -14665,7 +14665,7 @@
 	  YouTube: _YouTube2.default,
 	  Twitter: _Twitter2.default,
 	  Hanpuku: _Hanpuku2.default,
-	  ResonantLaboratory: _Resonant_Lab_Mark2.default,
+	  ResonantLab: _Resonant_Lab_Mark2.default,
 	  EFGLite: _efgLite2.default,
 	  updbExplorer: _updbExplorer2.default,
 	  expressionTopology: _expressionTopology2.default,
@@ -14817,7 +14817,7 @@
 	var map = {
 		"./Calendar-creator.md": 48,
 		"./EFG-lite.md": 49,
-		"./Resonant-Laboratory.md": 50,
+		"./Resonant-Lab.md": 50,
 		"./UPDB-Explorer.md": 51,
 		"./expressionTopology.md": 52,
 		"./hanpuku.md": 53,
@@ -14853,7 +14853,7 @@
 /* 50 */
 /***/ function(module, exports) {
 
-	module.exports = {"repository":"https://github.com/Kitware/candela/tree/master/app/resonant-laboratory","icon":"ResonantLaboratory","__content":"<h1 id=\"resonant-laboratory\">Resonant Laboratory</h1>\n<p>This is a project I developed while an intern at Kitware, Inc.</p>\n<p>Check out the live site <a href=\"https://resonantlab.kitware.com/\">here</a>.</p>\n"}
+	module.exports = {"repository":"https://github.com/Kitware/candela/tree/master/app/resonant-lab","icon":"ResonantLab","__content":"<h1 id=\"resonant-lab\">Resonant Lab</h1>\n<p>This is a project I developed while an intern at Kitware, Inc. that assists novice users in connecting arbitrary datasets to arbitrary visualizations. The visualizations include new, cutting-edge research visualizations that can be incorporated as they are developed—rather than waiting for these new techniques to appear in proprietary visualization toolkits.</p>\n<p>Check out the live site <a href=\"https://resonantlab.kitware.com/\">here</a>.</p>\n"}
 
 /***/ },
 /* 51 */
@@ -15286,13 +15286,13 @@
 /* 68 */
 /***/ function(module, exports) {
 
-	module.exports = {"layout":"publication","title":"Iterating Between Tools to Create and Edit Visualizations","key":"2016_infovis_hanpuku","permalink":"/publications/2016_infovis_hanpuku/","type":"paper","shortname":"Hanpuku","image":"2016_infovis_hanpuku.png","authors":["bigelow","Steven Drucker","Danyel Fisher","meyer"],"journal":"IEEE Transactions on Visualization and Computer Graphics (InfoVis ’16)","year":2016,"doi":"10.1109/TVCG.2016.2598609","pdf":"2016_infovis_hanpuku.pdf","video":"2016_infovis_hanpuku_video","supplements":[{"name":"Supplemental Material","link":"2016_infovis_hanpuku_supplemental.zip"}],"bibtex":"2016_infovis_hanpuku.bib","abstract":" <p>A common workflow for visualization designers begins with a generative tool, like D3 or Processing, to create the initial visualization; and proceeds to a drawing tool, like Adobe Illustrator or Inkscape, for editing and cleaning. Unfortunately, this is typically a one-way process: once a visualization is exported from the generative tool into a drawing tool, it is difficult to make further, data-driven changes. In this paper, we propose a bridge model to allow designers to bring their work back from the drawing tool to re-edit in the generative tool. Our key insight is to recast this iteration challenge as a merge problem - similar to when two people are editing a document and changes between them need to reconciled. We also present a specific instantiation of this model, a tool called Hanpuku, which bridges between D3 scripts and Illustrator. We show several examples of visualizations that are iteratively created using Hanpuku in order to illustrate the flexibility of the approach. We further describe several hypothetical tools that bridge between other visualization tools to emphasize the generality of the model.</p>","__content":""}
+	module.exports = {"layout":"publication","title":"Iterating Between Tools to Create and Edit Visualizations","key":"2016_infovis_hanpuku","permalink":"/publications/2016_infovis_hanpuku/","type":"paper","shortname":"Hanpuku","image":"2016_infovis_hanpuku.png","authors":["bigelow","Steven Drucker","Danyel Fisher","meyer"],"journal":"IEEE Transactions on Visualization and Computer Graphics (InfoVis ’16)","year":2016,"doi":"10.1109/TVCG.2016.2598609","pdf":"2016_infovis_hanpuku.pdf","video":"2016_infovis_hanpuku_video","supplements":[{"name":"Conference Talk Slides","abslink":"http://www.cs.utah.edu/~abigelow/Downloads/papers/InfoVis2016.key"},{"name":"Supplemental Material","link":"2016_infovis_hanpuku_supplemental.zip"}],"bibtex":"2016_infovis_hanpuku.bib","abstract":" <p>A common workflow for visualization designers begins with a generative tool, like D3 or Processing, to create the initial visualization; and proceeds to a drawing tool, like Adobe Illustrator or Inkscape, for editing and cleaning. Unfortunately, this is typically a one-way process: once a visualization is exported from the generative tool into a drawing tool, it is difficult to make further, data-driven changes. In this paper, we propose a bridge model to allow designers to bring their work back from the drawing tool to re-edit in the generative tool. Our key insight is to recast this iteration challenge as a merge problem - similar to when two people are editing a document and changes between them need to reconciled. We also present a specific instantiation of this model, a tool called Hanpuku, which bridges between D3 scripts and Illustrator. We show several examples of visualizations that are iteratively created using Hanpuku in order to illustrate the flexibility of the approach. We further describe several hypothetical tools that bridge between other visualization tools to emphasize the generality of the model.</p>","__content":""}
 
 /***/ },
 /* 69 */
 /***/ function(module, exports) {
 
-	module.exports = {"layout":"publication","title":"Resonant Laboratory and Candela: Spreading Your Visualization Ideas to the Masses","key":"2016_vip_resonant_lab","permalink":"/publications/2016_vip_resonant_lab/","type":"paper","shortname":null,"image":"2016_vip_resonant_lab.png","authors":["bigelow","Roni Choudhury","Jeffrey Baumes"],"journal":"Proceedings of Workshop on Visualization in Practice (VIP '16), 2016","journal-short":"Visualization in Practice","year":2016,"award":"Best Paper Award","doi":null,"publisher":null,"project":null,"video":"2016_vip_resonant_lab_video","pdf":"2016_vip_resonant_lab.pdf","supplements":[{"name":"Resonant Laboratory Application","abslink":"http://resonantlab.kitware.com","linksym":true}],"bibtex":"2016_vip_resonant_lab.bib","abstract":" <p>Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.</p>","__content":""}
+	module.exports = {"layout":"publication","title":"Resonant Laboratory and Candela: Spreading Your Visualization Ideas to the Masses","key":"2016_vip_resonant_lab","permalink":"/publications/2016_vip_resonant_lab/","type":"paper","shortname":null,"image":"2016_vip_resonant_lab.png","authors":["bigelow","Roni Choudhury","Jeffrey Baumes"],"journal":"Proceedings of Workshop on Visualization in Practice (VIP '16), 2016","journal-short":"Visualization in Practice","year":2016,"award":"Best Paper Award","doi":null,"publisher":null,"project":null,"video":"2016_vip_resonant_lab_video","pdf":"2016_vip_resonant_lab.pdf","supplements":[{"name":"Resonant Lab Application","abslink":"http://resonantlab.kitware.com","linksym":true}],"bibtex":"2016_vip_resonant_lab.bib","abstract":" <p>Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.</p>","__content":""}
 
 /***/ },
 /* 70 */
@@ -15324,19 +15324,19 @@
 /* 71 */
 /***/ function(module, exports) {
 
-	module.exports = {"title":"Research Assistant","start":2010,"stop":2012,"meta":["Internal Medicine","Division of Genetic Epidemiology","University of Utah, Salt Lake City, UT"],"reference":"Advisor: Dr. Nicola J. Camp","__content":"<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these are new, rich resources, they truly present wicked problems. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>\n"}
+	module.exports = {"title":"Research Assistant","start":2010,"stop":2012,"meta":["Internal Medicine","Division of Genetic Epidemiology","University of Utah, Salt Lake City, UT"],"reference":"Advisor: Dr. Nicola J. Camp","__content":"<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these are new, rich resources, they truly present wicked problems: once we could see one pattern in the data, it made us ask questions that need an entirely different perspectives. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>\n"}
 
 /***/ },
 /* 72 */
 /***/ function(module, exports) {
 
-	module.exports = {"title":"Research Intern","season":"Summer","year":2015,"meta":["IBM Research","Cambridge, MA"],"reference":"Mentor: Dr. Megan Monroe","__content":""}
+	module.exports = {"title":"Research Intern","season":"Summer","year":2015,"meta":["IBM Research","Cambridge, MA"],"reference":"Mentor: Dr. Megan Monroe","__content":"<p>During this three-month internship, we developed a system that supports traversing a large graph database in aggregate using graph pivots (we are finishing a paper on this subject that should be published soon).</p>\n<p>Apache TinkerPop3 was released midway through this project, just as we had switched from a Neo4j graph database to a Titan database. I learned a lot about graph databases and graph query languages, and learned hard but valuable lessons about good documentation, developing for a moving target, and the dangers of vendor lock-in.</p>\n"}
 
 /***/ },
 /* 73 */
 /***/ function(module, exports) {
 
-	module.exports = {"title":"Research Intern","season":"Spring, Summer","year":2016,"meta":["Kitware, Inc.","Clifton Park, NY"],"reference":"Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury","__content":""}
+	module.exports = {"title":"Research Intern","season":"Spring, Summer","year":2016,"meta":["Kitware, Inc.","Clifton Park, NY"],"reference":"Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury","__content":"<p>During this seven-month internship, I was privileged to work on <a href=\"https://resonantlab.kitware.com\">Resonant Lab</a>, a system that enables connecting arbitrary datasets to arbitrary visualizations. This work culminated in a Best Paper Award at the Visualization In Practice Workshop (VIP &#39;16).</p>\n<p>I gained a lot of experience with real-world software development, and building better-quality software than I normally have time for in academia was incredibly satisfying. Working in an industry research lab like this was great because it gave me the flexibility to think deeply about problems and approach them in non-conventional ways, but at the same time, it provided the support and priority structure to develop high-quality software.</p>\n<p>Working for Kitware was also a valuable experience because of its focus on open-source development; regardless of my future career, I hope to be able to continue working with what we started here.</p>\n"}
 
 /***/ },
 /* 74 */
