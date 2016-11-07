@@ -33,6 +33,9 @@ video: 2016_infovis_hanpuku_video
 
 # Extra supplements, such as talk slides, data sets, etc.
 supplements:
+- name: Conference Talk Slides
+  # use link instead of abslink if you want to link to the master directory
+  abslink: http://www.cs.utah.edu/~abigelow/Downloads/papers/InfoVis2016.key
 - name: Supplemental Material
   link: 2016_infovis_hanpuku_supplemental.zip
 
