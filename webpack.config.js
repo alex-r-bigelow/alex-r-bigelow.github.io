@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -9,12 +10,11 @@ module.exports = {
 
   output: {
     // Where to build results
-    path: '../alex-r-bigelow-deploy',
+    path: path.join(__dirname, '../alex-r-bigelow-deploy'),
 
     // Filename to use in HTML
     filename: 'webpack-bundle.js'
   },
-  debug: true,
   devtool: 'cheap-source-map',
   plugins: [
     new CleanWebpackPlugin([
@@ -30,7 +30,7 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.htaccess$/,
         loader: 'file-loader',
@@ -40,7 +40,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: 'markdown-with-front-matter'
+        loader: 'markdown-with-front-matter-loader'
       },
       {
         test: /\.css$/,
@@ -52,15 +52,15 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'html?attrs=img:src'
+        loader: 'html-loader?attrs=img:src'
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|(?!template\b)\b\w+\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        loader: 'url'
+        loader: 'url-loader'
       },
       {
         test: /template\.svg$/,
-        loader: 'html',
+        loader: 'html-loader',
         query: {
           attrs: 'image:xlink:href'
         }
@@ -78,5 +78,10 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'd3': path.resolve(__dirname, 'lib/d3.min.js')
+    }
   }
 };

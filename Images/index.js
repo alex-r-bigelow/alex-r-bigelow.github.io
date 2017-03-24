@@ -17,6 +17,8 @@ import updbExplorer from './project_logos/updb-explorer.png';
 import expressionTopology from './project_logos/expressionTopology.png';
 import paperInstruments from './project_logos/paper-instruments.png';
 import calendarCreator from './project_logos/calendar-creator.png';
+import SCIxmap from './project_logos/SCIxmap.png';
+import SCIpingpong from './project_logos/SCIpingpong.png';
 
 import pdf from './cv/pdf.svg';
 import bib from './cv/bib.png';
@@ -42,6 +44,8 @@ export default {
   expressionTopology,
   paperInstruments,
   calendarCreator,
+  SCIxmap,
+  SCIpingpong,
   pdf,
   bib,
   zip,

@@ -67,6 +67,8 @@ class Projects {
       '#hanpuku',
       '#UPDBExplorer',
       '#EFGlite',
+      '#SCIxmap',
+      '#SCIpingpong',
       '#Calendarcreator',
       '#paperinstruments',
       '#expressionTopology'

@@ -28,6 +28,12 @@ video: 2016_vip_resonant_lab_video
 pdf: 2016_vip_resonant_lab.pdf
 
 supplements:
+- name: Conference Talk Slides
+  # use link instead of abslink if you want to link to the master directory
+  abslink: http://www.cs.utah.edu/~abigelow/Downloads/papers/VisInPractice2016.key
+- name: Poster
+  # use link instead of abslink if you want to link to the master directory
+  abslink: http://www.cs.utah.edu/~abigelow/Downloads/posters/vip2016.pdf
 - name: Resonant Lab Application
   # use link instead of abslink if you want to link to the master directory
   abslink: http://resonantlab.kitware.com

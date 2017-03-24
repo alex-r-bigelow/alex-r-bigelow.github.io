@@ -18,11 +18,10 @@ journal: Proceedings of the IEEE Symposium on Biological Data Visualization (Bio
 year: 2012
 note: Poster selected for oral presentation
 
-external-project: http://www.cs.utah.edu/~abigelow/#compreheNGSive
 code: https://github.com/yasashiku/compreheNGSive
 
 pdf: 2012_biovis_comprehengsive.pdf
-supplement: 
+supplement:
 bibtex: 2012_biovis_comprehengsive.bib
 
 abstract: "
