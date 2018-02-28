@@ -1,0 +1,5 @@
+- limited rant about C dependencies
+- rollup.config.js multiple builds, why you want each of them (talk about package.json)
+- plugin order
+- filtering warnings
+- peerDependencies vs dependencies, whether to external or build inside

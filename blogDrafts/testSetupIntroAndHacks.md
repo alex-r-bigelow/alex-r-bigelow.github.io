@@ -1,0 +1,4 @@
+- package.json scripts
+- Travis CI setup
+- Adding the cool badge
+- Adding diffs / colors / better logging
