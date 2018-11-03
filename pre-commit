@@ -1,15 +1,23 @@
 #!/bin/bash
 #
-# A hook that updates sitemap.xml before committing
+# A hook that updates sitemap.xml and pages.json with the latest modification dates before committing
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
+echo '[' > pages.json
+
 urls=('' 'cv.html' 'blog.html' '404.html')
+redirects=()
 
 git ls-tree -r --name-only HEAD | ( while read filename; do
   if [[ -e $filename && ("$filename" =~ projects/*/.*.html || "$filename" =~ blog/*/.*.html) ]]; then
     urls+=("$filename")
+  fi
+
+  echo $filename
+  if [[ -e $filename && ("$filename" =~ projects/*/redirect.url) ]]; then
+    redirects+=("$filename")
   fi
 done
 
@@ -19,8 +27,25 @@ for url in "${urls[@]}"; do
   echo "    <lastmod>$lastmod</lastmod>" >> sitemap.xml
   echo "    <loc>https://alex-r-bigelow.github.io/$url</loc>" >> sitemap.xml
   echo "  </url>" >> sitemap.xml
+
+  echo "  {" >> pages.json
+  echo "    \"lastmod\":\"$lastmod\"," >> pages.json
+  echo "    \"loc\":\"https://alex-r-bigelow.github.io/$url\"" >> pages.json
+  echo "  }," >> pages.json
+done
+
+for redirect in "${redirects[@]}"; do
+  lastmod="TODO"
+  url=`cat $redirect`
+  echo "  {" >> pages.json
+  echo "    \"lastmod\":\"$lastmod\"," >> pages.json
+  echo "    \"loc\":\"$url\"," >> pages.json
+  echo "  }," >> pages.json
 done
 
 echo '</urlset>' >> sitemap.xml
 
-echo 'sitemap.xml updated')
+sed -i '$ s/.$//' pages.json
+echo "]" >> pages.json
+
+echo 'sitemap.xml and pages.json updated')

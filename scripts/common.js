@@ -1,14 +1,14 @@
 /* globals d3 */
 import drawMenu from './menu.js';
 
-function deriveSitemap (sitemap) {
+function getPages (rawPages) {
   window.pages = {};
   window.pageHierarchy = {
     root: [],
     projects: [],
     blog: []
   };
-  for (const url of sitemap.querySelectorAll('url')) {
+  for (const url of rawPages) {
     const base = {
       loc: url.querySelector('loc').textContent,
       lastmod: new Date(url.querySelector('lastmod').textContent)
@@ -43,6 +43,6 @@ function deriveSitemap (sitemap) {
 }
 
 window.onload = async () => {
-  deriveSitemap(await d3.xml('sitemap.xml'));
+  getPages(await d3.json('pages.json'));
   drawMenu();
 };
