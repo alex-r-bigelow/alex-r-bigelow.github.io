@@ -1,44 +1,13 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+package-lock.json
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
+# we want to include specific files inside node_modules and ignore the rest...
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
+# unignore node_modules dir itself
+!node_modules/
+node_modules/*
 
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Other big files *
-###################
-*.pdf
-*.ai
-
-node_modules
+!node_modules/d3/
+node_modules/d3/*
+!node_modules/d3/dist/
+node_modules/d3/dist/*
+!node_modules/d3/dist/d3.min.js

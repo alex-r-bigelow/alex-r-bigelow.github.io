@@ -1,3 +1,0 @@
-- library: npm link hell
-- subapps: problems with submodules after git clone
-- publishing to npm

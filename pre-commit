@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# A hook that updates sitemap.xml before committing
+
+echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+
+urls=('' 'cv.html' 'blog.html' '404.html')
+
+git ls-tree -r --name-only HEAD | ( while read filename; do
+  if [[ -e $filename && ("$filename" =~ projects/*/.*.html || "$filename" =~ blog/*/.*.html) ]]; then
+    urls+=("$filename")
+  fi
+done
+
+for url in "${urls[@]}"; do
+  lastmod="$(git log -1 --date=format:%Y-%m-%d --format="%ad" -- $url)"
+  echo "  <url>" >> sitemap.xml
+  echo "    <lastmod>$lastmod</lastmod>" >> sitemap.xml
+  echo "    <loc>https://alex-r-bigelow.github.io/$url</loc>" >> sitemap.xml
+  echo "  </url>" >> sitemap.xml
+done
+
+echo '</urlset>' >> sitemap.xml
+
+echo 'sitemap.xml updated')
