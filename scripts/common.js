@@ -27,7 +27,8 @@ function getPages (rawPages) {
       }
     } else if (page.type === 'project' || page.type === 'blog') {
       if (page.localUrl) {
-        page.title = page.localUrl.split('.').slice(0, -1).join('.');
+        page.title = page.localUrl
+          .split('.').slice(0, -1).join('.').replace('_', ' ');
         (async () => {
           for (const format of ICON_FORMATS) {
             try {
@@ -40,7 +41,8 @@ function getPages (rawPages) {
           }
         })();
       } else {
-        page.title = page.loc.split('/').slice(-1)[0].split('.').slice(0, -1).join('.');
+        page.title = page.loc.split('/').slice(-1)[0]
+          .split('.').slice(0, -1).join('.').replace('_', ' ');
       }
     }
     window.pages[page.url] = page;
