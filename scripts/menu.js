@@ -29,7 +29,7 @@ function drawMenu () {
 
   drawLinks(menu.select('.root'), window.pageHierarchy.root)
     .links.text(d => window.pages[d].title);
-  drawLinks(menu.select('.projects'), window.pageHierarchy.projects)
+  drawLinks(menu.select('.projects'), window.pageHierarchy.project)
     .links.text(d => window.pages[d].title);
 }
 

@@ -1,49 +1,42 @@
 /* globals d3 */
 import drawMenu from './menu.js';
 
-const ICON_FORMATS = ['svg', 'png'];
-
 function getPages (rawPages) {
   window.pages = {};
   window.pageHierarchy = {
     root: [],
-    projects: [],
+    project: [],
     blog: []
   };
   for (const page of rawPages) {
-    const type = /\/(blog)\/|\/(project)s\//.exec(page.loc);
+    page.location = new URL(page.url);
+    const type = /\/(blog)\/|\/(project)s\//.exec(page.location.pathname);
     page.type = type === null ? 'root' : type[1] || type[2];
-    page.localUrl = /https:\/\/alex-r-bigelow\.github\.io\/?(.*)/.exec(page.url)[1];
     if (page.type === 'root') {
-      switch (page.localUrl) {
-        case '':
+      switch (page.location.pathname) {
+        case '/':
           page.title = 'My tale';
           break;
-        case 'cv.html':
+        case '/cv.html':
           page.title = 'My CV';
           break;
         default:
           page.title = '404';
       }
     } else if (page.type === 'project' || page.type === 'blog') {
-      if (page.localUrl) {
-        page.title = page.localUrl
-          .split('.').slice(0, -1).join('.').replace('_', ' ');
-        (async () => {
-          for (const format of ICON_FORMATS) {
-            try {
-              const icon = `${page.localUrl}/icon.${format}`;
-              await window.fetch(icon, { method: 'HEAD' });
-              page.icon = icon;
-            } catch (err) {
-              // ignore failures to get icons
-            }
+      const subdir = page.type === 'project' ? 'projects' : 'blog';
+      page.dir = new RegExp(`${subdir}/(.*)/[^/]*$`).exec(page.location.pathname)[1];
+      page.title = page.dir.replace('_', ' ');
+      (async () => {
+        try {
+          const metadata = await d3.json(`${subdir}/${page.dir}/page_meta.json`);
+          Object.assign(page, metadata);
+        } catch (err) {
+          if (page.type === 'project') {
+            console.warn(`${page.title} project is missing page_meta.json`);
           }
-        })();
-      } else {
-        page.title = page.loc.split('/').slice(-1)[0]
-          .split('.').slice(0, -1).join('.').replace('_', ' ');
-      }
+        }
+      })();
     }
     window.pages[page.url] = page;
     window.pageHierarchy[page.type].push(page.url);

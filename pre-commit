@@ -10,13 +10,12 @@ echo '[' > pages.json
 urls=('' 'cv.html' 'blog.html' '404.html')
 redirects=()
 
-git ls-tree -r --name-only HEAD | ( while read filename; do
+git ls-files | ( while read filename; do
   if [[ -e $filename && ("$filename" =~ projects/.*/.*.html || "$filename" =~ blog/.*/.*.html) ]]; then
     urls+=("$filename")
   fi
 
   if [[ -e $filename && "$filename" =~ projects/.*/redirect.url ]]; then
-    echo $filename
     redirects+=("$filename")
   fi
 done
