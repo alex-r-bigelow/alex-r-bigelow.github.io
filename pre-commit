@@ -11,12 +11,12 @@ urls=('' 'cv.html' 'blog.html' '404.html')
 redirects=()
 
 git ls-tree -r --name-only HEAD | ( while read filename; do
-  if [[ -e $filename && ("$filename" =~ projects/*/.*.html || "$filename" =~ blog/*/.*.html) ]]; then
+  if [[ -e $filename && ("$filename" =~ projects/.*/.*.html || "$filename" =~ blog/.*/.*.html) ]]; then
     urls+=("$filename")
   fi
 
-  echo $filename
-  if [[ -e $filename && ("$filename" =~ projects/*/redirect.url) ]]; then
+  if [[ -e $filename && "$filename" =~ projects/.*/redirect.url ]]; then
+    echo $filename
     redirects+=("$filename")
   fi
 done
@@ -30,16 +30,14 @@ for url in "${urls[@]}"; do
 
   echo "  {" >> pages.json
   echo "    \"lastmod\":\"$lastmod\"," >> pages.json
-  echo "    \"loc\":\"https://alex-r-bigelow.github.io/$url\"" >> pages.json
+  echo "    \"url\":\"https://alex-r-bigelow.github.io/$url\"" >> pages.json
   echo "  }," >> pages.json
 done
 
 for redirect in "${redirects[@]}"; do
-  lastmod="TODO"
   url=`cat $redirect`
   echo "  {" >> pages.json
-  echo "    \"lastmod\":\"$lastmod\"," >> pages.json
-  echo "    \"loc\":\"$url\"," >> pages.json
+  echo "    \"url\":\"$url\"" >> pages.json
   echo "  }," >> pages.json
 done
 

@@ -1,6 +1,8 @@
 /* globals d3 */
 import drawMenu from './menu.js';
 
+const ICON_FORMATS = ['svg', 'png'];
+
 function getPages (rawPages) {
   window.pages = {};
   window.pageHierarchy = {
@@ -8,30 +10,41 @@ function getPages (rawPages) {
     projects: [],
     blog: []
   };
-  for (const url of rawPages) {
-    const base = {
-      loc: url.querySelector('loc').textContent,
-      lastmod: new Date(url.querySelector('lastmod').textContent)
-    };
-    const type = /\/(blog)\/|\/(project)s\//.exec(base.loc);
-    base.type = type === null ? 'root' : type[1] || type[2];
-    base.url = /https:\/\/alex-r-bigelow\.github\.io\/?(.*)/.exec(base.loc)[1];
-    if (base.type === 'root') {
-      switch (base.url) {
+  for (const page of rawPages) {
+    const type = /\/(blog)\/|\/(project)s\//.exec(page.loc);
+    page.type = type === null ? 'root' : type[1] || type[2];
+    page.localUrl = /https:\/\/alex-r-bigelow\.github\.io\/?(.*)/.exec(page.url)[1];
+    if (page.type === 'root') {
+      switch (page.localUrl) {
         case '':
-          base.title = 'My tale';
+          page.title = 'My tale';
           break;
         case 'cv.html':
-          base.title = 'My CV';
+          page.title = 'My CV';
           break;
         default:
-          base.title = '404';
+          page.title = '404';
       }
-    } else if (base.type === 'project' || base.type === 'blog') {
-      base.title = base.url.split('.').slice(0, -1).join('.');
+    } else if (page.type === 'project' || page.type === 'blog') {
+      if (page.localUrl) {
+        page.title = page.localUrl.split('.').slice(0, -1).join('.');
+        (async () => {
+          for (const format of ICON_FORMATS) {
+            try {
+              const icon = `${page.localUrl}/icon.${format}`;
+              await window.fetch(icon, { method: 'HEAD' });
+              page.icon = icon;
+            } catch (err) {
+              // ignore failures to get icons
+            }
+          }
+        })();
+      } else {
+        page.title = page.loc.split('/').slice(-1)[0].split('.').slice(0, -1).join('.');
+      }
     }
-    window.pages[base.url] = base;
-    window.pageHierarchy[base.type].push(base.url);
+    window.pages[page.url] = page;
+    window.pageHierarchy[page.type].push(page.url);
   }
   for (const pageList of Object.values(window.pageHierarchy)) {
     pageList.sort((a, b) => {
