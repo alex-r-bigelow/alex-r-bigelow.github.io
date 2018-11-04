@@ -11,6 +11,7 @@
     "serve": "^10.0.2"
   },
   "scripts": {
-    "serve": "serve ."
+    "serve": "serve .",
+    "build": "node build.js"
   }
 }

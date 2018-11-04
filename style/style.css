@@ -1,12 +1,77 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i|Josefin+Sans:700');
 @import url('colors.css');
+@import url('measurements.css');
 
 html,
 body {
   font-family: 'EB Garamond', serif;
   font-weight: 400;
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
-  }
+  background-color: var(--off-black);
+  color: var(--off-white);
+}
+html {
+  margin: 0 8em 0 2em;
+}
+body {
+  max-width: 40em;
+  margin: 4em auto 2em auto;
+}
+a {
+  text-decoration: none;
+  color: var(--dark-teal);
+}
+a:hover {
+  color: var(--dark-green);
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2em;
+  min-width: var(--menu-image-size);
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.75);
+}
+#menu .hamburger {
+  position: relative;
+  width: 100%;
+  height: var(--menu-image-size);
+  background-image: url('../images/hamburger.svg');
+  background-size: var(--menu-image-size);
+  background-repeat: no-repeat;
+  background-position: right;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+#menu h4 {
+  margin: 0.5em 0;
+  color: var(--off-white);
+}
+#menu.collapsed {
+  border-radius: 4em;
+}
+#menu.collapsed .hamburger {
+  margin-bottom: 0;
+}
+#menu.collapsed .projectLabel,
+#menu.collapsed a {
+  display: none;
+}
+#menu a {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+#menu a:hover h4 {
+  color: var(--dark-green);
+}
+#menu a img {
+  width: var(--menu-image-size);
+  height: var(--menu-image-size);
+  margin-right: 1em;
 }
