@@ -143,4 +143,6 @@ for (const details of Object.values(pages.details)) {
 }
 fs.writeFileSync('sitemap.xml', sitemap + '</urlset>');
 
+shell.exec('git add pages.json sitemap.xml');
+
 shell.echo('Updated pages.json and sitemap.xml');

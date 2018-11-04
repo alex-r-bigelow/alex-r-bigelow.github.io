@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  <url>
-  <lastmod>2018-11-03</lastmod>
+  <lastmod>2018-11-04</lastmod>
   <loc>https://alex-r-bigelow.github.io/404.html</loc>
   </url>
   <url>
-  <lastmod>2018-11-03</lastmod>
+  <lastmod>2018-11-04</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog.html</loc>
   </url>
   <url>
-  <lastmod>2016-03-12</lastmod>
+  <lastmod>2018-11-04</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/LG_e980_Flashing_Guide/post.html</loc>
   </url>
   <url>
   <lastmod>2018-11-04</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/Webpack_SVG_Templates/post.html</loc>
+  </url>
+  <url>
+  <lastmod>2018-11-04</lastmod>
+  <loc>https://alex-r-bigelow.github.io/contact.html</loc>
   </url>
   <url>
   <lastmod>2018-11-03</lastmod>
@@ -24,7 +28,7 @@
   <loc>https://alex-r-bigelow.github.io/index.html</loc>
   </url>
   <url>
-  <lastmod>2018-11-03</lastmod>
+  <lastmod>2018-11-04</lastmod>
   <loc>https://alex-r-bigelow.github.io/projects/Resonant_Lab/resonantLab.html</loc>
   </url>
 </urlset>

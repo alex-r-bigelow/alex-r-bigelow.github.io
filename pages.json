@@ -6,7 +6,7 @@
       "dirname": "",
       "path": "/404.html",
       "title": "404",
-      "lastmod": "2018-11-03"
+      "lastmod": "2018-11-04"
     },
     "/blog.html": {
       "url": "/blog.html",
@@ -14,15 +14,15 @@
       "dirname": "",
       "path": "/blog.html",
       "title": "Blog",
-      "lastmod": "2018-11-03"
+      "lastmod": "2018-11-04"
     },
     "/blog/LG_e980_Flashing_Guide": {
       "url": "/blog/LG_e980_Flashing_Guide/post.html",
       "dirname": "LG_e980_Flashing_Guide",
       "path": "/blog/LG_e980_Flashing_Guide",
       "type": "blog",
-      "lastmod": "2016-03-12",
-      "title": "LG e980_Flashing_Guide"
+      "title": "LG e980_Flashing_Guide",
+      "lastmod": "2018-11-04"
     },
     "/blog/Webpack_SVG_Templates": {
       "url": "/blog/Webpack_SVG_Templates/post.html",
@@ -32,12 +32,20 @@
       "title": "Webpack SVG_Templates",
       "lastmod": "2018-11-04"
     },
+    "/contact.html": {
+      "url": "/contact.html",
+      "type": "root",
+      "dirname": "",
+      "path": "/contact.html",
+      "title": "Contact Me",
+      "lastmod": "2018-11-04"
+    },
     "/cv.html": {
       "url": "/cv.html",
       "type": "root",
       "dirname": "",
       "path": "/cv.html",
-      "title": "My CV",
+      "title": "CV",
       "lastmod": "2018-11-03"
     },
     "/index.html": {
@@ -45,7 +53,7 @@
       "type": "root",
       "dirname": "",
       "path": "/index.html",
-      "title": "My tale",
+      "title": "Story",
       "lastmod": "2018-11-03"
     },
     "/projects/Hanpuku": {
@@ -77,7 +85,7 @@
       "featureOrder": -1,
       "type": "project",
       "title": "Resonant Lab",
-      "lastmod": "2018-11-03",
+      "lastmod": "2018-11-04",
       "icon": "/projects/Resonant_Lab/icon.svg"
     }
   },
@@ -86,6 +94,7 @@
       "/index.html",
       "/cv.html",
       "/blog.html",
+      "/contact.html",
       "/404.html"
     ],
     "project": [
