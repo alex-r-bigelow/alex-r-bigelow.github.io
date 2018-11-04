@@ -40,7 +40,8 @@ function drawMenu () {
 
   drawLinks(menu.select('.root'), window.pages.hierarchy.root
     .filter(d => d !== '/404.html'));
-  drawLinks(menu.select('.projects'), window.pages.hierarchy.project);
+  drawLinks(menu.select('.projects'), window.pages.hierarchy.project
+    .filter(d => window.pages.details[d].featureOrder >= 0));
 }
 
 export default drawMenu;

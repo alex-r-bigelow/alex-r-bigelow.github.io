@@ -95,7 +95,7 @@ for (const filename of fileList) {
 
       // Default metadata for all pages
       if (!details.title) {
-        details.title = details.dirname.replace('_', ' ');
+        details.title = details.dirname.replace(/_/g, ' ');
       }
       if (!details.lastmod) {
         details.lastmod = shell.exec(`git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`).stdout.trim() ||

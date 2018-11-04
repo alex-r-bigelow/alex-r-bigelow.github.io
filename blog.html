@@ -4,8 +4,27 @@
   <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
   <link rel="stylesheet" href="style/style.css"></script>
   <script type="module" src="scripts/common.js"></script>
+  <script type="module" src="scripts/blog.js"></script>
+  <style type="text/css">
+    @import url('colors.css');
+    #entries a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      color: var(--off-white);
+    }
+    #entries a:hover {
+      color: var(--dark-green);
+    }
+  </style>
 </head>
 <body>
-  
+  <header>
+    <h1>Blog</h1>
+    <p>A place where I dump solutions to problems when I find them.
+      <a href="https://www.youtube.com/watch?v=iKYEUXlYcSI">In due course,</a>
+    I'll start writing regularly.</p>
+  </header>
+  <div id="entries"></div>
 </body>
 </html>
