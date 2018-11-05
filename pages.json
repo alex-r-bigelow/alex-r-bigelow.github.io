@@ -14,23 +14,23 @@
       "dirname": "",
       "path": "/blog.html",
       "title": "Blog",
-      "lastmod": "2018-11-04"
+      "lastmod": "2018-11-05"
     },
     "/blog/LG_e980_Flashing_Guide": {
       "url": "/blog/LG_e980_Flashing_Guide/post.html",
       "dirname": "LG_e980_Flashing_Guide",
       "path": "/blog/LG_e980_Flashing_Guide",
       "type": "blog",
-      "title": "LG e980 Flashing Guide",
-      "lastmod": "2018-11-04"
+      "lastmod": "2016-03-12",
+      "title": "LG e980 Flashing Guide"
     },
     "/blog/Webpack_SVG_Templates": {
       "url": "/blog/Webpack_SVG_Templates/post.html",
       "dirname": "Webpack_SVG_Templates",
       "path": "/blog/Webpack_SVG_Templates",
       "type": "blog",
-      "title": "Webpack SVG Templates",
-      "lastmod": "2018-11-04"
+      "lastmod": "2016-09-08",
+      "title": "Webpack SVG Templates"
     },
     "/contact.html": {
       "url": "/contact.html",
@@ -38,7 +38,7 @@
       "dirname": "",
       "path": "/contact.html",
       "title": "Contact Me",
-      "lastmod": "2018-11-04"
+      "lastmod": "2018-11-05"
     },
     "/cv.html": {
       "url": "/cv.html",
@@ -60,7 +60,7 @@
       "url": "https://github.com/alex-r-bigelow/hanpuku",
       "dirname": "Hanpuku",
       "path": "/projects/Hanpuku",
-      "featureOrder": -1,
+      "featureOrder": 0,
       "type": "project",
       "isExternal": true,
       "title": "Hanpuku",
@@ -71,7 +71,7 @@
       "url": "https://github.com/origraph/origraph.github.io",
       "dirname": "Origraph",
       "path": "/projects/Origraph",
-      "featureOrder": -1,
+      "featureOrder": 1,
       "type": "project",
       "isExternal": true,
       "title": "Origraph",
@@ -82,7 +82,7 @@
       "url": "/projects/Resonant_Lab/resonantLab.html",
       "dirname": "Resonant_Lab",
       "path": "/projects/Resonant_Lab",
-      "featureOrder": -1,
+      "featureOrder": 2,
       "type": "project",
       "title": "Resonant Lab",
       "lastmod": "2018-11-04",

@@ -14,7 +14,7 @@
   },
   "scripts": {
     "serve": "serve .",
-    "build": "node build.js"
+    "build": "node ./build.js"
   },
   "devDependencies": {
     "shelljs": "^0.8.2"

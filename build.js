@@ -18,6 +18,10 @@ const ICON_FORMATS = ['png', 'svg'];
 
 const BASE_URL = 'https://alex-r-bigelow.github.io';
 
+// Make sure any new files will show up in the git ls-files command,
+// but wait to actually stage those files:
+shell.exec('git add --intent-to-add -A');
+
 const fileList = shell.exec('git ls-files').stdout.trim().split('\n');
 for (const filename of fileList) {
   if (shell.test('-e', filename)) {
@@ -165,7 +169,5 @@ for (const details of Object.values(pages.details)) {
   }
 }
 fs.writeFileSync('sitemap.xml', sitemap + '</urlset>');
-
-shell.exec('git add pages.json data.json sitemap.xml');
 
 shell.echo('Updated and staged pages.json, data.json, and sitemap.xml');
