@@ -30,4 +30,13 @@ http://colorbrewer2.org/#type=qualitative&scheme=Pastel2&n=8
   --light-green: #E6F5C9;
   --light-yellow: #FFF2AE;
   --light-brown: #F1E2CC;
+
+  --page-background: var(--off-black);
+  --text-color: var(--off-white);
+  --subdued-color: var(--light-grey);
+  --link-color: var(--dark-teal);
+  --hover-color: var(--dark-yellow);
+  --award-color: var(--dark-yellow);
+  --download-color: var(--dark-grey);
+  --overlay-color: rgba(0,0,0,0.75);
 }

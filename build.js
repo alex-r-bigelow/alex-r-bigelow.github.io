@@ -12,6 +12,7 @@ const pages = {
     blog: []
   }
 };
+const data = {};
 const icons = {};
 const ICON_FORMATS = ['png', 'svg'];
 
@@ -21,14 +22,14 @@ const fileList = shell.exec('git ls-files').stdout.trim().split('\n');
 for (const filename of fileList) {
   if (shell.test('-e', filename)) {
     const location = new URL(BASE_URL + '/' + filename);
-    let includeFile = false;
+    let includePage = false;
     let details = {
       url: location.pathname
     };
 
     // Root file?
     if (pages.hierarchy.root.indexOf(location.pathname) !== -1) {
-      includeFile = true;
+      includePage = true;
       details.type = 'root';
       details.dirname = '';
       details.path = location.pathname;
@@ -50,7 +51,7 @@ for (const filename of fileList) {
       }
     }
 
-    // Project or blog file?
+    // Main project or blog file?
     let project = /projects\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
     let blog = /blog\/(.*)\/([^/])*\.([^/.]*)$/.exec(location.pathname);
 
@@ -62,9 +63,9 @@ for (const filename of fileList) {
         details.featureOrder = -1;
         details.type = 'project';
         if (project[3] === 'html') {
-          includeFile = true;
+          includePage = true;
         } else if (project[2] === 'redirect' && project[3] === 'url') {
-          includeFile = true;
+          includePage = true;
           details.isExternal = true;
           details.url = shell.cat(filename).trim();
           // TODO idea: get lastmod for external files based on curl --head url | grep Last-Modified
@@ -79,14 +80,14 @@ for (const filename of fileList) {
         details.path = `/blog/${details.dirname}`;
         details.type = 'blog';
         if (blog[3] === 'html') {
-          includeFile = true;
+          includePage = true;
         } else if (blog[2] === 'icon' && ICON_FORMATS.indexOf(blog[3])) {
           icons[details.path] = `${details.path}/${blog[2]}.${blog[3]}`;
         }
       }
     }
 
-    if (includeFile) {
+    if (includePage) {
       // Allow for custom / overriding metadata
       const metapath = `${__dirname}${details.path}/meta.json`;
       if (shell.test('-e', metapath)) {
@@ -108,6 +109,25 @@ for (const filename of fileList) {
       }
       pages.details[details.path] = details;
     }
+
+    // Generic data files
+    let dataDir = /data\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
+    if (dataDir) {
+      details.path = dataDir[1].split('/');
+      details.name = dataDir[2];
+      details.extension = dataDir[3];
+      details.filename = `${details.name}.${details.extension}`;
+      details.lastmod = shell.exec(`git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`).stdout.trim() ||
+        shell.exec(`date +%Y-%m-%d -r ${filename}`).stdout.trim();
+      const pathCopy = Array.from(details.path);
+      let parent = data;
+      while (pathCopy.length > 0) {
+        const chunk = pathCopy.shift();
+        parent[chunk] = parent[chunk] || {};
+        parent = parent[chunk];
+      }
+      parent[details.filename] = details;
+    }
   }
 }
 
@@ -128,6 +148,9 @@ pages.hierarchy.project.sort((a, b) => {
 // Dump pages.json
 fs.writeFileSync('pages.json', JSON.stringify(pages, null, 2));
 
+// Dump data.json
+fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+
 // Dump non-external pages to sitemap.xml
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -143,6 +166,6 @@ for (const details of Object.values(pages.details)) {
 }
 fs.writeFileSync('sitemap.xml', sitemap + '</urlset>');
 
-shell.exec('git add pages.json sitemap.xml');
+shell.exec('git add pages.json data.json sitemap.xml');
 
-shell.echo('Updated pages.json and sitemap.xml');
+shell.echo('Updated and staged pages.json, data.json, and sitemap.xml');

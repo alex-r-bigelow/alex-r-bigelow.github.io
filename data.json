@@ -1,0 +1,228 @@
+{
+  "CV": {
+    "index.js": {
+      "url": "/data/CV/index.js",
+      "path": [
+        "CV"
+      ],
+      "name": "index",
+      "extension": "js",
+      "filename": "index.js",
+      "lastmod": "2018-11-04"
+    },
+    "style.scss": {
+      "url": "/data/CV/style.scss",
+      "path": [
+        "CV"
+      ],
+      "name": "style",
+      "extension": "scss",
+      "filename": "style.scss",
+      "lastmod": "2018-11-04"
+    },
+    "template.html": {
+      "url": "/data/CV/template.html",
+      "path": [
+        "CV"
+      ],
+      "name": "template",
+      "extension": "html",
+      "filename": "template.html",
+      "lastmod": "2018-11-04"
+    }
+  },
+  "jobs": {
+    "brusci.md": {
+      "url": "/data/jobs/brusci.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "brusci",
+      "extension": "md",
+      "filename": "brusci.md",
+      "lastmod": "2018-11-04"
+    },
+    "genepi.md": {
+      "url": "/data/jobs/genepi.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "genepi",
+      "extension": "md",
+      "filename": "genepi.md",
+      "lastmod": "2018-10-06"
+    },
+    "ibm.md": {
+      "url": "/data/jobs/ibm.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "ibm",
+      "extension": "md",
+      "filename": "ibm.md",
+      "lastmod": "2018-10-06"
+    },
+    "kitware.md": {
+      "url": "/data/jobs/kitware.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "kitware",
+      "extension": "md",
+      "filename": "kitware.md",
+      "lastmod": "2018-10-06"
+    },
+    "sci.md": {
+      "url": "/data/jobs/sci.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "sci",
+      "extension": "md",
+      "filename": "sci.md",
+      "lastmod": "2018-10-06"
+    },
+    "ta_1.md": {
+      "url": "/data/jobs/ta_1.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "ta_1",
+      "extension": "md",
+      "filename": "ta_1.md",
+      "lastmod": "2018-10-06"
+    },
+    "ta_2.md": {
+      "url": "/data/jobs/ta_2.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "ta_2",
+      "extension": "md",
+      "filename": "ta_2.md",
+      "lastmod": "2018-10-06"
+    }
+  },
+  "publications": {
+    "2012_biovis_comprehengsive.md": {
+      "url": "/data/publications/2012_biovis_comprehengsive.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2012_biovis_comprehengsive",
+      "extension": "md",
+      "filename": "2012_biovis_comprehengsive.md",
+      "lastmod": "2018-10-06"
+    },
+    "2012_thesis_bigelow.md": {
+      "url": "/data/publications/2012_thesis_bigelow.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2012_thesis_bigelow",
+      "extension": "md",
+      "filename": "2012_thesis_bigelow.md",
+      "lastmod": "2018-10-06"
+    },
+    "2013_biovis_compariseq.md": {
+      "url": "/data/publications/2013_biovis_compariseq.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2013_biovis_compariseq",
+      "extension": "md",
+      "filename": "2013_biovis_compariseq.md",
+      "lastmod": "2018-10-06"
+    },
+    "2013_explosion_poster.md": {
+      "url": "/data/publications/2013_explosion_poster.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2013_explosion_poster",
+      "extension": "md",
+      "filename": "2013_explosion_poster.md",
+      "lastmod": "2018-10-06"
+    },
+    "2014_avi_reflections.md": {
+      "url": "/data/publications/2014_avi_reflections.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2014_avi_reflections",
+      "extension": "md",
+      "filename": "2014_avi_reflections.md",
+      "lastmod": "2018-10-06"
+    },
+    "2014_avi_reflections_poster.md": {
+      "url": "/data/publications/2014_avi_reflections_poster.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2014_avi_reflections_poster",
+      "extension": "md",
+      "filename": "2014_avi_reflections_poster.md",
+      "lastmod": "2018-10-06"
+    },
+    "2015_bob_ross.md": {
+      "url": "/data/publications/2015_bob_ross.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2015_bob_ross",
+      "extension": "md",
+      "filename": "2015_bob_ross.md",
+      "lastmod": "2018-10-06"
+    },
+    "2015_hanpuku_poster.md": {
+      "url": "/data/publications/2015_hanpuku_poster.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2015_hanpuku_poster",
+      "extension": "md",
+      "filename": "2015_hanpuku_poster.md",
+      "lastmod": "2018-10-06"
+    },
+    "2016_hanpuku2_poster.md": {
+      "url": "/data/publications/2016_hanpuku2_poster.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2016_hanpuku2_poster",
+      "extension": "md",
+      "filename": "2016_hanpuku2_poster.md",
+      "lastmod": "2018-10-06"
+    },
+    "2016_infovis_hanpuku.md": {
+      "url": "/data/publications/2016_infovis_hanpuku.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2016_infovis_hanpuku",
+      "extension": "md",
+      "filename": "2016_infovis_hanpuku.md",
+      "lastmod": "2018-10-06"
+    },
+    "2016_vip_resonant_lab.md": {
+      "url": "/data/publications/2016_vip_resonant_lab.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2016_vip_resonant_lab",
+      "extension": "md",
+      "filename": "2016_vip_resonant_lab.md",
+      "lastmod": "2018-10-06"
+    },
+    "2017_infovis_fellowtoolbuilders_poster.md": {
+      "url": "/data/publications/2017_infovis_fellowtoolbuilders_poster.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2017_infovis_fellowtoolbuilders_poster",
+      "extension": "md",
+      "filename": "2017_infovis_fellowtoolbuilders_poster.md",
+      "lastmod": "2018-10-06"
+    }
+  }
+}

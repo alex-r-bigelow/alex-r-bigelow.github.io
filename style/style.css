@@ -6,8 +6,8 @@ html,
 body {
   font-family: 'EB Garamond', serif;
   font-weight: 400;
-  background-color: var(--off-black);
-  color: var(--off-white);
+  background-color: var(--page-background);
+  color: var(--text-color);
 }
 html {
   margin: 0 8em 0 2em;
@@ -18,10 +18,10 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--dark-teal);
+  color: var(--link-color);
 }
 a:hover {
-  color: var(--dark-green);
+  color: var(--hover-color);
 }
 
 #menu {
@@ -33,7 +33,7 @@ a:hover {
   border-radius: 2em;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0,0,0,0.75);
+  background-color: var(--overlay-color);
 }
 #menu .hamburger {
   position: relative;
@@ -48,7 +48,7 @@ a:hover {
 }
 #menu h4 {
   margin: 0.5em 0;
-  color: var(--off-white);
+  color: var(--text-color);
 }
 #menu.collapsed {
   border-radius: 4em;
@@ -68,7 +68,7 @@ a:hover {
   cursor: pointer;
 }
 #menu a:hover h4 {
-  color: var(--dark-green);
+  color: var(--hover-color);
 }
 #menu a img {
   width: var(--menu-image-size);

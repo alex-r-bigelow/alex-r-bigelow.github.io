@@ -1,9 +1,28 @@
-/* globals d3 */
+/* globals d3, jsyaml, showdown */
+const mdConverter = new showdown.Converter();
+const LINK_ICONS = {
+  'bib': 'images/cv/bib.png',
+  'png': 'images/cv/img.svg',
+  'svg': 'images/cv/img.svg',
+  'pdf': 'images/cv/pdf.svg',
+  'zip': 'images/cv/zip.png'
+};
 
-function renderPublications (pubType) {
-  let pubs = this.d3el.select('#' + pubType)
-    .selectAll('.publication').data(this.publications
-      .filter(d => d.type === pubType));
+function parseMd (text) {
+  const frontMatterChunks = text.split(/---\n/);
+  let result = {};
+  if (frontMatterChunks.length >= 2) {
+    result = jsyaml.load(frontMatterChunks[1]);
+    result.__content = mdConverter.makeHtml(frontMatterChunks[2]);
+  } else {
+    result.__content = mdConverter.makeHtml(text);
+  }
+  return result;
+}
+
+function renderPublications (pubType, publications) {
+  let pubs = d3.select('#' + pubType)
+    .selectAll('.publication').data(publications);
   let pubsEnter = pubs.enter().append('details')
     .attr('class', 'publication');
   let summaryEnter = pubsEnter.append('summary');
@@ -90,10 +109,10 @@ function renderPublications (pubType) {
   downloads.select('img')
     .attr('src', d => {
       if (d.value.linksym) {
-        return Images.link;
+        return 'images/cv/link.svg';
       } else {
-        let extension = d.value.link.match(/\.([^\.]*)$/)[1];
-        return Images[extension] || Images.link;
+        let extension = d.value.link.match(/\.([^.]*)$/)[1];
+        return LINK_ICONS[extension] || 'images/cv/link.svg';
       }
     });
   downloads.select('span')
@@ -101,9 +120,9 @@ function renderPublications (pubType) {
   pubs.select('.abstract').html(d => d.abstract || d.__content);
 }
 
-function renderExperience () {
-  let exps = this.d3el.select('#experience')
-    .selectAll('.experience').data(this.experience);
+function renderExperience (experience) {
+  let exps = d3.select('#experience')
+    .selectAll('.experience').data(experience);
   let expsEnter = exps.enter().append('details')
     .attr('class', 'experience');
   let summaryEnter = expsEnter.append('summary');
@@ -130,7 +149,9 @@ function renderExperience () {
   exps.select('.abstract').html(d => d.__content);
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
+  await window.pagesPromise;
+
   // I steal my publication data from my research group's page; it has an
   // extra level of abstraction with regard to people that we need to flatten
   // here
@@ -142,43 +163,47 @@ window.addEventListener('load', () => {
   };
   let pubTypeOrder = ['paper', 'thesis', 'poster'];
 
-  publications = [];
-  let loader = require.context('./Publications/', true, /\.md$/);
-  loader.keys().forEach(key => {
-    let pub = loader(key);
-    if (!pub.authors) {
-      pub.authors = [pub.author];
-    }
-    pub.authors.forEach((d, i) => {
-      if (d in peopleLookup) {
-        pub.authors[i] = peopleLookup[d];
+  let publications = Object.values(window.data.publications);
+  const pubFiles = await Promise.all(publications.map(pub => window.fetch(pub.url)));
+  for (const [index, pub] of publications.entries()) {
+    const text = await pubFiles[index].text();
+    if (pub.extension === 'md' || pub.extension === 'yaml') {
+      Object.assign(pub, parseMd(text));
+      if (!pub.authors) {
+        pub.authors = [pub.author];
       }
-    });
-    this.publications.push(pub);
-  });
-  this.publications.sort((a, b) => {
+      pub.authors = pub.authors.map(author => {
+        return peopleLookup[author] || author;
+      });
+    }
+  }
+  publications.sort((a, b) => {
     if (a.type !== b.type) {
       return pubTypeOrder.indexOf(a.type) - pubTypeOrder.indexOf(b.type);
     } else {
-      return b.year - a.year;
+      return a.year - b.year;
     }
   });
 
-  this.experience = [];
-  loader = require.context('./Experience/', true, /\.md$/);
-  loader.keys().forEach(key => {
-    this.experience.push(loader(key));
-  });
-  this.experience.sort((a, b) => {
+  let experience = Object.values(window.data.jobs);
+  const expFiles = await Promise.all(experience.map(exp => window.fetch(exp.url)));
+  for (const [index, exp] of experience.entries()) {
+    const text = await expFiles[index].text();
+    if (exp.extension === 'md') {
+      Object.assign(exp, parseMd(text));
+    }
+  }
+  experience.sort((a, b) => {
     a = a.year ? a.year : a.stop;
     a = a === 'Present' ? Infinity : a;
     b = b.year ? b.year : b.stop;
     b = b === 'Present' ? Infinity : b;
     return b - a;
   });
+  window.temp = publications;
 
-  renderPublications('paper');
-  renderPublications('poster');
-  renderPublications('thesis');
-  renderExperience();
+  renderPublications('paper', publications.filter(pub => pub.type === 'paper'));
+  renderPublications('poster', publications.filter(pub => pub.type === 'poster'));
+  renderPublications('thesis', publications.filter(pub => pub.type === 'thesis'));
+  renderExperience(experience);
 });
