@@ -5,8 +5,84 @@
   <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
   <link rel="stylesheet" href="style/style.css"></script>
   <script type="module" src="scripts/common.js"></script>
+  <style type="text/css">
+    @import('style/colors.css');
+    header {
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      width: 100px;
+      margin-right: 1em;
+    }
+    .announcement {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      max-width: 30em;
+      padding: 2em;
+      border-radius: 2em;
+      background-color: var(--overlay-color);
+    }
+    .announcement p {
+      margin: 0;
+    }
+    .announcement .ex {
+      position: absolute;
+      margin: 0;
+      text-align: right;
+      cursor: pointer;
+      right: 0.75em;
+      top: 0;
+    }
+    .announcement .ex:hover {
+      color: var(--hover-color);
+    }
+  </style>
 </head>
 <body>
-
+  <header>
+    <img src="images/profile.jpg"/>
+    <h1>Alex Bigelow</h1>
+  </header>
+  <div class="announcement">
+    <h1 class="ex" onclick="d3.select('.announcement').style('display', 'none')">x</h1>
+    <p>I'm job hunting! If you're looking for someone to interact with humans,
+    to visualize large or messy data, to come up with crazy ideas for creative
+    software, and/or bring crazy ideas to life, please
+    <a href="contact.html">contact me!</a></p>
+  </div>
+  <p>I'm a data visualization expert. While my undergrad in CS
+  prepared me to hack, optimize, test, render, and model with the best of them,
+  I don't believe that code + graphics + machine learning are sufficient for
+  dealing with large data sets.</p>
+  <p>The bulk of my graduate training focuses on the messy human side of data
+  and computing&emdash;in academic land, we call it
+  <a href="https://www.cs.ubc.ca/nest/imager/tr/2012/dsm/dsm.pdf">Design Study
+  Methodology</a>. It's all about figuring out from people why (and whether)
+  they care about data, what they actually need to see in it, prototyping custom
+  visualization solutions, testing whether visualization tools actually give
+  users the exposure and control over their data that they need, and helping
+  them to record and present their discoveries effectively.
+  </p>
+  <p>Of course, with a PhD, there's a little something extra on top. For my
+  research, I went back to the thing about computers that obsessed me as a
+  child: creative software. I'm a firm believer in software that enables people
+  to create, not just consume. But creating with data is <b>really</b> hard (see my
+  <a href="cv#2014_avi_reflections">2014 AVI publication</a>).</p>
+  <p>Part of the problem is that data tends to require automation&emdash;which
+  doesn't jive well with the manual aspect of things like drawing. One thing we
+  tried that seems to work is to bridge different tools that use each approach.
+  For details, see my <a href="cv#2016_infovis_hanpuku">2016 InfoVis publication</a>,
+  or the <a target="_blank" href="https://github.com/alex-r-bigelow/hanpuku">Hanpuku</a>
+  bridge between Illustrator and d3.js.</p>
+  <p>Another problem that we're trying to tackle is how to let people reshape
+  graph data to fit their mental model, instead of being constrained by the
+  given structure. For example, if I'm given Actor and Movie nodes, connected by
+  Role edges, but I'm computing Bacon numbers... I might prefer Movie edges,
+  connecting Actor nodes. How do I go about making this shift? For details,
+  check out <a target="_blank" href="https://github.com/origraph/origraph.github.io">Origraph</a>,
+  a kind of "Excel for graphs" project.</p>
+  <p></p>
 </body>
 </html>

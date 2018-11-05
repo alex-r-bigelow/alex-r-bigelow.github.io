@@ -38,5 +38,5 @@ http://colorbrewer2.org/#type=qualitative&scheme=Pastel2&n=8
   --hover-color: var(--dark-yellow);
   --award-color: var(--dark-yellow);
   --download-color: var(--dark-grey);
-  --overlay-color: rgba(0,0,0,0.75);
+  --overlay-color: rgba(0,0,0,0.9);
 }

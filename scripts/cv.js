@@ -21,6 +21,7 @@ function parseMd (text) {
 }
 
 function renderPublications (pubType, publications) {
+  console.log(publications);
   let pubs = d3.select('#' + pubType)
     .selectAll('.publication').data(publications);
   let pubsEnter = pubs.enter().append('details')
@@ -43,6 +44,8 @@ function renderPublications (pubType, publications) {
     .attr('class', 'abstract');
 
   pubs = pubsEnter.merge(pubs);
+  pubs.attr('id', pub => pub.name)
+    .property('open', pub => window.location.hash === '#' + pub.name);
   pubs.select('summary').select('h4')
     .text(d => d.title);
   pubs.select('summary').select('.dates')

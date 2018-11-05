@@ -39,7 +39,7 @@ for (const filename of fileList) {
       details.path = location.pathname;
       switch (location.pathname) {
         case '/index.html':
-          details.title = 'Story';
+          details.title = 'About Me';
           break;
         case '/cv.html':
           details.title = 'CV';
