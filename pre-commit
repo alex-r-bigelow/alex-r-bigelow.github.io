@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+npm run build
+git add pages.json data.json sitemap.xml
