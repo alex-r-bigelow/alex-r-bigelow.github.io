@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="style/style.css"></script>
   <script type="module" src="scripts/common.js"></script>
   <style type="text/css">
+    @import('style/colors.css');
     ul {
       margin: 0;
       padding: 0;
@@ -16,14 +17,15 @@
     li a {
       display: flex;
       align-items: center;
+      color: var(--text-color);
     }
     li a img {
       width: 2em;
       margin-right: 1em;
-      filter: url(#recolorImageTo1B9E77);
+      filter: url(#recolorImageToF7F7F7);
     }
     li a:hover img {
-      filter: url(#recolorImageTo66A61E);
+      filter: url(#recolorImageToE6AB02);
     }
   </style>
   <script type="text/javascript" src="scripts/recolorImageFilter.js"></script>
