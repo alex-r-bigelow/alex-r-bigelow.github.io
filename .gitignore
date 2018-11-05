@@ -17,3 +17,9 @@ node_modules/js-yaml/*
 !node_modules/js-yaml/dist/
 node_modules/js-yaml/dist/*
 !node_modules/js-yaml/dist/js-yaml.min.js
+
+!node_modules/showdown/
+node_modules/showdown/*
+!node_modules/showdown/dist/
+node_modules/showdown/dist/*
+!node_modules/showdown/dist/showdown.min.js
