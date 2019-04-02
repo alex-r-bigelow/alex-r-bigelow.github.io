@@ -27,8 +27,8 @@ a:hover {
 
 #menu {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2em;
+  right: 2em;
   padding: 2em;
   min-width: var(--menu-image-size);
   border-radius: 2em;

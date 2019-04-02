@@ -1,7 +1,7 @@
 ---
 title: Student Committee Volunteer
 start: 2015
-stop: Present
+stop: 2018
 meta:
  - Scientific Computing and Imaging Institute
  - Student Activity Committee

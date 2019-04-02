@@ -1,7 +1,7 @@
 ---
 title: Research Assistant
 start: 2013
-stop: Present
+stop: 2018
 meta:
  - School of Computing
  - Scientific Computing and Imaging (SCI) Institute

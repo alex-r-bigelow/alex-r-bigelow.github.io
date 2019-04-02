@@ -162,9 +162,11 @@ window.addEventListener('load', async () => {
     'bigelow': 'Alex Bigelow',
     'meyer': 'Miriah Meyer',
     'mckenna': 'Sean McKenna',
-    'quinan': 'Sam Quinan'
+    'quinan': 'Sam Quinan',
+    'nobre': 'Carolina Nobre',
+    'lex': 'Alexander Lex'
   };
-  let pubTypeOrder = ['paper', 'thesis', 'poster'];
+  let pubTypeOrder = ['preprint', 'paper', 'thesis', 'poster'];
 
   let publications = Object.values(window.data.publications);
   const pubFiles = await Promise.all(publications.map(pub => window.fetch(pub.url)));
@@ -205,6 +207,11 @@ window.addEventListener('load', async () => {
   });
   window.temp = publications;
 
+  if (publications.filter(pub => pub.type === 'preprint').length > 0) {
+    renderPublications('preprint', publications.filter(pub => pub.type === 'preprint'));
+  } else {
+    d3.select('#preprints').remove();
+  }
   renderPublications('paper', publications.filter(pub => pub.type === 'paper'));
   renderPublications('poster', publications.filter(pub => pub.type === 'poster'));
   renderPublications('thesis', publications.filter(pub => pub.type === 'thesis'));

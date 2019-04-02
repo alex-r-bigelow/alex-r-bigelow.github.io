@@ -69,6 +69,16 @@
       "extension": "md",
       "filename": "ta_2.md",
       "lastmod": "2018-11-05"
+    },
+    "ua.md": {
+      "url": "/data/jobs/ua.md",
+      "path": [
+        "jobs"
+      ],
+      "name": "ua",
+      "extension": "md",
+      "filename": "ua.md",
+      "lastmod": "2019-04-02"
     }
   },
   "publications": {
@@ -191,6 +201,36 @@
       "extension": "md",
       "filename": "2017_infovis_fellowtoolbuilders_poster.md",
       "lastmod": "2018-11-05"
+    },
+    "2018_infovis_origraph.md": {
+      "url": "/data/publications/2018_infovis_origraph.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2018_infovis_origraph",
+      "extension": "md",
+      "filename": "2018_infovis_origraph.md",
+      "lastmod": "2019-04-02"
+    },
+    "2019_pacificvis_jacobs_ladder.md": {
+      "url": "/data/publications/2019_pacificvis_jacobs_ladder.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2019_pacificvis_jacobs_ladder",
+      "extension": "md",
+      "filename": "2019_pacificvis_jacobs_ladder.md",
+      "lastmod": "2019-04-02"
+    },
+    "2019_preprint_origraph.md": {
+      "url": "/data/publications/2019_preprint_origraph.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2019_preprint_origraph",
+      "extension": "md",
+      "filename": "2019_preprint_origraph.md",
+      "lastmod": "2019-04-02"
     }
   }
 }
