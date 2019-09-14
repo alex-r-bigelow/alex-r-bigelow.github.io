@@ -21,7 +21,6 @@ function parseMd (text) {
 }
 
 function renderPublications (pubType, publications) {
-  console.log(publications);
   let pubs = d3.select('#' + pubType)
     .selectAll('.publication').data(publications);
   let pubsEnter = pubs.enter().append('details')
@@ -186,7 +185,7 @@ window.addEventListener('load', async () => {
     if (a.type !== b.type) {
       return pubTypeOrder.indexOf(a.type) - pubTypeOrder.indexOf(b.type);
     } else {
-      return a.year - b.year;
+      return b.year - a.year;
     }
   });
 

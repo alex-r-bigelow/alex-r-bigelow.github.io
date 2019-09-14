@@ -8,7 +8,7 @@
       "name": "brusci",
       "extension": "md",
       "filename": "brusci.md",
-      "lastmod": "2018-11-05"
+      "lastmod": "2019-04-02"
     },
     "genepi.md": {
       "url": "/data/jobs/genepi.md",
@@ -48,7 +48,7 @@
       "name": "sci",
       "extension": "md",
       "filename": "sci.md",
-      "lastmod": "2018-11-05"
+      "lastmod": "2019-04-02"
     },
     "ta_1.md": {
       "url": "/data/jobs/ta_1.md",
@@ -212,6 +212,16 @@
       "filename": "2018_infovis_origraph.md",
       "lastmod": "2019-04-02"
     },
+    "2019_infovis_atria.md": {
+      "url": "/data/publications/2019_infovis_atria.md",
+      "path": [
+        "publications"
+      ],
+      "name": "2019_infovis_atria",
+      "extension": "md",
+      "filename": "2019_infovis_atria.md",
+      "lastmod": "2019-09-14"
+    },
     "2019_pacificvis_jacobs_ladder.md": {
       "url": "/data/publications/2019_pacificvis_jacobs_ladder.md",
       "path": [
@@ -222,15 +232,15 @@
       "filename": "2019_pacificvis_jacobs_ladder.md",
       "lastmod": "2019-04-02"
     },
-    "2019_preprint_origraph.md": {
-      "url": "/data/publications/2019_preprint_origraph.md",
+    "2019_vast_origraph.md": {
+      "url": "/data/publications/2019_vast_origraph.md",
       "path": [
         "publications"
       ],
-      "name": "2019_preprint_origraph",
+      "name": "2019_vast_origraph",
       "extension": "md",
-      "filename": "2019_preprint_origraph.md",
-      "lastmod": "2019-04-02"
+      "filename": "2019_vast_origraph.md",
+      "lastmod": "2019-09-14"
     }
   }
 }
