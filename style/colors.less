@@ -1,0 +1,46 @@
+/*
+Current color scheme (from Colorbrewer2.org)
+*/
+
+@OffWhite: #F7F7F7;
+@LightestGrey: #D9D9D9;
+@LightGrey: #BDBDBD;
+@Grey: #969696;
+@DarkGrey: #737373;
+@DarkestGrey: #525252;
+@OffBlack: #252525;
+
+@DarkRed: #e41a1c;
+@DarkBlue: #377eb8;
+@DarkGreen: #4daf4a;
+@DarkPurple: #984ea3;
+@DarkOrange: #ff7f00;
+@DarkYellow: #ffff33;
+@DarkBrown: #a65628;
+@DarkPink: #f781bf;
+
+@LightRed: #fbb4ae;
+@LightBlue: #b3cde3;
+@LightGreen: #ccebc5;
+@LightPurple: #decbe4;
+@LightOrange: #fed9a6;
+@LightYellow: #ffffcc;
+@LightBrown: #e5d8bd;
+@LightPink: #fddaec;
+
+/*
+Color meanings:
+*/
+
+@backgroundColor: @LightGrey;
+
+@textColor: @OffBlack;
+@textColorImageFilter: replace(@textColor, '#(.*)', 'url(#recolorImageTo$1)');
+
+@invertedTextColor: @OffWhite;
+@invertedTextColorImageFilter: replace(@invertedTextColor, '#(.*)', 'url(#recolorImageTo$1)');
+
+@menuColor: @DarkOrange;
+@menuColorImageFilter: replace(@menuColor, '#(.*)', 'url(#recolorImageTo$1)');
+
+@shadowColor: fade(@OffBlack, 75%);

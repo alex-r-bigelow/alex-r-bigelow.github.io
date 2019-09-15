@@ -1,0 +1,35 @@
+@import '../../style/colors.less';
+@import '../../style/measurements.less';
+.Feed {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: @menuSize;
+  padding: @paragraphSize;
+  overflow: auto;
+  p {
+    max-width: 13em;
+  }
+  img {
+    width: 11em;
+    height: auto;
+    padding: 1em;
+    background-color: @shadowColor;
+  }
+  iframe {
+    padding: 1em;
+    background-color: @shadowColor;
+  }
+}
+@media (min-aspect-ratio: ~"1/1") {
+  .Feed {
+    right: @wideMenuSize;
+    p {
+      max-width: 22em;
+    }
+    img {
+      width: 20em;
+    }
+  }
+}

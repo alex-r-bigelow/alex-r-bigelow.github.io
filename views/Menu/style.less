@@ -1,0 +1,51 @@
+@import '../../style/colors.less';
+@import '../../style/measurements.less';
+nav.Menu {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  a {
+    position: relative;
+    text-decoration: none;
+    color: @textColor;
+    display: block;
+    width: @buttonSize;
+    height: @buttonSize;
+    padding: @buttonPaddingSize;
+    background-color: @shadowColor;
+    img {
+      position: absolute;
+      filter: @menuColorImageFilter;
+      width: @buttonSize;
+      height: @buttonSize;
+    }
+    .label {
+      display: none;
+    }
+
+    &:hover {
+      background-color: @menuColor;
+      img {
+        filter: @invertedTextColorImageFilter;
+      }
+    }
+  }
+}
+@media screen and (min-aspect-ratio: ~"1/1") {
+  nav.Menu a {
+    width: @wideButtonSize;
+    .label {
+      display: block;
+      position: absolute;
+      left: @menuSize;
+      top: @buttonPaddingSize;
+      line-height: @buttonSize;
+      color: @menuColor;
+      margin: 0;
+    }
+    &:hover .label {
+      color: @invertedTextColor;
+    }
+  }
+}
