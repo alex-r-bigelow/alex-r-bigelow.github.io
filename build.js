@@ -39,11 +39,13 @@ const PARSERS = {
       result.joinedAuthorList = result.authorList.join(' and ');
     }
 
-    // Fake 'howpublished' field for theses
+    // Fake 'howpublished' field for theses and patents
     if (raw.entryType === 'phdthesis') {
       result.howpublished = result.school + ' PhD Dissertation';
     } else if (raw.entryType === 'mastersthesis') {
       result.howpublished = result.school + ' Thesis';
+    } else if (raw.entryType === 'patent') {
+      result.howpublished = result.number;
     }
     return result;
   },

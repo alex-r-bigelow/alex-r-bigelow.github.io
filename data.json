@@ -687,14 +687,15 @@
           "extension": "bib",
           "contents": {
             "title": "Method for backfilling graph structure and articles comprising the same",
-            "author": "Bigelow, Alex R and Monroe, Megan",
+            "author": "Bigelow, Alex and Monroe, Megan",
             "year": "2017",
-            "note": "US Patent 9,569,558",
+            "number": "US Patent 9,569,558",
             "authorList": [
-              "Alex R Bigelow",
+              "Alex Bigelow",
               "Megan Monroe"
             ],
-            "joinedAuthorList": "Alex R Bigelow and Megan Monroe"
+            "joinedAuthorList": "Alex Bigelow and Megan Monroe",
+            "howpublished": "US Patent 9,569,558"
           },
           "filename": "citation.bib",
           "lastmod": "2019-09-24"

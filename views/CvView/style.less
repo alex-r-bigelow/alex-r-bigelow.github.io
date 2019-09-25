@@ -23,7 +23,8 @@
       right: 0;
     }
     .meta {
-      margin-top: 0;
+      margin: 0 0 0 1em;
+      padding: 0;
       list-style: none;
       font-size: 0.75em;
     }
@@ -57,9 +58,11 @@
     color: black !important;
     font-size: 12pt;
     overflow: visible;
+    height: auto;
   }
   h1, h2, h3, h4, h5, h6, strong {
     font-family: 'EB Garamond', serif;
+    page-break-after: avoid;
   }
   body {
     margin: 2cm;
@@ -67,6 +70,10 @@
   .CV {
     .contactInfo {
       margin-top: -1.5em;
+    }
+
+    .entry {
+      break-inside: avoid;
     }
   }
 }
