@@ -24,7 +24,7 @@
         "excerpt": ""
       },
       "filename": "brusci.md",
-      "lastmod": "2019-09-14"
+      "lastmod": "2019-09-24"
     },
     "genepi.md": {
       "url": "/data/experience/genepi.md",
@@ -50,7 +50,7 @@
         "excerpt": ""
       },
       "filename": "genepi.md",
-      "lastmod": "2019-04-02"
+      "lastmod": "2019-09-24"
     },
     "ibm.md": {
       "url": "/data/experience/ibm.md",
@@ -75,7 +75,7 @@
         "excerpt": ""
       },
       "filename": "ibm.md",
-      "lastmod": "2019-04-02"
+      "lastmod": "2019-09-24"
     },
     "kitware.md": {
       "url": "/data/experience/kitware.md",
@@ -100,7 +100,7 @@
         "excerpt": ""
       },
       "filename": "kitware.md",
-      "lastmod": "2019-04-02"
+      "lastmod": "2019-09-24"
     },
     "sci.md": {
       "url": "/data/experience/sci.md",
@@ -126,7 +126,7 @@
         "excerpt": ""
       },
       "filename": "sci.md",
-      "lastmod": "2019-04-02"
+      "lastmod": "2019-09-24"
     },
     "ta_1.md": {
       "url": "/data/experience/ta_1.md",
@@ -151,7 +151,7 @@
         "excerpt": ""
       },
       "filename": "ta_1.md",
-      "lastmod": "2019-04-02"
+      "lastmod": "2019-09-24"
     },
     "ta_2.md": {
       "url": "/data/experience/ta_2.md",
@@ -176,7 +176,7 @@
         "excerpt": ""
       },
       "filename": "ta_2.md",
-      "lastmod": "2019-04-02"
+      "lastmod": "2019-09-24"
     },
     "ua.md": {
       "url": "/data/experience/ua.md",
@@ -621,7 +621,7 @@
           "name": "description",
           "extension": "html",
           "filename": "description.html",
-          "lastmod": "2019-09-23"
+          "lastmod": "2019-09-24"
         },
         "publication.pdf": {
           "url": "/data/publications/papers/2019_vast_origraph/publication.pdf",
@@ -633,7 +633,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-23"
+          "lastmod": "2019-09-24"
         },
         "supplement.pdf": {
           "url": "/data/publications/papers/2019_vast_origraph/supplement.pdf",
@@ -645,7 +645,7 @@
           "name": "supplement",
           "extension": "pdf",
           "filename": "supplement.pdf",
-          "lastmod": "2019-09-23"
+          "lastmod": "2019-09-24"
         }
       }
     },

@@ -17,3 +17,9 @@ node_modules/uki/*
 !node_modules/uki/dist/
 node_modules/uki/dist/*
 !node_modules/uki/dist/uki.esm.js
+
+!node_modules/less/
+node_modules/less/*
+!node_modules/less/dist/
+node_modules/less/dist/*
+!node_modules/less/dist/less.min.js
