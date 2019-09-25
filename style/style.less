@@ -1,13 +1,31 @@
 /* @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i|Josefin+Sans:700'); */
-@import 'https://fonts.googleapis.com/css?family=EB+Garamond:400';
 @import './colors.less';
 @import './measurements.less';
 @import './scrollbars.less';
 
+/* josefin-sans-300 - latin */
+@font-face {
+  font-family: 'Josefin Sans Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Josefin Sans Light'), local('JosefinSans-Light'),
+       url('./fonts/josefin-sans-v14-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/josefin-sans-v14-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* josefin-sans-700 - latin */
+@font-face {
+  font-family: 'Josefin Sans Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'),
+       url('./fonts/josefin-sans-v14-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/josefin-sans-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html,
 body {
-  font-family: 'EB Garamond', serif;
-  font-weight: 400;
+  font-family: 'Josefin Sans Light', sans-serif;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -17,5 +35,11 @@ html {
   background: @backgroundColor;
 }
 body {
-  font-size: @paragraphSize;
+  font-size: @paragraphFontSize;
+}
+a {
+  color: @menuColor;
+}
+h1, h2, h3, h4, h5, h6, strong {
+  font-family: 'Josefin Sans Bold', sans-serif;
 }

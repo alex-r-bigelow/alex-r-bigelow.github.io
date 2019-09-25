@@ -1,0 +1,72 @@
+@import '../../style/colors.less';
+@import '../../style/measurements.less';
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: local('EB Garamond Regular'), local('EBGaramond-Regular'),
+       url('../../style/fonts/eb-garamond-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../../style/fonts/eb-garamond-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.CV {
+  .entry {
+    position: relative;
+    .title {
+      display: block;
+      max-width: calc(100% - 4em);
+    }
+    .date {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .meta {
+      margin-top: 0;
+      list-style: none;
+      font-size: 0.75em;
+    }
+  }
+}
+
+@media screen {
+  .CV {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: @menuSize;
+    padding: @paragraphFontSize;
+    overflow: auto;
+  }
+  @media (min-aspect-ratio: ~"1/1") {
+    .CV {
+      right: @wideMenuSize;
+    }
+  }
+}
+
+@media print {
+  .Menu {
+    display: none;
+  }
+  html, body {
+    background: white;
+    font-family: 'EB Garamond', serif;
+    color: black !important;
+    font-size: 12pt;
+    overflow: visible;
+  }
+  h1, h2, h3, h4, h5, h6, strong {
+    font-family: 'EB Garamond', serif;
+  }
+  body {
+    margin: 2cm;
+  }
+  .CV {
+    .contactInfo {
+      margin-top: -1.5em;
+    }
+  }
+}

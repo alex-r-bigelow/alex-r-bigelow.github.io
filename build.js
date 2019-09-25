@@ -2,12 +2,16 @@
 // Update sitemap.xml and pages.json with the latest modification dates
 const fs = require('fs');
 const shell = require('shelljs');
+const bibtexParse = require('bibtex-parse-js');
+const grayMatter = require('gray-matter');
+const showdown = require('showdown');
+const showdownConverter = new showdown.Converter();
 shell.config.silent = true;
 
 const pages = {
   details: {},
   hierarchy: {
-    root: ['/index.html', '/cv.html', '/blog.html', '/contact.html', '/404.html'],
+    root: ['/index.html', '/cv.html', '/blog.html', '/404.html'],
     project: [],
     blog: []
   }
@@ -15,6 +19,40 @@ const pages = {
 const data = {};
 const icons = {};
 const ICON_FORMATS = ['png', 'svg'];
+const PRELOAD_FORMATS = ['json', 'url', 'txt', 'bib', 'md'];
+const PARSERS = {
+  'json': text => JSON.parse(text),
+  'bib': text => {
+    // For our purposes, .bib files should only have one entry
+    const raw = bibtexParse.toJSON(text)[0];
+    const result = raw.entryTags;
+
+    // We want a prettier author list than the nasty format BibTeX uses:
+    result.authorList = result.author.split(/\s+and\s+/).map(author => {
+      author = author.split(/[\s,]+/);
+      return author.slice(1).join(' ') + ' ' + author[0];
+    });
+    if (result.authorList.length > 2) {
+      result.joinedAuthorList = result.authorList.slice(0, -1).join(', ') +
+        ', and ' + result.authorList[result.authorList.length - 1];
+    } else {
+      result.joinedAuthorList = result.authorList.join(' and ');
+    }
+
+    // Fake 'howpublished' field for theses
+    if (raw.entryType === 'phdthesis') {
+      result.howpublished = result.school + ' PhD Dissertation';
+    } else if (raw.entryType === 'mastersthesis') {
+      result.howpublished = result.school + ' Thesis';
+    }
+    return result;
+  },
+  'md': text => {
+    const result = grayMatter(text);
+    result.content = showdownConverter.makeHtml(result.content);
+    return result;
+  }
+};
 
 const BASE_URL = 'https://alex-r-bigelow.github.io';
 
@@ -26,6 +64,7 @@ const fileList = shell.exec('git ls-files').stdout.trim().split('\n');
 for (const filename of fileList) {
   if (shell.test('-e', filename)) {
     const location = new URL(BASE_URL + '/' + filename);
+    console.log(`Bundling ${filename}`);
     let includePage = false;
     let details = {
       url: location.pathname
@@ -47,47 +86,21 @@ for (const filename of fileList) {
         case '/blog.html':
           details.title = 'Blog';
           break;
-        case '/contact.html':
-          details.title = 'Contact Me';
-          break;
         default:
           details.title = '404';
       }
     }
 
-    // Main project or blog file?
-    let project = /projects\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
+    // Blog file?
     let blog = /blog\/(.*)\/([^/])*\.([^/.]*)$/.exec(location.pathname);
-
-    if (project || blog) {
-      // Project metadata
-      if (project) {
-        details.dirname = project[1];
-        details.path = `/projects/${details.dirname}`;
-        details.featureOrder = -1;
-        details.type = 'project';
-        if (project[3] === 'html') {
-          includePage = true;
-        } else if (project[2] === 'redirect' && project[3] === 'url') {
-          includePage = true;
-          details.isExternal = true;
-          details.url = shell.cat(filename).trim();
-          // TODO idea: get lastmod for external files based on curl --head url | grep Last-Modified
-        } else if (project[2] === 'icon' && ICON_FORMATS.indexOf(project[3]) !== -1) {
-          icons[details.path] = `${details.path}/${project[2]}.${project[3]}`;
-        }
-      }
-
-      // Blog metadata
-      if (blog) {
-        details.dirname = blog[1];
-        details.path = `/blog/${details.dirname}`;
-        details.type = 'blog';
-        if (blog[3] === 'html') {
-          includePage = true;
-        } else if (blog[2] === 'icon' && ICON_FORMATS.indexOf(blog[3])) {
-          icons[details.path] = `${details.path}/${blog[2]}.${blog[3]}`;
-        }
+    if (blog) {
+      details.dirname = blog[1];
+      details.path = `/blog/${details.dirname}`;
+      details.type = 'blog';
+      if (blog[3] === 'html') {
+        includePage = true;
+      } else if (blog[2] === 'icon' && ICON_FORMATS.indexOf(blog[3])) {
+        icons[details.path] = `${details.path}/${blog[2]}.${blog[3]}`;
       }
     }
 
@@ -120,6 +133,12 @@ for (const filename of fileList) {
       details.path = dataDir[1].split('/');
       details.name = dataDir[2];
       details.extension = dataDir[3];
+      if (PRELOAD_FORMATS.indexOf(details.extension) !== -1) {
+        details.contents = shell.exec(`cat ${filename}`).stdout;
+        if (PARSERS[details.extension]) {
+          details.contents = PARSERS[details.extension](details.contents);
+        }
+      }
       details.filename = `${details.name}.${details.extension}`;
       details.lastmod = shell.exec(`git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`).stdout.trim() ||
         shell.exec(`date +%Y-%m-%d -r ${filename}`).stdout.trim();

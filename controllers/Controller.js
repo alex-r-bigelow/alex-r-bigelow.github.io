@@ -1,27 +1,34 @@
-/* globals d3, less */
+/* globals less */
 import { Model } from '../node_modules/uki/dist/uki.esm.js';
-import Tooltip from '../views/Tooltip/Tooltip.js';
-
 import recolorImageFilter from '../utils/recolorImageFilter.js';
 
 class Controller extends Model {
   constructor () {
     super([
-      { type: 'json', url: 'pages.json' }
+      { type: 'json', url: 'data.json' }
     ]);
-    this.tooltip = new Tooltip();
+
+    this.views = [];
 
     window.onresize = () => { this.renderAllViews(); };
-
-    (async () => {
-      // Wait for LESS to finish loading before applying our SVG
-      // filter hack
-      await less.pageLoadFinished;
-      recolorImageFilter();
-    })();
+  }
+  async finishConstruction () {
+    const allSetupPromises = Promise.all(this.views.map(view => {
+      return new Promise((resolve, reject) => {
+        view.on('setupFinished', () => {
+          resolve();
+        });
+      });
+    }));
+    this.renderAllViews();
+    await allSetupPromises;
+    await less.pageLoadFinished;
+    recolorImageFilter();
   }
   renderAllViews () {
-    this.tooltip.render();
+    for (const view of this.views) {
+      view.render();
+    }
   }
 }
 

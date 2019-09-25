@@ -10,6 +10,12 @@ class Menu extends View {
   setup () {
     this.d3el.html(this.resources[1]);
   }
+  addButton (text, icon, action, position = ':first-child') {
+    const button = this.d3el.insert('a', position);
+    button.append('img').attr('src', icon);
+    button.append('h1').classed('label', true).text(text);
+    button.on('click', action);
+  }
 }
 
 export default Menu;

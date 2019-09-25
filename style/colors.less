@@ -10,37 +10,35 @@ Current color scheme (from Colorbrewer2.org)
 @DarkestGrey: #525252;
 @OffBlack: #252525;
 
-@DarkRed: #e41a1c;
-@DarkBlue: #377eb8;
-@DarkGreen: #4daf4a;
-@DarkPurple: #984ea3;
-@DarkOrange: #ff7f00;
-@DarkYellow: #ffff33;
-@DarkBrown: #a65628;
-@DarkPink: #f781bf;
+@DarkTeal: #1B9E77;
+@DarkOrange: #D95F02;
+@DarkPurple: #7570B3;
+@DarkPink: #E7298A;
+@DarkGreen: #66A61E;
+@DarkYellow: #E6AB02;
+@DarkBrown: #A6761D;
 
-@LightRed: #fbb4ae;
-@LightBlue: #b3cde3;
-@LightGreen: #ccebc5;
-@LightPurple: #decbe4;
-@LightOrange: #fed9a6;
-@LightYellow: #ffffcc;
-@LightBrown: #e5d8bd;
-@LightPink: #fddaec;
+@LightTeal: #B3E2CD;
+@LightOrange: #FDCDAC;
+@LightPurple: #CBD5E8;
+@LightPink: #F4CAE4;
+@LightGreen: #E6F5C9;
+@LightYellow: #FFF2AE;
+@LightBrown: #F1E2CC;
+
+/*
+Utility for recoloring images:
+*/
+.recolorImage(@targetColor) {
+  filter: replace(@targetColor, '#(.*)', 'url(#recolorImageTo$1)');
+}
 
 /*
 Color meanings:
 */
-
-@backgroundColor: @LightGrey;
-
+@backgroundColor: @OffWhite;
 @textColor: @OffBlack;
-@textColorImageFilter: replace(@textColor, '#(.*)', 'url(#recolorImageTo$1)');
-
 @invertedTextColor: @OffWhite;
-@invertedTextColorImageFilter: replace(@invertedTextColor, '#(.*)', 'url(#recolorImageTo$1)');
-
-@menuColor: @DarkOrange;
-@menuColorImageFilter: replace(@menuColor, '#(.*)', 'url(#recolorImageTo$1)');
-
+@menuColor: @DarkYellow;
+@accentColor: @DarkTeal;
 @shadowColor: fade(@OffBlack, 75%);

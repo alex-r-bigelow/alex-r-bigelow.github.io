@@ -6,19 +6,19 @@
   top: 0;
   bottom: 0;
   right: @menuSize;
-  padding: @paragraphSize;
+  padding: 2em;
   overflow: auto;
   p {
-    max-width: 13em;
+    max-width: @minParagraphWidth;
   }
   img {
-    width: 11em;
+    width: @minParagraphWidth;
     height: auto;
-    padding: 1em;
+    padding: 1px;
     background-color: @shadowColor;
   }
   iframe {
-    padding: 1em;
+    padding: 1px;
     background-color: @shadowColor;
   }
 }
@@ -26,10 +26,10 @@
   .Feed {
     right: @wideMenuSize;
     p {
-      max-width: 22em;
+      max-width: @maxParagraphWidth;
     }
     img {
-      width: 20em;
+      width: @maxParagraphWidth;
     }
   }
 }

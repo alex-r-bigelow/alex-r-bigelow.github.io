@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
-  <script type="text/javascript" src="node_modules/showdown/dist/showdown.min.js"></script>
-  <script type="text/javascript" src="node_modules/js-yaml/dist/js-yaml.min.js"></script>
-  <link rel="stylesheet" href="style/style.css"></script>
-  <link rel="stylesheet" href="style/cv.css"></script>
-  <script type="module" src="scripts/common.js"></script>
-  <script type="module" src="scripts/cv.js"></script>
+  <link rel="stylesheet/less" type="text/css" href="style/style.less"/>
+  <script type="text/javascript" src="node_modules/less/dist/less.min.js" data-log-level="1"></script>
+  <script type="module" src="controllers/CvController.js"></script>
 </head>
 <body>
-  <div id="cv">
+  <div class="CV">
     <h1>Alex Bigelow</h1>
+    <div class="contactInfo"></div>
+
     <h2>Education</h2>
-    <div id="education" class="cvchunk">
-      <details class="education">
-        <summary>
-          <h4>PhD Computing: Data Management and Analysis</h4>
-          <span class="dates">2019</span>
-        </summary>
+    <div class="education">
+      <div class="entry">
+        <span class="title">PhD Computing: Data Management and Analysis</span>
+        <span class="date">2019</span>
         <ul class="meta">
           <li>University of Utah, Salt Lake City, UT</li>
           <li>Advisor: Dr. Miriah Meyer</li>
         </ul>
-      </details>
-      <details class="education">
-        <summary>
-          <h4>B.S. Computer Science</h4>
-          <span class="dates">2012</span>
-        </summary>
+      </div>
+      <div class="entry">
+        <span class="title">B.S. Computer Science</span>
+        <span class="date">2012</span>
         <ul class="meta">
           <li>University of Utah, Salt Lake City, UT</li>
         </ul>
-      </details>
+      </div>
     </div>
     <h2>Publications</h2>
-    <!--<h3>Preprints</h3>
-    <div id="preprint" class="cvchunk"></div-->
-    <h3>Papers</h3>
-    <div id="paper" class="cvchunk"></div>
-    <h3>Posters</h3>
-    <div id="poster" class="cvchunk"></div>
-    <h3>Thesis</h3>
-    <div id="thesis" class="cvchunk"></div>
-    <h2>Experience</h2>
-    <div id="experience" class="cvchunk"></div>
+    <div class="pubchunk" data-type="theses">
+      <h3>Theses</h3>
+    </div>
+    <div class="pubchunk" data-type="preprints">
+      <h3>Preprints</h3>
+    </div>
+    <div class="pubchunk" data-type="papers">
+      <h3>Papers</h3>
+    </div>
+    <div class="pubchunk" data-type="posters">
+      <h3>Posters</h3>
+    </div>
+
+    <h2>Work Experience</h2>
+    <div class="experience"></div>
   </div>
+  <nav class="Menu"></nav>
+  <div class="Tooltip"></div>
 </body>
 </html>

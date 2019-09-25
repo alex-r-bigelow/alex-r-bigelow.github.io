@@ -16,9 +16,9 @@ nav.Menu {
     background-color: @shadowColor;
     img {
       position: absolute;
-      filter: @menuColorImageFilter;
       width: @buttonSize;
       height: @buttonSize;
+      .recolorImage(@menuColor);
     }
     .label {
       display: none;
@@ -27,7 +27,7 @@ nav.Menu {
     &:hover {
       background-color: @menuColor;
       img {
-        filter: @invertedTextColorImageFilter;
+        .recolorImage(@invertedTextColor);
       }
     }
   }
