@@ -13,6 +13,7 @@
           "title": "Student Committee Volunteer",
           "start": 2015,
           "stop": 2018,
+          "service": true,
           "meta": [
             "Scientific Computing and Imaging Institute",
             "Student Activity Committee",
@@ -102,6 +103,59 @@
       "filename": "kitware.md",
       "lastmod": "2019-09-24"
     },
+    "resbaz.md": {
+      "url": "/data/experience/resbaz.md",
+      "path": [
+        "experience"
+      ],
+      "name": "resbaz",
+      "extension": "md",
+      "contents": {
+        "content": "<p>(todo)</p>",
+        "data": {
+          "title": "Steering Committee Member",
+          "start": 2019,
+          "stop": "Present",
+          "service": true,
+          "meta": [
+            "Arizona Research Bazaar Steering Committee",
+            "University of Arizona, Tucson, AZ"
+          ]
+        },
+        "isEmpty": false,
+        "excerpt": ""
+      },
+      "filename": "resbaz.md",
+      "lastmod": "2020-01-14"
+    },
+    "reviewing.md": {
+      "url": "/data/experience/reviewing.md",
+      "path": [
+        "experience"
+      ],
+      "name": "reviewing",
+      "extension": "md",
+      "contents": {
+        "content": "<p>(todo)</p>",
+        "data": {
+          "title": "Reviewer",
+          "start": 2015,
+          "stop": "Present",
+          "service": true,
+          "meta": [
+            "IEEE Information Visualization (2016-2019)",
+            "Eurovis VGTC Conference on Visualization (2016, 2020)",
+            "IEEE Conference on Visual Analytics Science and Technology (VAST) (2017, 2019)",
+            "ACM CHI Conference on Human Factors in Computing Systems (2015, 2017-2020)",
+            "Workshop on Visualization in Practice (2017)"
+          ]
+        },
+        "isEmpty": false,
+        "excerpt": ""
+      },
+      "filename": "reviewing.md",
+      "lastmod": "2020-01-14"
+    },
     "sci.md": {
       "url": "/data/experience/sci.md",
       "path": [
@@ -188,7 +242,7 @@
       "contents": {
         "content": "",
         "data": {
-          "title": "Senior Systems Programmer",
+          "title": "Postdoctoral Researcher",
           "start": 2019,
           "stop": "Present",
           "meta": [
@@ -205,6 +259,419 @@
     }
   },
   "publications": {
+    "abstracts": {
+      "2012_comprehengsive": {
+        "award.txt": {
+          "url": "/data/publications/abstracts/2012_comprehengsive/award.txt",
+          "path": [
+            "publications",
+            "abstracts",
+            "2012_comprehengsive"
+          ],
+          "name": "award",
+          "extension": "txt",
+          "contents": "Poster selected for oral presentation\n",
+          "filename": "award.txt",
+          "lastmod": "2019-09-24"
+        },
+        "citation.bib": {
+          "url": "/data/publications/abstracts/2012_comprehengsive/citation.bib",
+          "path": [
+            "publications",
+            "abstracts",
+            "2012_comprehengsive"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "compreheNGSive: A Tool for Exploring Next-Gen Sequencing Variants",
+            "author": "Bigelow, Alex and Meyer, Miriah and Camp, Nicola J.",
+            "year": "2012",
+            "booktitle": "Proceedings of the IEEE Symposium on Biological Data Visualization (BioVis'12)",
+            "authorList": [
+              "Alex Bigelow",
+              "Miriah Meyer",
+              "Nicola J. Camp"
+            ],
+            "joinedAuthorList": "Alex Bigelow, Miriah Meyer, and Nicola J. Camp"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2019-09-24"
+        },
+        "meta.json": {
+          "url": "/data/publications/abstracts/2012_comprehengsive/meta.json",
+          "path": [
+            "publications",
+            "abstracts",
+            "2012_comprehengsive"
+          ],
+          "name": "meta",
+          "extension": "json",
+          "contents": {
+            "award": "Poster Selected for Oral Presentation"
+          },
+          "filename": "meta.json",
+          "lastmod": "2020-01-14"
+        },
+        "publication.pdf": {
+          "url": "/data/publications/abstracts/2012_comprehengsive/publication.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2012_comprehengsive"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2019-09-24"
+        }
+      },
+      "2013_compariseq": {
+        "citation.bib": {
+          "url": "/data/publications/abstracts/2013_compariseq/citation.bib",
+          "path": [
+            "publications",
+            "abstracts",
+            "2013_compariseq"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "compariSeq: Rethinking Sequence Logos",
+            "author": "McKenna, Sean and Quinan, Philip S. and Bigelow, Alex",
+            "year": "2013",
+            "booktitle": "Proceedings of the 5th Symposium on Biological Data Visualization (BioVis'13)",
+            "authorList": [
+              "Sean McKenna",
+              "Philip S. Quinan",
+              "Alex Bigelow"
+            ],
+            "joinedAuthorList": "Sean McKenna, Philip S. Quinan, and Alex Bigelow"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2019-09-24"
+        },
+        "compariSeq.png": {
+          "url": "/data/publications/abstracts/2013_compariseq/compariSeq.png",
+          "path": [
+            "publications",
+            "abstracts",
+            "2013_compariseq"
+          ],
+          "name": "compariSeq",
+          "extension": "png",
+          "filename": "compariSeq.png",
+          "lastmod": "2019-09-24"
+        },
+        "poster.pdf": {
+          "url": "/data/publications/abstracts/2013_compariseq/poster.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2013_compariseq"
+          ],
+          "name": "poster",
+          "extension": "pdf",
+          "filename": "poster.pdf",
+          "lastmod": "2019-09-24"
+        },
+        "publication.pdf": {
+          "url": "/data/publications/abstracts/2013_compariseq/publication.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2013_compariseq"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2019-09-24"
+        }
+      },
+      "2016_vip_resonant_lab": {
+        "abstract.txt": {
+          "url": "/data/publications/abstracts/2016_vip_resonant_lab/abstract.txt",
+          "path": [
+            "publications",
+            "abstracts",
+            "2016_vip_resonant_lab"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2019-09-24"
+        },
+        "award.txt": {
+          "url": "/data/publications/abstracts/2016_vip_resonant_lab/award.txt",
+          "path": [
+            "publications",
+            "abstracts",
+            "2016_vip_resonant_lab"
+          ],
+          "name": "award",
+          "extension": "txt",
+          "contents": "Best Paper Award\n",
+          "filename": "award.txt",
+          "lastmod": "2019-09-24"
+        },
+        "citation.bib": {
+          "url": "/data/publications/abstracts/2016_vip_resonant_lab/citation.bib",
+          "path": [
+            "publications",
+            "abstracts",
+            "2016_vip_resonant_lab"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Resonant Laboratory and Candela: Spreading Your Visualization Ideas to the Masses",
+            "author": "Bigelow, Alex and Choudhury, Roni and Baumes, Jeffrey",
+            "booktitle": "Proceedings of the Workshop on Visualization in Practice (VIP'16)",
+            "year": "2016",
+            "authorList": [
+              "Alex Bigelow",
+              "Roni Choudhury",
+              "Jeffrey Baumes"
+            ],
+            "joinedAuthorList": "Alex Bigelow, Roni Choudhury, and Jeffrey Baumes"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2019-10-30"
+        },
+        "meta.json": {
+          "url": "/data/publications/abstracts/2016_vip_resonant_lab/meta.json",
+          "path": [
+            "publications",
+            "abstracts",
+            "2016_vip_resonant_lab"
+          ],
+          "name": "meta",
+          "extension": "json",
+          "contents": {
+            "award": "Best Paper Award"
+          },
+          "filename": "meta.json",
+          "lastmod": "2020-01-14"
+        },
+        "publication.pdf": {
+          "url": "/data/publications/abstracts/2016_vip_resonant_lab/publication.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2016_vip_resonant_lab"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2019-09-24"
+        },
+        "slides.url": {
+          "url": "/data/publications/abstracts/2016_vip_resonant_lab/slides.url",
+          "path": [
+            "publications",
+            "abstracts",
+            "2016_vip_resonant_lab"
+          ],
+          "name": "slides",
+          "extension": "url",
+          "contents": "http://www.cs.utah.edu/~abigelow/Downloads/papers/VisInPractice2016.key\n",
+          "filename": "slides.url",
+          "lastmod": "2019-09-24"
+        }
+      },
+      "2017_fellow_tool_builders": {
+        "abstract.txt": {
+          "url": "/data/publications/abstracts/2017_fellow_tool_builders/abstract.txt",
+          "path": [
+            "publications",
+            "abstracts",
+            "2017_fellow_tool_builders"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "While it is true that fellow tool builders can threaten the success of a design study, there are also advantages to working with individuals that have strong software development skills. We present a review of two information visualization projects using thematic analysis, that provides additional insight and guidance for collaborating with people that have strong software development skills. Additionally, we discuss minor implications for the design of node-link diagrams and adjacency matrices, and report observed differences in engagement with respect to touch tables versus traditional keyboard, mouse, and monitor configurations.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2019-09-24"
+        },
+        "citation.bib": {
+          "url": "/data/publications/abstracts/2017_fellow_tool_builders/citation.bib",
+          "path": [
+            "publications",
+            "abstracts",
+            "2017_fellow_tool_builders"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Reflections on Working With Fellow Tool Builders",
+            "author": "Bigelow, Alex",
+            "year": "2017",
+            "booktitle": "Proceedings of the IEEE Information Visualization Conference-Posters (InfoVis'17)",
+            "authorList": [
+              "Alex Bigelow"
+            ],
+            "joinedAuthorList": "Alex Bigelow"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2019-09-24"
+        },
+        "fastForward.mp4": {
+          "url": "/data/publications/abstracts/2017_fellow_tool_builders/fastForward.mp4",
+          "path": [
+            "publications",
+            "abstracts",
+            "2017_fellow_tool_builders"
+          ],
+          "name": "fastForward",
+          "extension": "mp4",
+          "filename": "fastForward.mp4",
+          "lastmod": "2019-09-24"
+        },
+        "poster.pdf": {
+          "url": "/data/publications/abstracts/2017_fellow_tool_builders/poster.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2017_fellow_tool_builders"
+          ],
+          "name": "poster",
+          "extension": "pdf",
+          "filename": "poster.pdf",
+          "lastmod": "2019-09-24"
+        },
+        "publication.pdf": {
+          "url": "/data/publications/abstracts/2017_fellow_tool_builders/publication.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2017_fellow_tool_builders"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2019-09-24"
+        },
+        "supplement.md": {
+          "url": "/data/publications/abstracts/2017_fellow_tool_builders/supplement.md",
+          "path": [
+            "publications",
+            "abstracts",
+            "2017_fellow_tool_builders"
+          ],
+          "name": "supplement",
+          "extension": "md",
+          "contents": {
+            "content": "<p>This file summarizes the raw observations, open codes, and resulting themes.</p>\n<h1 id=\"collaborators\">Collaborators</h1>\n<p>| ID     | Role                | Gender | Research Area             |\n|--------|---------------------|--------|---------------------------|\n| <strong>I1</strong> | Mid Grad Student    | F      | Biomedical Computation    |\n| <strong>I2</strong> | Mid Grad Student    | F      | Biomedical Computation    |\n| <strong>I3</strong> | Staff Developer     | F      | Scientific Computing      |\n| <strong>I4</strong> | Research Faculty    | M      | Information Visualization |\n| <strong>I5</strong> | Senior Grad Student | M      | Biomedical Computation    |\n| <strong>I6</strong> | Senior Grad Student | M      | Biomedical Computation    |\n| <strong>I7</strong> | Senior Grad Student | M      | Biomedical Computation    |\n| <strong>I8</strong> | New Grad Student    | F      | Scientific Visualization  |</p>\n<h1 id=\"rawobservations\">Raw observations</h1>\n<p>The very raw data used for this poster takes the form of git commit messages, git histories, emails, Slack conversations, and group meeting notes.\nRather than include all of that data directly (that would include identifying information, etc), extracts of the raw events surrounding the development of each system are summarized below.</p>\n<h2 id=\"openhousemapextracts\">Open House Map Extracts</h2>\n<ul>\n<li><strong>M1</strong>: We used text CSV files on GitHub to hold all the information about what groups would be where, and, later, what individual posters or presentations would be in what area. These csv files had to be refactored a number of times</li>\n<li><strong>M2</strong>: Though the student committee worked hard for weeks to get details, I ended up having to come in at night to collect poster location information myself, once the posters were finally set up. <strong>I3</strong>'s assigned area was particularly problematic, because the location was changed last-minute</li>\n<li><strong>M3</strong>: Using an Illustrator SVG map made annotating (e.g. adding restrooms to the map) / changing area shapes easy; most changes in the git history were changes to the spaceAssignments.csv file</li>\n<li><strong>M4</strong>: <strong>I4</strong> provided useful feedback about the width of the selection bars above each poster name (they were initially squares and hard to click directly, even though the whole text block was technically clickable), but also provided (too much?) feedback about things like typography</li>\n<li><strong>M5</strong>: An institution-wide meeting (mostly about making sure people created / printed their posters on time) quickly devolved into a debate about the interface… particularly with respect to the map orientation (should North be up? But people exit the elevator, and initially encounter the interactive interface facing South…). However, an important development in this meeting occurred when the task abstraction of the interface changed---some participants indicated that they knew specific visitors that would want to be able to locate individual posters.</li>\n<li><strong>M6</strong>: Public display on a touch table likely contributed to high engagement - my personal demo was on an equally-sized monitor immediately off the elevator, but most visitors would walk right past me to the touch display in the room behind me (of course, I didn't actively try to stop people to see my demo, and it makes sense that people would want to first orient themselves in a new environment)</li>\n</ul>\n<h2 id=\"pingpongtournamentextracts\">Ping Pong Tournament Extracts</h2>\n<ul>\n<li><strong>P1</strong>: Instead of CSV files on GitHub, we used Google forms / sheets as a pseudo-database for the ping pong tournament. We still used GitHub for hosting the site, but this meant that committee members could check / edit the spreadsheets easily</li>\n<li><strong>P2</strong>: Setting up a debug / simulation mode was helpful during the live ping pong deployment - <strong>I6</strong> in particular responded quickly to requests to beta test changes to the site before they went live. Because of the google spreadsheets setup, it was easy to see and debug what tests he used to try (and, in some cases, succeed) to trigger bugs.</li>\n<li><strong>P3</strong>: <strong>I5</strong>, <strong>I6</strong>, and <strong>I7</strong> had very specific ideas of how the pool play / bracket should work. As such, I planned (and succeeded) to outsource the seeding of the bracket to them via a Google spreadsheet</li>\n<li><strong>P4</strong>: Shortly after the first debugging deployment, <strong>I8</strong> designed and printed promotional posters using the background image… but chose a very different font style and color scheme. Rather than reprint the posters, we felt it best to refactor the interactive system.</li>\n<li><strong>P5</strong>: This interface required typing in information---initially, we planned to deploy the interface on a touch table, as we had with the open house map. The touch table has a built-in keyboard that can be swiped in from the side---but we needed to add an icon to the interface to make this clear. However, due to a more important project needing the touch table, we had to instead deploy the interface on a monitor by the elevator (actually the same monitor where I gave my demo in the open house), with a keyboard and mouse attached</li>\n<li><strong>P6</strong>: We initially anticipated more participants---because the limited number that actually signed up was much lower (the vis deadline was partly to blame---we later heard that many more would have signed up, but they were too busy with submissions), we decided to include everyone in the bracket. This necessitated a last-minute rewrite of the code to include BYE / PASS nodes for the highest-seeded players</li>\n<li><strong>P7</strong>: It proved difficult to get people to actually play their games, particularly when the scheduled players didn't know each other well. Eventually, we had to add forfeits to the pool play phase (again, necessitating a last-minute redesign of the system). This happened again in the bracket---some students began leaving for the summer. Luckily, the few that had left were able to nominate the player they had most recently defeated to play for them, and the change was a simple adjustment to the spreadsheets (more drastic rewrites of the system were not necessary)</li>\n<li><strong>P8</strong>: Our initial plan was for all participants to pick a charity to represent (<strong>I1</strong> provided a CSV list of 503(c)(3) charities), and non-players could still participate by \"betting\" on players. However, this garnered little attention / participation. Toward the beginning of the bracket phase, <strong>I6</strong> suggested that we implement a March Madness-style approach, where people could submit their own brackets, and award a secondary prize to the charity picked by the most accurate bracket. Unfortunately, this was too difficult to implement in the short amount of time left in the tournament.</li>\n<li><strong>P9</strong>: Having the public display also appeared to result in high engagement, though not as much as I observed with the touch table. Passers-by seemed to be hesitant to use the keyboard / mouse… this may have had something to do with the permanent nature of the display (attached to the wall) - normally, the monitor showed a looping video of demonstrations, that people would not normally interfere with.</li>\n<li><strong>P10</strong>: Some passers-by reported confusion about the triangular edges, particularly in the node-link diagram (are triangles arrowheads pointing to the winner, or does the larger side indicate the winner)?</li>\n<li><strong>P11</strong>: Though most people that interacted with the interface were very technically savvy, the pool play adjacency matrices proved confusing to some people (not all, however… some people even commented on how intuitive they were). In their design, <strong>I3</strong> provided very useful feedback---initially, I displayed an arrow for an already-played game, pointing to the winner. However, <strong>I3</strong> made it clear that this was confusing; instead, redundantly displaying the name of the winner in the cell made more sense.</li>\n<li><strong>P12</strong>: <strong>I6</strong> contributed a very minor code fix</li>\n</ul>\n<h1 id=\"opencodes\">Open Codes</h1>\n<ul>\n<li><strong>O1</strong>: Last-minute system adjustments were common (<strong>M2</strong>, <strong>P4</strong>, <strong>P5</strong>, <strong>P6</strong>, <strong>P7</strong>, <strong>P8</strong>)</li>\n<li><strong>O2</strong>: Clever engineering tricks made most last-minute adjustments easier to handle (<strong>M3</strong>, <strong>P1</strong>, <strong>P2</strong>, <strong>P7</strong>)</li>\n<li><strong>O3</strong>: Actual code contributions from collaborators were rare (<strong>P12</strong>)</li>\n<li><strong>O4</strong>: Spreadsheets encouraged more collaborator help (<strong>M1</strong>, <strong>P1</strong>)</li>\n<li><strong>O5</strong>: Overall, mixed results getting data from collaborators (<strong>M2</strong>, <strong>P2</strong>, <strong>P3</strong>, <strong>P8</strong>)</li>\n<li><strong>O6</strong>: Confusion about triangular edges (<strong>P10</strong>)</li>\n<li><strong>O7</strong>: Confusion / intuition about rotated adjacency matrices (<strong>P11</strong>)</li>\n<li><strong>O8</strong>: Collaborators' feedback (mostly) insightful (<strong>M4</strong>, <strong>M5</strong>, <strong>P2</strong>, <strong>P11</strong>)</li>\n<li><strong>O9</strong>: Touch table more engaging than monitor + keyboard / mouse (<strong>M6</strong>, <strong>P9</strong>)</li>\n</ul>\n<h1 id=\"themes\">Themes</h1>\n<h2 id=\"collaboratorparticipation\">Collaborator Participation</h2>\n<ul>\n<li><strong>A1</strong>: Collaborator technical involvement in the project varied; personality seemed to dictate whether and how much people contributed, rather than interest in the overall project or interest in the technical aspects (<strong>O3</strong>, <strong>O4</strong>, <strong>O5</strong>). Technical involvement did <em>not</em> seem to have any relationship with relevant technical skills (<strong>O3</strong>; <strong>I6</strong> is not a web developer).</li>\n<li><strong>A2</strong>: Collaborators most readily participated when the tools were familiar; google sheets (even with strict rules about structure) were the most freely adjusted. Github CSV files came in second, beta testing the interface itself came in third, and the interface code was barely touched (<strong>O3</strong>, <strong>O4</strong>, <strong>O5</strong>).</li>\n</ul>\n<h2 id=\"collaboratorfeedback\">Collaborator Feedback</h2>\n<ul>\n<li><strong>A3</strong>: Most feedback was helpful; compared to non-developer users in typical design studies, people seemed more willing to provide critique (<strong>O8</strong>). The kinds of critique that collaborators suggested tended to be more bounded by their technical knowledge of what is easily changed, and what is difficult to implement (<strong>01</strong>, <strong>02</strong>, <strong>08</strong>)</li>\n<li><strong>A4</strong>: Some feedback was too specific or failed to capture the scope of the project; dealing with this gracefully is tricky. However, it was a pitfall to automatically assume that all feedback was too specific (<strong>O8</strong>)</li>\n</ul>\n<h2 id=\"implicationsforvisualizationtechniquesanddeployment\">Implications for Visualization Techniques and Deployment</h2>\n<ul>\n<li><strong>A5</strong>: Adjacency matrices were confusing to a subset of a <em>technical</em> audience (<strong>O7</strong>)! Artifact of rotated design?</li>\n<li><strong>A6</strong>: Triangles as arrows are ambiguous (<strong>O6</strong>)</li>\n<li><strong>A7</strong>: Touch table more engaging than fixed monitor (<strong>O9</strong>)</li>\n</ul>\n<h1 id=\"keytakeaways\">Key Takeaways</h1>\n<ul>\n<li>Just because a collaborator has the technical ability and the time to contribute, that doesn't mean that they will (<strong>A1</strong>, <strong>A2</strong>)</li>\n<li>The opposite is also true: just because a collaborator doesn't appear to have the technical ability or the time to contribute, that doesn't mean that they won't (<strong>A1</strong>, <strong>A2</strong>)</li>\n<li>Concern about working with fellow tool builders is warranted, but they should not necessarily be avoided---their expertise can be an incredible asset (<strong>A3</strong>, <strong>A4</strong>)</li>\n<li>Some minor details of node-link diagrams and adjacency matrices can have a profound effect on the ability of users to make sense of what is represented (<strong>A5</strong>, <strong>A6</strong>)---where these are employed, a legend is probably necessary</li>\n<li>Touch table vs traditional display: the former seems to naturally produce more engagement / willingness to mess with the system (<strong>A7</strong>)</li>\n</ul>",
+            "data": {},
+            "isEmpty": false,
+            "excerpt": ""
+          },
+          "filename": "supplement.md",
+          "lastmod": "2019-09-24"
+        },
+        "video.mp4": {
+          "url": "/data/publications/abstracts/2017_fellow_tool_builders/video.mp4",
+          "path": [
+            "publications",
+            "abstracts",
+            "2017_fellow_tool_builders"
+          ],
+          "name": "video",
+          "extension": "mp4",
+          "filename": "video.mp4",
+          "lastmod": "2019-09-24"
+        }
+      },
+      "2018_murejs": {
+        "abstract.txt": {
+          "url": "/data/publications/abstracts/2018_murejs/abstract.txt",
+          "path": [
+            "publications",
+            "abstracts",
+            "2018_murejs"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "When interpreting data as a graph for visualization, an analyst first assigns semantic meaning to graph concepts. For example, they may choose to represent actors and movies as nodes, and roles as edges. Alternatively, they may wish to represent movies as edges, connecting actor nodes when they collaborate. Data abstraction choices such as these are critical, because different data abstractions can limit—or inspire—different analysis questions, approaches, perspectives, and visualizations.\n\nHowever, current network modeling frameworks, systems, and databases narrowly define graph abstraction constructs—such as nodes, edges, node / edge classes, supernodes, hyperedges, etc.—in terms of how the data is stored in memory or on disk, rather than semantic, human-driven abstractions. Consequently, the ability of an analyst to iterate on a data abstraction becomes fundamentally limited by the implementation details of data wrangling software.\n\nWe present work-in-progress toward a broader framework for modeling network data that is less dependent on its underlying structure and storage. Our goal is to use semantic data abstraction constructs to inform how algorithms wrangle data, instead of allowing algorithmic concerns to define and constrain the semantics.\n\nWe also present mure.js, a software library that represents an initial implementation of this framework, allowing users to map semantic graph constructs to arbitrary data structures as metadata, that can, in turn, be used to select, navigate, and reshape the under- lying data. Additionally, we discuss an early software prototype of a visual graph wrangling system based on this library.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2019-09-24"
+        },
+        "citation.bib": {
+          "url": "/data/publications/abstracts/2018_murejs/citation.bib",
+          "path": [
+            "publications",
+            "abstracts",
+            "2018_murejs"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Mure. js: Toward Flexible Authoring and Reshaping of Networks",
+            "author": "Bigelow, Alex and Nobre, Carolina and Lex, Alexander and Meyer, Miriah",
+            "year": "2018",
+            "booktitle": "Proceedings of the IEEE Information Visualization Conference-Posters (InfoVis'18)",
+            "authorList": [
+              "Alex Bigelow",
+              "Carolina Nobre",
+              "Alexander Lex",
+              "Miriah Meyer"
+            ],
+            "joinedAuthorList": "Alex Bigelow, Carolina Nobre, Alexander Lex, and Miriah Meyer"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2019-09-24"
+        },
+        "fastForward.mp4": {
+          "url": "/data/publications/abstracts/2018_murejs/fastForward.mp4",
+          "path": [
+            "publications",
+            "abstracts",
+            "2018_murejs"
+          ],
+          "name": "fastForward",
+          "extension": "mp4",
+          "filename": "fastForward.mp4",
+          "lastmod": "2019-09-24"
+        },
+        "poster.pdf": {
+          "url": "/data/publications/abstracts/2018_murejs/poster.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2018_murejs"
+          ],
+          "name": "poster",
+          "extension": "pdf",
+          "filename": "poster.pdf",
+          "lastmod": "2019-09-24"
+        },
+        "poster.svg": {
+          "url": "/data/publications/abstracts/2018_murejs/poster.svg",
+          "path": [
+            "publications",
+            "abstracts",
+            "2018_murejs"
+          ],
+          "name": "poster",
+          "extension": "svg",
+          "filename": "poster.svg",
+          "lastmod": "2019-09-24"
+        },
+        "publication.pdf": {
+          "url": "/data/publications/abstracts/2018_murejs/publication.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2018_murejs"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2019-09-24"
+        }
+      }
+    },
     "papers": {
       "2014_avi_reflections": {
         "abstract.txt": {
@@ -243,7 +710,7 @@
           "name": "citation",
           "extension": "bib",
           "contents": {
-            "title": "Reflections on how designers design with data",
+            "title": "Reflections on How Designers Design with Data",
             "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and Meyer, Miriah",
             "booktitle": "Proceedings of the 2014 International Working Conference on Advanced Visual Interfaces",
             "pages": "17--24",
@@ -259,6 +726,21 @@
           },
           "filename": "citation.bib",
           "lastmod": "2019-09-24"
+        },
+        "meta.json": {
+          "url": "/data/publications/papers/2014_avi_reflections/meta.json",
+          "path": [
+            "publications",
+            "papers",
+            "2014_avi_reflections"
+          ],
+          "name": "meta",
+          "extension": "json",
+          "contents": {
+            "award": "Best Paper Award"
+          },
+          "filename": "meta.json",
+          "lastmod": "2020-01-14"
         },
         "publication.pdf": {
           "url": "/data/publications/papers/2014_avi_reflections/publication.pdf",
@@ -322,9 +804,9 @@
           "name": "citation",
           "extension": "bib",
           "contents": {
-            "title": "Iterating between tools to create and edit visualizations",
+            "title": "Iterating Between Tools to Create and Edit Visualizations",
             "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and Meyer, Miriah",
-            "journal": "IEEE transactions on visualization and computer graphics",
+            "journal": "IEEE Transactions on Visualization and Computer Graphics",
             "volume": "23",
             "number": "1",
             "pages": "481--490",
@@ -388,83 +870,6 @@
           "name": "supplement",
           "extension": "zip",
           "filename": "supplement.zip",
-          "lastmod": "2019-09-24"
-        }
-      },
-      "2016_vip_resonant_lab": {
-        "abstract.txt": {
-          "url": "/data/publications/papers/2016_vip_resonant_lab/abstract.txt",
-          "path": [
-            "publications",
-            "papers",
-            "2016_vip_resonant_lab"
-          ],
-          "name": "abstract",
-          "extension": "txt",
-          "contents": "Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.\n",
-          "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
-        },
-        "award.txt": {
-          "url": "/data/publications/papers/2016_vip_resonant_lab/award.txt",
-          "path": [
-            "publications",
-            "papers",
-            "2016_vip_resonant_lab"
-          ],
-          "name": "award",
-          "extension": "txt",
-          "contents": "Best Paper Award\n",
-          "filename": "award.txt",
-          "lastmod": "2019-09-24"
-        },
-        "citation.bib": {
-          "url": "/data/publications/papers/2016_vip_resonant_lab/citation.bib",
-          "path": [
-            "publications",
-            "papers",
-            "2016_vip_resonant_lab"
-          ],
-          "name": "citation",
-          "extension": "bib",
-          "contents": {
-            "title": "Resonant Laboratory and Candela: spreading your visualization ideas to the masses",
-            "author": "Bigelow, Alex and Choudhury, Roni and Baumes, Jeffrey",
-            "booktitle": "Proceedings of the Workshop on Visualization in Practice (VIP'16)",
-            "year": "2016",
-            "authorList": [
-              "Alex Bigelow",
-              "Roni Choudhury",
-              "Jeffrey Baumes"
-            ],
-            "joinedAuthorList": "Alex Bigelow, Roni Choudhury, and Jeffrey Baumes"
-          },
-          "filename": "citation.bib",
-          "lastmod": "2019-09-24"
-        },
-        "publication.pdf": {
-          "url": "/data/publications/papers/2016_vip_resonant_lab/publication.pdf",
-          "path": [
-            "publications",
-            "papers",
-            "2016_vip_resonant_lab"
-          ],
-          "name": "publication",
-          "extension": "pdf",
-          "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
-        },
-        "slides.url": {
-          "url": "/data/publications/papers/2016_vip_resonant_lab/slides.url",
-          "path": [
-            "publications",
-            "papers",
-            "2016_vip_resonant_lab"
-          ],
-          "name": "slides",
-          "extension": "url",
-          "contents": "http://www.cs.utah.edu/~abigelow/Downloads/papers/VisInPractice2016.key\n",
-          "filename": "slides.url",
           "lastmod": "2019-09-24"
         }
       },
@@ -698,124 +1103,11 @@
             "howpublished": "US Patent 9,569,558"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2019-09-25"
         }
       }
     },
     "posters": {
-      "2012_comprehengsive": {
-        "award.txt": {
-          "url": "/data/publications/posters/2012_comprehengsive/award.txt",
-          "path": [
-            "publications",
-            "posters",
-            "2012_comprehengsive"
-          ],
-          "name": "award",
-          "extension": "txt",
-          "contents": "Poster selected for oral presentation\n",
-          "filename": "award.txt",
-          "lastmod": "2019-09-24"
-        },
-        "citation.bib": {
-          "url": "/data/publications/posters/2012_comprehengsive/citation.bib",
-          "path": [
-            "publications",
-            "posters",
-            "2012_comprehengsive"
-          ],
-          "name": "citation",
-          "extension": "bib",
-          "contents": {
-            "title": "compreheNGSive: A Tool for Exploring Next-Gen Sequencing Variants",
-            "author": "Bigelow, Alex and Meyer, Miriah and Camp, Nicola J.",
-            "year": "2012",
-            "booktitle": "Proceedings of the IEEE Symposium on Biological Data Visualization (BioVis'12)",
-            "authorList": [
-              "Alex Bigelow",
-              "Miriah Meyer",
-              "Nicola J. Camp"
-            ],
-            "joinedAuthorList": "Alex Bigelow, Miriah Meyer, and Nicola J. Camp"
-          },
-          "filename": "citation.bib",
-          "lastmod": "2019-09-24"
-        },
-        "publication.pdf": {
-          "url": "/data/publications/posters/2012_comprehengsive/publication.pdf",
-          "path": [
-            "publications",
-            "posters",
-            "2012_comprehengsive"
-          ],
-          "name": "publication",
-          "extension": "pdf",
-          "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
-        }
-      },
-      "2013_compariseq": {
-        "citation.bib": {
-          "url": "/data/publications/posters/2013_compariseq/citation.bib",
-          "path": [
-            "publications",
-            "posters",
-            "2013_compariseq"
-          ],
-          "name": "citation",
-          "extension": "bib",
-          "contents": {
-            "title": "compariSeq: Rethinking Sequence Logos",
-            "author": "McKenna, Sean and Quinan, Philip S. and Bigelow, Alex",
-            "year": "2013",
-            "booktitle": "Proceedings of the 5th Symposium on Biological Data Visualization (BioVis'13)",
-            "authorList": [
-              "Sean McKenna",
-              "Philip S. Quinan",
-              "Alex Bigelow"
-            ],
-            "joinedAuthorList": "Sean McKenna, Philip S. Quinan, and Alex Bigelow"
-          },
-          "filename": "citation.bib",
-          "lastmod": "2019-09-24"
-        },
-        "compariSeq.png": {
-          "url": "/data/publications/posters/2013_compariseq/compariSeq.png",
-          "path": [
-            "publications",
-            "posters",
-            "2013_compariseq"
-          ],
-          "name": "compariSeq",
-          "extension": "png",
-          "filename": "compariSeq.png",
-          "lastmod": "2019-09-24"
-        },
-        "poster.pdf": {
-          "url": "/data/publications/posters/2013_compariseq/poster.pdf",
-          "path": [
-            "publications",
-            "posters",
-            "2013_compariseq"
-          ],
-          "name": "poster",
-          "extension": "pdf",
-          "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
-        },
-        "publication.pdf": {
-          "url": "/data/publications/posters/2013_compariseq/publication.pdf",
-          "path": [
-            "publications",
-            "posters",
-            "2013_compariseq"
-          ],
-          "name": "publication",
-          "extension": "pdf",
-          "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
-        }
-      },
       "2013_explosion": {
         "award.txt": {
           "url": "/data/publications/posters/2013_explosion/award.txt",
@@ -853,6 +1145,21 @@
           },
           "filename": "citation.bib",
           "lastmod": "2019-09-24"
+        },
+        "meta.json": {
+          "url": "/data/publications/posters/2013_explosion/meta.json",
+          "path": [
+            "publications",
+            "posters",
+            "2013_explosion"
+          ],
+          "name": "meta",
+          "extension": "json",
+          "contents": {
+            "award": "Best Poster Award"
+          },
+          "filename": "meta.json",
+          "lastmod": "2020-01-14"
         },
         "poster.pdf": {
           "url": "/data/publications/posters/2013_explosion/poster.pdf",
@@ -905,6 +1212,21 @@
           },
           "filename": "citation.bib",
           "lastmod": "2019-09-24"
+        },
+        "meta.json": {
+          "url": "/data/publications/posters/2014_reflections/meta.json",
+          "path": [
+            "publications",
+            "posters",
+            "2014_reflections"
+          ],
+          "name": "meta",
+          "extension": "json",
+          "contents": {
+            "award": "Best Poster Award"
+          },
+          "filename": "meta.json",
+          "lastmod": "2020-01-14"
         },
         "poster.pdf": {
           "url": "/data/publications/posters/2014_reflections/poster.pdf",
@@ -1044,197 +1366,6 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
-        }
-      },
-      "2017_fellow_tool_builders": {
-        "abstract.txt": {
-          "url": "/data/publications/posters/2017_fellow_tool_builders/abstract.txt",
-          "path": [
-            "publications",
-            "posters",
-            "2017_fellow_tool_builders"
-          ],
-          "name": "abstract",
-          "extension": "txt",
-          "contents": "While it is true that fellow tool builders can threaten the success of a design study, there are also advantages to working with individuals that have strong software development skills. We present a review of two information visualization projects using thematic analysis, that provides additional insight and guidance for collaborating with people that have strong software development skills. Additionally, we discuss minor implications for the design of node-link diagrams and adjacency matrices, and report observed differences in engagement with respect to touch tables versus traditional keyboard, mouse, and monitor configurations.\n",
-          "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
-        },
-        "citation.bib": {
-          "url": "/data/publications/posters/2017_fellow_tool_builders/citation.bib",
-          "path": [
-            "publications",
-            "posters",
-            "2017_fellow_tool_builders"
-          ],
-          "name": "citation",
-          "extension": "bib",
-          "contents": {
-            "title": "Reflections on Working With Fellow Tool Builders",
-            "author": "Bigelow, Alex",
-            "year": "2017",
-            "booktitle": "Proceedings of the IEEE Information Visualization Conference-Posters (InfoVis'17)",
-            "authorList": [
-              "Alex Bigelow"
-            ],
-            "joinedAuthorList": "Alex Bigelow"
-          },
-          "filename": "citation.bib",
-          "lastmod": "2019-09-24"
-        },
-        "fastForward.mp4": {
-          "url": "/data/publications/posters/2017_fellow_tool_builders/fastForward.mp4",
-          "path": [
-            "publications",
-            "posters",
-            "2017_fellow_tool_builders"
-          ],
-          "name": "fastForward",
-          "extension": "mp4",
-          "filename": "fastForward.mp4",
-          "lastmod": "2019-09-24"
-        },
-        "poster.pdf": {
-          "url": "/data/publications/posters/2017_fellow_tool_builders/poster.pdf",
-          "path": [
-            "publications",
-            "posters",
-            "2017_fellow_tool_builders"
-          ],
-          "name": "poster",
-          "extension": "pdf",
-          "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
-        },
-        "publication.pdf": {
-          "url": "/data/publications/posters/2017_fellow_tool_builders/publication.pdf",
-          "path": [
-            "publications",
-            "posters",
-            "2017_fellow_tool_builders"
-          ],
-          "name": "publication",
-          "extension": "pdf",
-          "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
-        },
-        "supplement.md": {
-          "url": "/data/publications/posters/2017_fellow_tool_builders/supplement.md",
-          "path": [
-            "publications",
-            "posters",
-            "2017_fellow_tool_builders"
-          ],
-          "name": "supplement",
-          "extension": "md",
-          "contents": {
-            "content": "<p>This file summarizes the raw observations, open codes, and resulting themes.</p>\n<h1 id=\"collaborators\">Collaborators</h1>\n<p>| ID     | Role                | Gender | Research Area             |\n|--------|---------------------|--------|---------------------------|\n| <strong>I1</strong> | Mid Grad Student    | F      | Biomedical Computation    |\n| <strong>I2</strong> | Mid Grad Student    | F      | Biomedical Computation    |\n| <strong>I3</strong> | Staff Developer     | F      | Scientific Computing      |\n| <strong>I4</strong> | Research Faculty    | M      | Information Visualization |\n| <strong>I5</strong> | Senior Grad Student | M      | Biomedical Computation    |\n| <strong>I6</strong> | Senior Grad Student | M      | Biomedical Computation    |\n| <strong>I7</strong> | Senior Grad Student | M      | Biomedical Computation    |\n| <strong>I8</strong> | New Grad Student    | F      | Scientific Visualization  |</p>\n<h1 id=\"rawobservations\">Raw observations</h1>\n<p>The very raw data used for this poster takes the form of git commit messages, git histories, emails, Slack conversations, and group meeting notes.\nRather than include all of that data directly (that would include identifying information, etc), extracts of the raw events surrounding the development of each system are summarized below.</p>\n<h2 id=\"openhousemapextracts\">Open House Map Extracts</h2>\n<ul>\n<li><strong>M1</strong>: We used text CSV files on GitHub to hold all the information about what groups would be where, and, later, what individual posters or presentations would be in what area. These csv files had to be refactored a number of times</li>\n<li><strong>M2</strong>: Though the student committee worked hard for weeks to get details, I ended up having to come in at night to collect poster location information myself, once the posters were finally set up. <strong>I3</strong>'s assigned area was particularly problematic, because the location was changed last-minute</li>\n<li><strong>M3</strong>: Using an Illustrator SVG map made annotating (e.g. adding restrooms to the map) / changing area shapes easy; most changes in the git history were changes to the spaceAssignments.csv file</li>\n<li><strong>M4</strong>: <strong>I4</strong> provided useful feedback about the width of the selection bars above each poster name (they were initially squares and hard to click directly, even though the whole text block was technically clickable), but also provided (too much?) feedback about things like typography</li>\n<li><strong>M5</strong>: An institution-wide meeting (mostly about making sure people created / printed their posters on time) quickly devolved into a debate about the interface… particularly with respect to the map orientation (should North be up? But people exit the elevator, and initially encounter the interactive interface facing South…). However, an important development in this meeting occurred when the task abstraction of the interface changed---some participants indicated that they knew specific visitors that would want to be able to locate individual posters.</li>\n<li><strong>M6</strong>: Public display on a touch table likely contributed to high engagement - my personal demo was on an equally-sized monitor immediately off the elevator, but most visitors would walk right past me to the touch display in the room behind me (of course, I didn't actively try to stop people to see my demo, and it makes sense that people would want to first orient themselves in a new environment)</li>\n</ul>\n<h2 id=\"pingpongtournamentextracts\">Ping Pong Tournament Extracts</h2>\n<ul>\n<li><strong>P1</strong>: Instead of CSV files on GitHub, we used Google forms / sheets as a pseudo-database for the ping pong tournament. We still used GitHub for hosting the site, but this meant that committee members could check / edit the spreadsheets easily</li>\n<li><strong>P2</strong>: Setting up a debug / simulation mode was helpful during the live ping pong deployment - <strong>I6</strong> in particular responded quickly to requests to beta test changes to the site before they went live. Because of the google spreadsheets setup, it was easy to see and debug what tests he used to try (and, in some cases, succeed) to trigger bugs.</li>\n<li><strong>P3</strong>: <strong>I5</strong>, <strong>I6</strong>, and <strong>I7</strong> had very specific ideas of how the pool play / bracket should work. As such, I planned (and succeeded) to outsource the seeding of the bracket to them via a Google spreadsheet</li>\n<li><strong>P4</strong>: Shortly after the first debugging deployment, <strong>I8</strong> designed and printed promotional posters using the background image… but chose a very different font style and color scheme. Rather than reprint the posters, we felt it best to refactor the interactive system.</li>\n<li><strong>P5</strong>: This interface required typing in information---initially, we planned to deploy the interface on a touch table, as we had with the open house map. The touch table has a built-in keyboard that can be swiped in from the side---but we needed to add an icon to the interface to make this clear. However, due to a more important project needing the touch table, we had to instead deploy the interface on a monitor by the elevator (actually the same monitor where I gave my demo in the open house), with a keyboard and mouse attached</li>\n<li><strong>P6</strong>: We initially anticipated more participants---because the limited number that actually signed up was much lower (the vis deadline was partly to blame---we later heard that many more would have signed up, but they were too busy with submissions), we decided to include everyone in the bracket. This necessitated a last-minute rewrite of the code to include BYE / PASS nodes for the highest-seeded players</li>\n<li><strong>P7</strong>: It proved difficult to get people to actually play their games, particularly when the scheduled players didn't know each other well. Eventually, we had to add forfeits to the pool play phase (again, necessitating a last-minute redesign of the system). This happened again in the bracket---some students began leaving for the summer. Luckily, the few that had left were able to nominate the player they had most recently defeated to play for them, and the change was a simple adjustment to the spreadsheets (more drastic rewrites of the system were not necessary)</li>\n<li><strong>P8</strong>: Our initial plan was for all participants to pick a charity to represent (<strong>I1</strong> provided a CSV list of 503(c)(3) charities), and non-players could still participate by \"betting\" on players. However, this garnered little attention / participation. Toward the beginning of the bracket phase, <strong>I6</strong> suggested that we implement a March Madness-style approach, where people could submit their own brackets, and award a secondary prize to the charity picked by the most accurate bracket. Unfortunately, this was too difficult to implement in the short amount of time left in the tournament.</li>\n<li><strong>P9</strong>: Having the public display also appeared to result in high engagement, though not as much as I observed with the touch table. Passers-by seemed to be hesitant to use the keyboard / mouse… this may have had something to do with the permanent nature of the display (attached to the wall) - normally, the monitor showed a looping video of demonstrations, that people would not normally interfere with.</li>\n<li><strong>P10</strong>: Some passers-by reported confusion about the triangular edges, particularly in the node-link diagram (are triangles arrowheads pointing to the winner, or does the larger side indicate the winner)?</li>\n<li><strong>P11</strong>: Though most people that interacted with the interface were very technically savvy, the pool play adjacency matrices proved confusing to some people (not all, however… some people even commented on how intuitive they were). In their design, <strong>I3</strong> provided very useful feedback---initially, I displayed an arrow for an already-played game, pointing to the winner. However, <strong>I3</strong> made it clear that this was confusing; instead, redundantly displaying the name of the winner in the cell made more sense.</li>\n<li><strong>P12</strong>: <strong>I6</strong> contributed a very minor code fix</li>\n</ul>\n<h1 id=\"opencodes\">Open Codes</h1>\n<ul>\n<li><strong>O1</strong>: Last-minute system adjustments were common (<strong>M2</strong>, <strong>P4</strong>, <strong>P5</strong>, <strong>P6</strong>, <strong>P7</strong>, <strong>P8</strong>)</li>\n<li><strong>O2</strong>: Clever engineering tricks made most last-minute adjustments easier to handle (<strong>M3</strong>, <strong>P1</strong>, <strong>P2</strong>, <strong>P7</strong>)</li>\n<li><strong>O3</strong>: Actual code contributions from collaborators were rare (<strong>P12</strong>)</li>\n<li><strong>O4</strong>: Spreadsheets encouraged more collaborator help (<strong>M1</strong>, <strong>P1</strong>)</li>\n<li><strong>O5</strong>: Overall, mixed results getting data from collaborators (<strong>M2</strong>, <strong>P2</strong>, <strong>P3</strong>, <strong>P8</strong>)</li>\n<li><strong>O6</strong>: Confusion about triangular edges (<strong>P10</strong>)</li>\n<li><strong>O7</strong>: Confusion / intuition about rotated adjacency matrices (<strong>P11</strong>)</li>\n<li><strong>O8</strong>: Collaborators' feedback (mostly) insightful (<strong>M4</strong>, <strong>M5</strong>, <strong>P2</strong>, <strong>P11</strong>)</li>\n<li><strong>O9</strong>: Touch table more engaging than monitor + keyboard / mouse (<strong>M6</strong>, <strong>P9</strong>)</li>\n</ul>\n<h1 id=\"themes\">Themes</h1>\n<h2 id=\"collaboratorparticipation\">Collaborator Participation</h2>\n<ul>\n<li><strong>A1</strong>: Collaborator technical involvement in the project varied; personality seemed to dictate whether and how much people contributed, rather than interest in the overall project or interest in the technical aspects (<strong>O3</strong>, <strong>O4</strong>, <strong>O5</strong>). Technical involvement did <em>not</em> seem to have any relationship with relevant technical skills (<strong>O3</strong>; <strong>I6</strong> is not a web developer).</li>\n<li><strong>A2</strong>: Collaborators most readily participated when the tools were familiar; google sheets (even with strict rules about structure) were the most freely adjusted. Github CSV files came in second, beta testing the interface itself came in third, and the interface code was barely touched (<strong>O3</strong>, <strong>O4</strong>, <strong>O5</strong>).</li>\n</ul>\n<h2 id=\"collaboratorfeedback\">Collaborator Feedback</h2>\n<ul>\n<li><strong>A3</strong>: Most feedback was helpful; compared to non-developer users in typical design studies, people seemed more willing to provide critique (<strong>O8</strong>). The kinds of critique that collaborators suggested tended to be more bounded by their technical knowledge of what is easily changed, and what is difficult to implement (<strong>01</strong>, <strong>02</strong>, <strong>08</strong>)</li>\n<li><strong>A4</strong>: Some feedback was too specific or failed to capture the scope of the project; dealing with this gracefully is tricky. However, it was a pitfall to automatically assume that all feedback was too specific (<strong>O8</strong>)</li>\n</ul>\n<h2 id=\"implicationsforvisualizationtechniquesanddeployment\">Implications for Visualization Techniques and Deployment</h2>\n<ul>\n<li><strong>A5</strong>: Adjacency matrices were confusing to a subset of a <em>technical</em> audience (<strong>O7</strong>)! Artifact of rotated design?</li>\n<li><strong>A6</strong>: Triangles as arrows are ambiguous (<strong>O6</strong>)</li>\n<li><strong>A7</strong>: Touch table more engaging than fixed monitor (<strong>O9</strong>)</li>\n</ul>\n<h1 id=\"keytakeaways\">Key Takeaways</h1>\n<ul>\n<li>Just because a collaborator has the technical ability and the time to contribute, that doesn't mean that they will (<strong>A1</strong>, <strong>A2</strong>)</li>\n<li>The opposite is also true: just because a collaborator doesn't appear to have the technical ability or the time to contribute, that doesn't mean that they won't (<strong>A1</strong>, <strong>A2</strong>)</li>\n<li>Concern about working with fellow tool builders is warranted, but they should not necessarily be avoided---their expertise can be an incredible asset (<strong>A3</strong>, <strong>A4</strong>)</li>\n<li>Some minor details of node-link diagrams and adjacency matrices can have a profound effect on the ability of users to make sense of what is represented (<strong>A5</strong>, <strong>A6</strong>)---where these are employed, a legend is probably necessary</li>\n<li>Touch table vs traditional display: the former seems to naturally produce more engagement / willingness to mess with the system (<strong>A7</strong>)</li>\n</ul>",
-            "data": {},
-            "isEmpty": false,
-            "excerpt": ""
-          },
-          "filename": "supplement.md",
-          "lastmod": "2019-09-24"
-        },
-        "video.mp4": {
-          "url": "/data/publications/posters/2017_fellow_tool_builders/video.mp4",
-          "path": [
-            "publications",
-            "posters",
-            "2017_fellow_tool_builders"
-          ],
-          "name": "video",
-          "extension": "mp4",
-          "filename": "video.mp4",
-          "lastmod": "2019-09-24"
-        }
-      },
-      "2018_murejs": {
-        "abstract.txt": {
-          "url": "/data/publications/posters/2018_murejs/abstract.txt",
-          "path": [
-            "publications",
-            "posters",
-            "2018_murejs"
-          ],
-          "name": "abstract",
-          "extension": "txt",
-          "contents": "When interpreting data as a graph for visualization, an analyst first assigns semantic meaning to graph concepts. For example, they may choose to represent actors and movies as nodes, and roles as edges. Alternatively, they may wish to represent movies as edges, connecting actor nodes when they collaborate. Data abstraction choices such as these are critical, because different data abstractions can limit—or inspire—different analysis questions, approaches, perspectives, and visualizations.\n\nHowever, current network modeling frameworks, systems, and databases narrowly define graph abstraction constructs—such as nodes, edges, node / edge classes, supernodes, hyperedges, etc.—in terms of how the data is stored in memory or on disk, rather than semantic, human-driven abstractions. Consequently, the ability of an analyst to iterate on a data abstraction becomes fundamentally limited by the implementation details of data wrangling software.\n\nWe present work-in-progress toward a broader framework for modeling network data that is less dependent on its underlying structure and storage. Our goal is to use semantic data abstraction constructs to inform how algorithms wrangle data, instead of allowing algorithmic concerns to define and constrain the semantics.\n\nWe also present mure.js, a software library that represents an initial implementation of this framework, allowing users to map semantic graph constructs to arbitrary data structures as metadata, that can, in turn, be used to select, navigate, and reshape the under- lying data. Additionally, we discuss an early software prototype of a visual graph wrangling system based on this library.\n",
-          "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
-        },
-        "citation.bib": {
-          "url": "/data/publications/posters/2018_murejs/citation.bib",
-          "path": [
-            "publications",
-            "posters",
-            "2018_murejs"
-          ],
-          "name": "citation",
-          "extension": "bib",
-          "contents": {
-            "title": "Mure. js: Toward Flexible Authoring and Reshaping of Networks",
-            "author": "Bigelow, Alex and Nobre, Carolina and Lex, Alexander and Meyer, Miriah",
-            "year": "2018",
-            "booktitle": "Proceedings of the IEEE Information Visualization Conference-Posters (InfoVis'18)",
-            "authorList": [
-              "Alex Bigelow",
-              "Carolina Nobre",
-              "Alexander Lex",
-              "Miriah Meyer"
-            ],
-            "joinedAuthorList": "Alex Bigelow, Carolina Nobre, Alexander Lex, and Miriah Meyer"
-          },
-          "filename": "citation.bib",
-          "lastmod": "2019-09-24"
-        },
-        "fastForward.mp4": {
-          "url": "/data/publications/posters/2018_murejs/fastForward.mp4",
-          "path": [
-            "publications",
-            "posters",
-            "2018_murejs"
-          ],
-          "name": "fastForward",
-          "extension": "mp4",
-          "filename": "fastForward.mp4",
-          "lastmod": "2019-09-24"
-        },
-        "poster.pdf": {
-          "url": "/data/publications/posters/2018_murejs/poster.pdf",
-          "path": [
-            "publications",
-            "posters",
-            "2018_murejs"
-          ],
-          "name": "poster",
-          "extension": "pdf",
-          "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
-        },
-        "poster.svg": {
-          "url": "/data/publications/posters/2018_murejs/poster.svg",
-          "path": [
-            "publications",
-            "posters",
-            "2018_murejs"
-          ],
-          "name": "poster",
-          "extension": "svg",
-          "filename": "poster.svg",
-          "lastmod": "2019-09-24"
-        },
-        "publication.pdf": {
-          "url": "/data/publications/posters/2018_murejs/publication.pdf",
-          "path": [
-            "publications",
-            "posters",
-            "2018_murejs"
-          ],
-          "name": "publication",
-          "extension": "pdf",
-          "filename": "publication.pdf",
           "lastmod": "2019-09-24"
         }
       }

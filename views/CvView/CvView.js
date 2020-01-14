@@ -25,7 +25,8 @@ class CvView extends View {
     for (const [pubType, pubs] of Object.entries(window.controller.resources[0].publications)) {
       this.drawPublications(this.d3el.select(`.${pubType}`), pubs);
     }
-    this.drawExperience(this.d3el.select('.experience'), window.controller.resources[0].experience);
+    this.drawExperience(this.d3el.select('.experience'), window.controller.resources[0].experience, false);
+    this.drawExperience(this.d3el.select('.service'), window.controller.resources[0].experience, true);
   }
   drawPublications (container, pubData) {
     const pubList = Object.values(pubData).sort((a, b) => {
@@ -50,6 +51,7 @@ class CvView extends View {
       .text(d => d['citation.bib'].contents.year);
 
     const metaFields = [
+      ['award'],
       ['booktitle', 'journal', 'howpublished'],
       ['joinedAuthorList']
     ];
@@ -57,8 +59,17 @@ class CvView extends View {
     const metaEnter = pubsEnter.select('.meta').selectAll('li')
       .data(d => metaFields.map(fieldnames => {
         for (const fieldname of fieldnames) {
-          let fieldvalue = d['citation.bib'].contents[fieldname];
+          const bib = d['citation.bib'].contents;
+          let fieldvalue = bib[fieldname] ||
+            (d['meta.json'] && d['meta.json'].contents[fieldname]);
           if (fieldvalue) {
+            // Add extra info for some fields:
+            if (fieldname === 'journal' && bib.volume && bib.pages) {
+              fieldvalue += ` ${bib.volume}:${bib.pages}`;
+            }
+            if (fieldname === 'booktitle' && bib.pages) {
+              fieldvalue += ` pp. ${bib.pages}`;
+            }
             return { fieldname, fieldvalue };
           }
         }
@@ -67,13 +78,23 @@ class CvView extends View {
     metaEnter.attr('class', d => d.fieldname)
       .text(d => d.fieldvalue);
   }
-  drawExperience (container, experience) {
-    const entriesList = Object.values(experience).sort((a, b) => {
-      const aTemp = parseInt(a.contents.data.stop) || parseInt(a.contents.data.year) || Infinity;
-      const bTemp = parseInt(b.contents.data.stop) || parseInt(b.contents.data.year) || Infinity;
+  drawExperience (container, experience, service) {
+    const entriesList = Object.values(experience)
+      .filter(d => d.contents.data.service ? service : !service)
+      .sort((a, b) => {
+        const aTemp =
+          parseInt(a.contents.data.stop) ||
+          parseInt(a.contents.data.year) ||
+          (a.contents.data.years && Math.max(...a.contents.data.years)) ||
+          Infinity;
+        const bTemp =
+          parseInt(b.contents.data.stop) ||
+          parseInt(b.contents.data.year) ||
+          (b.contents.data.years && Math.max(...b.contents.data.years)) ||
+          Infinity;
 
-      return bTemp - aTemp;
-    });
+        return bTemp - aTemp;
+      });
     let entriesEnter = container.selectAll('.entry')
       .data(entriesList).enter().append('div').classed('entry', true);
     entriesEnter.append('span')
@@ -84,6 +105,8 @@ class CvView extends View {
       .html(d => {
         if (d.contents.data.season) {
           return d.contents.data.season + ' ' + d.contents.data.year;
+        } else if (d.contents.data.years) {
+          return d.contents.data.years.join(', ');
         } else {
           return d.contents.data.start + '&ndash;' + d.contents.data.stop;
         }
