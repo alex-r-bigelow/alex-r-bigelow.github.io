@@ -25,7 +25,7 @@
         "excerpt": ""
       },
       "filename": "brusci.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-01-14"
     },
     "genepi.md": {
       "url": "/data/experience/genepi.md",
@@ -255,7 +255,7 @@
         "excerpt": ""
       },
       "filename": "ua.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-01-14"
     }
   },
   "publications": {
@@ -272,7 +272,7 @@
           "extension": "txt",
           "contents": "Poster selected for oral presentation\n",
           "filename": "award.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "citation.bib": {
           "url": "/data/publications/abstracts/2012_comprehengsive/citation.bib",
@@ -296,7 +296,7 @@
             "joinedAuthorList": "Alex Bigelow, Miriah Meyer, and Nicola J. Camp"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "meta.json": {
           "url": "/data/publications/abstracts/2012_comprehengsive/meta.json",
@@ -323,7 +323,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         }
       },
       "2013_compariseq": {
@@ -349,7 +349,7 @@
             "joinedAuthorList": "Sean McKenna, Philip S. Quinan, and Alex Bigelow"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "compariSeq.png": {
           "url": "/data/publications/abstracts/2013_compariseq/compariSeq.png",
@@ -361,7 +361,7 @@
           "name": "compariSeq",
           "extension": "png",
           "filename": "compariSeq.png",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "poster.pdf": {
           "url": "/data/publications/abstracts/2013_compariseq/poster.pdf",
@@ -373,7 +373,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "publication.pdf": {
           "url": "/data/publications/abstracts/2013_compariseq/publication.pdf",
@@ -385,7 +385,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         }
       },
       "2016_vip_resonant_lab": {
@@ -400,7 +400,7 @@
           "extension": "txt",
           "contents": "Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "award.txt": {
           "url": "/data/publications/abstracts/2016_vip_resonant_lab/award.txt",
@@ -413,7 +413,7 @@
           "extension": "txt",
           "contents": "Best Paper Award\n",
           "filename": "award.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "citation.bib": {
           "url": "/data/publications/abstracts/2016_vip_resonant_lab/citation.bib",
@@ -437,7 +437,7 @@
             "joinedAuthorList": "Alex Bigelow, Roni Choudhury, and Jeffrey Baumes"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-10-30"
+          "lastmod": "2020-01-14"
         },
         "meta.json": {
           "url": "/data/publications/abstracts/2016_vip_resonant_lab/meta.json",
@@ -464,7 +464,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "slides.url": {
           "url": "/data/publications/abstracts/2016_vip_resonant_lab/slides.url",
@@ -477,7 +477,7 @@
           "extension": "url",
           "contents": "http://www.cs.utah.edu/~abigelow/Downloads/papers/VisInPractice2016.key\n",
           "filename": "slides.url",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         }
       },
       "2017_fellow_tool_builders": {
@@ -492,7 +492,7 @@
           "extension": "txt",
           "contents": "While it is true that fellow tool builders can threaten the success of a design study, there are also advantages to working with individuals that have strong software development skills. We present a review of two information visualization projects using thematic analysis, that provides additional insight and guidance for collaborating with people that have strong software development skills. Additionally, we discuss minor implications for the design of node-link diagrams and adjacency matrices, and report observed differences in engagement with respect to touch tables versus traditional keyboard, mouse, and monitor configurations.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "citation.bib": {
           "url": "/data/publications/abstracts/2017_fellow_tool_builders/citation.bib",
@@ -514,7 +514,7 @@
             "joinedAuthorList": "Alex Bigelow"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "fastForward.mp4": {
           "url": "/data/publications/abstracts/2017_fellow_tool_builders/fastForward.mp4",
@@ -526,7 +526,7 @@
           "name": "fastForward",
           "extension": "mp4",
           "filename": "fastForward.mp4",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "poster.pdf": {
           "url": "/data/publications/abstracts/2017_fellow_tool_builders/poster.pdf",
@@ -538,7 +538,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "publication.pdf": {
           "url": "/data/publications/abstracts/2017_fellow_tool_builders/publication.pdf",
@@ -550,7 +550,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "supplement.md": {
           "url": "/data/publications/abstracts/2017_fellow_tool_builders/supplement.md",
@@ -568,7 +568,7 @@
             "excerpt": ""
           },
           "filename": "supplement.md",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "video.mp4": {
           "url": "/data/publications/abstracts/2017_fellow_tool_builders/video.mp4",
@@ -580,7 +580,7 @@
           "name": "video",
           "extension": "mp4",
           "filename": "video.mp4",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         }
       },
       "2018_murejs": {
@@ -595,7 +595,7 @@
           "extension": "txt",
           "contents": "When interpreting data as a graph for visualization, an analyst first assigns semantic meaning to graph concepts. For example, they may choose to represent actors and movies as nodes, and roles as edges. Alternatively, they may wish to represent movies as edges, connecting actor nodes when they collaborate. Data abstraction choices such as these are critical, because different data abstractions can limit—or inspire—different analysis questions, approaches, perspectives, and visualizations.\n\nHowever, current network modeling frameworks, systems, and databases narrowly define graph abstraction constructs—such as nodes, edges, node / edge classes, supernodes, hyperedges, etc.—in terms of how the data is stored in memory or on disk, rather than semantic, human-driven abstractions. Consequently, the ability of an analyst to iterate on a data abstraction becomes fundamentally limited by the implementation details of data wrangling software.\n\nWe present work-in-progress toward a broader framework for modeling network data that is less dependent on its underlying structure and storage. Our goal is to use semantic data abstraction constructs to inform how algorithms wrangle data, instead of allowing algorithmic concerns to define and constrain the semantics.\n\nWe also present mure.js, a software library that represents an initial implementation of this framework, allowing users to map semantic graph constructs to arbitrary data structures as metadata, that can, in turn, be used to select, navigate, and reshape the under- lying data. Additionally, we discuss an early software prototype of a visual graph wrangling system based on this library.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "citation.bib": {
           "url": "/data/publications/abstracts/2018_murejs/citation.bib",
@@ -620,7 +620,7 @@
             "joinedAuthorList": "Alex Bigelow, Carolina Nobre, Alexander Lex, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "fastForward.mp4": {
           "url": "/data/publications/abstracts/2018_murejs/fastForward.mp4",
@@ -632,7 +632,7 @@
           "name": "fastForward",
           "extension": "mp4",
           "filename": "fastForward.mp4",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "poster.pdf": {
           "url": "/data/publications/abstracts/2018_murejs/poster.pdf",
@@ -644,7 +644,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "poster.svg": {
           "url": "/data/publications/abstracts/2018_murejs/poster.svg",
@@ -656,7 +656,7 @@
           "name": "poster",
           "extension": "svg",
           "filename": "poster.svg",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "publication.pdf": {
           "url": "/data/publications/abstracts/2018_murejs/publication.pdf",
@@ -668,7 +668,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         }
       }
     },
@@ -725,7 +725,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "meta.json": {
           "url": "/data/publications/papers/2014_avi_reflections/meta.json",
@@ -780,6 +780,57 @@
           "lastmod": "2019-09-24"
         }
       },
+      "2016_haplotype": {
+        "abstract.txt": {
+          "url": "/data/publications/papers/2016_haplotype/abstract.txt",
+          "path": [
+            "publications",
+            "papers",
+            "2016_haplotype"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "The findings from genome-wide association studies hold enormous potential for novel insight into disease mechanisms. A major challenge in the field is to map these low-risk association signals to their underlying functional sequence variants(FSV). Simple sequence study designs are insufficient, as the vast numbers of statistically comparable variants and a limited knowledge of noncoding regulatory elements complicate prioritization. Furthermore, large sample sizes are typically required for adequate power to identify the initial association signals. One important question is whether similar sample sizes need to be sequenced to identify the FSVs. Here, we present a proof-of-principle example of an extreme discordant design to map FSVs within the 2q33 low-risk breast cancer locus. Our approach employed DNA sequencing of a small number of discordant haplotypes to efficiently identify candidate FSVs. Our results were consistent with those from a 2,000-fold larger, traditional imputation-based fine-mapping study. To prioritize further, we used expression-quantitative trait locus analysis of RNA sequencing from breast tissues, gene regulation annotations from the ENCODE consortium, and functional assays for differential enhancer activities. Notably, we implicate three regulatory variants at 2q33 that target CASP8 (rs3769823,rs3769821 in CASP8, and rs10197246 in ALS2CR12) as functionally relevant. We conclude that nested discordant haplotype sequencing is a promising approach to aid mapping of low-risk association loci. The ability to include more efficient sequencing designs into mapping efforts presents an opportunity for the field to capitalize on the potential of association loci and accelerate translation of association signals to their underlying FSVs.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2020-06-17"
+        },
+        "citation.bib": {
+          "url": "/data/publications/papers/2016_haplotype/citation.bib",
+          "path": [
+            "publications",
+            "papers",
+            "2016_haplotype"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Discordant haplotype sequencing identifies functional variants at the 2q33 breast cancer risk locus",
+            "author": "Camp, Nicola J and Lin, Wei-Yu and Bigelow, Alex and Burghel, George J and Mosbruger, Timothy L and Parry, Marina A and Waller, Rosalie G and Rigas, Sushilaben H and Tai, Pei-Yi and Berrett, Kristofer and others",
+            "journal": "Cancer research",
+            "volume": "76",
+            "number": "7",
+            "pages": "1916--1925",
+            "year": "2016",
+            "publisher": "AACR",
+            "authorList": [
+              "Nicola J Camp",
+              "Wei-Yu Lin",
+              "Alex Bigelow",
+              "George J Burghel",
+              "Timothy L Mosbruger",
+              "Marina A Parry",
+              "Rosalie G Waller",
+              "Sushilaben H Rigas",
+              "Pei-Yi Tai",
+              "Kristofer Berrett",
+              " others"
+            ],
+            "joinedAuthorList": "Nicola J Camp, Wei-Yu Lin, Alex Bigelow, George J Burghel, Timothy L Mosbruger, Marina A Parry, Rosalie G Waller, Sushilaben H Rigas, Pei-Yi Tai, Kristofer Berrett, and  others"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2020-06-17"
+        }
+      },
       "2016_infovis_hanpuku": {
         "abstract.txt": {
           "url": "/data/publications/papers/2016_infovis_hanpuku/abstract.txt",
@@ -821,7 +872,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-01-14"
         },
         "fastForward.mp4": {
           "url": "/data/publications/papers/2016_infovis_hanpuku/fastForward.mp4",
@@ -1004,7 +1055,9 @@
             "title": "Origraph: Interactive Network Wrangling",
             "author": "Bigelow, Alex and Nobre, Carolina and Meyer, Miriah and Lex, Alexander",
             "booktitle": "2019 IEEE Conference on Visual Analytics Science and Technology (VAST)",
+            "pages": "81--92",
             "year": "2019",
+            "organization": "IEEE",
             "authorList": [
               "Alex Bigelow",
               "Carolina Nobre",
@@ -1367,6 +1420,59 @@
           "extension": "pdf",
           "filename": "poster.pdf",
           "lastmod": "2019-09-24"
+        }
+      }
+    },
+    "preprints": {
+      "2020_guidelines": {
+        "abstract.txt": {
+          "url": "/data/publications/preprints/2020_guidelines/abstract.txt",
+          "path": [
+            "publications",
+            "preprints",
+            "2020_guidelines"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "Many data abstraction types, such as networks or set relationships, remain unfamiliar to data workers beyond the\nvisualization research community. We conduct a survey and series of interviews about how people describe their data, either directly or\nindirectly. We refer to the latter as latent data abstractions. We conduct a grounded theory analysis and develop a substantive theory\nthat (1) interprets the extent to which latent data abstractions exist, (2) reveals the far-reaching effects that the interventionist pursuit of\nsuch abstractions can have on data workers, (3) predicts why and when data workers may resist such explorations, and (4) suggests\nhow to take advantage of opportunities and mitigate risks through transparency about visualization research perspectives and agendas.\nTo continue the discussion, we make our dataset open along with a visual interface for further exploration.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2020-06-17"
+        },
+        "citation.bib": {
+          "url": "/data/publications/preprints/2020_guidelines/citation.bib",
+          "path": [
+            "publications",
+            "preprints",
+            "2020_guidelines"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Guidelines For Pursuing and Revealing Data Abstractions",
+            "author": "Bigelow, Alex and Williams, Katy and Isaacs, Katherine E",
+            "journal": "arXiv preprint arXiv:2005.04058",
+            "year": "2020",
+            "authorList": [
+              "Alex Bigelow",
+              "Katy Williams",
+              "Katherine E Isaacs"
+            ],
+            "joinedAuthorList": "Alex Bigelow, Katy Williams, and Katherine E Isaacs"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2020-06-17"
+        },
+        "publication.pdf": {
+          "url": "/data/publications/preprints/2020_guidelines/publication.pdf",
+          "path": [
+            "publications",
+            "preprints",
+            "2020_guidelines"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2020-05-08"
         }
       }
     },
