@@ -107,6 +107,8 @@ class CvView extends View {
           return d.contents.data.season + ' ' + d.contents.data.year;
         } else if (d.contents.data.years) {
           return d.contents.data.years.join(', ');
+        } else if (d.contents.data.start === d.contents.data.stop) {
+          return d.contents.data.start;
         } else {
           return d.contents.data.start + '&ndash;' + d.contents.data.stop;
         }
