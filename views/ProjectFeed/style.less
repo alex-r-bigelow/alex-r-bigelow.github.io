@@ -1,35 +1,20 @@
-@import '../../style/colors.less';
-@import '../../style/measurements.less';
 .Feed {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: @menuSize;
-  padding: 2em;
-  overflow: auto;
-  p {
-    max-width: @minParagraphWidth;
-  }
+  position: relative;
+  grid-gap: 3em;
+  max-width: 1200px;
+
   img {
-    width: @minParagraphWidth;
+    min-width: 100%;
     height: auto;
     padding: 1px;
-    background-color: @shadowColor;
+    background-color: var(--shadow-color);
   }
   iframe {
     padding: 1px;
-    background-color: @shadowColor;
+    background-color: var(--shadow-color);
   }
-}
-@media (min-aspect-ratio: ~"1/1") {
-  .Feed {
-    right: @wideMenuSize;
-    p {
-      max-width: @maxParagraphWidth;
-    }
-    img {
-      width: @maxParagraphWidth;
-    }
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }

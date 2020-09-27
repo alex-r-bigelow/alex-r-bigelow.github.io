@@ -25,7 +25,7 @@
         "excerpt": ""
       },
       "filename": "brusci.md",
-      "lastmod": "2020-01-14"
+      "lastmod": "2020-09-27"
     },
     "dsf.md": {
       "url": "/cv/experience/dsf.md",
@@ -50,7 +50,7 @@
         "excerpt": ""
       },
       "filename": "dsf.md",
-      "lastmod": "2020-06-17"
+      "lastmod": "2020-09-27"
     },
     "genepi.md": {
       "url": "/cv/experience/genepi.md",
@@ -76,7 +76,7 @@
         "excerpt": ""
       },
       "filename": "genepi.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-09-27"
     },
     "ibm.md": {
       "url": "/cv/experience/ibm.md",
@@ -101,7 +101,7 @@
         "excerpt": ""
       },
       "filename": "ibm.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-09-27"
     },
     "kitware.md": {
       "url": "/cv/experience/kitware.md",
@@ -126,7 +126,7 @@
         "excerpt": ""
       },
       "filename": "kitware.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-09-27"
     },
     "resbaz.md": {
       "url": "/cv/experience/resbaz.md",
@@ -151,7 +151,7 @@
         "excerpt": ""
       },
       "filename": "resbaz.md",
-      "lastmod": "2020-01-14"
+      "lastmod": "2020-09-27"
     },
     "reviewing.md": {
       "url": "/cv/experience/reviewing.md",
@@ -179,7 +179,7 @@
         "excerpt": ""
       },
       "filename": "reviewing.md",
-      "lastmod": "2020-06-17"
+      "lastmod": "2020-09-27"
     },
     "sci.md": {
       "url": "/cv/experience/sci.md",
@@ -205,7 +205,7 @@
         "excerpt": ""
       },
       "filename": "sci.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-09-27"
     },
     "ta_1.md": {
       "url": "/cv/experience/ta_1.md",
@@ -230,7 +230,7 @@
         "excerpt": ""
       },
       "filename": "ta_1.md",
-      "lastmod": "2020-01-28"
+      "lastmod": "2020-09-27"
     },
     "ta_2.md": {
       "url": "/cv/experience/ta_2.md",
@@ -255,7 +255,7 @@
         "excerpt": ""
       },
       "filename": "ta_2.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-09-27"
     },
     "ua.md": {
       "url": "/cv/experience/ua.md",
@@ -280,7 +280,7 @@
         "excerpt": ""
       },
       "filename": "ua.md",
-      "lastmod": "2020-01-14"
+      "lastmod": "2020-09-27"
     }
   },
   "publications": {
@@ -297,7 +297,7 @@
           "extension": "txt",
           "contents": "Poster selected for oral presentation\n",
           "filename": "award.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/abstracts/2012_comprehengsive/citation.bib",
@@ -321,7 +321,7 @@
             "joinedAuthorList": "Alex Bigelow, Miriah Meyer, and Nicola J. Camp"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "meta.json": {
           "url": "/cv/publications/abstracts/2012_comprehengsive/meta.json",
@@ -336,7 +336,7 @@
             "award": "Poster Selected for Oral Presentation"
           },
           "filename": "meta.json",
-          "lastmod": "2020-01-14"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/abstracts/2012_comprehengsive/publication.pdf",
@@ -348,7 +348,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2013_compariseq": {
@@ -374,7 +374,7 @@
             "joinedAuthorList": "Sean McKenna, Philip S. Quinan, and Alex Bigelow"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "compariSeq.png": {
           "url": "/cv/publications/abstracts/2013_compariseq/compariSeq.png",
@@ -386,7 +386,7 @@
           "name": "compariSeq",
           "extension": "png",
           "filename": "compariSeq.png",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/abstracts/2013_compariseq/poster.pdf",
@@ -398,7 +398,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/abstracts/2013_compariseq/publication.pdf",
@@ -410,7 +410,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2016_vip_resonant_lab": {
@@ -425,7 +425,7 @@
           "extension": "txt",
           "contents": "Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "award.txt": {
           "url": "/cv/publications/abstracts/2016_vip_resonant_lab/award.txt",
@@ -438,7 +438,7 @@
           "extension": "txt",
           "contents": "Best Paper Award\n",
           "filename": "award.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/abstracts/2016_vip_resonant_lab/citation.bib",
@@ -462,7 +462,7 @@
             "joinedAuthorList": "Alex Bigelow, Roni Choudhury, and Jeffrey Baumes"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-10-30"
+          "lastmod": "2020-09-27"
         },
         "meta.json": {
           "url": "/cv/publications/abstracts/2016_vip_resonant_lab/meta.json",
@@ -477,7 +477,7 @@
             "award": "Best Paper Award"
           },
           "filename": "meta.json",
-          "lastmod": "2020-01-14"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/abstracts/2016_vip_resonant_lab/publication.pdf",
@@ -489,7 +489,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "slides.url": {
           "url": "/cv/publications/abstracts/2016_vip_resonant_lab/slides.url",
@@ -502,7 +502,7 @@
           "extension": "url",
           "contents": "http://www.cs.utah.edu/~abigelow/Downloads/papers/VisInPractice2016.key\n",
           "filename": "slides.url",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2017_fellow_tool_builders": {
@@ -517,7 +517,7 @@
           "extension": "txt",
           "contents": "While it is true that fellow tool builders can threaten the success of a design study, there are also advantages to working with individuals that have strong software development skills. We present a review of two information visualization projects using thematic analysis, that provides additional insight and guidance for collaborating with people that have strong software development skills. Additionally, we discuss minor implications for the design of node-link diagrams and adjacency matrices, and report observed differences in engagement with respect to touch tables versus traditional keyboard, mouse, and monitor configurations.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/abstracts/2017_fellow_tool_builders/citation.bib",
@@ -539,7 +539,7 @@
             "joinedAuthorList": "Alex Bigelow"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "fastForward.mp4": {
           "url": "/cv/publications/abstracts/2017_fellow_tool_builders/fastForward.mp4",
@@ -551,7 +551,7 @@
           "name": "fastForward",
           "extension": "mp4",
           "filename": "fastForward.mp4",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/abstracts/2017_fellow_tool_builders/poster.pdf",
@@ -563,7 +563,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/abstracts/2017_fellow_tool_builders/publication.pdf",
@@ -575,7 +575,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "supplement.md": {
           "url": "/cv/publications/abstracts/2017_fellow_tool_builders/supplement.md",
@@ -593,7 +593,7 @@
             "excerpt": ""
           },
           "filename": "supplement.md",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "video.mp4": {
           "url": "/cv/publications/abstracts/2017_fellow_tool_builders/video.mp4",
@@ -605,7 +605,7 @@
           "name": "video",
           "extension": "mp4",
           "filename": "video.mp4",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2018_murejs": {
@@ -620,7 +620,7 @@
           "extension": "txt",
           "contents": "When interpreting data as a graph for visualization, an analyst first assigns semantic meaning to graph concepts. For example, they may choose to represent actors and movies as nodes, and roles as edges. Alternatively, they may wish to represent movies as edges, connecting actor nodes when they collaborate. Data abstraction choices such as these are critical, because different data abstractions can limit—or inspire—different analysis questions, approaches, perspectives, and visualizations.\n\nHowever, current network modeling frameworks, systems, and databases narrowly define graph abstraction constructs—such as nodes, edges, node / edge classes, supernodes, hyperedges, etc.—in terms of how the data is stored in memory or on disk, rather than semantic, human-driven abstractions. Consequently, the ability of an analyst to iterate on a data abstraction becomes fundamentally limited by the implementation details of data wrangling software.\n\nWe present work-in-progress toward a broader framework for modeling network data that is less dependent on its underlying structure and storage. Our goal is to use semantic data abstraction constructs to inform how algorithms wrangle data, instead of allowing algorithmic concerns to define and constrain the semantics.\n\nWe also present mure.js, a software library that represents an initial implementation of this framework, allowing users to map semantic graph constructs to arbitrary data structures as metadata, that can, in turn, be used to select, navigate, and reshape the under- lying data. Additionally, we discuss an early software prototype of a visual graph wrangling system based on this library.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/abstracts/2018_murejs/citation.bib",
@@ -645,7 +645,7 @@
             "joinedAuthorList": "Alex Bigelow, Carolina Nobre, Alexander Lex, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "fastForward.mp4": {
           "url": "/cv/publications/abstracts/2018_murejs/fastForward.mp4",
@@ -657,7 +657,7 @@
           "name": "fastForward",
           "extension": "mp4",
           "filename": "fastForward.mp4",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/abstracts/2018_murejs/poster.pdf",
@@ -669,7 +669,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "poster.svg": {
           "url": "/cv/publications/abstracts/2018_murejs/poster.svg",
@@ -681,7 +681,7 @@
           "name": "poster",
           "extension": "svg",
           "filename": "poster.svg",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/abstracts/2018_murejs/publication.pdf",
@@ -693,7 +693,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       }
     },
@@ -710,7 +710,7 @@
           "extension": "txt",
           "contents": "In recent years many popular data visualizations have emerged that are created largely by designers whose main area of expertise is not computer science. Designers generate these visualizations using a handful of design tools and environments. To better inform the development of tools intended for designers working with data, we set out to understand designers’ challenges and perspectives. We interviewed professional designers, conducted observations of designers working with data in the lab, and observed designers working with data in team settings in the wild. A set of patterns emerged from these observations from which we extract a number of themes that provide a new perspective on design considerations for visualization tool creators, as well as on known engineering problems.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "award.txt": {
           "url": "/cv/publications/papers/2014_avi_reflections/award.txt",
@@ -723,7 +723,7 @@
           "extension": "txt",
           "contents": "Best Paper Award\n",
           "filename": "award.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/papers/2014_avi_reflections/citation.bib",
@@ -750,7 +750,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-10-30"
+          "lastmod": "2020-09-27"
         },
         "meta.json": {
           "url": "/cv/publications/papers/2014_avi_reflections/meta.json",
@@ -765,7 +765,7 @@
             "award": "Best Paper Award"
           },
           "filename": "meta.json",
-          "lastmod": "2020-01-14"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2014_avi_reflections/publication.pdf",
@@ -777,7 +777,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "slides.url": {
           "url": "/cv/publications/papers/2014_avi_reflections/slides.url",
@@ -790,7 +790,7 @@
           "extension": "url",
           "contents": "http://sci.utah.edu/~vdl/papers/2014_avi_reflections_slides.pdf\n",
           "filename": "slides.url",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "supplement.zip": {
           "url": "/cv/publications/papers/2014_avi_reflections/supplement.zip",
@@ -802,7 +802,7 @@
           "name": "supplement",
           "extension": "zip",
           "filename": "supplement.zip",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2016_haplotype": {
@@ -817,7 +817,7 @@
           "extension": "txt",
           "contents": "The findings from genome-wide association studies hold enormous potential for novel insight into disease mechanisms. A major challenge in the field is to map these low-risk association signals to their underlying functional sequence variants(FSV). Simple sequence study designs are insufficient, as the vast numbers of statistically comparable variants and a limited knowledge of noncoding regulatory elements complicate prioritization. Furthermore, large sample sizes are typically required for adequate power to identify the initial association signals. One important question is whether similar sample sizes need to be sequenced to identify the FSVs. Here, we present a proof-of-principle example of an extreme discordant design to map FSVs within the 2q33 low-risk breast cancer locus. Our approach employed DNA sequencing of a small number of discordant haplotypes to efficiently identify candidate FSVs. Our results were consistent with those from a 2,000-fold larger, traditional imputation-based fine-mapping study. To prioritize further, we used expression-quantitative trait locus analysis of RNA sequencing from breast tissues, gene regulation annotations from the ENCODE consortium, and functional assays for differential enhancer activities. Notably, we implicate three regulatory variants at 2q33 that target CASP8 (rs3769823,rs3769821 in CASP8, and rs10197246 in ALS2CR12) as functionally relevant. We conclude that nested discordant haplotype sequencing is a promising approach to aid mapping of low-risk association loci. The ability to include more efficient sequencing designs into mapping efforts presents an opportunity for the field to capitalize on the potential of association loci and accelerate translation of association signals to their underlying FSVs.\n",
           "filename": "abstract.txt",
-          "lastmod": "2020-06-17"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/papers/2016_haplotype/citation.bib",
@@ -853,7 +853,7 @@
             "joinedAuthorList": "Nicola J Camp, Wei-Yu Lin, Alex Bigelow, George J Burghel, Timothy L Mosbruger, Marina A Parry, Rosalie G Waller, Sushilaben H Rigas, Pei-Yi Tai, Kristofer Berrett, and  others"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-06-17"
+          "lastmod": "2020-09-27"
         }
       },
       "2016_infovis_hanpuku": {
@@ -868,7 +868,7 @@
           "extension": "txt",
           "contents": "A common workflow for visualization designers begins with a generative tool, like D3 or Processing, to create the initial visualization; and proceeds to a drawing tool, like Adobe Illustrator or Inkscape, for editing and cleaning. Unfortunately, this is typically a one-way process: once a visualization is exported from the generative tool into a drawing tool, it is difficult to make further, data-driven changes. In this paper, we propose a bridge model to allow designers to bring their work back from the drawing tool to re-edit in the generative tool. Our key insight is to recast this iteration challenge as a merge problem - similar to when two people are editing a document and changes between them need to reconciled. We also present a specific instantiation of this model, a tool called Hanpuku, which bridges between D3 scripts and Illustrator. We show several examples of visualizations that are iteratively created using Hanpuku in order to illustrate the flexibility of the approach. We further describe several hypothetical tools that bridge between other visualization tools to emphasize the generality of the model.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/citation.bib",
@@ -897,7 +897,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-10-30"
+          "lastmod": "2020-09-27"
         },
         "fastForward.mp4": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/fastForward.mp4",
@@ -909,7 +909,7 @@
           "name": "fastForward",
           "extension": "mp4",
           "filename": "fastForward.mp4",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/publication.pdf",
@@ -921,7 +921,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "slides.url": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/slides.url",
@@ -934,7 +934,7 @@
           "extension": "url",
           "contents": "http://www.cs.utah.edu/~abigelow/Downloads/papers/VisInPractice2016.key\n",
           "filename": "slides.url",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "supplement.zip": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/supplement.zip",
@@ -946,7 +946,7 @@
           "name": "supplement",
           "extension": "zip",
           "filename": "supplement.zip",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2019_infovis_atria": {
@@ -961,7 +961,7 @@
           "extension": "txt",
           "contents": "Common pitfalls in visualization projects include lack of data availability and the domain users’ needs and focus changing too rapidly for the design process to complete. While it is often prudent to avoid such projects, we argue it can be beneficial to engage them in some cases as the visualization process can help refine data collection, solving a “chicken and egg” problem of having the data and tools to analyze it. We found this to be the case in the domain of task parallel computing where such data and tooling is an open area of research. Despite these hurdles, we conducted a design study. Through a tightly-coupled iterative design process, we built Atria, a multi-view execution graph visualization to support performance analysis. Atria simplifies the initial representation of the execution graph by aggregating nodes as related to their line of code. We deployed Atria on multiple platforms, some requiring design alteration. We describe how we adapted the design study methodology to the “moving target” of both the data and the domain experts’ concerns and how this movement kept both the visualization and programming project healthy. We reflect on our process and discuss what factors allow the project to be successful in the presence of changing data and user needs.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/papers/2019_infovis_atria/citation.bib",
@@ -986,7 +986,7 @@
             "joinedAuthorList": "Katy Williams, Alex Bigelow, and Kate Isaacs"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2019_infovis_atria/publication.pdf",
@@ -998,7 +998,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2019_pacificvis_jacobs_ladder": {
@@ -1013,7 +1013,7 @@
           "extension": "txt",
           "contents": "This paper reports on a simple visual technique that boils extracting a subgraph down to two operations—pivots and filters—that is agnostic to both the data abstraction, and its visual complexity scales independent of the size of the graph. The system’s design, as well as its qualitative evaluation with users, clarifies exactly when and how the user’s intent in a series of pivots is ambiguous—and, more usefully, when it is not. Reflections on our results show how, in the event of an ambiguous case, this innately practical operation could be further extended into “smart pivots” that anticipate the user’s intent beyond the current step. They also reveal ways that a series of graph pivots can expose the semantics of the data from the user’s perspective, and how this information could be leveraged to create adaptive data abstractions that do not rely as heavily on a system designer to create a comprehensive abstraction that anticipates all the user’s tasks.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/citation.bib",
@@ -1038,7 +1038,7 @@
             "joinedAuthorList": "Alex Bigelow and Megan Monroe"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/publication.pdf",
@@ -1050,7 +1050,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2019_vast_origraph": {
@@ -1065,7 +1065,7 @@
           "extension": "txt",
           "contents": "Networks are a natural way of thinking about many datasets. The data on which a network is based, however, is rarely collected in a form that suits the analysis process, making it necessary to create and reshape networks. Data wrangling is widely acknowledged to be a critical part of the data analysis pipeline, yet interactive network wrangling has received little attention in the visualization research community. In this paper, we discuss a set of operations that are important for wrangling network datasets and introduce a visual data wrangling tool, Origraph, that enables analysts to apply these operations to their datasets. Key operations include creating a network from source data such as tables, reshaping a network by introducing new node or edge classes, filtering nodes or edges, and deriving new node or edge attributes. Our tool, Origraph, enables analysts to execute these operations with little to no programming, and to immediately visualize the results. Origraph provides views to investigate the network model, a sample of the network, and node and edge attributes. In addition, we introduce interfaces designed to aid analysts in specifying arguments for sensible network wrangling operations. We demonstrate the usefulness of Origraph in two Use Cases: first, we investigate gender bias in the film industry, and then the influence of money on the political support for the war in Yemen.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/papers/2019_vast_origraph/citation.bib",
@@ -1092,7 +1092,7 @@
             "joinedAuthorList": "Alex Bigelow, Carolina Nobre, Miriah Meyer, and Alexander Lex"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-06-17"
+          "lastmod": "2020-09-27"
         },
         "description.html": {
           "url": "/cv/publications/papers/2019_vast_origraph/description.html",
@@ -1104,7 +1104,7 @@
           "name": "description",
           "extension": "html",
           "filename": "description.html",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2019_vast_origraph/publication.pdf",
@@ -1116,7 +1116,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "supplement.pdf": {
           "url": "/cv/publications/papers/2019_vast_origraph/supplement.pdf",
@@ -1128,7 +1128,7 @@
           "name": "supplement",
           "extension": "pdf",
           "filename": "supplement.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       }
     },
@@ -1144,7 +1144,7 @@
           "name": "US9569558",
           "extension": "pdf",
           "filename": "US9569558.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "abstract.txt": {
           "url": "/cv/publications/patents/2017_backfilling/abstract.txt",
@@ -1157,7 +1157,7 @@
           "extension": "txt",
           "contents": "Disclosed herein is system for updating a graph-based data structure comprising a processor that hosts an algorithm to incrementally update underlying data and abstractions for a graph-based data structure based on popular user selections; a user interface that is in two-way operative communication with the processor; where the user interface is operative to present graph-based data structures to a user for updating; and a memory database that is in communication with the processor and is adapted to receive, store, and recall data to/from the processor.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/patents/2017_backfilling/citation.bib",
@@ -1181,7 +1181,7 @@
             "howpublished": "US Patent 9,569,558"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-06-17"
+          "lastmod": "2020-09-27"
         }
       }
     },
@@ -1198,7 +1198,7 @@
           "extension": "txt",
           "contents": "Best Poster Award\n",
           "filename": "award.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/posters/2013_explosion/citation.bib",
@@ -1222,7 +1222,7 @@
             "joinedAuthorList": "Alex Bigelow, Miriah Meyer, and Nicola J. Camp"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "meta.json": {
           "url": "/cv/publications/posters/2013_explosion/meta.json",
@@ -1237,7 +1237,7 @@
             "award": "Best Poster Award"
           },
           "filename": "meta.json",
-          "lastmod": "2020-01-14"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/posters/2013_explosion/poster.pdf",
@@ -1249,7 +1249,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2014_reflections": {
@@ -1264,7 +1264,7 @@
           "extension": "txt",
           "contents": "Best Poster Award\n",
           "filename": "award.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/posters/2014_reflections/citation.bib",
@@ -1289,7 +1289,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "meta.json": {
           "url": "/cv/publications/posters/2014_reflections/meta.json",
@@ -1304,7 +1304,7 @@
             "award": "Best Poster Award"
           },
           "filename": "meta.json",
-          "lastmod": "2020-01-14"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/posters/2014_reflections/poster.pdf",
@@ -1316,7 +1316,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2015_bob_ross": {
@@ -1342,7 +1342,7 @@
             "joinedAuthorList": "Ally Warner, Jonathan Dunstan, and Alex Bigelow"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/posters/2015_bob_ross/poster.pdf",
@@ -1354,7 +1354,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/posters/2015_bob_ross/publication.pdf",
@@ -1366,7 +1366,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2015_hanpuku": {
@@ -1393,7 +1393,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/posters/2015_hanpuku/poster.pdf",
@@ -1405,7 +1405,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2016_hanpuku": {
@@ -1432,7 +1432,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "poster.pdf": {
           "url": "/cv/publications/posters/2016_hanpuku/poster.pdf",
@@ -1444,7 +1444,7 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       }
     },
@@ -1461,7 +1461,7 @@
           "extension": "txt",
           "contents": "Many data abstraction types, such as networks or set relationships, remain unfamiliar to data workers beyond the\nvisualization research community. We conduct a survey and series of interviews about how people describe their data, either directly or\nindirectly. We refer to the latter as latent data abstractions. We conduct a grounded theory analysis and develop a substantive theory\nthat (1) interprets the extent to which latent data abstractions exist, (2) reveals the far-reaching effects that the interventionist pursuit of\nsuch abstractions can have on data workers, (3) predicts why and when data workers may resist such explorations, and (4) suggests\nhow to take advantage of opportunities and mitigate risks through transparency about visualization research perspectives and agendas.\nTo continue the discussion, we make our dataset open along with a visual interface for further exploration.\n",
           "filename": "abstract.txt",
-          "lastmod": "2020-06-17"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/preprints/2020_guidelines/citation.bib",
@@ -1485,7 +1485,7 @@
             "joinedAuthorList": "Alex Bigelow, Katy Williams, and Katherine E Isaacs"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-06-17"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/preprints/2020_guidelines/publication.pdf",
@@ -1497,7 +1497,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-05-08"
+          "lastmod": "2020-09-27"
         }
       }
     },
@@ -1514,7 +1514,7 @@
           "extension": "txt",
           "contents": "Some misunderstanding is inevitable in any interdisciplinary work, and recognizing and handling misunderstanding quickly is vital to the success of a collaboration. Many misunderstandings arise from what appears to be common knowledge to a domain scientist, but is not something that a computer scientist would think to ask about. The use of experimental visualization as an inter-collaboration communication tool can highlight these important misunderstandings that would otherwise severely impair the collaboration.\n\nVisualization itself, however, is a powerful tool; if used carefully it can open doors to understanding and discovery, but it can also control, warp, or even limit how a visualization designer (and consequently a scientist) thinks about a problem. A willingness to abandon erroneous designs and even systems, regardless of the effort involved in creating and understanding them, is also very important for such a collaboration.\n\nThis case study of data exploration via experimental visualization is in the space of next-generation sequencing data. For most of the history of genetics, the main bottleneck in the rate of discovery has been the difficulty in obtaining data. Next generation sequencing is a relatively new technology that allows biologists a way to obtain genetic data at a fraction of the cost and unprecedented speeds compared to conventional sequencing. With the advent of NGS data, the bottleneck has shifted from the burden of data acquisition to the analysis of huge amounts of data.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/theses/2012_bs_thesis/citation.bib",
@@ -1537,7 +1537,7 @@
             "howpublished": "University of Utah Thesis"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/theses/2012_bs_thesis/publication.pdf",
@@ -1549,7 +1549,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       },
       "2019_phd_dissertation": {
@@ -1564,7 +1564,7 @@
           "extension": "txt",
           "contents": "Iteration is a ubiquitous need across many different visualization design workflows. For visual design, practitioners often need to transition between the automated generation of visuals and manual drawing; however, existing software makes free-form iteration between these modalities difficult or impossible. A similar challenge exists for data as well: data abstractions often need to be adjusted; however, many data reshaping operations— particularly graph wrangling operations—have support only in programming environments that may not be accessible to many visualization designers.\n\nThis dissertation begins with an effort to better understand how graphic designers, a specific subset of the broader visualization community, work with data. The lessons from that effort inspire our remaining contributions, which are directed toward the broader community of visualization practitioners: first, we present a software model and a system that make it possible to iterate between drawing and generative visualization. Second, we present a visual technique that enables inquiry into the relationship between two specific graph data wrangling operations: pivoting and filtering. Finally, we present an interface that supports a broader range of graph data wrangling operations that enable iteration between many different graph data abstractions.\n",
           "filename": "abstract.txt",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "citation.bib": {
           "url": "/cv/publications/theses/2019_phd_dissertation/citation.bib",
@@ -1587,7 +1587,7 @@
             "howpublished": "University of Utah PhD Dissertation"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         },
         "publication.pdf": {
           "url": "/cv/publications/theses/2019_phd_dissertation/publication.pdf",
@@ -1599,7 +1599,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2019-09-24"
+          "lastmod": "2020-09-27"
         }
       }
     }

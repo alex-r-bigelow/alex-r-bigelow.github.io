@@ -1,53 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="google-site-verification" content="7shenepNKvsotbAxPu_QqKMJWdnG3bBrdtlBdtFh3H0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
-  <link rel="stylesheet/less" type="text/css" href="style/style.less"/>
-  <link rel="stylesheet/less" type="text/css" href="style/profileMode.less"/>
+  <link rel="stylesheet/less" type="text/css" href="baseStyles.less"/>
   <script type="text/javascript" src="node_modules/less/dist/less.min.js" data-log-level="1"></script>
-  <script type="module" src="controllers/MainPage.js"></script>
+  <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
+  <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
+  <script type="module" src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
+  <script type="module">
+    import ProjectController from './controllers/ProjectController/ProjectController.js';
+    window.controller = new ProjectController();
+  </script>
 </head>
 <body>
-  <div class="Feed">
-    <h2>Projects</h2>
+  <h1>Project Portfolio</h1>
+  <div class="Feed grid-container thirds">
+    <div>
+      <h3 id="wrangling_survey" style="margin-top:0">Data Wrangling Survey</h3>
+      <p>How do you think about your data? Is it a network? Is it spatial? Something else?</p>
+      <p>What if you could change your mind?</p>
+      <p>Check out the <a href="https://alex-r-bigelow.github.io/wrangling-survey/Responses.html">interactive survey results</a>, or watch the associated IEEE VIS talk:</p>
+      <img class="youtubePlaceholder" data-youtubeid="DhPiHvtgtTI"/>
+    </div>
 
-    <h3 style="margin-top:0">Data Wrangling Survey</h3>
-    <p>How do you think about your data? Is it a network? Is it spatial? Something else?</p>
-    <p>What if you could change your mind?</p>
-    <p>Add your perspective to the conversation by <a href="https://alex-r-bigelow.github.io/wrangling-survey/?context=Link">taking the survey</a>.</p>
+    <div style="grid-column: 3;grid-row: 1 / 3">
+      <h3 id="ukijs">uki.js</h3>
+      <p>A minimal, d3-based Model-View framework for building larger systems out of linked bl.ock-esque views.</p>
+      <img src="img/uki.svg" width="30em"/>
+      <p>Yes, I rolled my own web framework. Reasons why / its main selling points:</p>
+      <ul>
+        <li><strong>Zero</strong> build steps required; relies on native ES6 imports + distributed, lazy resource retrieval</li>
+        <li>No extra syntax / template language to learn; only requires knowledge of JS, HTML, and CSS</li>
+        <li>Mostly optional MVC philosophy&mdash;can be used or ignored</li>
+        <li>Streamlines the process of loading resources (e.g. data files, API calls, or view-specific stylesheets / HTML template files)</li>
+        <li>Processing-style (setup + draw) rendering pipeline that ensures that needed DOM elements and resources exist</li>
+        <li>Composable UI addon library includes standard components like tooltips, context menus, modals, and loading screens</li>
+        <li>Integrations for GoldenLayout and Vega; using them is often as simple as applying a Mixin</li>
+      </ul>
+    </div>
 
-    <h3>Origraph</h3>
-    <p>A <a href="https://origraph.github.io">visual tool</a> for wrangling network data&mdash;no programming* necessary!</p>
-    <img class="youtubePlaceholder" data-youtubeid="bSFf2iD4TLI"/>
-    <p><small>*Okay, okay, there's an advanced mode that makes the user write code. This is the curse of creative software: usability and expressiveness don't like to co-exist in the same interface.</small></p>
+    <div>
+      <h3 id="origraph">Origraph</h3>
+      <p>A <a href="https://origraph.github.io">visual tool</a> for wrangling network data&mdash;no programming* necessary!</p>
+      <img class="youtubePlaceholder" data-youtubeid="bSFf2iD4TLI"/>
+      <p><small>*Okay, okay, there's an advanced mode that makes the user write code. This is the curse of creative software: usability and expressiveness don't like to co-exist in the same interface.</small></p>
+    </div>
 
-    <h3>uki.js</h3>
-    <p>A minimal, d3-based Model-View framework for building larger systems out of linked bl.ock-esque views.</p>
-    <p>Yes, I rolled my own framework, because everything else annoyed me. No, it's probably not any better.</p>
-    <img src="images/uki.svg"/>
+    <div>
+      <h3 id="hanpuku">Hanpuku</h3>
+      <p>Hanpuku is a tool for bridging d3.js and Illustrator. You can edit a d3.js visualization with Illustrator, and/or edit an Illustrator document with d3.js.</p>
+      <img class="youtubePlaceholder" data-youtubeid="eNoDZcs7vVs"/>
+    </div>
 
-    <h3>Hanpuku</h3>
-    <p>Hanpuku is a tool for bridging d3.js and Illustrator. You can edit a d3.js visualization with Illustrator, and/or edit an Illustrator document with d3.js.</p>
-    <img class="youtubePlaceholder" data-youtubeid="eNoDZcs7vVs"/>
+    <div>
+      <h3 id="jacobs_ladder">Jacob's Ladder</h3>
+      <p>Jacob's Ladder is a system I built during an internship at IBM for extracting subsets of large graphs.</p>
+      <img class="youtubePlaceholder" data-youtubeid="2joyCdBSGKw"/>
+    </div>
 
-    <h3>Jacob's Ladder</h3>
-    <p>Jacob's Ladder is a system I built during an internship at IBM for extracting subsets of large graphs.</p>
-    <img class="youtubePlaceholder" data-youtubeid="2joyCdBSGKw"/>
+    <div>
+      <h3 id="resonant_lab">Resonant Lab</h3>
+      <p><a href="https://resonantlab.kitware.com">Resonant Lab</a> is a system I built during an internship at Kitware to help make various DARPA XDATA projects easier to use.</p>
+      <img class="youtubePlaceholder" data-youtubeid="xvl6bbWLcMo"/>
+    </div>
 
-    <h3>Resonant Lab</h3>
-    <p><a href="https://resonantlab.kitware.com">Resonant Lab</a> is a system I built during an internship at Kitware to help make various DARPA XDATA projects easier to use.</p>
-    <img class="youtubePlaceholder" data-youtubeid="xvl6bbWLcMo"/>
+    <div>
+      <h3 id="calendar-creator" style="margin-top:0">calendar-creator</h3>
+      <p>A simple, <a href="https://alex-r-bigelow.github.io/calendar-creator/">few-frills interface</a> for creating minimal SVG calendars.</p>
+      <!--img src="images/calendar-creator.png"/-->
+    </div>
 
-    <h2 style="margin-top:4em">Small / Side Projects</h2>
-
-    <h3 style="margin-top:0">calendar-creator</h3>
-    <p>A simple, <a href="https://alex-r-bigelow.github.io/calendar-creator/">few-frills interface</a> for creating minimal SVG calendars.</p>
-    <!--img src="images/calendar-creator.png"/-->
-
-    <h3>ev-infinite</h3>
-    <p>No list like this would be complete without a silly little game. <a href="https://alex-r-bigelow.github.io/ev-infinite/">Mine</a> is a (very work in progress) attempt to make a procedural clone of Escape Velocity.</p>
+    <div>
+      <h3 id="ev-infinite">ev-infinite</h3>
+      <p>No list like this would be complete without a silly little game. <a href="https://alex-r-bigelow.github.io/ev-infinite/">Mine</a> is a (very work in progress) attempt to make a procedural clone of Escape Velocity.</p>
+    </div>
   </div>
   <nav class="Menu"></nav>
 </body>

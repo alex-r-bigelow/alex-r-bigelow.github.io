@@ -63,14 +63,20 @@ class MenuView extends uki.View {
 
   computeMenuSpec () {
     function pageToSpec (page) {
+      let onclick = () => { window.location = page.url; };
+      if (page.mail) {
+        onclick = () => {
+          // email obfuscation to cut down on spam...
+          const temp = 'mai' + 'lto:' + 'ale' + 'x' + '.' + 'r.big' + 'elow' + '@';
+          window.location = temp + 'gm' + 'ail.c' + 'om';
+        };
+      }
       const spec = {
         label: page.title,
         img: page.icon,
         // primary: window.location.pathname === page.url,
         primary: page.url === '/funding.html',
-        onclick: () => {
-          window.location = page.url;
-        }
+        onclick
       };
       if (page.subMenu) {
         spec.subEntries = page.subMenu.map(pageToSpec);

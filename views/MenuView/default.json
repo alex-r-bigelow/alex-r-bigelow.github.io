@@ -30,8 +30,28 @@
     "icon": "img/projects.svg",
     "subMenu": [
       {
+        "url": "/projects.html#wrangling_survey",
+        "title": "Data Wrangling Survey"
+      },
+      {
+        "url": "/projects.html#ukijs",
+        "title": "uki.js"
+      },
+      {
         "url": "/projects.html#origraph",
         "title": "Origraph"
+      },
+      {
+        "url": "/projects.html#hanpuku",
+        "title": "Hanpuku"
+      },
+      {
+        "url": "/projects.html#jacobs_ladder",
+        "title": "Jacob's Ladder"
+      },
+      {
+        "url": "/projects.html#resonant_lab",
+        "title": "Resonant Lab"
       }
     ]
   },
@@ -41,12 +61,7 @@
     "icon": "img/cv.svg"
   },
   {
-    "url": "/blog.html",
-    "title": "Blog",
-    "icon": "img/blog.svg"
-  },
-  {
-    "url": "m&#97;il&#116;o&#58;a&#108;ex&#46;r&#46;&#98;ig%65low&#37;&#52;&#48;&#37;&#54;&#55;mail&#46;%63om",
+    "mail": "m&#97;il&#116;o&#58;a&#108;ex&#46;r&#46;&#98;ig%65low&#37;&#52;&#48;&#37;&#54;&#55;mail&#46;%63om",
     "title": "Contact Me",
     "icon": "img/email.svg"
   }

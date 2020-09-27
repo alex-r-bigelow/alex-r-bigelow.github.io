@@ -4,16 +4,13 @@ class ProjectFeed extends uki.View {
   constructor (options = {}) {
     options.resources = options.resources || [];
     options.resources.push(...[
-      { type: 'less', url: 'views/ProjectFeed/style.less' },
-      { type: 'text', url: 'views/ProjectFeed/template.html' }
+      { type: 'less', url: 'views/ProjectFeed/style.less' }
     ]);
     super(options);
   }
 
   async setup () {
     await super.setup(...arguments);
-
-    this.d3el.html(this.getNamedResource('template'));
 
     const self = this;
     self.youtubeVideos = {};
@@ -25,7 +22,8 @@ class ProjectFeed extends uki.View {
       // Fill in placeholders with high-res images
       placeholder.attr('src', `http://i.ytimg.com/vi/${youTubeID}/default.jpg`);
       // Create an (initially hidden) iframe and load the video
-      const iframe = self.d3el.insert('iframe', `[data-youTubeID="${youTubeID}"]`)
+      const iframe = d3.select(placeholder.parentNode)
+        .insert('iframe', `[data-youTubeID="${youTubeID}"]`)
         .style('display', 'none')
         .attr('frameborder', '0')
         .attr('allowfullscreen', '')
