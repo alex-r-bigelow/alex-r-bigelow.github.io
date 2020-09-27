@@ -1,0 +1,53 @@
+[
+  {
+    "url": "/index.html",
+    "title": "About Me",
+    "icon": "img/home.svg"
+  },
+  {
+    "url": "/funding.html",
+    "title": "Hire Me",
+    "icon": "img/fund.svg"
+  },
+  {
+    "url": "/consulting.html",
+    "title": "Consulting",
+    "icon": "img/consulting.svg",
+    "subMenu": [
+      {
+        "url": "/consulting.html?context=roles",
+        "title": "What I Do"
+      },
+      {
+        "url": "/consulting.html?context=expertise",
+        "title": "Areas of Expertise"
+      }
+    ]
+  },
+  {
+    "url": "/projects.html",
+    "title": "Projects",
+    "icon": "img/projects.svg",
+    "subMenu": [
+      {
+        "url": "/projects.html#origraph",
+        "title": "Origraph"
+      }
+    ]
+  },
+  {
+    "url": "/cv.html",
+    "title": "CV",
+    "icon": "img/cv.svg"
+  },
+  {
+    "url": "/blog.html",
+    "title": "Blog",
+    "icon": "img/blog.svg"
+  },
+  {
+    "url": "m&#97;il&#116;o&#58;a&#108;ex&#46;r&#46;&#98;ig%65low&#37;&#52;&#48;&#37;&#54;&#55;mail&#46;%63om",
+    "title": "Contact Me",
+    "icon": "img/email.svg"
+  }
+]

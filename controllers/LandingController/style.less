@@ -1,0 +1,25 @@
+body {
+  height: calc(100vh - 8em);
+  max-width: 30em;
+  margin-right: 15em;
+  background:
+    linear-gradient(115deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%),
+    65% 25% / cover no-repeat url("../img/alex.png");
+}
+.MenuView {
+  background: rgba(255,255,255,0.8);
+  border: 1px solid var(--background-color);
+  box-shadow: -0.5em 0.25em 1em rgba(var(--shadow-color-rgb),0.75);
+  border-radius: 0 0 0 1em;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background:
+      linear-gradient(115deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 70%),
+      65% 25% / cover no-repeat url("../img/alex.png");
+  }
+  .MenuView {
+    background: rgba(0,0,0,0.8);
+  }
+}

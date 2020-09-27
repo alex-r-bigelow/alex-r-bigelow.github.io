@@ -1,13 +1,18 @@
-/* globals d3 */
-import { View } from '../../node_modules/uki/dist/uki.esm.js';
+/* globals uki, d3 */
 
-class CvView extends View {
-  constructor (d3el) {
-    super(d3el, [
+class CvView extends uki.View {
+  constructor (options = {}) {
+    options.resources = options.resources || [];
+    options.resources.push(...[
+      { type: 'json', url: 'views/CvView/data.json', name: 'data' },
       { type: 'less', url: 'views/CvView/style.less' }
     ]);
+    super(options);
+
     window.addEventListener('beforeprint', () => {
-      // Mechanically add contact info to a printed version of the CV
+      // Programmatically add contact info to a printed version of the CV...
+      // really lame version of obfuscation, but should stop *most* evil
+      // spammers
       this.d3el.select('.contactInfo')
         .append('p').html('alex.r.bigelow@gmail.com<br/>+1 (801) 300-8525');
     });
@@ -15,19 +20,27 @@ class CvView extends View {
       this.d3el.select('.contactInfo').html('');
     });
   }
+
+  get data () {
+    return this.getNamedResource('data');
+  }
+
   async setup () {
+    await super.setup(...arguments);
+
     await window.controller.ready;
     for (const pubChunk of this.d3el.selectAll('.pubchunk').nodes()) {
       const pubType = pubChunk.dataset.type;
-      const pubData = window.controller.resources[0].publications[pubType] || {};
+      const pubData = this.data.publications[pubType] || {};
       this.drawPublications(d3.select(pubChunk), pubData);
     }
-    for (const [pubType, pubs] of Object.entries(window.controller.resources[0].publications)) {
+    for (const [pubType, pubs] of Object.entries(this.data.publications)) {
       this.drawPublications(this.d3el.select(`.${pubType}`), pubs);
     }
-    this.drawExperience(this.d3el.select('.experience'), window.controller.resources[0].experience, false);
-    this.drawExperience(this.d3el.select('.service'), window.controller.resources[0].experience, true);
+    this.drawExperience(this.d3el.select('.experience'), this.data.experience, false);
+    this.drawExperience(this.d3el.select('.service'), this.data.experience, true);
   }
+
   drawPublications (container, pubData) {
     const pubList = Object.values(pubData).sort((a, b) => {
       return b['citation.bib'].contents.year - a['citation.bib'].contents.year;
@@ -42,11 +55,13 @@ class CvView extends View {
       .classed('entry', true);
     pubs = pubs.merge(pubsEnter);
 
-    pubsEnter.append('span')
+    pubs.classed('hideInPrint', d => d['meta.json']?.contents?.hideInPrint);
+
+    pubsEnter.append('h6')
       .classed('title', true)
       .text(d => d['citation.bib'].contents.title);
 
-    pubsEnter.append('span')
+    pubsEnter.append('h6')
       .classed('date', true)
       .text(d => d['citation.bib'].contents.year);
 
@@ -78,6 +93,7 @@ class CvView extends View {
     metaEnter.attr('class', d => d.fieldname)
       .text(d => d.fieldvalue);
   }
+
   drawExperience (container, experience, service) {
     const entriesList = Object.values(experience)
       .filter(d => d.contents.data.service ? service : !service)
@@ -95,12 +111,13 @@ class CvView extends View {
 
         return bTemp - aTemp;
       });
-    let entriesEnter = container.selectAll('.entry')
-      .data(entriesList).enter().append('div').classed('entry', true);
-    entriesEnter.append('span')
+    const entriesEnter = container.selectAll('.entry')
+      .data(entriesList).enter().append('div').classed('entry', true)
+      .classed('hideInPrint', d => d['meta.json']?.contents?.hideInPrint);
+    entriesEnter.append('h6')
       .classed('title', true)
       .text(d => d.contents.data.title);
-    entriesEnter.append('span')
+    entriesEnter.append('h6')
       .classed('date', true)
       .html(d => {
         if (d.contents.data.season) {
@@ -122,7 +139,7 @@ class CvView extends View {
     const metaEnter = entriesEnter.select('.meta').selectAll('li')
       .data(d => metaFields.map(fieldnames => {
         for (const fieldname of fieldnames) {
-          let fieldvalue = d.contents.data[fieldname];
+          const fieldvalue = d.contents.data[fieldname];
           if (fieldvalue) {
             return { fieldname, fieldvalue };
           }

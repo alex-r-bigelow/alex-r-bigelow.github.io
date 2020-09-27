@@ -1,7 +1,7 @@
 {
   "experience": {
     "brusci.md": {
-      "url": "/data/experience/brusci.md",
+      "url": "/cv/experience/brusci.md",
       "path": [
         "experience"
       ],
@@ -28,7 +28,7 @@
       "lastmod": "2020-01-14"
     },
     "dsf.md": {
-      "url": "/data/experience/dsf.md",
+      "url": "/cv/experience/dsf.md",
       "path": [
         "experience"
       ],
@@ -53,7 +53,7 @@
       "lastmod": "2020-06-17"
     },
     "genepi.md": {
-      "url": "/data/experience/genepi.md",
+      "url": "/cv/experience/genepi.md",
       "path": [
         "experience"
       ],
@@ -79,7 +79,7 @@
       "lastmod": "2019-09-24"
     },
     "ibm.md": {
-      "url": "/data/experience/ibm.md",
+      "url": "/cv/experience/ibm.md",
       "path": [
         "experience"
       ],
@@ -104,7 +104,7 @@
       "lastmod": "2019-09-24"
     },
     "kitware.md": {
-      "url": "/data/experience/kitware.md",
+      "url": "/cv/experience/kitware.md",
       "path": [
         "experience"
       ],
@@ -129,7 +129,7 @@
       "lastmod": "2019-09-24"
     },
     "resbaz.md": {
-      "url": "/data/experience/resbaz.md",
+      "url": "/cv/experience/resbaz.md",
       "path": [
         "experience"
       ],
@@ -154,7 +154,7 @@
       "lastmod": "2020-01-14"
     },
     "reviewing.md": {
-      "url": "/data/experience/reviewing.md",
+      "url": "/cv/experience/reviewing.md",
       "path": [
         "experience"
       ],
@@ -182,7 +182,7 @@
       "lastmod": "2020-06-17"
     },
     "sci.md": {
-      "url": "/data/experience/sci.md",
+      "url": "/cv/experience/sci.md",
       "path": [
         "experience"
       ],
@@ -208,7 +208,7 @@
       "lastmod": "2019-09-24"
     },
     "ta_1.md": {
-      "url": "/data/experience/ta_1.md",
+      "url": "/cv/experience/ta_1.md",
       "path": [
         "experience"
       ],
@@ -230,10 +230,10 @@
         "excerpt": ""
       },
       "filename": "ta_1.md",
-      "lastmod": "2019-09-24"
+      "lastmod": "2020-01-28"
     },
     "ta_2.md": {
-      "url": "/data/experience/ta_2.md",
+      "url": "/cv/experience/ta_2.md",
       "path": [
         "experience"
       ],
@@ -258,7 +258,7 @@
       "lastmod": "2019-09-24"
     },
     "ua.md": {
-      "url": "/data/experience/ua.md",
+      "url": "/cv/experience/ua.md",
       "path": [
         "experience"
       ],
@@ -287,7 +287,7 @@
     "abstracts": {
       "2012_comprehengsive": {
         "award.txt": {
-          "url": "/data/publications/abstracts/2012_comprehengsive/award.txt",
+          "url": "/cv/publications/abstracts/2012_comprehengsive/award.txt",
           "path": [
             "publications",
             "abstracts",
@@ -297,10 +297,10 @@
           "extension": "txt",
           "contents": "Poster selected for oral presentation\n",
           "filename": "award.txt",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/abstracts/2012_comprehengsive/citation.bib",
+          "url": "/cv/publications/abstracts/2012_comprehengsive/citation.bib",
           "path": [
             "publications",
             "abstracts",
@@ -321,10 +321,10 @@
             "joinedAuthorList": "Alex Bigelow, Miriah Meyer, and Nicola J. Camp"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "meta.json": {
-          "url": "/data/publications/abstracts/2012_comprehengsive/meta.json",
+          "url": "/cv/publications/abstracts/2012_comprehengsive/meta.json",
           "path": [
             "publications",
             "abstracts",
@@ -339,7 +339,7 @@
           "lastmod": "2020-01-14"
         },
         "publication.pdf": {
-          "url": "/data/publications/abstracts/2012_comprehengsive/publication.pdf",
+          "url": "/cv/publications/abstracts/2012_comprehengsive/publication.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -348,12 +348,12 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         }
       },
       "2013_compariseq": {
         "citation.bib": {
-          "url": "/data/publications/abstracts/2013_compariseq/citation.bib",
+          "url": "/cv/publications/abstracts/2013_compariseq/citation.bib",
           "path": [
             "publications",
             "abstracts",
@@ -374,10 +374,10 @@
             "joinedAuthorList": "Sean McKenna, Philip S. Quinan, and Alex Bigelow"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "compariSeq.png": {
-          "url": "/data/publications/abstracts/2013_compariseq/compariSeq.png",
+          "url": "/cv/publications/abstracts/2013_compariseq/compariSeq.png",
           "path": [
             "publications",
             "abstracts",
@@ -386,10 +386,10 @@
           "name": "compariSeq",
           "extension": "png",
           "filename": "compariSeq.png",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "poster.pdf": {
-          "url": "/data/publications/abstracts/2013_compariseq/poster.pdf",
+          "url": "/cv/publications/abstracts/2013_compariseq/poster.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -398,10 +398,10 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/abstracts/2013_compariseq/publication.pdf",
+          "url": "/cv/publications/abstracts/2013_compariseq/publication.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -410,12 +410,12 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         }
       },
       "2016_vip_resonant_lab": {
         "abstract.txt": {
-          "url": "/data/publications/abstracts/2016_vip_resonant_lab/abstract.txt",
+          "url": "/cv/publications/abstracts/2016_vip_resonant_lab/abstract.txt",
           "path": [
             "publications",
             "abstracts",
@@ -425,10 +425,10 @@
           "extension": "txt",
           "contents": "Visualization practitioners are constantly developing new, innovative ways to visualize data, but much of the software that practitioners produce does not make it into production in professional systems. To solve this problem, we have developed and informally tested two open source systems. The first, Candela, is a framework and API for creating visualization components for the web that can wrap up new or existing visualizations as needed. Because Candela’s API generalizes the inputs to a visualization, we have also developed a system called Resonant Laboratory that makes it possible for novice users to connect arbitrary datasets to Candela visualizations. Together, these systems enable novice users to explore and share their data with the growing library of state-of-the-art visualization techniques.\n",
           "filename": "abstract.txt",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "award.txt": {
-          "url": "/data/publications/abstracts/2016_vip_resonant_lab/award.txt",
+          "url": "/cv/publications/abstracts/2016_vip_resonant_lab/award.txt",
           "path": [
             "publications",
             "abstracts",
@@ -438,10 +438,10 @@
           "extension": "txt",
           "contents": "Best Paper Award\n",
           "filename": "award.txt",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/abstracts/2016_vip_resonant_lab/citation.bib",
+          "url": "/cv/publications/abstracts/2016_vip_resonant_lab/citation.bib",
           "path": [
             "publications",
             "abstracts",
@@ -462,10 +462,10 @@
             "joinedAuthorList": "Alex Bigelow, Roni Choudhury, and Jeffrey Baumes"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-10-30"
         },
         "meta.json": {
-          "url": "/data/publications/abstracts/2016_vip_resonant_lab/meta.json",
+          "url": "/cv/publications/abstracts/2016_vip_resonant_lab/meta.json",
           "path": [
             "publications",
             "abstracts",
@@ -480,7 +480,7 @@
           "lastmod": "2020-01-14"
         },
         "publication.pdf": {
-          "url": "/data/publications/abstracts/2016_vip_resonant_lab/publication.pdf",
+          "url": "/cv/publications/abstracts/2016_vip_resonant_lab/publication.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -489,10 +489,10 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "slides.url": {
-          "url": "/data/publications/abstracts/2016_vip_resonant_lab/slides.url",
+          "url": "/cv/publications/abstracts/2016_vip_resonant_lab/slides.url",
           "path": [
             "publications",
             "abstracts",
@@ -502,12 +502,12 @@
           "extension": "url",
           "contents": "http://www.cs.utah.edu/~abigelow/Downloads/papers/VisInPractice2016.key\n",
           "filename": "slides.url",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         }
       },
       "2017_fellow_tool_builders": {
         "abstract.txt": {
-          "url": "/data/publications/abstracts/2017_fellow_tool_builders/abstract.txt",
+          "url": "/cv/publications/abstracts/2017_fellow_tool_builders/abstract.txt",
           "path": [
             "publications",
             "abstracts",
@@ -517,10 +517,10 @@
           "extension": "txt",
           "contents": "While it is true that fellow tool builders can threaten the success of a design study, there are also advantages to working with individuals that have strong software development skills. We present a review of two information visualization projects using thematic analysis, that provides additional insight and guidance for collaborating with people that have strong software development skills. Additionally, we discuss minor implications for the design of node-link diagrams and adjacency matrices, and report observed differences in engagement with respect to touch tables versus traditional keyboard, mouse, and monitor configurations.\n",
           "filename": "abstract.txt",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/abstracts/2017_fellow_tool_builders/citation.bib",
+          "url": "/cv/publications/abstracts/2017_fellow_tool_builders/citation.bib",
           "path": [
             "publications",
             "abstracts",
@@ -539,10 +539,10 @@
             "joinedAuthorList": "Alex Bigelow"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "fastForward.mp4": {
-          "url": "/data/publications/abstracts/2017_fellow_tool_builders/fastForward.mp4",
+          "url": "/cv/publications/abstracts/2017_fellow_tool_builders/fastForward.mp4",
           "path": [
             "publications",
             "abstracts",
@@ -551,10 +551,10 @@
           "name": "fastForward",
           "extension": "mp4",
           "filename": "fastForward.mp4",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "poster.pdf": {
-          "url": "/data/publications/abstracts/2017_fellow_tool_builders/poster.pdf",
+          "url": "/cv/publications/abstracts/2017_fellow_tool_builders/poster.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -563,10 +563,10 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/abstracts/2017_fellow_tool_builders/publication.pdf",
+          "url": "/cv/publications/abstracts/2017_fellow_tool_builders/publication.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -575,10 +575,10 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "supplement.md": {
-          "url": "/data/publications/abstracts/2017_fellow_tool_builders/supplement.md",
+          "url": "/cv/publications/abstracts/2017_fellow_tool_builders/supplement.md",
           "path": [
             "publications",
             "abstracts",
@@ -593,10 +593,10 @@
             "excerpt": ""
           },
           "filename": "supplement.md",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "video.mp4": {
-          "url": "/data/publications/abstracts/2017_fellow_tool_builders/video.mp4",
+          "url": "/cv/publications/abstracts/2017_fellow_tool_builders/video.mp4",
           "path": [
             "publications",
             "abstracts",
@@ -605,12 +605,12 @@
           "name": "video",
           "extension": "mp4",
           "filename": "video.mp4",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         }
       },
       "2018_murejs": {
         "abstract.txt": {
-          "url": "/data/publications/abstracts/2018_murejs/abstract.txt",
+          "url": "/cv/publications/abstracts/2018_murejs/abstract.txt",
           "path": [
             "publications",
             "abstracts",
@@ -620,10 +620,10 @@
           "extension": "txt",
           "contents": "When interpreting data as a graph for visualization, an analyst first assigns semantic meaning to graph concepts. For example, they may choose to represent actors and movies as nodes, and roles as edges. Alternatively, they may wish to represent movies as edges, connecting actor nodes when they collaborate. Data abstraction choices such as these are critical, because different data abstractions can limit—or inspire—different analysis questions, approaches, perspectives, and visualizations.\n\nHowever, current network modeling frameworks, systems, and databases narrowly define graph abstraction constructs—such as nodes, edges, node / edge classes, supernodes, hyperedges, etc.—in terms of how the data is stored in memory or on disk, rather than semantic, human-driven abstractions. Consequently, the ability of an analyst to iterate on a data abstraction becomes fundamentally limited by the implementation details of data wrangling software.\n\nWe present work-in-progress toward a broader framework for modeling network data that is less dependent on its underlying structure and storage. Our goal is to use semantic data abstraction constructs to inform how algorithms wrangle data, instead of allowing algorithmic concerns to define and constrain the semantics.\n\nWe also present mure.js, a software library that represents an initial implementation of this framework, allowing users to map semantic graph constructs to arbitrary data structures as metadata, that can, in turn, be used to select, navigate, and reshape the under- lying data. Additionally, we discuss an early software prototype of a visual graph wrangling system based on this library.\n",
           "filename": "abstract.txt",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/abstracts/2018_murejs/citation.bib",
+          "url": "/cv/publications/abstracts/2018_murejs/citation.bib",
           "path": [
             "publications",
             "abstracts",
@@ -645,10 +645,10 @@
             "joinedAuthorList": "Alex Bigelow, Carolina Nobre, Alexander Lex, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "fastForward.mp4": {
-          "url": "/data/publications/abstracts/2018_murejs/fastForward.mp4",
+          "url": "/cv/publications/abstracts/2018_murejs/fastForward.mp4",
           "path": [
             "publications",
             "abstracts",
@@ -657,10 +657,10 @@
           "name": "fastForward",
           "extension": "mp4",
           "filename": "fastForward.mp4",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "poster.pdf": {
-          "url": "/data/publications/abstracts/2018_murejs/poster.pdf",
+          "url": "/cv/publications/abstracts/2018_murejs/poster.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -669,10 +669,10 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "poster.svg": {
-          "url": "/data/publications/abstracts/2018_murejs/poster.svg",
+          "url": "/cv/publications/abstracts/2018_murejs/poster.svg",
           "path": [
             "publications",
             "abstracts",
@@ -681,10 +681,10 @@
           "name": "poster",
           "extension": "svg",
           "filename": "poster.svg",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/abstracts/2018_murejs/publication.pdf",
+          "url": "/cv/publications/abstracts/2018_murejs/publication.pdf",
           "path": [
             "publications",
             "abstracts",
@@ -693,14 +693,14 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-09-24"
         }
       }
     },
     "papers": {
       "2014_avi_reflections": {
         "abstract.txt": {
-          "url": "/data/publications/papers/2014_avi_reflections/abstract.txt",
+          "url": "/cv/publications/papers/2014_avi_reflections/abstract.txt",
           "path": [
             "publications",
             "papers",
@@ -713,7 +713,7 @@
           "lastmod": "2019-09-24"
         },
         "award.txt": {
-          "url": "/data/publications/papers/2014_avi_reflections/award.txt",
+          "url": "/cv/publications/papers/2014_avi_reflections/award.txt",
           "path": [
             "publications",
             "papers",
@@ -726,7 +726,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/papers/2014_avi_reflections/citation.bib",
+          "url": "/cv/publications/papers/2014_avi_reflections/citation.bib",
           "path": [
             "publications",
             "papers",
@@ -750,10 +750,10 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-10-30"
         },
         "meta.json": {
-          "url": "/data/publications/papers/2014_avi_reflections/meta.json",
+          "url": "/cv/publications/papers/2014_avi_reflections/meta.json",
           "path": [
             "publications",
             "papers",
@@ -768,7 +768,7 @@
           "lastmod": "2020-01-14"
         },
         "publication.pdf": {
-          "url": "/data/publications/papers/2014_avi_reflections/publication.pdf",
+          "url": "/cv/publications/papers/2014_avi_reflections/publication.pdf",
           "path": [
             "publications",
             "papers",
@@ -780,7 +780,7 @@
           "lastmod": "2019-09-24"
         },
         "slides.url": {
-          "url": "/data/publications/papers/2014_avi_reflections/slides.url",
+          "url": "/cv/publications/papers/2014_avi_reflections/slides.url",
           "path": [
             "publications",
             "papers",
@@ -793,7 +793,7 @@
           "lastmod": "2019-09-24"
         },
         "supplement.zip": {
-          "url": "/data/publications/papers/2014_avi_reflections/supplement.zip",
+          "url": "/cv/publications/papers/2014_avi_reflections/supplement.zip",
           "path": [
             "publications",
             "papers",
@@ -807,7 +807,7 @@
       },
       "2016_haplotype": {
         "abstract.txt": {
-          "url": "/data/publications/papers/2016_haplotype/abstract.txt",
+          "url": "/cv/publications/papers/2016_haplotype/abstract.txt",
           "path": [
             "publications",
             "papers",
@@ -820,7 +820,7 @@
           "lastmod": "2020-06-17"
         },
         "citation.bib": {
-          "url": "/data/publications/papers/2016_haplotype/citation.bib",
+          "url": "/cv/publications/papers/2016_haplotype/citation.bib",
           "path": [
             "publications",
             "papers",
@@ -858,7 +858,7 @@
       },
       "2016_infovis_hanpuku": {
         "abstract.txt": {
-          "url": "/data/publications/papers/2016_infovis_hanpuku/abstract.txt",
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/abstract.txt",
           "path": [
             "publications",
             "papers",
@@ -871,7 +871,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/papers/2016_infovis_hanpuku/citation.bib",
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/citation.bib",
           "path": [
             "publications",
             "papers",
@@ -897,10 +897,10 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-01-14"
+          "lastmod": "2019-10-30"
         },
         "fastForward.mp4": {
-          "url": "/data/publications/papers/2016_infovis_hanpuku/fastForward.mp4",
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/fastForward.mp4",
           "path": [
             "publications",
             "papers",
@@ -912,7 +912,7 @@
           "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/papers/2016_infovis_hanpuku/publication.pdf",
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/publication.pdf",
           "path": [
             "publications",
             "papers",
@@ -924,7 +924,7 @@
           "lastmod": "2019-09-24"
         },
         "slides.url": {
-          "url": "/data/publications/papers/2016_infovis_hanpuku/slides.url",
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/slides.url",
           "path": [
             "publications",
             "papers",
@@ -937,7 +937,7 @@
           "lastmod": "2019-09-24"
         },
         "supplement.zip": {
-          "url": "/data/publications/papers/2016_infovis_hanpuku/supplement.zip",
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/supplement.zip",
           "path": [
             "publications",
             "papers",
@@ -951,7 +951,7 @@
       },
       "2019_infovis_atria": {
         "abstract.txt": {
-          "url": "/data/publications/papers/2019_infovis_atria/abstract.txt",
+          "url": "/cv/publications/papers/2019_infovis_atria/abstract.txt",
           "path": [
             "publications",
             "papers",
@@ -964,7 +964,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/papers/2019_infovis_atria/citation.bib",
+          "url": "/cv/publications/papers/2019_infovis_atria/citation.bib",
           "path": [
             "publications",
             "papers",
@@ -989,7 +989,7 @@
           "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/papers/2019_infovis_atria/publication.pdf",
+          "url": "/cv/publications/papers/2019_infovis_atria/publication.pdf",
           "path": [
             "publications",
             "papers",
@@ -1003,7 +1003,7 @@
       },
       "2019_pacificvis_jacobs_ladder": {
         "abstract.txt": {
-          "url": "/data/publications/papers/2019_pacificvis_jacobs_ladder/abstract.txt",
+          "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/abstract.txt",
           "path": [
             "publications",
             "papers",
@@ -1016,7 +1016,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/papers/2019_pacificvis_jacobs_ladder/citation.bib",
+          "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/citation.bib",
           "path": [
             "publications",
             "papers",
@@ -1041,7 +1041,7 @@
           "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/papers/2019_pacificvis_jacobs_ladder/publication.pdf",
+          "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/publication.pdf",
           "path": [
             "publications",
             "papers",
@@ -1055,7 +1055,7 @@
       },
       "2019_vast_origraph": {
         "abstract.txt": {
-          "url": "/data/publications/papers/2019_vast_origraph/abstract.txt",
+          "url": "/cv/publications/papers/2019_vast_origraph/abstract.txt",
           "path": [
             "publications",
             "papers",
@@ -1068,7 +1068,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/papers/2019_vast_origraph/citation.bib",
+          "url": "/cv/publications/papers/2019_vast_origraph/citation.bib",
           "path": [
             "publications",
             "papers",
@@ -1095,7 +1095,7 @@
           "lastmod": "2020-06-17"
         },
         "description.html": {
-          "url": "/data/publications/papers/2019_vast_origraph/description.html",
+          "url": "/cv/publications/papers/2019_vast_origraph/description.html",
           "path": [
             "publications",
             "papers",
@@ -1107,7 +1107,7 @@
           "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/papers/2019_vast_origraph/publication.pdf",
+          "url": "/cv/publications/papers/2019_vast_origraph/publication.pdf",
           "path": [
             "publications",
             "papers",
@@ -1119,7 +1119,7 @@
           "lastmod": "2019-09-24"
         },
         "supplement.pdf": {
-          "url": "/data/publications/papers/2019_vast_origraph/supplement.pdf",
+          "url": "/cv/publications/papers/2019_vast_origraph/supplement.pdf",
           "path": [
             "publications",
             "papers",
@@ -1135,7 +1135,7 @@
     "patents": {
       "2017_backfilling": {
         "US9569558.pdf": {
-          "url": "/data/publications/patents/2017_backfilling/US9569558.pdf",
+          "url": "/cv/publications/patents/2017_backfilling/US9569558.pdf",
           "path": [
             "publications",
             "patents",
@@ -1147,7 +1147,7 @@
           "lastmod": "2019-09-24"
         },
         "abstract.txt": {
-          "url": "/data/publications/patents/2017_backfilling/abstract.txt",
+          "url": "/cv/publications/patents/2017_backfilling/abstract.txt",
           "path": [
             "publications",
             "patents",
@@ -1160,7 +1160,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/patents/2017_backfilling/citation.bib",
+          "url": "/cv/publications/patents/2017_backfilling/citation.bib",
           "path": [
             "publications",
             "patents",
@@ -1181,14 +1181,14 @@
             "howpublished": "US Patent 9,569,558"
           },
           "filename": "citation.bib",
-          "lastmod": "2019-09-25"
+          "lastmod": "2020-06-17"
         }
       }
     },
     "posters": {
       "2013_explosion": {
         "award.txt": {
-          "url": "/data/publications/posters/2013_explosion/award.txt",
+          "url": "/cv/publications/posters/2013_explosion/award.txt",
           "path": [
             "publications",
             "posters",
@@ -1201,7 +1201,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/posters/2013_explosion/citation.bib",
+          "url": "/cv/publications/posters/2013_explosion/citation.bib",
           "path": [
             "publications",
             "posters",
@@ -1225,7 +1225,7 @@
           "lastmod": "2019-09-24"
         },
         "meta.json": {
-          "url": "/data/publications/posters/2013_explosion/meta.json",
+          "url": "/cv/publications/posters/2013_explosion/meta.json",
           "path": [
             "publications",
             "posters",
@@ -1240,7 +1240,7 @@
           "lastmod": "2020-01-14"
         },
         "poster.pdf": {
-          "url": "/data/publications/posters/2013_explosion/poster.pdf",
+          "url": "/cv/publications/posters/2013_explosion/poster.pdf",
           "path": [
             "publications",
             "posters",
@@ -1254,7 +1254,7 @@
       },
       "2014_reflections": {
         "award.txt": {
-          "url": "/data/publications/posters/2014_reflections/award.txt",
+          "url": "/cv/publications/posters/2014_reflections/award.txt",
           "path": [
             "publications",
             "posters",
@@ -1267,7 +1267,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/posters/2014_reflections/citation.bib",
+          "url": "/cv/publications/posters/2014_reflections/citation.bib",
           "path": [
             "publications",
             "posters",
@@ -1292,7 +1292,7 @@
           "lastmod": "2019-09-24"
         },
         "meta.json": {
-          "url": "/data/publications/posters/2014_reflections/meta.json",
+          "url": "/cv/publications/posters/2014_reflections/meta.json",
           "path": [
             "publications",
             "posters",
@@ -1307,7 +1307,7 @@
           "lastmod": "2020-01-14"
         },
         "poster.pdf": {
-          "url": "/data/publications/posters/2014_reflections/poster.pdf",
+          "url": "/cv/publications/posters/2014_reflections/poster.pdf",
           "path": [
             "publications",
             "posters",
@@ -1321,7 +1321,7 @@
       },
       "2015_bob_ross": {
         "citation.bib": {
-          "url": "/data/publications/posters/2015_bob_ross/citation.bib",
+          "url": "/cv/publications/posters/2015_bob_ross/citation.bib",
           "path": [
             "publications",
             "posters",
@@ -1345,7 +1345,7 @@
           "lastmod": "2019-09-24"
         },
         "poster.pdf": {
-          "url": "/data/publications/posters/2015_bob_ross/poster.pdf",
+          "url": "/cv/publications/posters/2015_bob_ross/poster.pdf",
           "path": [
             "publications",
             "posters",
@@ -1357,7 +1357,7 @@
           "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/posters/2015_bob_ross/publication.pdf",
+          "url": "/cv/publications/posters/2015_bob_ross/publication.pdf",
           "path": [
             "publications",
             "posters",
@@ -1371,7 +1371,7 @@
       },
       "2015_hanpuku": {
         "citation.bib": {
-          "url": "/data/publications/posters/2015_hanpuku/citation.bib",
+          "url": "/cv/publications/posters/2015_hanpuku/citation.bib",
           "path": [
             "publications",
             "posters",
@@ -1396,7 +1396,7 @@
           "lastmod": "2019-09-24"
         },
         "poster.pdf": {
-          "url": "/data/publications/posters/2015_hanpuku/poster.pdf",
+          "url": "/cv/publications/posters/2015_hanpuku/poster.pdf",
           "path": [
             "publications",
             "posters",
@@ -1410,7 +1410,7 @@
       },
       "2016_hanpuku": {
         "citation.bib": {
-          "url": "/data/publications/posters/2016_hanpuku/citation.bib",
+          "url": "/cv/publications/posters/2016_hanpuku/citation.bib",
           "path": [
             "publications",
             "posters",
@@ -1435,7 +1435,7 @@
           "lastmod": "2019-09-24"
         },
         "poster.pdf": {
-          "url": "/data/publications/posters/2016_hanpuku/poster.pdf",
+          "url": "/cv/publications/posters/2016_hanpuku/poster.pdf",
           "path": [
             "publications",
             "posters",
@@ -1451,7 +1451,7 @@
     "preprints": {
       "2020_guidelines": {
         "abstract.txt": {
-          "url": "/data/publications/preprints/2020_guidelines/abstract.txt",
+          "url": "/cv/publications/preprints/2020_guidelines/abstract.txt",
           "path": [
             "publications",
             "preprints",
@@ -1464,7 +1464,7 @@
           "lastmod": "2020-06-17"
         },
         "citation.bib": {
-          "url": "/data/publications/preprints/2020_guidelines/citation.bib",
+          "url": "/cv/publications/preprints/2020_guidelines/citation.bib",
           "path": [
             "publications",
             "preprints",
@@ -1488,7 +1488,7 @@
           "lastmod": "2020-06-17"
         },
         "publication.pdf": {
-          "url": "/data/publications/preprints/2020_guidelines/publication.pdf",
+          "url": "/cv/publications/preprints/2020_guidelines/publication.pdf",
           "path": [
             "publications",
             "preprints",
@@ -1497,14 +1497,14 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-06-17"
+          "lastmod": "2020-05-08"
         }
       }
     },
     "theses": {
       "2012_bs_thesis": {
         "abstract.txt": {
-          "url": "/data/publications/theses/2012_bs_thesis/abstract.txt",
+          "url": "/cv/publications/theses/2012_bs_thesis/abstract.txt",
           "path": [
             "publications",
             "theses",
@@ -1517,7 +1517,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/theses/2012_bs_thesis/citation.bib",
+          "url": "/cv/publications/theses/2012_bs_thesis/citation.bib",
           "path": [
             "publications",
             "theses",
@@ -1540,7 +1540,7 @@
           "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/theses/2012_bs_thesis/publication.pdf",
+          "url": "/cv/publications/theses/2012_bs_thesis/publication.pdf",
           "path": [
             "publications",
             "theses",
@@ -1554,7 +1554,7 @@
       },
       "2019_phd_dissertation": {
         "abstract.txt": {
-          "url": "/data/publications/theses/2019_phd_dissertation/abstract.txt",
+          "url": "/cv/publications/theses/2019_phd_dissertation/abstract.txt",
           "path": [
             "publications",
             "theses",
@@ -1567,7 +1567,7 @@
           "lastmod": "2019-09-24"
         },
         "citation.bib": {
-          "url": "/data/publications/theses/2019_phd_dissertation/citation.bib",
+          "url": "/cv/publications/theses/2019_phd_dissertation/citation.bib",
           "path": [
             "publications",
             "theses",
@@ -1590,7 +1590,7 @@
           "lastmod": "2019-09-24"
         },
         "publication.pdf": {
-          "url": "/data/publications/theses/2019_phd_dissertation/publication.pdf",
+          "url": "/cv/publications/theses/2019_phd_dissertation/publication.pdf",
           "path": [
             "publications",
             "theses",

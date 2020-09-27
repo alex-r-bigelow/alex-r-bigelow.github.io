@@ -6,23 +6,29 @@ const bibtexParse = require('bibtex-parse-js');
 const grayMatter = require('gray-matter');
 const showdown = require('showdown');
 const showdownConverter = new showdown.Converter();
+const menu = require('./views/MenuView/default.json');
 shell.config.silent = true;
 
 const pages = {
   details: {},
   hierarchy: {
-    root: ['/index.html', '/cv.html', '/blog.html', '/404.html'],
-    project: [],
+    root: [
+      '/index.html',
+      '/funding.html',
+      '/consulting.html',
+      '/projects.html',
+      '/cv.html',
+      '/blog.html',
+      '/404.html'
+    ],
     blog: []
   }
 };
-const data = {};
-const icons = {};
-const ICON_FORMATS = ['png', 'svg'];
+const cvData = {};
 const PRELOAD_FORMATS = ['json', 'url', 'txt', 'bib', 'md'];
 const PARSERS = {
-  'json': text => JSON.parse(text),
-  'bib': text => {
+  json: text => JSON.parse(text),
+  bib: text => {
     // For our purposes, .bib files should only have one entry
     const raw = bibtexParse.toJSON(text)[0];
     const result = raw.entryTags;
@@ -49,7 +55,7 @@ const PARSERS = {
     }
     return result;
   },
-  'md': text => {
+  md: text => {
     const result = grayMatter(text);
     result.content = showdownConverter.makeHtml(result.content);
     return result;
@@ -68,7 +74,7 @@ for (const filename of fileList) {
     const location = new URL(BASE_URL + '/' + filename);
     console.log(`Bundling ${filename}`);
     let includePage = false;
-    let details = {
+    const details = {
       url: location.pathname
     };
 
@@ -78,31 +84,17 @@ for (const filename of fileList) {
       details.type = 'root';
       details.dirname = '';
       details.path = location.pathname;
-      switch (location.pathname) {
-        case '/index.html':
-          details.title = 'About Me';
-          break;
-        case '/cv.html':
-          details.title = 'CV';
-          break;
-        case '/blog.html':
-          details.title = 'Blog';
-          break;
-        default:
-          details.title = '404';
-      }
+      details.title = menu.find(d => d.url === location.pathName)?.title;
     }
 
     // Blog file?
-    let blog = /blog\/(.*)\/([^/])*\.([^/.]*)$/.exec(location.pathname);
+    const blog = /blog\/(.*)\/([^/])*\.([^/.]*)$/.exec(location.pathname);
     if (blog) {
       details.dirname = blog[1];
       details.path = `/blog/${details.dirname}`;
       details.type = 'blog';
-      if (blog[3] === 'html') {
+      if (blog[2] === 'post' && blog[3] === 'html') {
         includePage = true;
-      } else if (blog[2] === 'icon' && ICON_FORMATS.indexOf(blog[3])) {
-        icons[details.path] = `${details.path}/${blog[2]}.${blog[3]}`;
       }
     }
 
@@ -129,8 +121,8 @@ for (const filename of fileList) {
       pages.details[details.path] = details;
     }
 
-    // Generic data files
-    let dataDir = /data\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
+    // CV data?
+    const dataDir = /cv\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
     if (dataDir) {
       details.path = dataDir[1].split('/');
       details.name = dataDir[2];
@@ -145,7 +137,7 @@ for (const filename of fileList) {
       details.lastmod = shell.exec(`git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`).stdout.trim() ||
         shell.exec(`date +%Y-%m-%d -r ${filename}`).stdout.trim();
       const pathCopy = Array.from(details.path);
-      let parent = data;
+      let parent = cvData;
       while (pathCopy.length > 0) {
         const chunk = pathCopy.shift();
         parent[chunk] = parent[chunk] || {};
@@ -156,25 +148,12 @@ for (const filename of fileList) {
   }
 }
 
-// Attach any icons that we found that weren't otherwise specified
-for (const [pagePath, icon] of Object.entries(icons)) {
-  if (!pages.details[pagePath].icon) {
-    pages.details[pagePath].icon = icon;
-  }
-}
-
 pages.hierarchy.blog.sort((a, b) => {
   return pages.details[a].lastmod - pages.details[b].lastmod;
 });
-pages.hierarchy.project.sort((a, b) => {
-  return pages.details[a].featureOrder - pages.details[b].featureOrder;
-});
 
-// Dump pages.json
-fs.writeFileSync('pages.json', JSON.stringify(pages, null, 2));
-
-// Dump data.json
-fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+// Dump CvView/data.json
+fs.writeFileSync('views/CvView/data.json', JSON.stringify(cvData, null, 2));
 
 // Dump non-external pages to sitemap.xml
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -191,4 +170,4 @@ for (const details of Object.values(pages.details)) {
 }
 fs.writeFileSync('sitemap.xml', sitemap + '</urlset>');
 
-shell.echo('Updated and staged pages.json, data.json, and sitemap.xml');
+shell.echo('Updated and staged views/CvView/data.json and sitemap.xml');

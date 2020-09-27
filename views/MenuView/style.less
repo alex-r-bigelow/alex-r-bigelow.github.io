@@ -1,0 +1,16 @@
+.MenuView {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  menuItem.subMenu:before {
+    content: '\25b6';
+    color: var(--text-color-softer);
+    position: absolute;
+    right: 0.5em;
+  }
+}

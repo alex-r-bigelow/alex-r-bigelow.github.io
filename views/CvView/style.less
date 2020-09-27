@@ -1,18 +1,15 @@
-@import '../../style/colors.less';
-@import '../../style/measurements.less';
-
 /* eb-garamond-regular - latin */
 @font-face {
   font-family: 'EB Garamond';
   font-style: normal;
   font-weight: 400;
-  src: url('style/fonts/eb-garamond-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/eb-garamond-v12-latin-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('style/fonts/eb-garamond-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('style/fonts/eb-garamond-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('style/fonts/eb-garamond-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('style/fonts/eb-garamond-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('style/fonts/eb-garamond-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
+       url('fonts/eb-garamond-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/eb-garamond-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/eb-garamond-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/eb-garamond-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/eb-garamond-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
 }
 
 /* eb-garamond-smallCaps - latin */
@@ -20,35 +17,52 @@
   font-family: 'EB Garamond SC';
   font-style: normal;
   font-weight: 400;
-  src: url('style/fonts/eb-garamond-sc-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/eb-garamond-sc-v12-latin-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('style/fonts/eb-garamond-sc-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('style/fonts/eb-garamond-sc-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('style/fonts/eb-garamond-sc-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('style/fonts/eb-garamond-sc-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('style/fonts/eb-garamond-sc-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
+       url('fonts/eb-garamond-sc-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/eb-garamond-sc-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/eb-garamond-sc-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/eb-garamond-sc-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/eb-garamond-sc-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
 }
 
 .CV {
+  grid-gap: 60px;
+  grid-auto-flow: column;
+  grid-template-rows: 1rem auto;
+
+  .showInPrint {
+    display: none;
+  }
+
+  h2, h5 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
   .entry {
     position: relative;
     .title {
       display: block;
       max-width: calc(100% - 4em);
+      margin-bottom: 0;
+      color: var(--text-color-richer);
     }
     .date {
       position: absolute;
       top: 0;
       right: 0;
+      color: var(--text-color-richer);
     }
-    .meta {
+    .meta, .booktitle, .journal, .howpublished {
       margin: 0 0 0 1em;
       padding: 0;
       list-style: none;
-      font-size: 0.75em;
+      color: var(--text-color-softer);
 
       .award {
         position: relative;
+        color: var(--accent-color);
+        margin-bottom: 0;
         &:before {
           content: '\2606';
           position: absolute;
@@ -70,26 +84,9 @@
 }
 
 @media screen {
-  .CV {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: @menuSize;
-    padding: @paragraphFontSize;
-    overflow: auto;
-  }
-  @media (min-aspect-ratio: ~"1/1") {
-    .CV {
-      right: @wideMenuSize;
-    }
-  }
 }
 
 @media print {
-  .Menu {
-    display: none;
-  }
   html, body {
     background: white;
     font-family: 'EB Garamond', serif;
@@ -97,17 +94,35 @@
     font-size: 12pt;
     overflow: visible;
     height: auto;
+    margin: 0;
+    padding: 0;
   }
-  h1, h2, h3, h4, h5, h6, strong {
-    font-family: 'EB Garamond SC', serif;
-    page-break-after: avoid;
-  }
-  body {
-    margin: 2cm;
+  .MenuView, .hideInPrint {
+    display: none !important;
   }
   .CV {
-    .contactInfo {
-      margin-top: -1.5em;
+    grid-template-columns: repeat(2, calc(50% - 5mm));
+    grid-template-rows: 6rem auto;
+    grid-gap: 0 10mm;
+    h1, h2, h3, h4, h5, strong {
+      font-family: 'EB Garamond SC', serif;
+      page-break-after: avoid;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h1 { font-size: 2.0rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.0rem; }
+    h6 { font-size: 0.8rem; }
+
+    .showInPrint {
+      display: inline-block;
+    }
+
+    .meta {
+      font-size: 0.75em;
     }
 
     .entry {
@@ -116,6 +131,11 @@
 
     .forcePageBreak {
       page-break-after: always;
+    }
+
+    /* hacks for mysterious whitespace problems after page break */
+    .service h5 {
+      margin-top: -6rem;
     }
   }
   .printHelper {

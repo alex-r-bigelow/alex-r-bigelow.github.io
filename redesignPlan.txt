@@ -1,0 +1,19 @@
+landing page
+- hire / fund me popup
+- consulting
+  - what i do for projects (roles i play)
+  - areas of expertise
+  - CV
+- projects
+  - uki
+  - honegumi?
+  - wrangling survey
+  - Origraph
+  - Hanpuku
+  - Jacob's Ladder
+  - Resonant Lab
+  - calendar-creator
+  - ev-infinite
+- CV
+- blog
+- contact

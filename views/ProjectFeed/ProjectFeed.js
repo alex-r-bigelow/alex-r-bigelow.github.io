@@ -1,13 +1,20 @@
-/* globals d3 */
-import { View } from '../../node_modules/uki/dist/uki.esm.js';
+/* globals d3, uki */
 
-class Feed extends View {
-  constructor (d3el) {
-    super(d3el, [
-      { type: 'less', url: 'views/Feed/style.less' }
+class ProjectFeed extends uki.View {
+  constructor (options = {}) {
+    options.resources = options.resources || [];
+    options.resources.push(...[
+      { type: 'less', url: 'views/ProjectFeed/style.less' },
+      { type: 'text', url: 'views/ProjectFeed/template.html' }
     ]);
+    super(options);
   }
-  setup () {
+
+  async setup () {
+    await super.setup(...arguments);
+
+    this.d3el.html(this.getNamedResource('template'));
+
     const self = this;
     self.youtubeVideos = {};
     this.d3el.selectAll('.youtubePlaceholder').each(function () {
@@ -38,7 +45,10 @@ class Feed extends View {
       });
     });
   }
-  draw () {
+
+  async draw () {
+    await super.draw(...arguments);
+
     for (const { placeholder, iframe } of Object.values(this.youtubeVideos)) {
       if (placeholder && iframe) {
         placeholder.style('display', null);
@@ -52,4 +62,4 @@ class Feed extends View {
   }
 }
 
-export default Feed;
+export default ProjectFeed;
