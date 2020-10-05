@@ -1,7 +1,0 @@
-Many data abstraction types, such as networks or set relationships, remain unfamiliar to data workers beyond the
-visualization research community. We conduct a survey and series of interviews about how people describe their data, either directly or
-indirectly. We refer to the latter as latent data abstractions. We conduct a grounded theory analysis and develop a substantive theory
-that (1) interprets the extent to which latent data abstractions exist, (2) reveals the far-reaching effects that the interventionist pursuit of
-such abstractions can have on data workers, (3) predicts why and when data workers may resist such explorations, and (4) suggests
-how to take advantage of opportunities and mitigate risks through transparency about visualization research perspectives and agendas.
-To continue the discussion, we make our dataset open along with a visual interface for further exploration.

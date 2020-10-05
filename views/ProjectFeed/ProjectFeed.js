@@ -20,9 +20,9 @@ class ProjectFeed extends uki.View {
 
       const placeholder = d3.select(this);
       // Fill in placeholders with high-res images
-      placeholder.attr('src', `http://i.ytimg.com/vi/${youTubeID}/default.jpg`);
+      placeholder.attr('src', `http://i.ytimg.com/vi/${youTubeID}/hqdefault.jpg`);
       // Create an (initially hidden) iframe and load the video
-      const iframe = d3.select(placeholder.parentNode)
+      const iframe = d3.select(placeholder.node().parentNode)
         .insert('iframe', `[data-youTubeID="${youTubeID}"]`)
         .style('display', 'none')
         .attr('frameborder', '0')
@@ -49,7 +49,14 @@ class ProjectFeed extends uki.View {
 
     for (const { placeholder, iframe } of Object.values(this.youtubeVideos)) {
       if (placeholder && iframe) {
+        iframe
+          .attr('width', 0)
+          .attr('height', 0);
         placeholder.style('display', null);
+      }
+    }
+    for (const { placeholder, iframe } of Object.values(this.youtubeVideos)) {
+      if (placeholder && iframe) {
         const bounds = placeholder.node().getBoundingClientRect();
         placeholder.style('display', 'none');
         iframe

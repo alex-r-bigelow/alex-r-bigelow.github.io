@@ -27,10 +27,6 @@
 }
 
 .CV {
-  grid-gap: 60px;
-  grid-auto-flow: column;
-  grid-template-rows: 1rem auto;
-
   .showInPrint {
     display: none;
   }
@@ -102,8 +98,8 @@
   }
   .CV {
     grid-template-columns: repeat(2, calc(50% - 5mm));
-    grid-template-rows: 6rem auto;
     grid-gap: 0 10mm;
+    max-width: calc(100% - 3cm);
     h1, h2, h3, h4, h5, strong {
       font-family: 'EB Garamond SC', serif;
       page-break-after: avoid;
@@ -134,9 +130,6 @@
     }
 
     /* hacks for mysterious whitespace problems after page break */
-    .service h5 {
-      margin-top: -6rem;
-    }
   }
   .printHelper {
     display: none;

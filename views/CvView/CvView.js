@@ -28,7 +28,6 @@ class CvView extends uki.View {
   async setup () {
     await super.setup(...arguments);
 
-    await window.controller.ready;
     for (const pubChunk of this.d3el.selectAll('.pubchunk').nodes()) {
       const pubType = pubChunk.dataset.type;
       const pubData = this.data.publications[pubType] || {};

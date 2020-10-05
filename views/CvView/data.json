@@ -168,7 +168,7 @@
           "stop": "Present",
           "service": true,
           "meta": [
-            "IEEE Information Visualization (2016-2020)",
+            "IEEE Information Visualization (2016-2020), Short Papers Program Committee (2020)",
             "Eurovis VGTC Conference on Visualization (2016, 2020)",
             "IEEE Conference on Visual Analytics Science and Technology (VAST) (2017, 2019)",
             "ACM CHI Conference on Human Factors in Computing Systems (2015, 2017-2020)",
@@ -695,6 +695,75 @@
           "filename": "publication.pdf",
           "lastmod": "2020-09-27"
         }
+      },
+      "2020_pearc": {
+        "abstract.txt": {
+          "url": "/cv/publications/abstracts/2020_pearc/abstract.txt",
+          "path": [
+            "publications",
+            "abstracts",
+            "2020_pearc"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "We describe an interactive computing environment called JetLag. JetLag implements the following features of Phylanx project: (1) Phylanx, a Python-based asynchronous array computing toolkit; (2) the APEX performance measurement library; (3) a performance visualization framework called Traveler; (4) the Tapis/Agave Science as a Service middleware; and (6) a container infrastructure that includes Docker-based Jupyter notebook for the client and a singularity image for the server. The running system starts with a user performing array computations on their workstation or laptop. If, at some point, the calculation the user is performing becomes sufficiently intensive or numerous, it can be packaged and sent to another machine where it will run (through the batch queue system if there is one), produce a result, and have that result sent back to the user’s local interface. Whether the calculation is local or remote, the user will be able to use APEX and Traveler to diagnose and fix performance related problems. The JetLag system is suitable for a variety of array computational tasks, including machine learning and exploratory data analysis.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2020-10-01"
+        },
+        "citation.bib": {
+          "url": "/cv/publications/abstracts/2020_pearc/citation.bib",
+          "path": [
+            "publications",
+            "abstracts",
+            "2020_pearc"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "author": "Brandt, Steven R. and Bigelow, Alex and Sakin, Sayef Azad and Williams, Katy and Isaacs, Katherine E. and Huck, Kevin and Tohid, Rod and Wagle, Bibek and Shirzad, Shahrzad and Kaiser, Hartmut",
+            "title": "JetLag: An Interactive, Asynchronous Array Computing Environment",
+            "year": "2020",
+            "isbn": "9781450366892",
+            "publisher": "Association for Computing Machinery",
+            "address": "New York, NY, USA",
+            "url": "https://doi.org/10.1145/3311790.3396657",
+            "doi": "10.1145/3311790.3396657",
+            "abstract": "We describe an interactive computing environment called JetLag. JetLag implements the following features of Phylanx project: (1) Phylanx, a Python-based asynchronous array computing toolkit; (2) the APEX performance measurement library; (3) a performance visualization framework called Traveler; (4) the Tapis/Agave Science as a Service middleware; and (6) a container infrastructure that includes Docker-based Jupyter notebook for the client and a singularity image for the server. The running system starts with a user performing array computations on their workstation or laptop. If, at some point, the calculation the user is performing becomes sufficiently intensive or numerous, it can be packaged and sent to another machine where it will run (through the batch queue system if there is one), produce a result, and have that result sent back to the user’s local interface. Whether the calculation is local or remote, the user will be able to use APEX and Traveler to diagnose and fix performance related problems. The JetLag system is suitable for a variety of array computational tasks, including machine learning and exploratory data analysis. ",
+            "booktitle": "Practice and Experience in Advanced Research Computing",
+            "pages": "8–12",
+            "numpages": "5",
+            "keywords": "performance visualization, interactive computing, research environment, asynchronous, cloud computing, performance tuning, array",
+            "location": "Portland, OR, USA",
+            "series": "PEARC '20",
+            "authorList": [
+              "Steven R. Brandt",
+              "Alex Bigelow",
+              "Sayef Azad Sakin",
+              "Katy Williams",
+              "Katherine E. Isaacs",
+              "Kevin Huck",
+              "Rod Tohid",
+              "Bibek Wagle",
+              "Shahrzad Shirzad",
+              "Hartmut Kaiser"
+            ],
+            "joinedAuthorList": "Steven R. Brandt, Alex Bigelow, Sayef Azad Sakin, Katy Williams, Katherine E. Isaacs, Kevin Huck, Rod Tohid, Bibek Wagle, Shahrzad Shirzad, and Hartmut Kaiser"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2020-10-01"
+        },
+        "publication.pdf": {
+          "url": "/cv/publications/abstracts/2020_pearc/publication.pdf",
+          "path": [
+            "publications",
+            "abstracts",
+            "2020_pearc"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2020-10-01"
+        }
       }
     },
     "papers": {
@@ -741,6 +810,7 @@
             "pages": "17--24",
             "year": "2014",
             "organization": "ACM",
+            "doi": "10.1145/2598153.2598175",
             "authorList": [
               "Alex Bigelow",
               "Steven Drucker",
@@ -854,6 +924,21 @@
           },
           "filename": "citation.bib",
           "lastmod": "2020-09-27"
+        },
+        "meta.json": {
+          "url": "/cv/publications/papers/2016_haplotype/meta.json",
+          "path": [
+            "publications",
+            "papers",
+            "2016_haplotype"
+          ],
+          "name": "meta",
+          "extension": "json",
+          "contents": {
+            "hideInPrint": true
+          },
+          "filename": "meta.json",
+          "lastmod": "2020-10-01"
         }
       },
       "2016_infovis_hanpuku": {
@@ -888,6 +973,7 @@
             "pages": "481--490",
             "year": "2016",
             "publisher": "IEEE",
+            "doi": "10.1109/TVCG.2016.2598609",
             "authorList": [
               "Alex Bigelow",
               "Steven Drucker",
@@ -973,10 +1059,14 @@
           "name": "citation",
           "extension": "bib",
           "contents": {
+            "title": "Visualizing a Moving Target: A Design Study on Task Parallel Programs in the Presence of Evolving Data and Concerns",
             "author": "Williams, Katy and Bigelow, Alex and Isaacs, Kate",
             "journal": "IEEE Transactions on Visualization and Computer Graphics",
-            "title": "Visualizing a Moving Target: A Design Study on Task Parallel Programs in the Presence of Evolving Data and Concerns",
+            "volume": "26",
+            "number": "1",
+            "pages": "1118--1128",
             "year": "2019",
+            "publisher": "IEEE",
             "doi": "10.1109/TVCG.2019.2934285",
             "authorList": [
               "Katy Williams",
@@ -1031,6 +1121,7 @@
             "pages": "47--54",
             "year": "2019",
             "organization": "IEEE",
+            "doi": "10.1109/PacificVis.2019.00014",
             "authorList": [
               "Alex Bigelow",
               "Megan Monroe"
@@ -1083,6 +1174,7 @@
             "pages": "81--92",
             "year": "2019",
             "organization": "IEEE",
+            "doi": "10.1109/VAST47406.2019.8986909",
             "authorList": [
               "Alex Bigelow",
               "Carolina Nobre",
@@ -1129,6 +1221,58 @@
           "extension": "pdf",
           "filename": "supplement.pdf",
           "lastmod": "2020-09-27"
+        }
+      },
+      "2020_guidelines": {
+        "abstract.txt": {
+          "url": "/cv/publications/papers/2020_guidelines/abstract.txt",
+          "path": [
+            "publications",
+            "papers",
+            "2020_guidelines"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "Many data abstraction types, such as networks or set relationships, remain unfamiliar to data workers beyond the\nvisualization research community. We conduct a survey and series of interviews about how people describe their data, either directly or\nindirectly. We refer to the latter as latent data abstractions. We conduct a Grounded Theory analysis that (1) interprets the extent to\nwhich latent data abstractions exist, (2) reveals the far-reaching effects that the interventionist pursuit of such abstractions can have on\ndata workers, (3) describes why and when data workers may resist such explorations, and (4) suggests how to take advantage of\nopportunities and mitigate risks through transparency about visualization research perspectives and agendas. We then use the themes\nand codes discovered in the Grounded Theory analysis to develop guidelines for data abstraction in visualization projects. To continue\nthe discussion, we make our dataset open along with a visual interface for further exploration.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2020-10-01"
+        },
+        "citation.bib": {
+          "url": "/cv/publications/papers/2020_guidelines/citation.bib",
+          "path": [
+            "publications",
+            "papers",
+            "2020_guidelines"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Guidelines For Pursuing and Revealing Data Abstractions",
+            "author": "Bigelow, Alex and Williams, Katy and Isaacs, Katherine E",
+            "journal": "IEEE Transactions on Visualization and Computer Graphics",
+            "year": "2020",
+            "publisher": "IEEE",
+            "authorList": [
+              "Alex Bigelow",
+              "Katy Williams",
+              "Katherine E Isaacs"
+            ],
+            "joinedAuthorList": "Alex Bigelow, Katy Williams, and Katherine E Isaacs"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2020-10-01"
+        },
+        "publication.pdf": {
+          "url": "/cv/publications/papers/2020_guidelines/publication.pdf",
+          "path": [
+            "publications",
+            "papers",
+            "2020_guidelines"
+          ],
+          "name": "publication",
+          "extension": "pdf",
+          "filename": "publication.pdf",
+          "lastmod": "2020-10-01"
         }
       }
     },
@@ -1444,59 +1588,6 @@
           "name": "poster",
           "extension": "pdf",
           "filename": "poster.pdf",
-          "lastmod": "2020-09-27"
-        }
-      }
-    },
-    "preprints": {
-      "2020_guidelines": {
-        "abstract.txt": {
-          "url": "/cv/publications/preprints/2020_guidelines/abstract.txt",
-          "path": [
-            "publications",
-            "preprints",
-            "2020_guidelines"
-          ],
-          "name": "abstract",
-          "extension": "txt",
-          "contents": "Many data abstraction types, such as networks or set relationships, remain unfamiliar to data workers beyond the\nvisualization research community. We conduct a survey and series of interviews about how people describe their data, either directly or\nindirectly. We refer to the latter as latent data abstractions. We conduct a grounded theory analysis and develop a substantive theory\nthat (1) interprets the extent to which latent data abstractions exist, (2) reveals the far-reaching effects that the interventionist pursuit of\nsuch abstractions can have on data workers, (3) predicts why and when data workers may resist such explorations, and (4) suggests\nhow to take advantage of opportunities and mitigate risks through transparency about visualization research perspectives and agendas.\nTo continue the discussion, we make our dataset open along with a visual interface for further exploration.\n",
-          "filename": "abstract.txt",
-          "lastmod": "2020-09-27"
-        },
-        "citation.bib": {
-          "url": "/cv/publications/preprints/2020_guidelines/citation.bib",
-          "path": [
-            "publications",
-            "preprints",
-            "2020_guidelines"
-          ],
-          "name": "citation",
-          "extension": "bib",
-          "contents": {
-            "title": "Guidelines For Pursuing and Revealing Data Abstractions",
-            "author": "Bigelow, Alex and Williams, Katy and Isaacs, Katherine E",
-            "journal": "arXiv preprint arXiv:2005.04058",
-            "year": "2020",
-            "authorList": [
-              "Alex Bigelow",
-              "Katy Williams",
-              "Katherine E Isaacs"
-            ],
-            "joinedAuthorList": "Alex Bigelow, Katy Williams, and Katherine E Isaacs"
-          },
-          "filename": "citation.bib",
-          "lastmod": "2020-09-27"
-        },
-        "publication.pdf": {
-          "url": "/cv/publications/preprints/2020_guidelines/publication.pdf",
-          "path": [
-            "publications",
-            "preprints",
-            "2020_guidelines"
-          ],
-          "name": "publication",
-          "extension": "pdf",
-          "filename": "publication.pdf",
           "lastmod": "2020-09-27"
         }
       }

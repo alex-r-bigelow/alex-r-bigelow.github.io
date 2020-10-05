@@ -20,6 +20,8 @@ class CvController extends Controller {
     });
 
     await super.setup(...arguments);
+
+    this.views.push(this.cvView);
   }
 }
 

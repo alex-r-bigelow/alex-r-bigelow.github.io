@@ -8,6 +8,8 @@ class Controller extends uki.ui.InformativeView {
 
     super(options);
 
+    this.views = [];
+
     window.onresize = () => { this.render(); };
   }
 
@@ -19,6 +21,15 @@ class Controller extends uki.ui.InformativeView {
       drawCollapsed: this.collapseMenu === undefined ? true : this.collapseMenu,
       extraSpecs: this.extraMenuSpecs || []
     });
+    this.views.push(this.menuView);
+  }
+
+  async draw () {
+    await super.draw(...arguments);
+
+    for (const view of this.views) {
+      view.render();
+    }
   }
 }
 

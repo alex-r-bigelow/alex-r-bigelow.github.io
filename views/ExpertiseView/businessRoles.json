@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Visualization designer",
+    "description": "I am prepared to play all of the below roles, and/or interact with existing people that do these jobs, with specific expertise about the perceptual effectiveness of various visualization techniques",
+    "stars": 6
+  },
+  {
+    "title": "Data wrangler",
+    "description": "I experiment with, identify, and reshape data to fit appropriate data models that are effective for relevant stakeholders to understand and query, and efficient for algorithms to leverage",
+    "stars": 6
+  },
+  {
+    "title": "Product manager",
+    "description": "I identify, document, and communicate diverse stakeholder high-level goals, and how they justify low-level visualization tasks, software features, designs, and data models",
+    "stars": 5
+  },
+  {
+    "title": "UX designer / researcher",
+    "description": "I experiment with, plan, test, and analyze the extent to which software (and/or hardware) systems are useful, usable, expressive, learnable, and compatible with real-world workflows",
+    "stars": 5
+  },
+  {
+    "title": "Front-end developer",
+    "description": "I build, test, deploy, adapt, and maintain user-facing, interactive software that behaves according to stakeholder needs",
+    "stars": 5
+  },
+  {
+    "title": "Graphic designer",
+    "description": "I experiment with, plan, and implement visual layouts, styles, typography that achieve a purpose, are aesthetically pleasing, and fit stakeholder needs",
+    "stars": 4
+  },
+  {
+    "title": "Back-end developer",
+    "description": "I build, test, desploy, adapt, and maintain infrastructure that deals with heavy computations, secure data storage and retrieval, communication between users, etc.",
+    "stars": 4
+  },
+  {
+    "title": "Data scientist",
+    "description": "Fancy term for \"statistician;\" I understand, design, and implement AI / Machine Learning algorithms to model and predict phenomena",
+    "stars": 3
+  },
+  {
+    "title": "Bioinformatician",
+    "description": "I am prepared to play all of the other listed roles, in the context of biological (and often sensitive human) data",
+    "stars": 2
+  }
+]

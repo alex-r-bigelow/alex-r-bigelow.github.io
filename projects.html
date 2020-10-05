@@ -14,20 +14,36 @@
 </head>
 <body>
   <h1>Project Portfolio</h1>
-  <div class="Feed grid-container thirds">
+  <div class="Feed grid-420">
     <div>
-      <h3 id="wrangling_survey" style="margin-top:0">Data Wrangling Survey</h3>
-      <p>How do you think about your data? Is it a network? Is it spatial? Something else?</p>
-      <p>What if you could change your mind?</p>
-      <p>Check out the <a href="https://alex-r-bigelow.github.io/wrangling-survey/Responses.html">interactive survey results</a>, or watch the associated IEEE VIS talk:</p>
-      <img class="youtubePlaceholder" data-youtubeid="DhPiHvtgtTI"/>
+      <h4 id="traveler">Traveler</h4>
+      <video controls>
+        <source src="img/traveler.mp4" type="video/mp4"/>
+        Sorry, your browser doesn't support embedded MP4 videos.
+      </video>
+      <p>A <a href="https://github.com/hdc-arizona/traveler-integrated">visualization system</a> for profiling HPC performance and behavior, specifically for the <a href="https://github.com/STEllAR-GROUP/hpx">HPX</a> and <a href="https://phylanx.stellar-group.org/">Phylanx</a> projects.</p>
     </div>
 
-    <div style="grid-column: 3;grid-row: 1 / 3">
-      <h3 id="ukijs">uki.js</h3>
-      <p>A minimal, d3-based Model-View framework for building larger systems out of linked bl.ock-esque views.</p>
+    <div>
+      <h4 id="wrangling_survey">Data Wrangling Survey</h4>
+      <img class="youtubePlaceholder" data-youtubeid="DhPiHvtgtTI"/>
+      <p>How do you think about your data? Is it a network? Is it spatial? Something else? What if you could change your mind?</p>
+      <p>Check out the <a href="https://alex-r-bigelow.github.io/wrangling-survey/Responses.html">interactive survey results</a>, or watch the associated IEEE VIS talk:</p>
+    </div>
+
+    <div>
+      <h4 id="origraph">Origraph</h4>
+      <img class="youtubePlaceholder" data-youtubeid="bSFf2iD4TLI"/>
+      <p>A <a href="https://origraph.github.io">visual tool</a> for wrangling network data&mdash;no programming* necessary!</p>
+      <p><small>*Okay, okay, there's an advanced mode that makes the user write code. This is the curse of creative software: usability and expressiveness don't like to co-exist in the same interface.</small></p>
+    </div>
+
+    <div style="grid-row-end:span 2">
+      <h4 id="ukijs">uki.js</h4>
       <img src="img/uki.svg" width="30em"/>
-      <p>Yes, I rolled my own web framework. Reasons why / its main selling points:</p>
+      <p>
+        A minimal, d3-based Model-View framework for building larger systems out of linked bl.ock-esque views. Reasons why I rolled my own / its main selling points:
+      </p>
       <ul>
         <li><strong>Zero</strong> build steps required; relies on native ES6 imports + distributed, lazy resource retrieval</li>
         <li>No extra syntax / template language to learn; only requires knowledge of JS, HTML, and CSS</li>
@@ -40,41 +56,33 @@
     </div>
 
     <div>
-      <h3 id="origraph">Origraph</h3>
-      <p>A <a href="https://origraph.github.io">visual tool</a> for wrangling network data&mdash;no programming* necessary!</p>
-      <img class="youtubePlaceholder" data-youtubeid="bSFf2iD4TLI"/>
-      <p><small>*Okay, okay, there's an advanced mode that makes the user write code. This is the curse of creative software: usability and expressiveness don't like to co-exist in the same interface.</small></p>
-    </div>
-
-    <div>
-      <h3 id="hanpuku">Hanpuku</h3>
-      <p>Hanpuku is a tool for bridging d3.js and Illustrator. You can edit a d3.js visualization with Illustrator, and/or edit an Illustrator document with d3.js.</p>
+      <h4 id="hanpuku">Hanpuku</h4>
       <img class="youtubePlaceholder" data-youtubeid="eNoDZcs7vVs"/>
+      <p>Hanpuku is a tool for bridging d3.js and Illustrator. You can edit a d3.js visualization with Illustrator, and/or edit an Illustrator document with d3.js.</p>
     </div>
 
     <div>
-      <h3 id="jacobs_ladder">Jacob's Ladder</h3>
-      <p>Jacob's Ladder is a system I built during an internship at IBM for extracting subsets of large graphs.</p>
+      <h4 id="jacobs_ladder">Jacob's Ladder</h4>
       <img class="youtubePlaceholder" data-youtubeid="2joyCdBSGKw"/>
+      <p>Jacob's Ladder is a system I built during an internship at IBM for extracting subsets of large graphs.</p>
     </div>
 
     <div>
-      <h3 id="resonant_lab">Resonant Lab</h3>
-      <p><a href="https://resonantlab.kitware.com">Resonant Lab</a> is a system I built during an internship at Kitware to help make various DARPA XDATA projects easier to use.</p>
+      <h4 id="resonant_lab">Resonant Lab</h4>
       <img class="youtubePlaceholder" data-youtubeid="xvl6bbWLcMo"/>
+      <p><a href="https://resonantlab.kitware.com">Resonant Lab</a> is a system I built during an internship at Kitware to help make various DARPA XDATA projects easier to use.</p>
     </div>
 
     <div>
-      <h3 id="calendar-creator" style="margin-top:0">calendar-creator</h3>
+      <h4 id="calendar-creator" style="margin-top:0">calendar-creator</h4>
       <p>A simple, <a href="https://alex-r-bigelow.github.io/calendar-creator/">few-frills interface</a> for creating minimal SVG calendars.</p>
       <!--img src="images/calendar-creator.png"/-->
     </div>
 
     <div>
-      <h3 id="ev-infinite">ev-infinite</h3>
+      <h4 id="ev-infinite">ev-infinite</h4>
       <p>No list like this would be complete without a silly little game. <a href="https://alex-r-bigelow.github.io/ev-infinite/">Mine</a> is a (very work in progress) attempt to make a procedural clone of Escape Velocity.</p>
     </div>
   </div>
-  <nav class="Menu"></nav>
 </body>
 </html>

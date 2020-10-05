@@ -15,12 +15,12 @@
     "icon": "img/consulting.svg",
     "subMenu": [
       {
-        "url": "/consulting.html?context=roles",
+        "url": "/consulting.html#roles",
         "title": "What I Do"
       },
       {
-        "url": "/consulting.html?context=expertise",
-        "title": "Areas of Expertise"
+        "url": "/consulting.html#expertise",
+        "title": "Specific skills"
       }
     ]
   },
@@ -29,6 +29,10 @@
     "title": "Projects",
     "icon": "img/projects.svg",
     "subMenu": [
+      {
+        "url": "/projects.html#traveler",
+        "title": "Traveler"
+      },
       {
         "url": "/projects.html#wrangling_survey",
         "title": "Data Wrangling Survey"
