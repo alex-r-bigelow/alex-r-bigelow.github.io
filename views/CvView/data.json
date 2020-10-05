@@ -179,7 +179,7 @@
         "excerpt": ""
       },
       "filename": "reviewing.md",
-      "lastmod": "2020-09-27"
+      "lastmod": "2020-10-05"
     },
     "sci.md": {
       "url": "/cv/experience/sci.md",
@@ -708,7 +708,7 @@
           "extension": "txt",
           "contents": "We describe an interactive computing environment called JetLag. JetLag implements the following features of Phylanx project: (1) Phylanx, a Python-based asynchronous array computing toolkit; (2) the APEX performance measurement library; (3) a performance visualization framework called Traveler; (4) the Tapis/Agave Science as a Service middleware; and (6) a container infrastructure that includes Docker-based Jupyter notebook for the client and a singularity image for the server. The running system starts with a user performing array computations on their workstation or laptop. If, at some point, the calculation the user is performing becomes sufficiently intensive or numerous, it can be packaged and sent to another machine where it will run (through the batch queue system if there is one), produce a result, and have that result sent back to the user’s local interface. Whether the calculation is local or remote, the user will be able to use APEX and Traveler to diagnose and fix performance related problems. The JetLag system is suitable for a variety of array computational tasks, including machine learning and exploratory data analysis.\n",
           "filename": "abstract.txt",
-          "lastmod": "2020-10-01"
+          "lastmod": "2020-10-05"
         },
         "citation.bib": {
           "url": "/cv/publications/abstracts/2020_pearc/citation.bib",
@@ -750,7 +750,7 @@
             "joinedAuthorList": "Steven R. Brandt, Alex Bigelow, Sayef Azad Sakin, Katy Williams, Katherine E. Isaacs, Kevin Huck, Rod Tohid, Bibek Wagle, Shahrzad Shirzad, and Hartmut Kaiser"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-10-01"
+          "lastmod": "2020-10-05"
         },
         "publication.pdf": {
           "url": "/cv/publications/abstracts/2020_pearc/publication.pdf",
@@ -762,7 +762,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-10-01"
+          "lastmod": "2020-10-05"
         }
       }
     },
@@ -820,7 +820,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-09-27"
+          "lastmod": "2020-10-05"
         },
         "meta.json": {
           "url": "/cv/publications/papers/2014_avi_reflections/meta.json",
@@ -938,7 +938,7 @@
             "hideInPrint": true
           },
           "filename": "meta.json",
-          "lastmod": "2020-10-01"
+          "lastmod": "2020-10-05"
         }
       },
       "2016_infovis_hanpuku": {
@@ -983,7 +983,7 @@
             "joinedAuthorList": "Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-09-27"
+          "lastmod": "2020-10-05"
         },
         "fastForward.mp4": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/fastForward.mp4",
@@ -1076,7 +1076,7 @@
             "joinedAuthorList": "Katy Williams, Alex Bigelow, and Kate Isaacs"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-09-27"
+          "lastmod": "2020-10-05"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2019_infovis_atria/publication.pdf",
@@ -1129,7 +1129,7 @@
             "joinedAuthorList": "Alex Bigelow and Megan Monroe"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-09-27"
+          "lastmod": "2020-10-05"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/publication.pdf",
@@ -1184,7 +1184,7 @@
             "joinedAuthorList": "Alex Bigelow, Carolina Nobre, Miriah Meyer, and Alexander Lex"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-09-27"
+          "lastmod": "2020-10-05"
         },
         "description.html": {
           "url": "/cv/publications/papers/2019_vast_origraph/description.html",
@@ -1235,7 +1235,7 @@
           "extension": "txt",
           "contents": "Many data abstraction types, such as networks or set relationships, remain unfamiliar to data workers beyond the\nvisualization research community. We conduct a survey and series of interviews about how people describe their data, either directly or\nindirectly. We refer to the latter as latent data abstractions. We conduct a Grounded Theory analysis that (1) interprets the extent to\nwhich latent data abstractions exist, (2) reveals the far-reaching effects that the interventionist pursuit of such abstractions can have on\ndata workers, (3) describes why and when data workers may resist such explorations, and (4) suggests how to take advantage of\nopportunities and mitigate risks through transparency about visualization research perspectives and agendas. We then use the themes\nand codes discovered in the Grounded Theory analysis to develop guidelines for data abstraction in visualization projects. To continue\nthe discussion, we make our dataset open along with a visual interface for further exploration.\n",
           "filename": "abstract.txt",
-          "lastmod": "2020-10-01"
+          "lastmod": "2020-10-05"
         },
         "citation.bib": {
           "url": "/cv/publications/papers/2020_guidelines/citation.bib",
@@ -1260,7 +1260,7 @@
             "joinedAuthorList": "Alex Bigelow, Katy Williams, and Katherine E Isaacs"
           },
           "filename": "citation.bib",
-          "lastmod": "2020-10-01"
+          "lastmod": "2020-10-05"
         },
         "publication.pdf": {
           "url": "/cv/publications/papers/2020_guidelines/publication.pdf",
@@ -1272,7 +1272,7 @@
           "name": "publication",
           "extension": "pdf",
           "filename": "publication.pdf",
-          "lastmod": "2020-10-01"
+          "lastmod": "2020-10-05"
         }
       }
     },
