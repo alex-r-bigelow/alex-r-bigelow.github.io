@@ -35,6 +35,23 @@
     margin-top: 3rem;
     margin-bottom: 1rem;
   }
+  .meta {
+    margin: 0 0 0 1em;
+    padding: 0;
+    list-style: none;
+    color: var(--text-color-softer);
+    .award {
+      position: relative;
+      color: var(--accent-color);
+      margin-bottom: 0;
+      &:before {
+        content: '\2606';
+        position: absolute;
+        left: -1em;
+        bottom: 0px;
+      }
+    }
+  }
   .entry {
     position: relative;
     .title {
@@ -49,24 +66,15 @@
       right: 0;
       color: var(--text-color-richer);
     }
-    .meta, .booktitle, .journal, .howpublished {
+    .booktitle, .journal, .howpublished {
       margin: 0 0 0 1em;
-      padding: 0;
-      list-style: none;
-      color: var(--text-color-softer);
-
-      .award {
-        position: relative;
-        color: var(--accent-color);
-        margin-bottom: 0;
-        &:before {
-          content: '\2606';
-          position: absolute;
-          left: -1em;
-          bottom: 0px;
-        }
-      }
     }
+  }
+  .pubchunk .entry .title {
+    cursor: pointer;
+  }
+  .buttonContainer .button {
+    margin-right: 1em;
   }
 }
 .printHelper {

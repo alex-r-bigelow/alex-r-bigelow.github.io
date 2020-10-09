@@ -64,33 +64,83 @@ class CvView extends uki.View {
       .classed('date', true)
       .text(d => d['citation.bib'].contents.year);
 
-    const metaFields = [
+    pubs.on('click', (event, d) => {
+      uki.ui.showModal({
+        content: modalEl => this.createPubModalContent(d, modalEl),
+        buttonSpecs: ['defaultOK']
+      });
+    });
+
+    pubsEnter.append('ul').classed('meta', true)
+      .selectAll('li')
+      .data(d => this.getMetaFields(d)).enter().append('li')
+      .attr('class', d => d.fieldname)
+      .text(d => d.fieldvalue);
+  }
+
+  getMetaFields (pub) {
+    return [
       ['award'],
       ['booktitle', 'journal', 'howpublished'],
       ['joinedAuthorList']
-    ];
-    pubsEnter.append('ul').classed('meta', true);
-    const metaEnter = pubsEnter.select('.meta').selectAll('li')
-      .data(d => metaFields.map(fieldnames => {
-        for (const fieldname of fieldnames) {
-          const bib = d['citation.bib'].contents;
-          let fieldvalue = bib[fieldname] ||
-            (d['meta.json'] && d['meta.json'].contents[fieldname]);
-          if (fieldvalue) {
-            // Add extra info for some fields:
-            if (fieldname === 'journal' && bib.volume && bib.pages) {
-              fieldvalue += ` ${bib.volume}:${bib.pages}`;
-            }
-            if (fieldname === 'booktitle' && bib.pages) {
-              fieldvalue += ` pp. ${bib.pages}`;
-            }
-            return { fieldname, fieldvalue };
+    ].map(fieldnames => {
+      for (const fieldname of fieldnames) {
+        const bib = pub['citation.bib'].contents;
+        let fieldvalue = bib[fieldname] ||
+          (pub['meta.json'] && pub['meta.json'].contents[fieldname]);
+        if (fieldvalue) {
+          // Add extra info for some fields:
+          if (fieldname === 'journal' && bib.volume && bib.pages) {
+            fieldvalue += ` ${bib.volume}:${bib.pages}`;
+          }
+          if (fieldname === 'booktitle' && bib.pages) {
+            fieldvalue += ` pp. ${bib.pages}`;
+          }
+          return { fieldname, fieldvalue };
+        }
+      }
+      return null;
+    }).filter(d => d !== null);
+  }
+
+  createPubModalContent (pub, modalEl) {
+    modalEl.html('').classed('CV', true);
+
+    modalEl.append('h5').text(pub['citation.bib'].contents.title);
+    modalEl.append('ul').classed('meta', true)
+      .selectAll('li')
+      .data(this.getMetaFields(pub)).enter().append('li')
+      .attr('class', d => d.fieldname)
+      .text(d => d.fieldvalue);
+
+    // Add buttons for linked files
+    const buttonContainer = modalEl.append('div').classed('buttonContainer', true);
+    const generateLinkedFileSpec = (key, label) => {
+      return {
+        key,
+        spec: {
+          label,
+          onclick: () => {
+            window.location = pub[key].url;
           }
         }
-        return null;
-      }).filter(d => d !== null)).enter().append('li');
-    metaEnter.attr('class', d => d.fieldname)
-      .text(d => d.fieldvalue);
+      };
+    };
+    const buttonSpecs = [
+      generateLinkedFileSpec('publication.pdf', 'Publication PDF'),
+      generateLinkedFileSpec('poster.pdf', 'Poster'),
+      generateLinkedFileSpec('citation.bib', 'BibTeX Citation')
+    ];
+    for (const { key, spec } of buttonSpecs) {
+      if (pub[key]) {
+        spec.d3el = buttonContainer.append('div');
+        new uki.ui.ButtonView(spec); // eslint-disable-line no-new
+      }
+    }
+
+    if (pub['abstract.txt']) {
+      modalEl.append('p').html(pub['abstract.txt'].contents);
+    }
   }
 
   drawExperience (container, experience, service) {
