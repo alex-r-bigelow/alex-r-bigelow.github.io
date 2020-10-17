@@ -764,6 +764,51 @@
           "filename": "publication.pdf",
           "lastmod": "2020-10-05"
         }
+      },
+      "2020_pyhpc": {
+        "abstract.txt": {
+          "url": "/cv/publications/abstracts/2020_pyhpc/abstract.txt",
+          "path": [
+            "publications",
+            "abstracts",
+            "2020_pyhpc"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "We describe JetLag, a Python-based environment that provides access to a distributed, interactive, asynchronous many-task (AMT) computing framework called Phylanx. This environment encompasses the entire computing process, from a Jupyter front-end for managing code and results to the collection and visualization of performance data.\n\nWe use a Python decorator to access the abstract syntax tree of Python functions and transpile them into a set of C++ data structures which are then executed by the HPX runtime. The environment includes services for sending functions and their arguments to run as jobs on remote resources.\n\nA set of Docker and Singularity containers are used to simplify the setup of the JetLag environment. The JetLag system is suitable for a variety of array computational tasks, including machine learning and exploratory data analysis.\n",
+          "filename": "abstract.txt",
+          "lastmod": "2020-10-09"
+        },
+        "citation.bib": {
+          "url": "/cv/publications/abstracts/2020_pyhpc/citation.bib",
+          "path": [
+            "publications",
+            "abstracts",
+            "2020_pyhpc"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Distributed Asynchronous Array Computing with the Jetlag Environment",
+            "author": "Brandt, Steven R. and Hasheminezhad, Bita and  Wu, Nanmiao  and Sakin, Sayef Azad and Bigelow, Alex and Isaacs, Katherine E. and Huck, Kevin and Kaiser, Hartmut",
+            "year": "2020",
+            "booktitle": "9th Workshop on Python for High-Perforrmance and Scientific Computing",
+            "note": "to appear",
+            "authorList": [
+              "Steven R. Brandt",
+              "Bita Hasheminezhad",
+              "Nanmiao Wu",
+              "Sayef Azad Sakin",
+              "Alex Bigelow",
+              "Katherine E. Isaacs",
+              "Kevin Huck",
+              "Hartmut Kaiser"
+            ],
+            "joinedAuthorList": "Steven R. Brandt, Bita Hasheminezhad, Nanmiao Wu, Sayef Azad Sakin, Alex Bigelow, Katherine E. Isaacs, Kevin Huck, and Hartmut Kaiser"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2020-10-09"
+        }
       }
     },
     "papers": {

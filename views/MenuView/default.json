@@ -7,20 +7,23 @@
   {
     "url": "/funding.html",
     "title": "Hire Me",
-    "icon": "img/fund.svg"
-  },
-  {
-    "url": "/consulting.html",
-    "title": "Consulting",
-    "icon": "img/consulting.svg",
+    "icon": "img/fund.svg",
     "subMenu": [
       {
-        "url": "/consulting.html#roles",
+        "url": "/funding.html#interests",
         "title": "What I Do"
       },
       {
-        "url": "/consulting.html#expertise",
-        "title": "Specific skills"
+        "url": "/funding.html#roles",
+        "title": "Business Roles"
+      },
+      {
+        "url": "/cv.html",
+        "title": "My CV"
+      },
+      {
+        "url": "/funding.html#expertise",
+        "title": "Specific Skills"
       }
     ]
   },

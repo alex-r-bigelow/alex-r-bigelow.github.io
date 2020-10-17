@@ -1,17 +1,17 @@
 [
   {
     "title": "Visualization designer",
-    "description": "I am prepared to play all of the below roles, and/or interact with existing people that do these jobs, with specific expertise about the perceptual effectiveness of various visualization techniques",
+    "description": "I create interactive graphics and software that accurately convey information to the human visual system, telling audience-appropriate stories about patterns that exist within or between datasets",
     "stars": 6
   },
   {
     "title": "Data wrangler",
-    "description": "I experiment with, identify, and reshape data to fit appropriate data models that are effective for relevant stakeholders to understand and query, and efficient for algorithms to leverage",
+    "description": "I experiment with, identify, and reshape data to fit appropriate data models that are effective for relevant stakeholders to understand and query, and are efficient for algorithms to leverage",
     "stars": 6
   },
   {
     "title": "Product manager",
-    "description": "I identify, document, and communicate diverse stakeholder high-level goals, and how they justify low-level visualization tasks, software features, designs, and data models",
+    "description": "I identify, document, and communicate diverse stakeholder high-level goals, and how they justify low-level interactive tasks, software features, designs, and data models",
     "stars": 5
   },
   {
@@ -27,6 +27,11 @@
   {
     "title": "Graphic designer",
     "description": "I experiment with, plan, and implement visual layouts, styles, typography that achieve a purpose, are aesthetically pleasing, and fit stakeholder needs",
+    "stars": 4
+  },
+  {
+    "title": "Business ethnographer",
+    "description": "I use rigorous qualitative research methodologies to discover blind spots in current strategies and articulate under-explored questions with enough detail to make them more actionable",
     "stars": 4
   },
   {

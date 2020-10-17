@@ -1,0 +1,5 @@
+We describe JetLag, a Python-based environment that provides access to a distributed, interactive, asynchronous many-task (AMT) computing framework called Phylanx. This environment encompasses the entire computing process, from a Jupyter front-end for managing code and results to the collection and visualization of performance data.
+
+We use a Python decorator to access the abstract syntax tree of Python functions and transpile them into a set of C++ data structures which are then executed by the HPX runtime. The environment includes services for sending functions and their arguments to run as jobs on remote resources.
+
+A set of Docker and Singularity containers are used to simplify the setup of the JetLag environment. The JetLag system is suitable for a variety of array computational tasks, including machine learning and exploratory data analysis.

@@ -1,0 +1,35 @@
+.NetworkDecoratorView {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  svg {
+    postion: absolute;
+    left: 0;
+    top: 0;
+    .links path {
+      stroke-width: 1px;
+      stroke: var(--text-color-softer);
+      fill: none;
+    }
+    .nodes .node {
+      circle {
+        fill: var(--text-color-softer);
+        stroke: none;
+        cursor: pointer;
+      }
+      &.selected circle {
+        fill: var(--text-color-richer);
+      }
+      text {
+        display: none;
+        fill: var(--text-color-softer);
+      }
+      &:hover text {
+        display: block;
+      }
+    }
+  }
+}

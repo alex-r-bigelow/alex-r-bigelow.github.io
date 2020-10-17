@@ -4,20 +4,21 @@ class ExpertiseView extends uki.View {
   constructor (options = {}) {
     options.resources = options.resources || [];
     options.resources.push(...[
-      { type: 'text', url: 'views/ExpertiseView/template.html', name: 'template' },
+      { type: 'text', url: 'views/ExpertiseView/legend.html', name: 'legend' },
       { type: 'json', url: `views/ExpertiseView/${options.dataset}`, name: 'data' },
       { type: 'less', url: 'views/ExpertiseView/style.less' }
     ]);
     super(options);
+    this.legendEl = options.legendEl;
   }
 
   async setup () {
     await super.setup(...arguments);
 
-    this.d3el.html(this.getNamedResource('template'));
+    this.legendEl.html(this.getNamedResource('legend'));
 
     this.starDescriptions = {};
-    for (const element of this.d3el.selectAll('[data-description]').nodes()) {
+    for (const element of this.legendEl.selectAll('[data-description]').nodes()) {
       this.starDescriptions[element.dataset.description] = element.innerHTML;
     }
   }
@@ -25,10 +26,10 @@ class ExpertiseView extends uki.View {
   async draw () {
     await super.draw(...arguments);
 
-    const legendStars = this.d3el.selectAll('[data-stars]');
+    const legendStars = this.legendEl.selectAll('[data-stars]');
     this.drawStars(legendStars);
 
-    let entries = this.d3el.select('.entryList')
+    let entries = this.d3el
       .selectAll('.entry').data(this.getNamedResource('data'));
     entries.exit().remove();
     const entriesEnter = entries.enter().append('div')
