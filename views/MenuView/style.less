@@ -1,5 +1,5 @@
 .MenuView {
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
 
@@ -7,10 +7,22 @@
   flex-direction: column;
   padding: 1em;
 
-  menuItem.subMenu:before {
-    content: '\25b6';
-    color: var(--text-color-softer);
-    position: absolute;
-    right: 0.5em;
+  .menuItem {
+    background-color: var(--background-color);
+    &.subMenu:before {
+      content: '\25b6';
+      color: var(--text-color-softer);
+      position: absolute;
+      right: 0.5em;
+    }
+    &.button-primary {
+      background-color: var(--accent-color);
+      &:hover {
+        background-color: var(--accent-color-hover);
+      }
+      &.subMenu:before {
+        color: var(--inverted-shadow-color);
+      }
+    }
   }
 }

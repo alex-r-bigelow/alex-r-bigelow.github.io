@@ -5,7 +5,7 @@ class LandingController extends Controller {
     options.resources = options.resources || [];
     options.resources.push({ type: 'less', url: 'controllers/LandingController/style.less' });
     super(options);
-    this.collapseMenu = false;
+    this.collapseMenu = window.outerWidth < 620;
   }
 }
 

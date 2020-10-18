@@ -5,6 +5,7 @@ import CvView from '../../views/CvView/CvView.js';
 class CvController extends Controller {
   constructor (options = {}) {
     super(options);
+    this.collapseMenu = window.outerWidth < 1994;
     this.extraMenuSpecs = [{
       label: 'Print',
       img: 'img/print.svg',

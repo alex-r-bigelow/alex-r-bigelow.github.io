@@ -18,7 +18,7 @@ class Controller extends uki.ui.InformativeView {
 
     this.menuView = new MenuView({
       d3el: this.d3el.append('nav'),
-      drawCollapsed: this.collapseMenu === undefined ? true : this.collapseMenu,
+      drawCollapsed: this.collapseMenu === undefined ? window.outerWidth < 1536 : this.collapseMenu,
       extraSpecs: this.extraMenuSpecs || []
     });
     this.views.push(this.menuView);
