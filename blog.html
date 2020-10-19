@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="google-site-verification" content="7shenepNKvsotbAxPu_QqKMJWdnG3bBrdtlBdtFh3H0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less"/>
   <script type="text/javascript" src="node_modules/less/dist/less.min.js" data-log-level="1"></script>
@@ -9,12 +8,24 @@
   <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
   <script type="module" src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
   <script type="module">
-    import LandingController from './controllers/LandingController/LandingController.js';
-    window.controller = new LandingController();
+    import BlogController from './controllers/BlogController/BlogController.js';
+    window.controller = new BlogController();
   </script>
 </head>
 <body>
-  <h1>Alex Bigelow</h1>
-  <p>Data Visualization Designer, Computing PhD</p>
+  <div class="grid-420 full">
+    <div>
+      <h1>Blog</h1>
+      <p>
+        A place where I post informal things that I write. If you're looking for
+        my peer-reviewed publications, click on the titles in <a href="/cv.html">CV</a>.
+      </p>
+      <p>
+        Any opinions here are my own, and don't necessarily represent those of any
+        past or present employer.
+      </p>
+    </div>
+  </div>
+  <div class="BlogView"></div>
 </body>
 </html>

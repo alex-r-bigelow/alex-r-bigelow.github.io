@@ -1,0 +1,35 @@
+[
+  {
+    "url": "/blog/Creating_Creative_Tools/index.html",
+    "dirname": "Creating_Creative_Tools",
+    "path": "/blog/Creating_Creative_Tools",
+    "type": "blog",
+    "index": {
+      "data": {},
+      "isEmpty": false,
+      "excerpt": ""
+    },
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "title": "Creating Creative Tools",
+    "lastmod": "2020-10-19"
+  },
+  {
+    "url": "/blog/LG_e980_Flashing_Guide/index.html",
+    "dirname": "LG_e980_Flashing_Guide",
+    "path": "/blog/LG_e980_Flashing_Guide",
+    "type": "blog",
+    "index": {
+      "data": {},
+      "isEmpty": false,
+      "excerpt": ""
+    },
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "lastmod": "2016-03-12",
+    "preview": {
+      "content": "<p>A guide for flashing CyanogenMod to an LG e980</p>"
+    },
+    "title": "LG e980 Flashing Guide"
+  }
+]

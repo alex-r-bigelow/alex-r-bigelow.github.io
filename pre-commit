@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
 npm run build
-git add views/CvView/data.json sitemap.xml

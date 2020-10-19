@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Update sitemap.xml and pages.json with the latest modification dates
+// Update sitemap.xml with the latest modification dates, and build data files
+// that summarize / contain CV info and blog posts
 const fs = require('fs');
 const shell = require('shelljs');
 const bibtexParse = require('bibtex-parse-js');
@@ -15,7 +16,6 @@ const pages = {
     root: [
       '/index.html',
       '/funding.html',
-      '/consulting.html',
       '/projects.html',
       '/cv.html',
       '/blog.html',
@@ -88,13 +88,45 @@ for (const filename of fileList) {
     }
 
     // Blog file?
-    const blog = /blog\/(.*)\/([^/])*\.([^/.]*)$/.exec(location.pathname);
+    const blog = /blog\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
     if (blog) {
       details.dirname = blog[1];
       details.path = `/blog/${details.dirname}`;
       details.type = 'blog';
-      if (blog[2] === 'post' && blog[3] === 'html') {
-        includePage = true;
+      if (blog[2] === 'index' || blog[2] === 'preview') {
+        // Check if this is an auto-generated HTML file that we should skip
+        const mdFile = `blog/${blog[1]}/${blog[2]}.md`;
+        const mdFileExists = shell.test('-e', mdFile);
+        if (blog[3] === 'html' && mdFileExists) {
+          console.log(`... skipping auto-generated ${filename} ...`);
+          continue;
+        }
+
+        // Parse the post / preview contents
+        let contents = shell.exec(`cat ${filename}`).stdout;
+        let saveHTML = false;
+        let wrapHTML = false;
+        if (blog[3] === 'md') {
+          // Convert to HTML, note that we need to dump the file, and override
+          // url to point to the generated file
+          contents = PARSERS.md(contents);
+          saveHTML = true;
+          details.url = `/blog/${blog[1]}/${blog[2]}.html`;
+          if (blog[2] === 'index') {
+            // Always wrap markdown posts in our generic blog HTML wrapper
+            wrapHTML = true;
+          }
+        }
+        // Store the contents and what to do with them
+        if (blog[2] === 'index') {
+          details.index = contents;
+          details.saveIndexHTML = saveHTML;
+          details.wrapIndexHTML = wrapHTML;
+          // Include the main post page
+          includePage = true;
+        } else {
+          details.preview = contents;
+        }
       }
     }
 
@@ -107,9 +139,11 @@ for (const filename of fileList) {
 
       // Default metadata for all pages
       if (!details.title) {
+        // Default title is the directory name, replacing underscores with spaces
         details.title = details.dirname.replace(/_/g, ' ');
       }
       if (!details.lastmod) {
+        // Check when the file was last changed
         details.lastmod = shell.exec(`git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`).stdout.trim() ||
           shell.exec(`date +%Y-%m-%d -r ${filename}`).stdout.trim();
       }
@@ -151,9 +185,36 @@ for (const filename of fileList) {
 pages.hierarchy.blog.sort((a, b) => {
   return pages.details[a].lastmod - pages.details[b].lastmod;
 });
+const blogHTMLWrapper = shell.exec('cat blogHTMLWrapper.html').stdout;
+const blogData = pages.hierarchy.blog.map(blogPath => {
+  // Get the details associated with the path
+  const details = pages.details[blogPath];
+  // While we're here, create / overwrite any converted HTML files
+  if (details.index) {
+    if (details.saveIndexHTML) {
+      let contents = details.index.content;
+      if (details.wrapIndexHTML) {
+        contents = eval('`' + blogHTMLWrapper + '`'); // eslint-disable-line no-eval
+      }
+      fs.writeFileSync(`blog/${details.dirname}/index.html`, contents);
+      shell.exec(`git add blog/${details.dirname}/index.html`);
+      console.log(`Generated blog/${details.dirname}/index.html`);
+    }
+    // Don't store index contents in BlogView/data.json
+    delete details.index.content;
+  }
+  return details;
+});
+
+// Dump BlogView/data.json
+fs.writeFileSync('views/BlogView/data.json', JSON.stringify(blogData, null, 2));
+shell.exec('git add views/BlogView/data.json');
+console.log('Updated views/CvView/data.json');
 
 // Dump CvView/data.json
 fs.writeFileSync('views/CvView/data.json', JSON.stringify(cvData, null, 2));
+shell.exec('git add views/CvView/data.json');
+console.log('Updated views/CvView/data.json');
 
 // Dump non-external pages to sitemap.xml
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -169,5 +230,5 @@ for (const details of Object.values(pages.details)) {
   }
 }
 fs.writeFileSync('sitemap.xml', sitemap + '</urlset>');
-
-shell.echo('Updated and staged views/CvView/data.json and sitemap.xml');
+shell.exec('git add sitemap.xml');
+console.log('Updated sitemap.xml');
