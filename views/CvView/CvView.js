@@ -19,6 +19,10 @@ class CvView extends uki.View {
     window.addEventListener('afterprint', () => {
       this.d3el.select('.contactInfo').html('');
     });
+    this.pubHashLookup = {};
+    window.addEventListener('hashchange', () => {
+      this.openHashedPub();
+    });
   }
 
   get data () {
@@ -31,13 +35,15 @@ class CvView extends uki.View {
     for (const pubChunk of this.d3el.selectAll('.pubchunk').nodes()) {
       const pubType = pubChunk.dataset.type;
       const pubData = this.data.publications[pubType] || {};
+      for (const [key, pub] of Object.entries(pubData)) {
+        pub.hash = key;
+        this.pubHashLookup['#' + key] = pub;
+      }
       this.drawPublications(d3.select(pubChunk), pubData);
-    }
-    for (const [pubType, pubs] of Object.entries(this.data.publications)) {
-      this.drawPublications(this.d3el.select(`.${pubType}`), pubs);
     }
     this.drawExperience(this.d3el.select('.experience'), this.data.experience, false);
     this.drawExperience(this.d3el.select('.service'), this.data.experience, true);
+    this.openHashedPub();
   }
 
   drawPublications (container, pubData) {
@@ -58,6 +64,7 @@ class CvView extends uki.View {
 
     pubsEnter.append('h6')
       .classed('title', true)
+      .attr('id', d => d.hash)
       .text(d => d['citation.bib'].contents.title);
 
     pubsEnter.append('h6')
@@ -65,10 +72,8 @@ class CvView extends uki.View {
       .text(d => d['citation.bib'].contents.year);
 
     pubs.on('click', (event, d) => {
-      uki.ui.showModal({
-        content: modalEl => this.createPubModalContent(d, modalEl),
-        buttonSpecs: ['defaultOK']
-      });
+      window.location.hash = '#' + d.hash;
+      // results in a call to this.showPubModal(d);
     });
 
     pubsEnter.append('ul').classed('meta', true)
@@ -101,6 +106,20 @@ class CvView extends uki.View {
       }
       return null;
     }).filter(d => d !== null);
+  }
+
+  openHashedPub () {
+    const pub = this.pubHashLookup[window.location.hash];
+    if (pub) {
+      this.showPubModal(pub);
+    }
+  }
+
+  showPubModal (pub) {
+    uki.ui.showModal({
+      content: modalEl => this.createPubModalContent(pub, modalEl),
+      buttonSpecs: ['defaultOK']
+    });
   }
 
   createPubModalContent (pub, modalEl) {
