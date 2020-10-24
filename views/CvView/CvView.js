@@ -152,6 +152,7 @@ class CvView extends uki.View {
     };
     const buttonSpecs = [
       generateLinkedFileSpec('publication.pdf', 'Publication PDF', 'url'),
+      generateLinkedFileSpec('publication.url', 'Link to Publication', 'contents'),
       generateLinkedFileSpec('demo.url', 'Demo Video', 'contents'),
       generateLinkedFileSpec('results.url', 'Survey Results', 'contents'),
       generateLinkedFileSpec('talk.url', 'Presentation Video', 'contents'),

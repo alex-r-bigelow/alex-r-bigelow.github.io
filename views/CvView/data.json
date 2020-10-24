@@ -1397,6 +1397,63 @@
           "filename": "talk.url",
           "lastmod": "2020-10-23"
         }
+      },
+      "2020_ten_rules": {
+        "citation.bib": {
+          "url": "/cv/publications/papers/2020_ten_rules/citation.bib",
+          "path": [
+            "publications",
+            "papers",
+            "2020_ten_rules"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Ten Simple Rules for Organizing a Data Science Workshop",
+            "volume": "16",
+            "issn": "1553-7358",
+            "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008226",
+            "doi": "10.1371/journal.pcbi.1008226",
+            "language": "en",
+            "number": "10",
+            "urldate": "2020-10-24",
+            "journal": "PLOS Computational Biology",
+            "author": "Ponsero, Alise and Bartelme, Ryan and Almeida, Gustavo de Oliveira and Bigelow, Alex and Tuteja, Reetu and Ellingson, Holly and Swetnam, Tyson and Merchant, Nirav and Oxnam, Maliaca and Lyons, Eric",
+            "month": "oct",
+            "year": "2020",
+            "note": "Publisher: Public Library of Science",
+            "keywords": "Computer software, Human learning, Instructors, Internet, Learning, Pedagogy, Reproducibility, Workshops",
+            "pages": "e1008226",
+            "authorList": [
+              "Alise Ponsero",
+              "Ryan Bartelme",
+              "Gustavo de Oliveira Almeida",
+              "Alex Bigelow",
+              "Reetu Tuteja",
+              "Holly Ellingson",
+              "Tyson Swetnam",
+              "Nirav Merchant",
+              "Maliaca Oxnam",
+              "Eric Lyons"
+            ],
+            "joinedAuthorList": "Alise Ponsero, Ryan Bartelme, Gustavo de Oliveira Almeida, Alex Bigelow, Reetu Tuteja, Holly Ellingson, Tyson Swetnam, Nirav Merchant, Maliaca Oxnam, and Eric Lyons"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2020-10-24"
+        },
+        "publication.url": {
+          "url": "/cv/publications/papers/2020_ten_rules/publication.url",
+          "path": [
+            "publications",
+            "papers",
+            "2020_ten_rules"
+          ],
+          "name": "publication",
+          "extension": "url",
+          "contents": "https://doi.org/10.1371/journal.pcbi.1008226\n",
+          "filename": "publication.url",
+          "lastmod": "2020-10-24"
+        }
       }
     },
     "patents": {
