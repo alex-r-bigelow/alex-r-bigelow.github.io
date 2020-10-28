@@ -19,6 +19,10 @@ class CvView extends uki.View {
     window.addEventListener('afterprint', () => {
       this.d3el.select('.contactInfo').html('');
     });
+    this.pubHashLookup = {};
+    window.addEventListener('hashchange', () => {
+      this.openHashedPub();
+    });
   }
 
   get data () {
@@ -31,13 +35,15 @@ class CvView extends uki.View {
     for (const pubChunk of this.d3el.selectAll('.pubchunk').nodes()) {
       const pubType = pubChunk.dataset.type;
       const pubData = this.data.publications[pubType] || {};
+      for (const [key, pub] of Object.entries(pubData)) {
+        pub.hash = key;
+        this.pubHashLookup['#' + key] = pub;
+      }
       this.drawPublications(d3.select(pubChunk), pubData);
-    }
-    for (const [pubType, pubs] of Object.entries(this.data.publications)) {
-      this.drawPublications(this.d3el.select(`.${pubType}`), pubs);
     }
     this.drawExperience(this.d3el.select('.experience'), this.data.experience, false);
     this.drawExperience(this.d3el.select('.service'), this.data.experience, true);
+    this.openHashedPub();
   }
 
   drawPublications (container, pubData) {
@@ -58,6 +64,7 @@ class CvView extends uki.View {
 
     pubsEnter.append('h6')
       .classed('title', true)
+      .attr('id', d => d.hash)
       .text(d => d['citation.bib'].contents.title);
 
     pubsEnter.append('h6')
@@ -65,10 +72,13 @@ class CvView extends uki.View {
       .text(d => d['citation.bib'].contents.year);
 
     pubs.on('click', (event, d) => {
-      uki.ui.showModal({
-        content: modalEl => this.createPubModalContent(d, modalEl),
-        buttonSpecs: ['defaultOK']
-      });
+      const hash = '#' + d.hash;
+      if (window.location.hash === hash) {
+        this.showPubModal(d);
+      } else {
+        window.location.hash = '#' + d.hash;
+        // automatically calls this.showPubModal(d)
+      }
     });
 
     pubsEnter.append('ul').classed('meta', true)
@@ -103,6 +113,20 @@ class CvView extends uki.View {
     }).filter(d => d !== null);
   }
 
+  openHashedPub () {
+    const pub = this.pubHashLookup[window.location.hash];
+    if (pub) {
+      this.showPubModal(pub);
+    }
+  }
+
+  showPubModal (pub) {
+    uki.ui.showModal({
+      content: modalEl => this.createPubModalContent(pub, modalEl),
+      buttonSpecs: ['defaultOK']
+    });
+  }
+
   createPubModalContent (pub, modalEl) {
     modalEl.html('').classed('CV', true);
 
@@ -115,21 +139,29 @@ class CvView extends uki.View {
 
     // Add buttons for linked files
     const buttonContainer = modalEl.append('div').classed('buttonContainer', true);
-    const generateLinkedFileSpec = (key, label) => {
+    const generateLinkedFileSpec = (key, label, accessor) => {
       return {
         key,
         spec: {
           label,
           onclick: () => {
-            window.location = pub[key].url;
+            window.location = pub[key][accessor];
           }
         }
       };
     };
     const buttonSpecs = [
-      generateLinkedFileSpec('publication.pdf', 'Publication PDF'),
-      generateLinkedFileSpec('poster.pdf', 'Poster'),
-      generateLinkedFileSpec('citation.bib', 'BibTeX Citation')
+      generateLinkedFileSpec('publication.pdf', 'Publication PDF', 'url'),
+      generateLinkedFileSpec('publication.url', 'Link to Publication', 'contents'),
+      generateLinkedFileSpec('demo.url', 'Demo Video', 'contents'),
+      generateLinkedFileSpec('results.url', 'Survey Results', 'contents'),
+      generateLinkedFileSpec('talk.url', 'Presentation Video', 'contents'),
+      generateLinkedFileSpec('slides.url', 'Presentation Slides', 'contents'),
+      generateLinkedFileSpec('supplement.pdf', 'Supplemental PDF', 'url'),
+      generateLinkedFileSpec('supplement.zip', 'Supplemental Archive', 'url'),
+      generateLinkedFileSpec('osf.url', 'Supplemental Data', 'contents'),
+      generateLinkedFileSpec('poster.pdf', 'Poster', 'url'),
+      generateLinkedFileSpec('citation.bib', 'BibTeX Citation', 'url')
     ];
     for (const { key, spec } of buttonSpecs) {
       if (pub[key]) {

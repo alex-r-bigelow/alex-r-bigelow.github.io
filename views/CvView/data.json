@@ -1078,6 +1078,19 @@
           "extension": "zip",
           "filename": "supplement.zip",
           "lastmod": "2020-09-27"
+        },
+        "talk.url": {
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/talk.url",
+          "path": [
+            "publications",
+            "papers",
+            "2016_infovis_hanpuku"
+          ],
+          "name": "talk",
+          "extension": "url",
+          "contents": "https://vimeo.com/201779979\n",
+          "filename": "talk.url",
+          "lastmod": "2020-10-23"
         }
       },
       "2019_infovis_atria": {
@@ -1134,6 +1147,19 @@
           "extension": "pdf",
           "filename": "publication.pdf",
           "lastmod": "2020-09-27"
+        },
+        "talk.url": {
+          "url": "/cv/publications/papers/2019_infovis_atria/talk.url",
+          "path": [
+            "publications",
+            "papers",
+            "2019_infovis_atria"
+          ],
+          "name": "talk",
+          "extension": "url",
+          "contents": "https://vimeo.com/370668837\n",
+          "filename": "talk.url",
+          "lastmod": "2020-10-23"
         }
       },
       "2019_pacificvis_jacobs_ladder": {
@@ -1266,6 +1292,19 @@
           "extension": "pdf",
           "filename": "supplement.pdf",
           "lastmod": "2020-09-27"
+        },
+        "talk.url": {
+          "url": "/cv/publications/papers/2019_vast_origraph/talk.url",
+          "path": [
+            "publications",
+            "papers",
+            "2019_vast_origraph"
+          ],
+          "name": "talk",
+          "extension": "url",
+          "contents": "https://vimeo.com/372531346\n",
+          "filename": "talk.url",
+          "lastmod": "2020-10-23"
         }
       },
       "2020_guidelines": {
@@ -1307,6 +1346,19 @@
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
         },
+        "osf.url": {
+          "url": "/cv/publications/papers/2020_guidelines/osf.url",
+          "path": [
+            "publications",
+            "papers",
+            "2020_guidelines"
+          ],
+          "name": "osf",
+          "extension": "url",
+          "contents": "https://osf.io/s2wmp/\n",
+          "filename": "osf.url",
+          "lastmod": "2020-10-23"
+        },
         "publication.pdf": {
           "url": "/cv/publications/papers/2020_guidelines/publication.pdf",
           "path": [
@@ -1318,6 +1370,89 @@
           "extension": "pdf",
           "filename": "publication.pdf",
           "lastmod": "2020-10-05"
+        },
+        "results.url": {
+          "url": "/cv/publications/papers/2020_guidelines/results.url",
+          "path": [
+            "publications",
+            "papers",
+            "2020_guidelines"
+          ],
+          "name": "results",
+          "extension": "url",
+          "contents": "https://alex-r-bigelow.github.io/wrangling-survey/Responses.html\n",
+          "filename": "results.url",
+          "lastmod": "2020-10-23"
+        },
+        "talk.url": {
+          "url": "/cv/publications/papers/2020_guidelines/talk.url",
+          "path": [
+            "publications",
+            "papers",
+            "2020_guidelines"
+          ],
+          "name": "talk",
+          "extension": "url",
+          "contents": "https://youtu.be/DhPiHvtgtTI\n",
+          "filename": "talk.url",
+          "lastmod": "2020-10-23"
+        }
+      },
+      "2020_ten_rules": {
+        "citation.bib": {
+          "url": "/cv/publications/papers/2020_ten_rules/citation.bib",
+          "path": [
+            "publications",
+            "papers",
+            "2020_ten_rules"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Ten Simple Rules for Organizing a Data Science Workshop",
+            "volume": "16",
+            "issn": "1553-7358",
+            "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008226",
+            "doi": "10.1371/journal.pcbi.1008226",
+            "language": "en",
+            "number": "10",
+            "urldate": "2020-10-24",
+            "journal": "PLOS Computational Biology",
+            "author": "Ponsero, Alise and Bartelme, Ryan and Almeida, Gustavo de Oliveira and Bigelow, Alex and Tuteja, Reetu and Ellingson, Holly and Swetnam, Tyson and Merchant, Nirav and Oxnam, Maliaca and Lyons, Eric",
+            "month": "oct",
+            "year": "2020",
+            "note": "Publisher: Public Library of Science",
+            "keywords": "Computer software, Human learning, Instructors, Internet, Learning, Pedagogy, Reproducibility, Workshops",
+            "pages": "e1008226",
+            "authorList": [
+              "Alise Ponsero",
+              "Ryan Bartelme",
+              "Gustavo de Oliveira Almeida",
+              "Alex Bigelow",
+              "Reetu Tuteja",
+              "Holly Ellingson",
+              "Tyson Swetnam",
+              "Nirav Merchant",
+              "Maliaca Oxnam",
+              "Eric Lyons"
+            ],
+            "joinedAuthorList": "Alise Ponsero, Ryan Bartelme, Gustavo de Oliveira Almeida, Alex Bigelow, Reetu Tuteja, Holly Ellingson, Tyson Swetnam, Nirav Merchant, Maliaca Oxnam, and Eric Lyons"
+          },
+          "filename": "citation.bib",
+          "lastmod": "2020-10-24"
+        },
+        "publication.url": {
+          "url": "/cv/publications/papers/2020_ten_rules/publication.url",
+          "path": [
+            "publications",
+            "papers",
+            "2020_ten_rules"
+          ],
+          "name": "publication",
+          "extension": "url",
+          "contents": "https://doi.org/10.1371/journal.pcbi.1008226\n",
+          "filename": "publication.url",
+          "lastmod": "2020-10-24"
         }
       }
     },

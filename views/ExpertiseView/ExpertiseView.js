@@ -43,7 +43,7 @@ class ExpertiseView extends uki.View {
     const stars = entriesEnter.select('.stars');
     this.drawStars(stars);
     const self = this;
-    stars.on('mouseenter', function (event, d) {
+    stars.on('click', function (event, d) {
       uki.ui.showTooltip({
         target: d3.select(this),
         showEvent: event,
