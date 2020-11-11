@@ -4,26 +4,17 @@
     "dirname": "Creating_Creative_Tools",
     "path": "/blog/Creating_Creative_Tools",
     "type": "blog",
-    "index": {
-      "data": {},
-      "isEmpty": false,
-      "excerpt": ""
-    },
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
     "title": "Creating Creative Tools",
-    "lastmod": "2020-10-19"
+    "lastmod": "2020-10-19",
+    "preview": "<p>Thoughts on why creative thinking and data both add layers of complexity that make Alan Kay's ideal of \"symmetric authoring and consuming\" incredibly difficult for software to support in practice.</p>"
   },
   {
     "url": "/blog/LG_e980_Flashing_Guide/index.html",
     "dirname": "LG_e980_Flashing_Guide",
     "path": "/blog/LG_e980_Flashing_Guide",
     "type": "blog",
-    "index": {
-      "data": {},
-      "isEmpty": false,
-      "excerpt": ""
-    },
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
     "lastmod": "2016-03-12",

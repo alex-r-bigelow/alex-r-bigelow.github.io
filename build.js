@@ -25,6 +25,7 @@ const pages = {
   }
 };
 const cvData = {};
+const externalBlogPreviews = {};
 const PRELOAD_FORMATS = ['json', 'url', 'txt', 'bib', 'md'];
 const PARSERS = {
   json: text => JSON.parse(text),
@@ -107,14 +108,14 @@ for (const filename of fileList) {
         let saveHTML = false;
         let wrapHTML = false;
         if (blog[3] === 'md') {
-          // Convert to HTML, note that we need to dump the file, and override
-          // url to point to the generated file
-          contents = PARSERS.md(contents);
-          saveHTML = true;
-          details.url = `/blog/${blog[1]}/${blog[2]}.html`;
+          // Convert to HTML
+          contents = PARSERS.md(contents).content;
           if (blog[2] === 'index') {
-            // Always wrap markdown posts in our generic blog HTML wrapper
+            // Always wrap markdown posts in our generic blog HTML wrapper, and
+            // override the url to point to the generated file
+            saveHTML = true;
             wrapHTML = true;
+            details.url = `/blog/${blog[1]}/${blog[2]}.html`;
           }
         }
         // Store the contents and what to do with them
@@ -125,7 +126,8 @@ for (const filename of fileList) {
           // Include the main post page
           includePage = true;
         } else {
-          details.preview = contents;
+          // We may not have seen the main post yet, so add it later
+          externalBlogPreviews[details.path] = contents;
         }
       }
     }
@@ -182,6 +184,7 @@ for (const filename of fileList) {
   }
 }
 
+// Post-processing for blog stuff
 pages.hierarchy.blog.sort((a, b) => {
   return pages.details[a].lastmod - pages.details[b].lastmod;
 });
@@ -189,10 +192,14 @@ const blogHTMLWrapper = shell.exec('cat blogHTMLWrapper.html').stdout;
 const blogData = pages.hierarchy.blog.map(blogPath => {
   // Get the details associated with the path
   const details = pages.details[blogPath];
+  // Patch on an external preview if it exists
+  if (externalBlogPreviews[details.path]) {
+    details.preview = externalBlogPreviews[details.path];
+  }
   // While we're here, create / overwrite any converted HTML files
   if (details.index) {
     if (details.saveIndexHTML) {
-      let contents = details.index.content;
+      let contents = details.index;
       if (details.wrapIndexHTML) {
         contents = eval('`' + blogHTMLWrapper + '`'); // eslint-disable-line no-eval
       }
@@ -201,7 +208,7 @@ const blogData = pages.hierarchy.blog.map(blogPath => {
       console.log(`Generated blog/${details.dirname}/index.html`);
     }
     // Don't store index contents in BlogView/data.json
-    delete details.index.content;
+    delete details.index;
   }
   return details;
 });
