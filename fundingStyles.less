@@ -16,6 +16,9 @@ h3 img {
     top: 0;
     bottom: 0;
   }
+  strong {
+    color: var(--background-color-richer);
+  }
   a {
     color: var(--background-color-richer);
     &:hover {
@@ -24,6 +27,24 @@ h3 img {
   }
   & > * {
     position: relative;
+  }
+}
+.iconList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  li {
+    margin: 1em;
+    text-align: center;
+    img {
+      height: 4em;
+      filter: url(#recolorImageTo--text-color-softer);
+      margin-right: 1em;
+      vertical-align: middle;
+    }
+    span {
+      display: block;
+    }
   }
 }
 .grid-420 {
