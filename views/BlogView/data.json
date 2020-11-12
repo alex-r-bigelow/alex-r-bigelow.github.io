@@ -7,7 +7,7 @@
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
     "title": "Creating Creative Tools",
-    "lastmod": "2020-10-19",
+    "lastmod": "2020-11-11",
     "preview": "<p>Thoughts on why creative thinking and data both add layers of complexity that make Alan Kay's ideal of \"symmetric authoring and consuming\" incredibly difficult for software to support in practice.</p>"
   },
   {
@@ -22,5 +22,16 @@
       "content": "<p>A guide for flashing CyanogenMod to an LG e980</p>"
     },
     "title": "LG e980 Flashing Guide"
+  },
+  {
+    "url": "/blog/The_Future_of_Data_Wrangling_Tools/index.html",
+    "dirname": "The_Future_of_Data_Wrangling_Tools",
+    "path": "/blog/The_Future_of_Data_Wrangling_Tools",
+    "type": "blog",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "title": "The Future of Data Wrangling Tools",
+    "lastmod": "2020-11-12",
+    "preview": "<p>An attempt to communicate the (almost completely) unexplored space of possible data wrangling tools, in terms of both non-tabular abstractions, as well as the pros and cons of fine-grained editors versus broad-strokes wrangling tools.</p>"
   }
 ]
