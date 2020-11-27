@@ -1,4 +1,4 @@
-/* globals d3, uki */
+/* globals d3, uki, galite */
 
 import MenuView from '../../views/MenuView/MenuView.js';
 
@@ -10,7 +10,15 @@ class Controller extends uki.ui.InformativeView {
 
     this.views = [];
 
-    window.onresize = () => { this.render(); };
+    window.addEventListener('resize', () => { this.render(); });
+
+    if (window.galite && window.location.hostname !== 'localhost') {
+      galite('create', 'UA-44570094-2', 'auto');
+      galite('send', 'pageview');
+      window.addEventListener('unload', () => {
+        galite('send', 'timing', 'JS Dependencies', 'unload');
+      });
+    }
   }
 
   async setup () {
