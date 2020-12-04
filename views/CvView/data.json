@@ -19,7 +19,12 @@
             "Student Activity Committee",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "Advisor: Dr. Greg Jones"
+          "reference": "Advisor: Dr. Greg Jones",
+          "links": {
+            "SCI X Map": "/projects#scix_map",
+            "Ping Pong Tournament": "/projects#ping_pong_tournament",
+            "InfoVis Poster": "/cv#2017_fellow_tool_builders"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -44,7 +49,12 @@
             "Health Sciences",
             "University of Arizona, Tucson, AZ"
           ],
-          "reference": "Mentors: Dr. Alex Thome, Dr. Maliaca Oxnam, Dr. Eric Lyons"
+          "reference": "Mentors: Dr. Alex Thome, Dr. Maliaca Oxnam, Dr. Eric Lyons",
+          "links": {
+            "PLOS Comp. Bio. Paper": "/cv#2020_ten_rules",
+            "HCW HOSTED Project": "/projects#hcw_hosted",
+            "Arizona Research Bazaar": "/cv#resbaz"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -60,7 +70,7 @@
       "name": "genepi",
       "extension": "md",
       "contents": {
-        "content": "<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these are new, rich resources, they present truly wicked problems: once we could see one pattern in the data, it made us ask questions that need an entirely different perspectives. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>",
+        "content": "<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these were new, rich resources, they presented truly wicked problems: once we could see one pattern in the data, it made us ask questions that needed an entirely different perspective. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>",
         "data": {
           "title": "Research Assistant",
           "start": 2010,
@@ -70,13 +80,17 @@
             "Division of Genetic Epidemiology",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "Advisor: Dr. Nicola J. Camp"
+          "reference": "Advisor: Dr. Nicola J. Camp",
+          "links": {
+            "BS Thesis": "/cv#2012_bs_thesis",
+            "Cancer Research Paper": "/cv#2016_haplotype"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
       },
       "filename": "genepi.md",
-      "lastmod": "2020-09-27"
+      "lastmod": "2020-12-03"
     },
     "ibm.md": {
       "url": "/cv/experience/ibm.md",
@@ -95,13 +109,17 @@
             "IBM Research",
             "Cambridge, MA"
           ],
-          "reference": "Mentor: Dr. Megan Monroe"
+          "reference": "Mentor: Dr. Megan Monroe",
+          "links": {
+            "PacificVis Paper": "/cv#jacobs_ladder",
+            "Project": "/projects#jacobs_ladder"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
       },
       "filename": "ibm.md",
-      "lastmod": "2020-09-27"
+      "lastmod": "2020-12-03"
     },
     "kitware.md": {
       "url": "/cv/experience/kitware.md",
@@ -120,7 +138,11 @@
             "Kitware, Inc.",
             "Clifton Park, NY"
           ],
-          "reference": "Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury"
+          "reference": "Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury",
+          "links": {
+            "VIP Best Paper": "/cv#2016_vip_resonant_lab",
+            "Resonant Lab": "/projects#resonant_lab"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -172,7 +194,8 @@
             "Eurovis VGTC Conference on Visualization (2016, 2020)",
             "IEEE Conference on Visual Analytics Science and Technology (VAST) (2017, 2019)",
             "ACM CHI Conference on Human Factors in Computing Systems (2015, 2017-2020)",
-            "Workshop on Visualization in Practice (2017)"
+            "IEEE Transactions on Visualization and Computer Graphics (2019-2020)",
+            "Workshop on Visualization in Practice (2017))"
           ]
         },
         "isEmpty": false,
@@ -224,7 +247,10 @@
             "CS 5630 / 6630 Visualization",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "with Dr. Miriah Meyer, using Processing"
+          "reference": "with Dr. Miriah Meyer, using Processing",
+          "links": {
+            "Course page": "https://www.cs.utah.edu/~miriah/teaching/cs6630/"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -249,7 +275,10 @@
             "CS 5630 / 6630 Visualization",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "with Dr. Alex Lex, using D3.js"
+          "reference": "with Dr. Alex Lex, using D3.js",
+          "links": {
+            "Course page": "http://dataviscourse.net/2015/"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -1030,6 +1059,19 @@
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
         },
+        "demo.url": {
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/demo.url",
+          "path": [
+            "publications",
+            "papers",
+            "2016_infovis_hanpuku"
+          ],
+          "name": "demo",
+          "extension": "url",
+          "contents": "https://youtu.be/eNoDZcs7vVs\n",
+          "filename": "demo.url",
+          "lastmod": "2020-12-04"
+        },
         "fastForward.mp4": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/fastForward.mp4",
           "path": [
@@ -1202,6 +1244,19 @@
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
         },
+        "demo.url": {
+          "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/demo.url",
+          "path": [
+            "publications",
+            "papers",
+            "2019_pacificvis_jacobs_ladder"
+          ],
+          "name": "demo",
+          "extension": "url",
+          "contents": "https://youtu.be/2joyCdBSGKw\n",
+          "filename": "demo.url",
+          "lastmod": "2020-12-04"
+        },
         "publication.pdf": {
           "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/publication.pdf",
           "path": [
@@ -1256,6 +1311,19 @@
           },
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
+        },
+        "demo.url": {
+          "url": "/cv/publications/papers/2019_vast_origraph/demo.url",
+          "path": [
+            "publications",
+            "papers",
+            "2019_vast_origraph"
+          ],
+          "name": "demo",
+          "extension": "url",
+          "contents": "https://youtu.be/bSFf2iD4TLI\n",
+          "filename": "demo.url",
+          "lastmod": "2020-12-04"
         },
         "description.html": {
           "url": "/cv/publications/papers/2019_vast_origraph/description.html",

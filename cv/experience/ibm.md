@@ -6,6 +6,9 @@ meta:
  - IBM Research
  - Cambridge, MA
 reference: "Mentor: Dr. Megan Monroe"
+links:
+  PacificVis Paper: /cv#jacobs_ladder
+  Project: /projects#jacobs_ladder
 ---
 During this three-month internship, we developed Jacob's Ladder, a system that supports traversing a large graph database in aggregate using graph pivots.
 

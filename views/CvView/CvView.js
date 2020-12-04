@@ -159,7 +159,12 @@ class CvView extends uki.View {
       // Experience
       title = d.contents.data.title;
       metaFields = this.getExpMetaFields(d);
-      buttonSpecs = []; // TODO: any buttons / links for experience entries?
+      buttonSpecs = Object.entries(d.contents.data.links || []).map(([key, value]) => {
+        return {
+          label: key,
+          onclick: () => { window.location = value; }
+        };
+      });
       body = d.contents.content;
     }
 
@@ -205,7 +210,7 @@ class CvView extends uki.View {
       .selectAll('li')
       .data(metaFields).enter().append('li')
       .attr('class', d => d.fieldname)
-      .text(d => d.fieldvalue);
+      .html(d => d.fieldvalue);
 
     // Add buttons for linked files
     const buttonContainer = modalEl.append('div').classed('buttonContainer', true);

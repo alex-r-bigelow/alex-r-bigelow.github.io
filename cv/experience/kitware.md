@@ -6,6 +6,9 @@ meta:
  - Kitware, Inc.
  - Clifton Park, NY
 reference: "Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury"
+links:
+  VIP Best Paper: /cv#2016_vip_resonant_lab
+  Resonant Lab: /projects#resonant_lab
 ---
 During this seven-month internship, I was privileged to work on [Resonant Lab](https://resonantlab.kitware.com), a system that enables connecting arbitrary datasets to arbitrary visualizations. This work culminated in a Best Paper Award at the Visualization In Practice Workshop (VIP '16).
 

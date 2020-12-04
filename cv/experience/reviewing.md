@@ -8,5 +8,6 @@ meta:
  - Eurovis VGTC Conference on Visualization (2016, 2020)
  - IEEE Conference on Visual Analytics Science and Technology (VAST) (2017, 2019)
  - ACM CHI Conference on Human Factors in Computing Systems (2015, 2017-2020)
- - Workshop on Visualization in Practice (2017)
+ - IEEE Transactions on Visualization and Computer Graphics (2019-2020)
+ - Workshop on Visualization in Practice (2017))
 ---
