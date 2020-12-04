@@ -35,7 +35,7 @@
       "name": "dsf",
       "extension": "md",
       "contents": {
-        "content": "",
+        "content": "<p>The University of Arizona Data Science Fellow program included a period of intense training in which each fellow instructed the others in specific data science disciplines; for example, in my case, I developed and conducted a series of trainings in data visualization.</p>\n<p>We also engaged with University projects in the Health Sciences and adjacent organizations; my involvement included working with <a href=\"https://researchbazaar.arizona.edu/\">Arizona Research Bazaar</a> to help with campus computing outreach efforts, as well as <a href=\"https://hcwhosted.org/\">HCW HOSTED</a> to provide resources for healthcare workers during the COVID-19 pandemic.</p>",
         "data": {
           "title": "Data Science Fellow",
           "start": 2020,
@@ -136,7 +136,7 @@
       "name": "resbaz",
       "extension": "md",
       "contents": {
-        "content": "<p>(todo)</p>",
+        "content": "<p>I benefitted from, and endeavored to assist with, a University of Arizona campus outreach group that provided regular meetups for people on campus and members of the community to help each other with applied programming or data challenges.</p>\n<p>We also organized a free weeklong series of workshops that provided training in a variety of data science topics.</p>",
         "data": {
           "title": "Steering Committee Member",
           "start": 2019,
@@ -161,7 +161,7 @@
       "name": "reviewing",
       "extension": "md",
       "contents": {
-        "content": "<p>(todo)</p>",
+        "content": "",
         "data": {
           "title": "Reviewer",
           "start": 2015,

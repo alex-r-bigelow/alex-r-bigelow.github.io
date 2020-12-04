@@ -10,4 +10,3 @@ meta:
  - ACM CHI Conference on Human Factors in Computing Systems (2015, 2017-2020)
  - Workshop on Visualization in Practice (2017)
 ---
-(todo)

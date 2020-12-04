@@ -19,9 +19,9 @@ class CvView extends uki.View {
     window.addEventListener('afterprint', () => {
       this.d3el.select('.contactInfo').html('');
     });
-    this.pubHashLookup = {};
+    this.hashLookup = {};
     window.addEventListener('hashchange', () => {
-      this.openHashedPub();
+      this.openHashedModal();
     });
   }
 
@@ -37,13 +37,17 @@ class CvView extends uki.View {
       const pubData = this.data.publications[pubType] || {};
       for (const [key, pub] of Object.entries(pubData)) {
         pub.hash = key;
-        this.pubHashLookup['#' + key] = pub;
+        this.hashLookup['#' + key] = pub;
       }
       this.drawPublications(d3.select(pubChunk), pubData);
     }
+    for (const exp of Object.values(this.data.experience)) {
+      exp.hash = exp.name;
+      this.hashLookup['#' + exp.name] = exp;
+    }
     this.drawExperience(this.d3el.select('.experience'), this.data.experience, false);
     this.drawExperience(this.d3el.select('.service'), this.data.experience, true);
-    this.openHashedPub();
+    this.openHashedModal();
   }
 
   drawPublications (container, pubData) {
@@ -74,21 +78,21 @@ class CvView extends uki.View {
     pubs.on('click', (event, d) => {
       const hash = '#' + d.hash;
       if (window.location.hash === hash) {
-        this.showPubModal(d);
+        this.showModal(d);
       } else {
         window.location.hash = '#' + d.hash;
-        // automatically calls this.showPubModal(d)
+        // automatically calls this.showModal(d)
       }
     });
 
     pubsEnter.append('ul').classed('meta', true)
       .selectAll('li')
-      .data(d => this.getMetaFields(d)).enter().append('li')
+      .data(d => this.getPubMetaFields(d)).enter().append('li')
       .attr('class', d => d.fieldname)
       .text(d => d.fieldvalue);
   }
 
-  getMetaFields (pub) {
+  getPubMetaFields (pub) {
     return [
       ['award'],
       ['booktitle', 'journal', 'howpublished'],
@@ -113,32 +117,59 @@ class CvView extends uki.View {
     }).filter(d => d !== null);
   }
 
-  openHashedPub () {
-    const pub = this.pubHashLookup[window.location.hash];
-    if (pub) {
-      this.showPubModal(pub);
+  getExpMetaFields (exp) {
+    const basic = [
+      { fieldname: 'reference', fieldvalue: exp.contents.data.reference },
+      { fieldname: 'timestamp', fieldvalue: this.formatExpTimestamp(exp) }
+    ];
+
+    return basic.concat(exp.contents.data.meta.map(meta => {
+      return { fieldname: 'expDetail', fieldvalue: meta };
+    }));
+  }
+
+  formatExpTimestamp (exp) {
+    if (exp.contents.data.season) {
+      return exp.contents.data.season + ' ' + exp.contents.data.year;
+    } else if (exp.contents.data.years) {
+      return exp.contents.data.years.join(', ');
+    } else if (exp.contents.data.start === exp.contents.data.stop) {
+      return exp.contents.data.start;
+    } else {
+      return exp.contents.data.start + '&ndash;' + exp.contents.data.stop;
     }
   }
 
-  showPubModal (pub) {
+  openHashedModal () {
+    const pub = this.hashLookup[window.location.hash];
+    if (pub) {
+      this.showModal(pub);
+    }
+  }
+
+  showModal (d) {
+    let title, metaFields, buttonSpecs, body;
+    if (d['citation.bib']) {
+      // Publication
+      title = d['citation.bib'].contents.title;
+      metaFields = this.getPubMetaFields(d);
+      buttonSpecs = this.getPubButtonSpecs(d);
+      body = d['abstract.txt']?.contents || '';
+    } else {
+      // Experience
+      title = d.contents.data.title;
+      metaFields = this.getExpMetaFields(d);
+      buttonSpecs = []; // TODO: any buttons / links for experience entries?
+      body = d.contents.content;
+    }
+
     uki.ui.showModal({
-      content: modalEl => this.createPubModalContent(pub, modalEl),
+      content: modalEl => this.createModalContent(title, metaFields, buttonSpecs, body, modalEl),
       buttonSpecs: ['defaultOK']
     });
   }
 
-  createPubModalContent (pub, modalEl) {
-    modalEl.html('').classed('CV', true);
-
-    modalEl.append('h5').text(pub['citation.bib'].contents.title);
-    modalEl.append('ul').classed('meta', true)
-      .selectAll('li')
-      .data(this.getMetaFields(pub)).enter().append('li')
-      .attr('class', d => d.fieldname)
-      .text(d => d.fieldvalue);
-
-    // Add buttons for linked files
-    const buttonContainer = modalEl.append('div').classed('buttonContainer', true);
+  getPubButtonSpecs (pub) {
     const generateLinkedFileSpec = (key, label, accessor) => {
       return {
         key,
@@ -150,7 +181,7 @@ class CvView extends uki.View {
         }
       };
     };
-    const buttonSpecs = [
+    return [
       generateLinkedFileSpec('publication.pdf', 'Publication PDF', 'url'),
       generateLinkedFileSpec('publication.url', 'Link to Publication', 'contents'),
       generateLinkedFileSpec('demo.url', 'Demo Video', 'contents'),
@@ -162,16 +193,29 @@ class CvView extends uki.View {
       generateLinkedFileSpec('osf.url', 'Supplemental Data', 'contents'),
       generateLinkedFileSpec('poster.pdf', 'Poster', 'url'),
       generateLinkedFileSpec('citation.bib', 'BibTeX Citation', 'url')
-    ];
-    for (const { key, spec } of buttonSpecs) {
-      if (pub[key]) {
-        spec.d3el = buttonContainer.append('div');
-        new uki.ui.ButtonView(spec); // eslint-disable-line no-new
-      }
+    ].filter(({ key }) => !!pub[key])
+      .map(({ spec }) => spec);
+  }
+
+  createModalContent (title, metaFields, buttonSpecs, body, modalEl) {
+    modalEl.html('').classed('CV', true);
+
+    modalEl.append('h5').text(title);
+    modalEl.append('ul').classed('meta', true)
+      .selectAll('li')
+      .data(metaFields).enter().append('li')
+      .attr('class', d => d.fieldname)
+      .text(d => d.fieldvalue);
+
+    // Add buttons for linked files
+    const buttonContainer = modalEl.append('div').classed('buttonContainer', true);
+    for (const spec of buttonSpecs) {
+      spec.d3el = buttonContainer.append('div');
+      new uki.ui.ButtonView(spec); // eslint-disable-line no-new
     }
 
-    if (pub['abstract.txt']) {
-      modalEl.append('p').html(pub['abstract.txt'].contents);
+    if (body) {
+      modalEl.append('p').html(body);
     }
   }
 
@@ -200,17 +244,7 @@ class CvView extends uki.View {
       .text(d => d.contents.data.title);
     entriesEnter.append('h6')
       .classed('date', true)
-      .html(d => {
-        if (d.contents.data.season) {
-          return d.contents.data.season + ' ' + d.contents.data.year;
-        } else if (d.contents.data.years) {
-          return d.contents.data.years.join(', ');
-        } else if (d.contents.data.start === d.contents.data.stop) {
-          return d.contents.data.start;
-        } else {
-          return d.contents.data.start + '&ndash;' + d.contents.data.stop;
-        }
-      });
+      .html(d => this.formatExpTimestamp(d));
 
     const metaFields = [
       ['meta'],
@@ -235,6 +269,16 @@ class CvView extends uki.View {
           return d.fieldvalue;
         }
       });
+
+    entriesEnter.on('click', (event, d) => {
+      const hash = '#' + d.hash;
+      if (window.location.hash === hash) {
+        this.showModal(d);
+      } else {
+        window.location.hash = '#' + d.hash;
+        // automatically calls this.showModal(d)
+      }
+    });
   }
 }
 
