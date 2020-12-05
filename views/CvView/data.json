@@ -30,7 +30,7 @@
         "excerpt": ""
       },
       "filename": "brusci.md",
-      "lastmod": "2020-09-27"
+      "lastmod": "2020-12-04"
     },
     "dsf.md": {
       "url": "/cv/experience/dsf.md",
@@ -60,7 +60,7 @@
         "excerpt": ""
       },
       "filename": "dsf.md",
-      "lastmod": "2020-12-03"
+      "lastmod": "2020-12-04"
     },
     "genepi.md": {
       "url": "/cv/experience/genepi.md",
@@ -90,7 +90,7 @@
         "excerpt": ""
       },
       "filename": "genepi.md",
-      "lastmod": "2020-12-03"
+      "lastmod": "2020-12-04"
     },
     "ibm.md": {
       "url": "/cv/experience/ibm.md",
@@ -119,7 +119,7 @@
         "excerpt": ""
       },
       "filename": "ibm.md",
-      "lastmod": "2020-12-03"
+      "lastmod": "2020-12-04"
     },
     "kitware.md": {
       "url": "/cv/experience/kitware.md",
@@ -129,7 +129,7 @@
       "name": "kitware",
       "extension": "md",
       "contents": {
-        "content": "<p>During this seven-month internship, I was privileged to work on <a href=\"https://resonantlab.kitware.com\">Resonant Lab</a>, a system that enables connecting arbitrary datasets to arbitrary visualizations. This work culminated in a Best Paper Award at the Visualization In Practice Workshop (VIP '16).</p>\n<p>I gained a lot of experience with real-world software development, and building better-quality software than I normally have time for in academia was incredibly satisfying. Working in an industry research lab like this was great because it gave me the flexibility to think deeply about problems and approach them in non-conventional ways, but at the same time, it provided the support and priority structure to develop high-quality software.</p>\n<p>Working for Kitware was also a valuable experience because of its focus on open-source development; regardless of my future career, I hope to be able to continue working with what we started here.</p>",
+        "content": "<p>During this seven-month internship, I was privileged to work on <a href=\"https://resonantlab.kitware.com\">Resonant Lab</a>, a system that enables connecting arbitrary datasets to arbitrary visualizations. This work culminated in a Best Paper Award at the Visualization In Practice Workshop (VIP '16).</p>\n<p>I gained a lot of experience with real-world software development, and building better-quality software than I normally have time for in academia was incredibly satisfying. Working in an industry research lab like this was great because it gave me the flexibility to think deeply about problems and approach them in non-conventional ways, but at the same time, it provided the support and priority structure to develop high-quality software. Working for Kitware was also a valuable experience because of its focus on open-source development.</p>",
         "data": {
           "title": "Research Intern",
           "season": "Spring, Summer",
@@ -148,7 +148,7 @@
         "excerpt": ""
       },
       "filename": "kitware.md",
-      "lastmod": "2020-09-27"
+      "lastmod": "2020-12-04"
     },
     "resbaz.md": {
       "url": "/cv/experience/resbaz.md",
@@ -202,7 +202,7 @@
         "excerpt": ""
       },
       "filename": "reviewing.md",
-      "lastmod": "2020-12-03"
+      "lastmod": "2020-12-04"
     },
     "sci.md": {
       "url": "/cv/experience/sci.md",
@@ -212,7 +212,7 @@
       "name": "sci",
       "extension": "md",
       "contents": {
-        "content": "",
+        "content": "<p>As a PhD student, I researched the effects that data can have on graphic designers as they create visualizations, how to support more iterative workflows between programming and drawing, and how to better support ideation about different network data abstractions.</p>",
         "data": {
           "title": "Research Assistant",
           "start": 2013,
@@ -256,7 +256,7 @@
         "excerpt": ""
       },
       "filename": "ta_1.md",
-      "lastmod": "2020-09-27"
+      "lastmod": "2020-12-04"
     },
     "ta_2.md": {
       "url": "/cv/experience/ta_2.md",
@@ -284,7 +284,7 @@
         "excerpt": ""
       },
       "filename": "ta_2.md",
-      "lastmod": "2020-09-27"
+      "lastmod": "2020-12-04"
     },
     "ua.md": {
       "url": "/cv/experience/ua.md",
@@ -294,7 +294,7 @@
       "name": "ua",
       "extension": "md",
       "contents": {
-        "content": "",
+        "content": "<p>As a postdoc, I researched, published, and submitted a grant (that wasn't funded) to study the impacts that different data abstractions can have on visualization design and analysis. I also helped advise two PhD students conducting design studies and building visualization systems for High Performance Computing researchers.</p>",
         "data": {
           "title": "Postdoctoral Researcher",
           "start": 2019,
