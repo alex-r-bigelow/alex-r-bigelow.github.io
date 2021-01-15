@@ -19,7 +19,12 @@
             "Student Activity Committee",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "Advisor: Dr. Greg Jones"
+          "reference": "Advisor: Dr. Greg Jones",
+          "links": {
+            "SCI X Map": "/projects#scix_map",
+            "Ping Pong Tournament": "/projects#ping_pong_tournament",
+            "InfoVis Poster": "/cv#2017_fellow_tool_builders"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -35,7 +40,7 @@
       "name": "dsf",
       "extension": "md",
       "contents": {
-        "content": "",
+        "content": "<p>The University of Arizona Data Science Fellow program included a period of intense training in which each fellow instructed the others in specific data science disciplines; for example, in my case, I developed and conducted a series of trainings in data visualization.</p>\n<p>We also engaged with University projects in the Health Sciences and adjacent organizations; my involvement included working with <a href=\"https://researchbazaar.arizona.edu/\">Arizona Research Bazaar</a> to help with campus computing outreach efforts, as well as <a href=\"https://hcwhosted.org/\">HCW HOSTED</a> to provide resources for healthcare workers during the COVID-19 pandemic.</p>",
         "data": {
           "title": "Data Science Fellow",
           "start": 2020,
@@ -44,7 +49,12 @@
             "Health Sciences",
             "University of Arizona, Tucson, AZ"
           ],
-          "reference": "Mentors: Dr. Alex Thome, Dr. Maliaca Oxnam, Dr. Eric Lyons"
+          "reference": "Mentors: Dr. Alex Thome, Dr. Maliaca Oxnam, Dr. Eric Lyons",
+          "links": {
+            "PLOS Comp. Bio. Paper": "/cv#2020_ten_rules",
+            "HCW HOSTED Project": "/projects#hcw_hosted",
+            "Arizona Research Bazaar": "/cv#resbaz"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -60,7 +70,7 @@
       "name": "genepi",
       "extension": "md",
       "contents": {
-        "content": "<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these are new, rich resources, they truly present wicked problems: once we could see one pattern in the data, it made us ask questions that need an entirely different perspectives. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>",
+        "content": "<p>For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the <a href=\"http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/\">Utah Population Database</a>.</p>\n<p>I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these were new, rich resources, they presented truly wicked problems: once we could see one pattern in the data, it made us ask questions that needed an entirely different perspective. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.</p>",
         "data": {
           "title": "Research Assistant",
           "start": 2010,
@@ -70,7 +80,11 @@
             "Division of Genetic Epidemiology",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "Advisor: Dr. Nicola J. Camp"
+          "reference": "Advisor: Dr. Nicola J. Camp",
+          "links": {
+            "BS Thesis": "/cv#2012_bs_thesis",
+            "Cancer Research Paper": "/cv#2016_haplotype"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -86,7 +100,7 @@
       "name": "ibm",
       "extension": "md",
       "contents": {
-        "content": "<p>During this three-month internship, we developed a system that supports traversing a large graph database in aggregate using graph pivots (we are finishing a paper on this subject that should be published soon).</p>\n<p>Apache TinkerPop3 was released midway through this project, just as we had switched from a Neo4j graph database to a Titan database. I learned a lot about graph databases and graph query languages, and learned hard but valuable lessons about good documentation, developing for a moving target, and the dangers of vendor lock-in.</p>",
+        "content": "<p>During this three-month internship, we developed Jacob's Ladder, a system that supports traversing a large graph database in aggregate using graph pivots.</p>\n<p>Apache TinkerPop3 was released midway through this project, just as we had switched from a Neo4j graph database to a Titan database. I learned a lot about graph databases and graph query languages, and learned hard but valuable lessons about good documentation, developing for a moving target, and the dangers of vendor lock-in.</p>",
         "data": {
           "title": "Research Intern",
           "season": "Summer",
@@ -95,7 +109,11 @@
             "IBM Research",
             "Cambridge, MA"
           ],
-          "reference": "Mentor: Dr. Megan Monroe"
+          "reference": "Mentor: Dr. Megan Monroe",
+          "links": {
+            "PacificVis Paper": "/cv#jacobs_ladder",
+            "Project": "/projects#jacobs_ladder"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -111,7 +129,7 @@
       "name": "kitware",
       "extension": "md",
       "contents": {
-        "content": "<p>During this seven-month internship, I was privileged to work on <a href=\"https://resonantlab.kitware.com\">Resonant Lab</a>, a system that enables connecting arbitrary datasets to arbitrary visualizations. This work culminated in a Best Paper Award at the Visualization In Practice Workshop (VIP '16).</p>\n<p>I gained a lot of experience with real-world software development, and building better-quality software than I normally have time for in academia was incredibly satisfying. Working in an industry research lab like this was great because it gave me the flexibility to think deeply about problems and approach them in non-conventional ways, but at the same time, it provided the support and priority structure to develop high-quality software.</p>\n<p>Working for Kitware was also a valuable experience because of its focus on open-source development; regardless of my future career, I hope to be able to continue working with what we started here.</p>",
+        "content": "<p>During this seven-month internship, I was privileged to work on <a href=\"https://resonantlab.kitware.com\">Resonant Lab</a>, a system that enables connecting arbitrary datasets to arbitrary visualizations. This work culminated in a Best Paper Award at the Visualization In Practice Workshop (VIP '16).</p>\n<p>I gained a lot of experience with real-world software development, and building better-quality software than I normally have time for in academia was incredibly satisfying. Working in an industry research lab like this was great because it gave me the flexibility to think deeply about problems and approach them in non-conventional ways, but at the same time, it provided the support and priority structure to develop high-quality software. Working for Kitware was also a valuable experience because of its focus on open-source development.</p>",
         "data": {
           "title": "Research Intern",
           "season": "Spring, Summer",
@@ -120,7 +138,11 @@
             "Kitware, Inc.",
             "Clifton Park, NY"
           ],
-          "reference": "Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury"
+          "reference": "Mentors: Dr. Jeff Baumes, Dr. Roni Choudhury",
+          "links": {
+            "VIP Best Paper": "/cv#2016_vip_resonant_lab",
+            "Resonant Lab": "/projects#resonant_lab"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -136,7 +158,7 @@
       "name": "resbaz",
       "extension": "md",
       "contents": {
-        "content": "<p>(todo)</p>",
+        "content": "<p>I benefitted from, and endeavored to assist with, a University of Arizona campus outreach group that provided regular meetups for people on campus and members of the community to help each other with applied programming or data challenges.</p>\n<p>We also organized a free weeklong series of workshops that provided training in a variety of data science topics.</p>",
         "data": {
           "title": "Steering Committee Member",
           "start": 2019,
@@ -161,7 +183,7 @@
       "name": "reviewing",
       "extension": "md",
       "contents": {
-        "content": "<p>(todo)</p>",
+        "content": "",
         "data": {
           "title": "Reviewer",
           "start": 2015,
@@ -172,7 +194,8 @@
             "Eurovis VGTC Conference on Visualization (2016, 2020)",
             "IEEE Conference on Visual Analytics Science and Technology (VAST) (2017, 2019)",
             "ACM CHI Conference on Human Factors in Computing Systems (2015, 2017-2020)",
-            "Workshop on Visualization in Practice (2017)"
+            "IEEE Transactions on Visualization and Computer Graphics (2019-2020)",
+            "Workshop on Visualization in Practice (2017))"
           ]
         },
         "isEmpty": false,
@@ -189,7 +212,7 @@
       "name": "sci",
       "extension": "md",
       "contents": {
-        "content": "",
+        "content": "<p>As a PhD student, I researched the effects that data can have on graphic designers as they create visualizations, how to support more iterative workflows between programming and drawing, and how to better support ideation about different network data abstractions.</p>",
         "data": {
           "title": "Research Assistant",
           "start": 2013,
@@ -224,7 +247,10 @@
             "CS 5630 / 6630 Visualization",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "with Dr. Miriah Meyer, using Processing"
+          "reference": "with Dr. Miriah Meyer, using Processing",
+          "links": {
+            "Course page": "https://www.cs.utah.edu/~miriah/teaching/cs6630/"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -249,7 +275,10 @@
             "CS 5630 / 6630 Visualization",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "with Dr. Alex Lex, using D3.js"
+          "reference": "with Dr. Alex Lex, using D3.js",
+          "links": {
+            "Course page": "http://dataviscourse.net/2015/"
+          }
         },
         "isEmpty": false,
         "excerpt": ""
@@ -265,7 +294,7 @@
       "name": "ua",
       "extension": "md",
       "contents": {
-        "content": "",
+        "content": "<p>As a postdoc, I researched, published, and submitted a grant (that wasn't funded) to study the impacts that different data abstractions can have on visualization design and analysis. I also helped advise two PhD students conducting design studies and building visualization systems for High Performance Computing researchers.</p>",
         "data": {
           "title": "Postdoctoral Researcher",
           "start": 2019,
@@ -1030,6 +1059,19 @@
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
         },
+        "demo.url": {
+          "url": "/cv/publications/papers/2016_infovis_hanpuku/demo.url",
+          "path": [
+            "publications",
+            "papers",
+            "2016_infovis_hanpuku"
+          ],
+          "name": "demo",
+          "extension": "url",
+          "contents": "https://youtu.be/eNoDZcs7vVs\n",
+          "filename": "demo.url",
+          "lastmod": "2021-01-15"
+        },
         "fastForward.mp4": {
           "url": "/cv/publications/papers/2016_infovis_hanpuku/fastForward.mp4",
           "path": [
@@ -1202,6 +1244,19 @@
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
         },
+        "demo.url": {
+          "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/demo.url",
+          "path": [
+            "publications",
+            "papers",
+            "2019_pacificvis_jacobs_ladder"
+          ],
+          "name": "demo",
+          "extension": "url",
+          "contents": "https://youtu.be/2joyCdBSGKw\n",
+          "filename": "demo.url",
+          "lastmod": "2021-01-15"
+        },
         "publication.pdf": {
           "url": "/cv/publications/papers/2019_pacificvis_jacobs_ladder/publication.pdf",
           "path": [
@@ -1256,6 +1311,19 @@
           },
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
+        },
+        "demo.url": {
+          "url": "/cv/publications/papers/2019_vast_origraph/demo.url",
+          "path": [
+            "publications",
+            "papers",
+            "2019_vast_origraph"
+          ],
+          "name": "demo",
+          "extension": "url",
+          "contents": "https://youtu.be/bSFf2iD4TLI\n",
+          "filename": "demo.url",
+          "lastmod": "2021-01-15"
         },
         "description.html": {
           "url": "/cv/publications/papers/2019_vast_origraph/description.html",
