@@ -16,7 +16,9 @@ class BlogView extends uki.View {
     this.d3el.classed('BlogView', true)
       .classed('flexbox-albatross', true)
       .insert('nav', ':first-child')
-      .classed('blogMenu', true);
+      .classed('blogMenu', true)
+      .insert('a').attr('href', '/blog')
+      .insert('h5').text('Blog home');
   }
 
   async draw () {
@@ -26,20 +28,24 @@ class BlogView extends uki.View {
 
     let entries = this.d3el.select('.blogMenu').selectAll('.entry').data(data);
     entries.exit().remove();
-    const entriesEnter = entries.enter().append('details')
+    const entriesEnter = entries.enter().append('div')
       .classed('entry', true);
     entries = entries.merge(entriesEnter);
 
-    entriesEnter.append('summary').append('a');
-    entries.select('a')
+    const summaryEnter = entriesEnter.append('div')
+      .classed('summary', true);
+
+    summaryEnter.append('a');
+    entries.select('.summary a')
       .attr('href', d => d.url)
       .text(d => d.title);
 
-    entriesEnter.append('div')
+    summaryEnter.append('span')
       .classed('date', true)
       .text(d => d.lastmod);
 
     entriesEnter.append('div')
+      .classed('preview', true)
       .html(d => d.preview?.content || '');
   }
 }

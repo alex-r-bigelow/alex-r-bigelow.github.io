@@ -1,132 +1,41 @@
 [
   {
-    "url": "/blog/Getting_PHP_to_run_in_OS_X_Lion/index.html",
-    "dirname": "Getting_PHP_to_run_in_OS_X_Lion",
+    "url": "/blog/LG_e980_Flashing_Guide/index.html",
+    "dirname": "LG_e980_Flashing_Guide",
     "type": "blog",
-    "path": "/blog/Getting_PHP_to_run_in_OS_X_Lion",
+    "path": "/blog/LG_e980_Flashing_Guide",
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
-    "lastmod": "2012-01-18",
+    "lastmod": "2016-03-12",
     "preview": {
-      "content": "<p>Fixing problems with PHP after an OS upgrade</p>"
+      "content": "<p>A guide for flashing CyanogenMod to an LG e980</p>"
     },
-    "title": "Getting PHP to run in OS X Lion"
+    "title": "LG e980 Flashing Guide"
   },
   {
-    "url": "/blog/Macfusion_MacFUSE_Lion/index.html",
-    "dirname": "Macfusion_MacFUSE_Lion",
+    "url": "/blog/Graph_Databases/index.html",
+    "dirname": "Graph_Databases",
     "type": "blog",
-    "path": "/blog/Macfusion_MacFUSE_Lion",
+    "path": "/blog/Graph_Databases",
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
-    "title": "Macfusion, MacFUSE and OS X Lion",
-    "lastmod": "2012-01-19",
+    "lastmod": "2015-07-06",
     "preview": {
-      "content": "<p>Getting Macfusion to work after an OS update</p>"
-    }
-  },
-  {
-    "url": "/blog/webpy_and_Sessions/index.html",
-    "dirname": "webpy_and_Sessions",
-    "type": "blog",
-    "path": "/blog/webpy_and_Sessions",
-    "saveIndexHTML": true,
-    "wrapIndexHTML": true,
-    "title": "web.py and Sessions",
-    "lastmod": "2012-03-26",
-    "preview": {
-      "content": "<p>Dealing with some of the strange things web.py does with sessions</p>"
-    }
-  },
-  {
-    "url": "/blog/Installing_pycairo_or_py2cairo_on_OS_X_Lion/index.html",
-    "dirname": "Installing_pycairo_or_py2cairo_on_OS_X_Lion",
-    "type": "blog",
-    "path": "/blog/Installing_pycairo_or_py2cairo_on_OS_X_Lion",
-    "saveIndexHTML": true,
-    "wrapIndexHTML": true,
-    "lastmod": "2012-05-10",
-    "preview": {
-      "content": "<p>Notes from a really involved installation</p>"
+      "content": "<p>Notes while learning about Graph Databases for the first time</p>"
     },
-    "title": "Installing pycairo or py2cairo on OS X Lion"
+    "title": "Graph Databases"
   },
   {
-    "url": "/blog/PySide_in_Eclipse/index.html",
-    "dirname": "PySide_in_Eclipse",
+    "url": "/blog/MacFusion_OSXFUSE_and_Mavericks/index.html",
+    "dirname": "MacFusion_OSXFUSE_and_Mavericks",
     "type": "blog",
-    "path": "/blog/PySide_in_Eclipse",
+    "path": "/blog/MacFusion_OSXFUSE_and_Mavericks",
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
-    "lastmod": "2012-05-15",
+    "title": "MacFusion, OSXFUSE, and Mavericks",
+    "lastmod": "2013-11-14",
     "preview": {
-      "content": "<p>Notes for dealing with Eclipse oddities with PySide</p>"
-    },
-    "title": "PySide in Eclipse"
-  },
-  {
-    "url": "/blog/Adding_to_XCode_Menu/index.html",
-    "dirname": "Adding_to_XCode_Menu",
-    "type": "blog",
-    "path": "/blog/Adding_to_XCode_Menu",
-    "saveIndexHTML": true,
-    "wrapIndexHTML": true,
-    "title": "Adding to the XCode \"Open Developer Tool\" Menu",
-    "lastmod": "2012-10-23",
-    "preview": {
-      "content": "<p>Trick to add older XCode tools that aren't automatically added to its menu</p>"
-    }
-  },
-  {
-    "url": "/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse/index.html",
-    "dirname": "Efficiently_running_a_SimpleHTTPServer_from_Eclipse",
-    "type": "blog",
-    "path": "/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse",
-    "saveIndexHTML": true,
-    "wrapIndexHTML": true,
-    "lastmod": "2013-03-29",
-    "preview": {
-      "content": "<p>A better server setup than the default</p>"
-    },
-    "title": "Efficiently running a SimpleHTTPServer from Eclipse"
-  },
-  {
-    "url": "/blog/Exporting_video_from_Tableau/index.html",
-    "dirname": "Exporting_video_from_Tableau",
-    "type": "blog",
-    "path": "/blog/Exporting_video_from_Tableau",
-    "saveIndexHTML": true,
-    "wrapIndexHTML": true,
-    "title": "Workaround: How to export video from Tableau",
-    "lastmod": "2013-04-19",
-    "preview": {
-      "content": "<p>A hack for creating animations with Tableau</p>"
-    }
-  },
-  {
-    "url": "/blog/epstopdf_on_OS_X/index.html",
-    "dirname": "epstopdf_on_OS_X",
-    "type": "blog",
-    "path": "/blog/epstopdf_on_OS_X",
-    "saveIndexHTML": true,
-    "wrapIndexHTML": true,
-    "lastmod": "2013-06-10",
-    "preview": {
-      "content": "<p>Fixing .eps problems with TeXShop</p>"
-    },
-    "title": "epstopdf on OS X"
-  },
-  {
-    "url": "/blog/Toshiba_Portege_M200_Linux/index.html",
-    "dirname": "Toshiba_Portege_M200_Linux",
-    "type": "blog",
-    "path": "/blog/Toshiba_Portege_M200_Linux",
-    "saveIndexHTML": true,
-    "wrapIndexHTML": true,
-    "title": "Toshiba Portégé M200 OS installation",
-    "lastmod": "2013-08-14",
-    "preview": {
-      "content": "<p>Workaround for installing linux on a very old-but-cool precursor to modern tablets</p>"
+      "content": "<p>Workaround for fixing MacFusion after Mavericks update</p>"
     }
   },
   {
@@ -143,42 +52,133 @@
     }
   },
   {
-    "url": "/blog/MacFusion_OSXFUSE_and_Mavericks/index.html",
-    "dirname": "MacFusion_OSXFUSE_and_Mavericks",
+    "url": "/blog/Toshiba_Portege_M200_Linux/index.html",
+    "dirname": "Toshiba_Portege_M200_Linux",
     "type": "blog",
-    "path": "/blog/MacFusion_OSXFUSE_and_Mavericks",
+    "path": "/blog/Toshiba_Portege_M200_Linux",
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
-    "title": "MacFusion, OSXFUSE, and Mavericks",
-    "lastmod": "2013-11-14",
+    "title": "Toshiba Portégé M200 OS installation",
+    "lastmod": "2013-08-14",
     "preview": {
-      "content": "<p>Workaround for fixing MacFusion after Mavericks update</p>"
+      "content": "<p>Workaround for installing linux on a very old-but-cool precursor to modern tablets</p>"
     }
   },
   {
-    "url": "/blog/Graph_Databases/index.html",
-    "dirname": "Graph_Databases",
+    "url": "/blog/epstopdf_on_OS_X/index.html",
+    "dirname": "epstopdf_on_OS_X",
     "type": "blog",
-    "path": "/blog/Graph_Databases",
+    "path": "/blog/epstopdf_on_OS_X",
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
-    "lastmod": "2015-07-06",
+    "lastmod": "2013-06-10",
     "preview": {
-      "content": "<p>Notes while learning about Graph Databases for the first time</p>"
+      "content": "<p>Fixing .eps problems with TeXShop</p>"
     },
-    "title": "Graph Databases"
+    "title": "epstopdf on OS X"
   },
   {
-    "url": "/blog/LG_e980_Flashing_Guide/index.html",
-    "dirname": "LG_e980_Flashing_Guide",
+    "url": "/blog/Exporting_video_from_Tableau/index.html",
+    "dirname": "Exporting_video_from_Tableau",
     "type": "blog",
-    "path": "/blog/LG_e980_Flashing_Guide",
+    "path": "/blog/Exporting_video_from_Tableau",
     "saveIndexHTML": true,
     "wrapIndexHTML": true,
-    "lastmod": "2016-03-12",
+    "title": "Workaround: How to export video from Tableau",
+    "lastmod": "2013-04-19",
     "preview": {
-      "content": "<p>A guide for flashing CyanogenMod to an LG e980</p>"
+      "content": "<p>A hack for creating animations with Tableau</p>"
+    }
+  },
+  {
+    "url": "/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse/index.html",
+    "dirname": "Efficiently_running_a_SimpleHTTPServer_from_Eclipse",
+    "type": "blog",
+    "path": "/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "lastmod": "2013-03-29",
+    "preview": {
+      "content": "<p>A better server setup than the default</p>"
     },
-    "title": "LG e980 Flashing Guide"
+    "title": "Efficiently running a SimpleHTTPServer from Eclipse"
+  },
+  {
+    "url": "/blog/Adding_to_XCode_Menu/index.html",
+    "dirname": "Adding_to_XCode_Menu",
+    "type": "blog",
+    "path": "/blog/Adding_to_XCode_Menu",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "title": "Adding to the XCode \"Open Developer Tool\" Menu",
+    "lastmod": "2012-10-23",
+    "preview": {
+      "content": "<p>Trick to add older XCode tools that aren't automatically added to its menu</p>"
+    }
+  },
+  {
+    "url": "/blog/PySide_in_Eclipse/index.html",
+    "dirname": "PySide_in_Eclipse",
+    "type": "blog",
+    "path": "/blog/PySide_in_Eclipse",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "lastmod": "2012-05-15",
+    "preview": {
+      "content": "<p>Notes for dealing with Eclipse oddities with PySide</p>"
+    },
+    "title": "PySide in Eclipse"
+  },
+  {
+    "url": "/blog/Installing_pycairo_or_py2cairo_on_OS_X_Lion/index.html",
+    "dirname": "Installing_pycairo_or_py2cairo_on_OS_X_Lion",
+    "type": "blog",
+    "path": "/blog/Installing_pycairo_or_py2cairo_on_OS_X_Lion",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "lastmod": "2012-05-10",
+    "preview": {
+      "content": "<p>Notes from a really involved installation</p>"
+    },
+    "title": "Installing pycairo or py2cairo on OS X Lion"
+  },
+  {
+    "url": "/blog/webpy_and_Sessions/index.html",
+    "dirname": "webpy_and_Sessions",
+    "type": "blog",
+    "path": "/blog/webpy_and_Sessions",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "title": "web.py and Sessions",
+    "lastmod": "2012-03-26",
+    "preview": {
+      "content": "<p>Dealing with some of the strange things web.py does with sessions</p>"
+    }
+  },
+  {
+    "url": "/blog/Macfusion_MacFUSE_Lion/index.html",
+    "dirname": "Macfusion_MacFUSE_Lion",
+    "type": "blog",
+    "path": "/blog/Macfusion_MacFUSE_Lion",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "title": "Macfusion, MacFUSE and OS X Lion",
+    "lastmod": "2012-01-19",
+    "preview": {
+      "content": "<p>Getting Macfusion to work after an OS update</p>"
+    }
+  },
+  {
+    "url": "/blog/Getting_PHP_to_run_in_OS_X_Lion/index.html",
+    "dirname": "Getting_PHP_to_run_in_OS_X_Lion",
+    "type": "blog",
+    "path": "/blog/Getting_PHP_to_run_in_OS_X_Lion",
+    "saveIndexHTML": true,
+    "wrapIndexHTML": true,
+    "lastmod": "2012-01-18",
+    "preview": {
+      "content": "<p>Fixing problems with PHP after an OS upgrade</p>"
+    },
+    "title": "Getting PHP to run in OS X Lion"
   }
 ]

@@ -4,12 +4,24 @@
 
   .blogMenu {
     max-width: 40rem;
-    .date {
+    .summary {
+      display: flex;
+      align-items: baseline;
+      .date {
+        margin-left: auto;
+        white-space: nowrap;
+        color: var(--text-color-softer);
+      }
+    }
+    .preview {
+      font-size: 0.75em;
       color: var(--text-color-softer);
     }
   }
 
   .blogContents {
-    min-width: ~"max(50%, 60rem)"; /* escape css3 function so LESS doesn't parse max() */
+    margin-left: 4rem;
+    min-width: 60%;
+    max-width: 60rem;
   }
 }

@@ -3,9 +3,18 @@ h3 img {
   height: 1em;
   display: inline-block;
 }
+.fundingChunk {
+  position: relative;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 38px;
+	gap: 38px;
+  max-width: 878px;
+}
 .jumbotron {
   position: relative;
   padding-top: 2em;
+  margin-bottom: 2em;
   color: var(--background-color-richer);
   &:before {
     content: ' ';
@@ -63,7 +72,6 @@ h3 img {
   }
 }
 @media (min-width: 1078px) {
-	/* breakpoint / widths from honegumi.css */
 	.splitscreen {
     .anchor {
       max-width: 420px;
