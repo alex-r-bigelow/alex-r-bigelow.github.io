@@ -4,7 +4,7 @@ class ProjectFeed extends uki.View {
   constructor (options = {}) {
     options.resources = options.resources || [];
     options.resources.push(...[
-      { type: 'less', url: 'views/ProjectFeed/style.less' }
+      { type: 'less', url: '/views/ProjectFeed/style.less' }
     ]);
     super(options);
   }

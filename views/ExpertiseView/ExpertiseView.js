@@ -4,9 +4,9 @@ class ExpertiseView extends uki.View {
   constructor (options = {}) {
     options.resources = options.resources || [];
     options.resources.push(...[
-      { type: 'text', url: 'views/ExpertiseView/legend.html', name: 'legend' },
-      { type: 'json', url: `views/ExpertiseView/${options.dataset}`, name: 'data' },
-      { type: 'less', url: 'views/ExpertiseView/style.less' }
+      { type: 'text', url: '/views/ExpertiseView/legend.html', name: 'legend' },
+      { type: 'json', url: `/views/ExpertiseView/${options.dataset}`, name: 'data' },
+      { type: 'less', url: '/views/ExpertiseView/style.less' }
     ]);
     super(options);
     this.legendEl = options.legendEl;

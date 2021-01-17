@@ -21,7 +21,8 @@ const pages = {
       '/blog.html',
       '/404.html'
     ],
-    blog: []
+    blog: [],
+    drafts: []
   }
 };
 const cvData = {};
@@ -88,17 +89,20 @@ for (const filename of fileList) {
       details.title = menu.find(d => d.url === location.pathName)?.title;
     }
 
-    // Blog file?
+    // Blog or draft file?
     const blog = /blog\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
-    if (blog) {
-      details.dirname = blog[1];
-      details.path = `/blog/${details.dirname}`;
-      details.type = 'blog';
-      if (blog[2] === 'index' || blog[2] === 'preview') {
+    const drafts = /drafts\/(.*)\/([^/]*)\.([^/.]*)$/.exec(location.pathname);
+    const blogOrDraft = blog || drafts;
+    if (blogOrDraft) {
+      details.dirname = blogOrDraft[1];
+      details.type = blog ? 'blog' : 'drafts';
+      details.path = `/${details.type}/${details.dirname}`;
+
+      if (blogOrDraft[2] === 'index' || blogOrDraft[2] === 'preview') {
         // Check if this is an auto-generated HTML file that we should skip
-        const mdFile = `blog/${blog[1]}/${blog[2]}.md`;
+        const mdFile = `${details.type}/${blogOrDraft[1]}/${blogOrDraft[2]}.md`;
         const mdFileExists = shell.test('-e', mdFile);
-        if (blog[3] === 'html' && mdFileExists) {
+        if (blogOrDraft[3] === 'html' && mdFileExists) {
           console.log(`... skipping auto-generated ${filename} ...`);
           continue;
         }
@@ -107,19 +111,19 @@ for (const filename of fileList) {
         let contents = shell.exec(`cat ${filename}`).stdout;
         let saveHTML = false;
         let wrapHTML = false;
-        if (blog[3] === 'md') {
+        if (blogOrDraft[3] === 'md') {
           // Convert to HTML
           contents = PARSERS.md(contents).content;
-          if (blog[2] === 'index') {
+          if (blogOrDraft[2] === 'index') {
             // Always wrap markdown posts in our generic blog HTML wrapper, and
             // override the url to point to the generated file
             saveHTML = true;
             wrapHTML = true;
-            details.url = `/blog/${blog[1]}/${blog[2]}.html`;
+            details.url = `/${details.type}/${blogOrDraft[1]}/${blogOrDraft[2]}.html`;
           }
         }
         // Store the contents and what to do with them
-        if (blog[2] === 'index') {
+        if (blogOrDraft[2] === 'index') {
           details.index = contents;
           details.saveIndexHTML = saveHTML;
           details.wrapIndexHTML = wrapHTML;
@@ -189,7 +193,7 @@ pages.hierarchy.blog.sort((a, b) => {
   return pages.details[a].lastmod - pages.details[b].lastmod;
 });
 const blogHTMLWrapper = shell.exec('cat blogHTMLWrapper.html').stdout;
-const blogData = pages.hierarchy.blog.map(blogPath => {
+function finalizeBlog (blogPath) {
   // Get the details associated with the path
   const details = pages.details[blogPath];
   // Patch on an external preview if it exists
@@ -203,15 +207,25 @@ const blogData = pages.hierarchy.blog.map(blogPath => {
       if (details.wrapIndexHTML) {
         contents = eval('`' + blogHTMLWrapper + '`'); // eslint-disable-line no-eval
       }
-      fs.writeFileSync(`blog/${details.dirname}/index.html`, contents);
-      shell.exec(`git add blog/${details.dirname}/index.html`);
-      console.log(`Generated blog/${details.dirname}/index.html`);
+      fs.writeFileSync(`${details.type}/${details.dirname}/index.html`, contents);
+      if (details.type === 'blog') {
+        shell.exec(`git add blog/${details.dirname}/index.html`);
+      }
+      console.log(`Generated ${details.type}/${details.dirname}/index.html`);
     }
-    // Don't store index contents in BlogView/data.json
+    // Don't store blog contents in BlogView/data.json
     delete details.index;
   }
+  // If this is only a draft, delete all its details now that we've finished the
+  // dry run, so that its info doesn't end up in any of our metadata
+  if (details.type === 'drafts') {
+    delete pages.details[blogPath];
+  }
   return details;
-});
+}
+const blogData = pages.hierarchy.blog.map(finalizeBlog);
+// Dry run for drafts (generate HTML files, but don't include drafts' metadata anywhere)
+pages.hierarchy.drafts.map(finalizeBlog);
 
 // Dump BlogView/data.json
 fs.writeFileSync('views/BlogView/data.json', JSON.stringify(blogData, null, 2));

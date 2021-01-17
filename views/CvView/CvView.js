@@ -4,20 +4,26 @@ class CvView extends uki.View {
   constructor (options = {}) {
     options.resources = options.resources || [];
     options.resources.push(...[
-      { type: 'json', url: 'views/CvView/data.json', name: 'data' },
-      { type: 'less', url: 'views/CvView/style.less' }
+      { type: 'json', url: '/views/CvView/data.json', name: 'data' },
+      { type: 'less', url: '/views/CvView/style.less' }
     ]);
     super(options);
 
     window.addEventListener('beforeprint', () => {
       // Programmatically add contact info to a printed version of the CV...
-      // really lame version of obfuscation, but should stop *most* evil
+      // really lame version of obfuscation, but this should stop *most* evil
       // spammers
       this.d3el.select('.contactInfo')
-        .append('p').html('alex.r.bigelow@gmail.com<br/>+1 (801) 300-8525');
+        .append('p').html('alex.r.b' + 'igelow@gm' + 'ail.com<br/>+1 (8' + '01) 30' + '0-85' + '25');
+      // Switch lenghty paper section to a shorter one for printing
+      this.d3el.select('[data-type="papers"] h5')
+        .text('Papers');
     });
     window.addEventListener('afterprint', () => {
       this.d3el.select('.contactInfo').html('');
+      // Switch lenghty paper section to a shorter one for printing
+      this.d3el.select('[data-type="papers"] h5')
+        .text('Refereed Conference and Journal Papers');
     });
     this.hashLookup = {};
     window.addEventListener('hashchange', () => {

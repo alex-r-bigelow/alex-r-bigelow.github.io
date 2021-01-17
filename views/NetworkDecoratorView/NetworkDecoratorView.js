@@ -38,9 +38,9 @@ class NetworkDecoratorView extends uki.View {
   constructor (options = {}) {
     options.resources = options.resources || [];
     options.resources.push(...[
-      { type: 'text', url: 'views/NetworkDecoratorView/template.html', name: 'template' },
-      { type: 'json', url: 'views/NetworkDecoratorView/data.json', name: 'data' },
-      { type: 'less', url: 'views/NetworkDecoratorView/style.less' }
+      { type: 'text', url: '/views/NetworkDecoratorView/template.html', name: 'template' },
+      { type: 'json', url: '/views/NetworkDecoratorView/data.json', name: 'data' },
+      { type: 'less', url: '/views/NetworkDecoratorView/style.less' }
     ]);
     super(options);
 

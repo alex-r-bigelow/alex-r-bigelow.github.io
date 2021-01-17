@@ -27,6 +27,12 @@
 }
 
 .CV {
+  justify-content: space-around;
+
+  & > .column {
+    max-width: 60rem;
+  }
+
   .showInPrint {
     display: none;
   }
@@ -34,6 +40,18 @@
   h2, h5 {
     margin-top: 3rem;
     margin-bottom: 1rem;
+  }
+  h2 {
+    color: var(--accent-color);
+    font-weight: var(--heavy-font-weight);
+  }
+  h5 {
+    background-color: var(--background-color-softer);
+    padding: 0.25em;
+    font-weight: var(--heavy-font-weight);
+  }
+  h2 + div h5 {
+    margin-top: 0;
   }
   .meta {
     margin: 0 0 0 1em;
@@ -82,6 +100,16 @@
     }
   }
 }
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.25em;
+  color: var(--text-color-softer);
+  text-align: center;
+  background-color: var(--background-color-softer);
+}
 .printHelper {
   visibility: hidden;
   h1 {
@@ -100,24 +128,46 @@
     background: white;
     font-family: 'EB Garamond', serif;
     color: black !important;
-    font-size: 11pt;
+    font-size: 12pt;
     overflow: visible;
     height: auto;
     margin: 0;
     padding: 0;
+    -webkit-print-color-adjust: exact !important;
+
+    /* Note to self: uncomment this when debugging print layout */
+    width: 8.5in;
   }
   .MenuView, .TooltipView, .hideInPrint {
     display: none !important;
   }
   .CV {
-    grid-template-columns: repeat(2, calc(50% - 5mm));
-    grid-gap: 0 10mm;
-    max-width: calc(100% - 3cm);
+    justify-content: space-between;
+    & > .column {
+      max-width: 24rem;
+    }
     h1, h2, h3, h4, h5, strong {
       font-family: 'EB Garamond SC', serif;
       page-break-after: avoid;
-      margin-top: 0.25em;
       margin-bottom: 0;
+      margin-top: 0;
+    }
+    h1 {
+      letter-spacing: 0.5pt;
+    }
+    h2 {
+      margin-top: 1rem;
+      letter-spacing: 0.1pt;
+      &::first-letter {
+        letter-spacing: 0.75pt;
+      }
+    }
+    h5 {
+      letter-spacing: 2pt;
+      background-color: #ccc;
+      color: white;
+      padding: 0.1em 0.5em;
+      margin-top: 1rem;
     }
     h1 { font-size: 2.0rem; }
     h2 { font-size: 1.5rem; }
@@ -146,8 +196,8 @@
       page-break-after: always;
     }
 
-    /* hacks for mysterious whitespace problems after page break */
   }
+  .footer,
   .printHelper {
     display: none;
   }

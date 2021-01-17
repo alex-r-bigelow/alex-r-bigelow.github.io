@@ -3,8 +3,8 @@ class MenuView extends uki.View {
   constructor (options = {}) {
     options.resources = options.resources || [];
     options.resources.push(...[
-      { type: 'less', url: 'views/MenuView/style.less' },
-      { type: 'json', url: 'views/MenuView/default.json', name: 'defaultMenu' }
+      { type: 'less', url: '/views/MenuView/style.less' },
+      { type: 'json', url: '/views/MenuView/default.json', name: 'defaultMenu' }
     ]);
     super(options);
 
@@ -89,7 +89,7 @@ class MenuView extends uki.View {
       .concat(this.extraSpecs);
     if (this.drawCollapsed) {
       return [{
-        img: 'img/hamburger.svg',
+        img: '/img/hamburger.svg',
         onclick: function () {
           uki.ui.showContextMenu({
             menuEntries: specs,

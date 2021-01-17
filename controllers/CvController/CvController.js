@@ -8,7 +8,7 @@ class CvController extends Controller {
     this.collapseMenu = window.outerWidth < 1994;
     this.extraMenuSpecs = [{
       label: 'Print',
-      img: 'img/print.svg',
+      img: '/img/print.svg',
       onclick: () => {
         window.print();
       }
