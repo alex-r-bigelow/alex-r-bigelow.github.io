@@ -36,6 +36,7 @@ class BlogView extends uki.View {
       .text(d => d.title);
 
     entriesEnter.append('div')
+      .classed('date', true)
       .text(d => d.lastmod);
 
     entriesEnter.append('div')

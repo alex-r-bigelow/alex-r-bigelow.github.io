@@ -190,7 +190,7 @@ for (const filename of fileList) {
 
 // Post-processing for blog stuff
 pages.hierarchy.blog.sort((a, b) => {
-  return pages.details[a].lastmod - pages.details[b].lastmod;
+  return new Date(pages.details[a].lastmod) - new Date(pages.details[b].lastmod);
 });
 const blogHTMLWrapper = shell.exec('cat blogHTMLWrapper.html').stdout;
 function finalizeBlog (blogPath) {

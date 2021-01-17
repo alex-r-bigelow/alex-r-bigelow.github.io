@@ -1,5 +1,6 @@
 package-lock.json
 buildLocalUkiLibs.sh
+drafts
 
 # we want to include specific files inside node_modules and ignore the rest...
 
