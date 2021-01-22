@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet/less" type="text/css" href="/styles/baseStyles.less"/>
+  <script type="text/javascript" src="/node_modules/less/dist/less.min.js" data-log-level="1"></script>
+  <script type="text/javascript" src="/node_modules/d3/dist/d3.min.js"></script>
+  <script type="module" src="/node_modules/uki/dist/uki.esm.js"></script>
+  <script type="module" src="/node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
+  <script type="module">
+    import BlogController from '/controllers/BlogController/BlogController.js';
+    window.controller = new BlogController();
+  </script>
+</head>
+<body>
+  <div class="BlogView">
+    <div class="blogContents">
+      <p>Of course, with another version of OS X, we have more problems with Macfusion.<br />
+<br />
+The first problem you'll encounter with a fresh, normal installation is the "Authentication has failed" error. With the help of <a href="https://github.com/mgorbach/macfusion2/issues/32">this thread</a>, it turns out that XQuartz needs to be installed as well (I know, <i>that's</i> intuitive…).<br />
+<br />
+Here's the current workaround:<br />
+<br /></p>
+<ul>
+<li>Install <a href="http://osxfuse.github.io/">OSXFUSE</a> (with the MacFUSE Compatibility Layer)</li>
+<li>Install <a href="http://macfusionapp.org/">MacFusion</a></li>
+<li>Install <a href="http://xquartz.macosforge.org/landing/">XQuartz</a></li>
+</ul>
+<p>After this, I got the good old "Mount process has terminated unexpectedly" error when I tried to mount my home directory on the server as an SSHFS volume. After inspecting logs in the Console, it looks like it doesn't like an empty or relative Path (I had tried leaving it blank or setting it to ~/). It works with absolute paths, though.</p>
+    </div>
+  </div>
+</body>
+</html>

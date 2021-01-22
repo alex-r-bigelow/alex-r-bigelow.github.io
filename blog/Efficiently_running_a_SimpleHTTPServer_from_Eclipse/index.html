@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet/less" type="text/css" href="/styles/baseStyles.less"/>
+  <script type="text/javascript" src="/node_modules/less/dist/less.min.js" data-log-level="1"></script>
+  <script type="text/javascript" src="/node_modules/d3/dist/d3.min.js"></script>
+  <script type="module" src="/node_modules/uki/dist/uki.esm.js"></script>
+  <script type="module" src="/node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
+  <script type="module">
+    import BlogController from '/controllers/BlogController/BlogController.js';
+    window.controller = new BlogController();
+  </script>
+</head>
+<body>
+  <div class="BlogView">
+    <div class="blogContents">
+      <p>I've started working a lot more with straight javascript and HTML, and I've never been quite satisfied with the workflow in Eclipse. Sure, there's a built-in web browser or real-ish Apache or Tomcat servers you can set up with a lot of reading and patience. There's also a cute Eclipse web browser that rarely renders anything the same as Chrome, Firefox, Safari, or anything that anyone actually uses… that, and you're just looking at files like you'd see them if, in Chrome, you went to File -&gt;; Open File…</p>
+<p>Sometimes all you need is just a quick way to actually serve files and see how they behave in a real browser. There probably <b>is</b> a better way to do this in Eclipse, but I couldn't find any good documentation about how to pull it off.</p>
+<p>Here's my workaround for OS X (it shouldn't be too hard to adapt to Linux or Windows):</p>
+<p>Create a file like this in the project:</p>
+<pre><code class="bash language-bash">#!/bin/bash
+cd `dirname "${BASH_SOURCE[0]}"`
+python -m SimpleHTTPServer 8123
+</code></pre>
+<p>Save it as "run.command" in the directory you want to serve files from.</p>
+<p>Open a terminal, <code>cd</code> to the directory, and <code>chmod a+x run.command</code></p>
+<p>In Eclipse, right+click on the file, and go to "Open With -&gt;; System Editor"</p>
+<p>From now on, every time you double click run.command, a server will start up (you'll get a terminal window that spits out python's logs). When you're done testing, you'll want to hit Control+C in this window to shut it down. To prevent lots of terminal windows from accumulating, you can go to "Terminal -&gt;; Preferences… -&gt;; Settings -&gt;; Shell" and under "When the shell exits", select "Close if the shell exited cleanly"</p>
+<p>Point your favorite web browser at <a href="http://localhost:8123/">http://localhost:8123</a>.&nbsp;You should see the files of that directory listed, and pages should display normally.</p>
+<p>For an even more efficient workflow, make a system bookmark by dragging the icon next to the address to the desktop.</p>
+<p><img src="/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse/screenshot.jpg"/></p>
+<p>OS X will call it something like "Directory Listing for -.webloc". Rename it to "run.webloc" and add it to your project directory next to run.command.</p>
+<p>Now to test a project, there are just two double clicks: first on run.command, then on run.webloc. When you're done testing, close the browser window, click the terminal, and hit Control-C.</p>
+    </div>
+  </div>
+</body>
+</html>

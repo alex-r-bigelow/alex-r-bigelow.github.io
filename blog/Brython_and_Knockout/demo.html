@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <script type="application/javascript" ,="" src="./demo_files/brython.js"></script>
+    <script type="application/javascript" ,="" src="./demo_files/knockout-3.0.0.js"></script>
+    <script type="text/python" src="./demo_files/exvg.py"></script>
+</head>
+
+<body onload="brython()">
+    <table>
+        <thead>
+            <tr>
+                <td>x</td>
+                <td>y</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input data-bind="value: x"></td>
+            <td><input data-bind="value: y"></td>
+            </tr>
+        </tbody>
+    </table>
+    <svg style="width:500px;height:200px;border:1px solid">
+        <circle r="10" data-bind="attr: {cx: x, cy: y}, event: { mousedown: mouseDown }" cx="100" cy="50"></circle>
+    </svg>
+
+
+</body></html>

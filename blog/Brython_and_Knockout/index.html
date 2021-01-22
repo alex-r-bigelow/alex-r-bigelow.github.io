@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet/less" type="text/css" href="/styles/baseStyles.less"/>
+  <script type="text/javascript" src="/node_modules/less/dist/less.min.js" data-log-level="1"></script>
+  <script type="text/javascript" src="/node_modules/d3/dist/d3.min.js"></script>
+  <script type="module" src="/node_modules/uki/dist/uki.esm.js"></script>
+  <script type="module" src="/node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
+  <script type="module">
+    import BlogController from '/controllers/BlogController/BlogController.js';
+    window.controller = new BlogController();
+  </script>
+</head>
+<body>
+  <div class="BlogView">
+    <div class="blogContents">
+      <p>I spent the last few days trying to learn AngularJS, and was resigned to the thought that I was going to have to suck it up and write my current project in straight javascript. I was getting frustrated with all the baggage that comes with AngularJS and its awful documentation (I still don't have a proper understanding of directives!) when I stumbled on KnockoutJS. It focuses on doing one thing very well, and doesn't force a particular flavor of MVC on you. Its documentation is awesome and has an approach to tutorials that, in my humble opinion, are more natural than the ones at Khan Academy.</p>
+<p>And there's an interesting pattern in how it wraps observables.</p>
+<p>To get around problems with IE, you access and modify KnockoutJS variables via <em>functions</em>. This has a handy side effect in that everything it touches is sanitized. In other words, you can have observable brython objects that are modified and returned directly without any javascript baggage! You don't even have to wrap the ko library in a JSObject… just use it directly in your python script. The only thing you have to remember is which objects are observable and which ones aren't - but you'd have to do that in javascript, too.</p>
+<p>There is an oddity, however; KnockoutJS doesn't call brython class functions for events properly (of course, it's expecting javascript). You can get around it, though, by wrapping the function with lambda.</p>
+<p>Here's an example:</p>
+<p><strong>index.html:</strong></p>
+<pre><code class="html language-html">&lt;!doctype html&gt;  
+ &lt;html&gt;  
+
+ &lt;head&gt;  
+   &lt;script type="application/javascript" , src="brython.js"&gt;&lt;/script&gt;  
+   &lt;script type="application/javascript", src="knockout-3.0.0.js"&gt;&lt;/script&gt;  
+   &lt;script type="text/python", src="exvg.py"&gt;&lt;/script&gt;  
+ &lt;/head&gt;  
+
+ &lt;body onload="brython()"&gt;  
+   &lt;table&gt;  
+     &lt;thead&gt;  
+       &lt;tr&gt;  
+         &lt;td&gt;x&lt;/td&gt;  
+         &lt;td&gt;y&lt;/td&gt;  
+       &lt;/tr&gt;  
+     &lt;/thead&gt;  
+     &lt;tbody&gt;  
+     &lt;tr&gt;  
+       &lt;td&gt;&lt;input data-bind="value: x" /&gt;&lt;/td&gt;  
+       &lt;td&gt;&lt;input data-bind="value: y" /&gt;&lt;/td&gt;  
+       &lt;/tr&gt;  
+     &lt;/tbody&gt;  
+   &lt;/table&gt;  
+   &lt;svg style="width:500px;height:200px;border:1px solid"&gt;  
+     &lt;circle r="10" data-bind="attr: {cx: x, cy: y}, event: { mousedown: mouseDown }"/&gt;  
+   &lt;/svg&gt;  
+ &lt;/body&gt;  
+
+ &lt;/html&gt;  
+</code></pre>
+<p><strong>exvg.py:</strong></p>
+<pre><code class="python language-python">class Point:  
+   def __init__(self):  
+     self.x = ko.observable(100)  
+     self.y = ko.observable(50)  
+
+     # This is a little funky:  
+     self.mouseDown = lambda data, event : self._mouseDown(event)  
+
+   def _mouseDown(self, event):  
+     # I want to drag relative to the parent SVG element  
+     containerRect = event.target.parent.getBoundingClientRect()  
+     startX = containerRect.left  
+     startY = containerRect.top  
+
+     def mouseMove(event):  
+       self.x(event.clientX-startX)  
+       self.y(event.clientY-startY)  
+
+     def mouseUp(event):  
+       # In theory I should unbind the specific function, but brython  
+       # chokes when I try to unbind mouseUp from mouseup  
+       doc.unbind('mouseup')  
+       doc.unbind('mousemove')  
+
+     # I override other events until we're done dragging  
+     event.preventDefault()  
+     doc.bind('mousemove',mouseMove)  
+     doc.bind('mouseup',mouseUp)  
+
+ ko.applyBindings(Point())  
+</code></pre>
+<p><strong>The result:</strong></p>
+<iframe height="300px" src="/blog/Brython_and_Knockout/demo.html"></iframe>
+    </div>
+  </div>
+</body>
+</html>

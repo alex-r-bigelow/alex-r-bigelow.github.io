@@ -14,7 +14,7 @@ class CvView extends uki.View {
       // really lame version of obfuscation, but this should stop *most* evil
       // spammers
       this.d3el.select('.contactInfo')
-        .append('p').html('alex.r.b' + 'igelow@gm' + 'ail.com<br/>+1 (8' + '01) 30' + '0-85' + '25');
+        .append('p').html('alex.r.b' + 'igelow@gm' + 'ail.com<br/>alex-r-bigelow.github.io<br/>+1 (8' + '01) 30' + '0-85' + '25');
       // Switch lenghty paper section to a shorter one for printing
       this.d3el.select('[data-type="papers"] h5')
         .text('Papers');
