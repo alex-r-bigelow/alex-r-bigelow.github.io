@@ -71,11 +71,13 @@ class MenuView extends uki.View {
           window.location = temp + 'gm' + 'ail.c' + 'om';
         };
       }
+      const primary = window.location.pathname === page.url ||
+        window.location.pathname + '.html' === page.url ||
+        (window.location.pathname === '/' && page.url === '/index.html');
       const spec = {
         label: page.title,
         img: page.icon,
-        // primary: window.location.pathname === page.url,
-        primary: page.url === '/index.html',
+        primary,
         onclick
       };
       if (page.subMenu) {
