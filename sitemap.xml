@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  <url>
-  <lastmod>2021-01-17</lastmod>
-  <loc>https://alex-r-bigelow.github.io/404.html</loc>
-  </url>
-  <url>
-  <lastmod>2021-01-17</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog.html</loc>
-  </url>
-  <url>
   <lastmod>2012-10-23</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/Adding_to_XCode_Menu/index.html</loc>
   </url>
@@ -18,6 +10,10 @@
   <url>
   <lastmod>2013-03-29</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2013-06-10</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/epstopdf_on_OS_X/index.html</loc>
   </url>
   <url>
   <lastmod>2013-04-19</lastmod>
@@ -40,12 +36,12 @@
   <loc>https://alex-r-bigelow.github.io/blog/LG_e980_Flashing_Guide/index.html</loc>
   </url>
   <url>
-  <lastmod>2013-11-14</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/MacFusion_OSXFUSE_and_Mavericks/index.html</loc>
-  </url>
-  <url>
   <lastmod>2012-01-19</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/Macfusion_MacFUSE_Lion/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2013-11-14</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/MacFusion_OSXFUSE_and_Mavericks/index.html</loc>
   </url>
   <url>
   <lastmod>2012-05-15</lastmod>
@@ -56,20 +52,8 @@
   <loc>https://alex-r-bigelow.github.io/blog/Toshiba_Portege_M200_Linux/index.html</loc>
   </url>
   <url>
-  <lastmod>2013-06-10</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/epstopdf_on_OS_X/index.html</loc>
-  </url>
-  <url>
   <lastmod>2012-03-26</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/webpy_and_Sessions/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2021-01-17</lastmod>
-  <loc>https://alex-r-bigelow.github.io/cv.html</loc>
-  </url>
-  <url>
-  <lastmod>2021-01-17</lastmod>
-  <loc>https://alex-r-bigelow.github.io/funding.html</loc>
   </url>
   <url>
   <lastmod>2020-11-27</lastmod>
@@ -77,6 +61,22 @@
   </url>
   <url>
   <lastmod>2021-01-17</lastmod>
+  <loc>https://alex-r-bigelow.github.io/funding.html</loc>
+  </url>
+  <url>
+  <lastmod>2021-01-17</lastmod>
   <loc>https://alex-r-bigelow.github.io/projects.html</loc>
+  </url>
+  <url>
+  <lastmod>2021-01-17</lastmod>
+  <loc>https://alex-r-bigelow.github.io/cv.html</loc>
+  </url>
+  <url>
+  <lastmod>2021-01-17</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog.html</loc>
+  </url>
+  <url>
+  <lastmod>2021-01-17</lastmod>
+  <loc>https://alex-r-bigelow.github.io/404.html</loc>
   </url>
 </urlset>

@@ -1,7 +1,7 @@
 ---
 title: Postdoctoral Researcher
 start: 2019
-stop: Present
+stop: 2021
 meta:
  - Department of Computer Science
  - University of Arizona, Tucson, AZ

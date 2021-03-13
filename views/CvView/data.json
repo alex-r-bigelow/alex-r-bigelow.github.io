@@ -298,7 +298,7 @@
         "data": {
           "title": "Postdoctoral Researcher",
           "start": 2019,
-          "stop": "Present",
+          "stop": 2021,
           "meta": [
             "Department of Computer Science",
             "University of Arizona, Tucson, AZ"
@@ -1526,18 +1526,6 @@
     },
     "patents": {
       "2017_backfilling": {
-        "US9569558.pdf": {
-          "url": "/cv/publications/patents/2017_backfilling/US9569558.pdf",
-          "path": [
-            "publications",
-            "patents",
-            "2017_backfilling"
-          ],
-          "name": "US9569558",
-          "extension": "pdf",
-          "filename": "US9569558.pdf",
-          "lastmod": "2020-09-27"
-        },
         "abstract.txt": {
           "url": "/cv/publications/patents/2017_backfilling/abstract.txt",
           "path": [
@@ -1573,6 +1561,18 @@
             "howpublished": "US Patent 9,569,558"
           },
           "filename": "citation.bib",
+          "lastmod": "2020-09-27"
+        },
+        "US9569558.pdf": {
+          "url": "/cv/publications/patents/2017_backfilling/US9569558.pdf",
+          "path": [
+            "publications",
+            "patents",
+            "2017_backfilling"
+          ],
+          "name": "US9569558",
+          "extension": "pdf",
+          "filename": "US9569558.pdf",
           "lastmod": "2020-09-27"
         }
       }

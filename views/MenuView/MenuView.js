@@ -75,7 +75,7 @@ class MenuView extends uki.View {
         label: page.title,
         img: page.icon,
         // primary: window.location.pathname === page.url,
-        primary: page.url === '/funding.html',
+        primary: page.url === '/index.html',
         onclick
       };
       if (page.subMenu) {

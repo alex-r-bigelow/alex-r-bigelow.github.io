@@ -66,11 +66,11 @@ const PARSERS = {
 
 const BASE_URL = 'https://alex-r-bigelow.github.io';
 
-// Make sure any new files will show up in the git ls-files command,
-// but wait to actually stage those files:
-shell.exec('git add --intent-to-add -A');
+// Grab any file in the blog, cv, or drafts directory, as well as our root
+// files (remove the preceding slash for local file ops)
+const fileList = shell.exec('find blog cv drafts -type f').stdout.trim().split('\n')
+  .concat(pages.hierarchy.root.map(filename => filename.slice(1)));
 
-const fileList = shell.exec('git ls-files').stdout.trim().split('\n');
 for (const filename of fileList) {
   if (shell.test('-e', filename)) {
     const location = new URL(BASE_URL + '/' + filename);
