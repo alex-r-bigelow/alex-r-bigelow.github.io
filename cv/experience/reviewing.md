@@ -3,6 +3,7 @@ title: Reviewer
 start: 2015
 stop: Present
 service: true
+hideInPrint: true
 meta:
  - IEEE Information Visualization (2016-2020), Short Papers Program Committee (2020)
  - Eurovis VGTC Conference on Visualization (2016, 2020)

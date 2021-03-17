@@ -189,6 +189,7 @@
           "start": 2015,
           "stop": "Present",
           "service": true,
+          "hideInPrint": true,
           "meta": [
             "IEEE Information Visualization (2016-2020), Short Papers Program Committee (2020)",
             "Eurovis VGTC Conference on Visualization (2016, 2020)",
@@ -229,6 +230,30 @@
       },
       "filename": "sci.md",
       "lastmod": "2020-12-04"
+    },
+    "stardog.md": {
+      "url": "/cv/experience/stardog.md",
+      "path": [
+        "experience"
+      ],
+      "name": "stardog",
+      "extension": "md",
+      "contents": {
+        "content": "<p>At Stardog, I design visualizations for exploring graphs, and prototype systems\nto help people model their data as a graph visually.</p>",
+        "data": {
+          "title": "Software Engineer",
+          "start": 2021,
+          "stop": "Present",
+          "meta": [
+            "Stardog"
+          ],
+          "reference": "Supervisors: Jason Rogers, Michael Grove"
+        },
+        "isEmpty": false,
+        "excerpt": ""
+      },
+      "filename": "stardog.md",
+      "lastmod": "2021-03-17"
     },
     "ta_1.md": {
       "url": "/cv/experience/ta_1.md",
@@ -309,7 +334,7 @@
         "excerpt": ""
       },
       "filename": "ua.md",
-      "lastmod": "2020-12-04"
+      "lastmod": "2021-03-13"
     }
   },
   "publications": {

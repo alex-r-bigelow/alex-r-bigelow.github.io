@@ -249,7 +249,8 @@ class CvView extends uki.View {
       });
     const entriesEnter = container.selectAll('.entry')
       .data(entriesList).enter().append('div').classed('entry', true)
-      .classed('hideInPrint', d => d['meta.json']?.contents?.hideInPrint);
+      .classed('hideInPrint', d => d['meta.json']?.contents?.hideInPrint ||
+        d.contents.data.hideInPrint);
     entriesEnter.append('h6')
       .classed('title', true)
       .text(d => d.contents.data.title);
