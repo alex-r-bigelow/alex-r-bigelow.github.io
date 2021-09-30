@@ -93,7 +93,7 @@
       "contents": {
         "content": "",
         "data": {
-          "title": "Reviewer",
+          "title": "Peer Reviewer",
           "start": 2015,
           "stop": "Present",
           "service": true,
@@ -111,7 +111,7 @@
         "excerpt": ""
       },
       "filename": "reviewing.md",
-      "lastmod": "2020-12-04"
+      "lastmod": "2021-09-30"
     },
     "sci.md": {
       "url": "/cv/experience/sci.md",
@@ -285,7 +285,7 @@
       "contents": {
         "content": "<p>I volunteered on the SCI Institute's student committee. Responsibilities have included:</p>\n<ul>\n<li>Deep involvement in planning and carrying out the <a href=\"http://sci.utah.edu/the-institute/events/day/20161116.html\">SCI X</a> exhibition in 2016. This included creating an <a href=\"https://github.com/alex-r-bigelow/scix-map\">interactive map</a> for a display table and visitors' devices</li>\n<li>Planning and carrying out Institute parties. This included mocking up an <a href=\"https://github.com/alex-r-bigelow/ping-pong-tournament\">interface</a> for managing an in-house ping pong tournament</li>\n</ul>",
         "data": {
-          "title": "Student Committee Volunteer",
+          "title": "Committee Member",
           "start": 2015,
           "stop": 2018,
           "service": true,

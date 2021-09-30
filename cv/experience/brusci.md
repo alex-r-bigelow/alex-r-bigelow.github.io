@@ -1,5 +1,5 @@
 ---
-title: Student Committee Volunteer
+title: Committee Member
 start: 2015
 stop: 2018
 service: true
