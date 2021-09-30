@@ -1,29 +1,39 @@
 /* eb-garamond-regular - latin */
 @font-face {
-  font-family: 'EB Garamond';
+  font-family: "EB Garamond";
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/eb-garamond-v12-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('fonts/eb-garamond-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/eb-garamond-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/eb-garamond-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('fonts/eb-garamond-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('fonts/eb-garamond-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
+  src: url("fonts/eb-garamond-v12-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("fonts/eb-garamond-v12-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("fonts/eb-garamond-v12-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("fonts/eb-garamond-v12-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("fonts/eb-garamond-v12-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("fonts/eb-garamond-v12-latin-regular.svg#EBGaramond") format("svg"); /* Legacy iOS */
 }
 
 /* eb-garamond-smallCaps - latin */
 @font-face {
-  font-family: 'EB Garamond SC';
+  font-family: "EB Garamond SC";
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/eb-garamond-sc-v12-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('fonts/eb-garamond-sc-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/eb-garamond-sc-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/eb-garamond-sc-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('fonts/eb-garamond-sc-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('fonts/eb-garamond-sc-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
+  src: url("fonts/eb-garamond-sc-v12-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("fonts/eb-garamond-sc-v12-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("fonts/eb-garamond-sc-v12-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("fonts/eb-garamond-sc-v12-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("fonts/eb-garamond-sc-v12-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("fonts/eb-garamond-sc-v12-latin-regular.svg#EBGaramond") format("svg"); /* Legacy iOS */
 }
 
 .CV {
@@ -37,7 +47,8 @@
     display: none;
   }
 
-  h2, h5 {
+  h2,
+  h5 {
     margin-top: 3rem;
     margin-bottom: 1rem;
   }
@@ -63,7 +74,7 @@
       color: var(--accent-color);
       margin-bottom: 0;
       &:before {
-        content: '\2606';
+        content: "\2606";
         position: absolute;
         left: -1em;
         bottom: 0px;
@@ -84,7 +95,9 @@
       right: 0;
       color: var(--text-color-richer);
     }
-    .booktitle, .journal, .howpublished {
+    .booktitle,
+    .journal,
+    .howpublished {
       margin: 0 0 0 1em;
     }
   }
@@ -113,10 +126,10 @@
 .printHelper {
   visibility: hidden;
   h1 {
-    font-family: 'EB Garamond SC', serif;
+    font-family: "EB Garamond SC", serif;
   }
   p {
-    font-family: 'EB Garamond', serif;
+    font-family: "EB Garamond", serif;
   }
 }
 
@@ -124,9 +137,10 @@
 }
 
 @media print {
-  html, body {
+  html,
+  body {
     background: white;
-    font-family: 'EB Garamond', serif;
+    font-family: "EB Garamond", serif;
     color: black !important;
     font-size: 12pt;
     overflow: visible;
@@ -138,7 +152,9 @@
     /* Note to self: uncomment this when debugging print layout */
     width: 8.5in;
   }
-  .MenuView, .TooltipView, .hideInPrint {
+  .MenuView,
+  .TooltipView,
+  .hideInPrint {
     display: none !important;
   }
   .CV {
@@ -146,8 +162,13 @@
     & > .column {
       max-width: 24rem;
     }
-    h1, h2, h3, h4, h5, strong {
-      font-family: 'EB Garamond SC', serif;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    strong {
+      font-family: "EB Garamond SC", serif;
       page-break-after: avoid;
       margin-bottom: 0;
       margin-top: 0;
@@ -169,12 +190,24 @@
       padding: 0.1em 0.5em;
       margin-top: 1rem;
     }
-    h1 { font-size: 2.0rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.5rem; }
-    h4 { font-size: 1.25rem; }
-    h5 { font-size: 1.0rem; }
-    h6 { font-size: 0.8rem; }
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1.25rem;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+    h6 {
+      font-size: 0.8rem;
+    }
 
     .contactInfo p {
       margin-bottom: 1em;
@@ -184,7 +217,10 @@
       display: inline-block;
     }
 
-    .meta, .journal, .booktitle, .howpublished {
+    .meta,
+    .journal,
+    .booktitle,
+    .howpublished {
       font-size: 0.75em;
     }
 
@@ -195,7 +231,6 @@
     .forcePageBreak {
       page-break-after: always;
     }
-
   }
   .footer,
   .printHelper {
