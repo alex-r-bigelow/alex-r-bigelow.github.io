@@ -29,6 +29,11 @@ class CvView extends uki.View {
     window.addEventListener('hashchange', () => {
       this.openHashedModal();
     });
+
+    window.enableFullPrint = () => {
+      d3.selectAll('.showInFullPrint').classed('hideInPrint', false);
+      d3.selectAll('.hideInFullPrint').classed('showInPrint', false);
+    };
   }
 
   get data () {
@@ -70,7 +75,7 @@ class CvView extends uki.View {
       .classed('entry', true);
     pubs = pubs.merge(pubsEnter);
 
-    pubs.classed('hideInPrint', d => d['meta.json']?.contents?.hideInPrint);
+    pubs.classed('hideInPrint showInFullPrint', d => d['meta.json']?.contents?.hideInPrint);
 
     pubsEnter.append('h6')
       .classed('title', true)
@@ -249,7 +254,7 @@ class CvView extends uki.View {
       });
     const entriesEnter = container.selectAll('.entry')
       .data(entriesList).enter().append('div').classed('entry', true)
-      .classed('hideInPrint', d => d?.contents?.data?.hideInPrint);
+      .classed('hideInPrint showInFullPrint', d => d?.contents?.data?.hideInPrint);
     entriesEnter.append('h6')
       .classed('title', true)
       .text(d => d.contents.data.title);
