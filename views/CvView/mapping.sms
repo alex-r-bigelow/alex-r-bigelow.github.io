@@ -1,0 +1,66 @@
+prefix : <tag:alex:bigelow:cv:graph>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+MAPPING
+FROM JSON {
+  {
+    "experience": {
+      "?experienceId": {
+        "contents": {
+          "data": {
+            "title": "?experienceTitle",
+            "referenceList": [ "?referencePerson" ]
+          }
+        }
+      }
+    },
+    "publications": {
+      "?publicationType": {
+        "?publicationId": {
+          "citation.bib": {
+            "contents": {
+              "title": "?publicationTitle",
+              "authorList": [ "?coauthorPerson" ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
+TO {
+  ?refPerson a foaf:Person ;
+    rdfs:label ?refPersonLabel ;
+    :collaborated_at ?exp ;
+    :name ?referencePerson .
+
+  ?coaPerson a foaf:Person ;
+    rdfs:label ?coaPersonLabel ;
+    :collaborated_on ?pub ;
+    :name ?coauthorPerson .
+  
+  ?pub a :Publication ;
+    rdfs:label ?pubTitle ;
+    :publication_type ?pubType .
+  
+  ?exp a :Work_Experience ;
+    rdfs:label ?expTitle .
+}
+WHERE {
+  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Person_{referencePerson}") AS ?refPerson)
+  BIND(xsd:string(?referencePerson) AS ?refPersonLabel)
+
+  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Person_{coauthorPerson}") AS ?coaPerson)
+  BIND(xsd:string(?coauthorPerson) AS ?coaPersonLabel)
+
+  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Publication_{publicationId}") AS ?pub)
+  BIND(xsd:string(?publicationTitle) AS ?pubTitle)
+  BIND(xsd:string(?publicationType) AS ?pubType)
+
+  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Publication_{experienceId}") AS ?exp)
+  BIND(xsd:string(?experienceTitle) AS ?expTitle)
+}

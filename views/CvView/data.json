@@ -17,10 +17,13 @@
             "CS 5630 / 6630 Visualization",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "with Dr. Alex Lex, using D3.js",
+          "reference": "with Dr. Alexander Lex, using D3.js",
           "links": {
             "Course page": "http://dataviscourse.net/2015/"
-          }
+          },
+          "referenceList": [
+            "Alexander Lex"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -74,8 +77,14 @@
           "reference": "Advisor: Dr. Nicola J. Camp",
           "links": {
             "BS Thesis": "/cv#2012_bs_thesis",
-            "Cancer Research Paper": "/cv#2016_haplotype"
-          }
+            "Cancer Research Papers": [
+              "/cv#2016_haplotype",
+              "/cv#2014_targeted"
+            ]
+          },
+          "referenceList": [
+            "Nicola J. Camp"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -131,7 +140,10 @@
             "Scientific Computing and Imaging (SCI) Institute",
             "University of Utah, Salt Lake City, UT"
           ],
-          "reference": "Advisor: Dr. Miriah Meyer"
+          "reference": "Advisor: Dr. Miriah Meyer",
+          "referenceList": [
+            "Miriah Meyer"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -156,7 +168,10 @@
             "Department of Computer Science",
             "University of Arizona, Tucson, AZ"
           ],
-          "reference": "Advisor: Dr. Kate Isaacs"
+          "reference": "Advisor: Dr. Katherine E Isaacs",
+          "referenceList": [
+            "Katherine E Isaacs"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -185,7 +200,10 @@
           "links": {
             "PacificVis Paper": "/cv#jacobs_ladder",
             "Project": "/projects#jacobs_ladder"
-          }
+          },
+          "referenceList": [
+            "Megan Monroe"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -210,7 +228,14 @@
             "Stardog Union",
             "Arlington, VA"
           ],
-          "reference": "Mentors: Dr. Jason Rogers, Laura Firey, Dr. Michael Grove"
+          "reference": "Mentors: Annee Barrett, Dr. Jason Rogers, Laura Firey Monroe, Dr. Michael Grove, Paul Ambro",
+          "referenceList": [
+            "Barrett",
+            "Jason Rogers",
+            "Laura Firey Monroe",
+            "Michael Grove",
+            "Paul Ambro"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -239,7 +264,11 @@
           "links": {
             "VIP Best Paper": "/cv#2016_vip_resonant_lab",
             "Resonant Lab": "/projects#resonant_lab"
-          }
+          },
+          "referenceList": [
+            "Jeff Baumes",
+            "Roni Choudhury"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -267,7 +296,10 @@
           "reference": "with Dr. Miriah Meyer, using Processing",
           "links": {
             "Course page": "https://www.cs.utah.edu/~miriah/teaching/cs6630/"
-          }
+          },
+          "referenceList": [
+            "Miriah Meyer"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -300,7 +332,10 @@
             "SCI X Map": "/projects#scix_map",
             "Ping Pong Tournament": "/projects#ping_pong_tournament",
             "InfoVis Poster": "/cv#2017_fellow_tool_builders"
-          }
+          },
+          "referenceList": [
+            "Greg Jones"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -330,7 +365,12 @@
             "PLOS Comp. Bio. Paper": "/cv#2020_ten_rules",
             "HCW HOSTED Project": "/projects#hcw_hosted",
             "Arizona Research Bazaar": "/cv#resbaz"
-          }
+          },
+          "referenceList": [
+            "Alex Thome",
+            "Maliaca Oxnam",
+            "Eric Lyons"
+          ]
         },
         "isEmpty": false,
         "excerpt": ""
@@ -394,6 +434,64 @@
       }
     },
     "papers": {
+      "2014_targeted": {
+        "abstract.txt": {
+          "url": "/cv/publications/papers/2014_targeted/abstract.txt",
+          "path": [
+            "publications",
+            "papers",
+            "2014_targeted"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "CASP8 at 2q33 is an established common, low risk susceptibility locus for breast cancer but functional variants are yet to be elucidated. Previously we used haplotype mining of 45 tSNPs in 3778 breast cancer cases and controls to identify a risk haplotype maximizing association evidence. A protective haplotype was also suggested. Here, we perform a focused sequencing study to identify the critical sequence variant/s.\n\nTo not exclude potential regulatory variants, we designed a custom Agilent SureSelect capture array to target all non-repetitive sequence in the 1 Mb region surrounding CASP8. The resulting 41 libraries for germline DNA (24 breast cancer cases homozygous for the risk haplotype, 17 cancer-free women carrying the protective haplotype) were sequenced on the Life Technologies SOLID system. A total of 1464 sequence variants were prioritized by their propensity to lie on the risk or protective haplotypes, resulting in the selection of 42 variants to follow-up with expression-QTL analysis (MAFs 0.1-0.4). Our RNA sequencing panel comprised 156 tissue samples from 88 women (68 breast tumor, 88 normal breast). Illumina TruSeq stranded mRNA sequencing was performed on an Illumina HiSeq 2000. Genotyping for the 42 selected variants was performed using Illumina BeadXpress. RNAseq eQTL analysis focused on 4 genes: CFLAR, CASP10, CASP8, ALS2CR12 using counts standardized to fragments per kilobase per million bases (FPKM). Differences in FPKM between carriers and non-carriers of the 42 DNA sequence variants were assessed in both normal and tumor tissues. Replication analyses were carried out on available TCGA data and published blood eQTL microarray data.\n\nIn normal tissue, an intronic variant in ALS2CR12 on the risk haplotype was best associated with CASP8 expression (19% decreased FPKM, p=9x10-5). Eight other variants (all in ALS2CR12 or CASP8) showed similar CASP8 decreases (p<10-3). Increased ALS2CR12 expression was also observed for the same variants, and decreased CASP8 expression was seen in tumor. Despite the difference in technologies, lower coverage and sparser genotyping, the decreased CASP8 and increased ALS2CR12 levels were replicated in both in the TCGA normal tissue (p=3x10-4) and blood eQTL data (p=4x10-14).\n\nIn tumor, our strongest eQTL results were for decreased expression of CFLAR (p=1x10-4) and CASP10 (p=4x10-5), identified for variants on the protective haplotype (including rs1045485). Examination of TCGA breast tumors did not replicate these findings; however read depths were substantially lower for these genes in the TCGA data.\n\nWe find evidence for two separate paths to 2q33 breast cancer risk. Reduction of CASP8 expression, which may lead to reduced apoptosis and an environment conducive to tumor development. Reduction of CFLAR-CASP10 expression in tumor may implicate autophagy leading to a challenging environment for tumors, but requires more replication.",
+          "filename": "abstract.txt",
+          "lastmod": ""
+        },
+        "citation.bib": {
+          "url": "/cv/publications/papers/2014_targeted/citation.bib",
+          "path": [
+            "publications",
+            "papers",
+            "2014_targeted"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Targeted DNA and RNA sequencing identifies breast cancer risk variants associated with differential expression of CASP8 and CFLAR/CASP10",
+            "author": "Camp, Nicola J. and Lin, Wei-Yu and Bigelow, Alex and Parry, Marina A. and Mosbruger, Tim and Burghel, George and Rajamanickam, Venkatesh and Rigas, Sushilaben H. and Cosby, Rachel and Connley, Dan and Wang, Guoying and Tresa, George and Waller, Rosalie G. and Cannon-Albright, Lisa A. and Brandt, Jones and Sargent, Rob and Reed, Malcolm W. R. and Cox, Angela",
+            "journal": "Cancer Research",
+            "volume": "74",
+            "number": "19\\_Supplement",
+            "pages": "3267--3267",
+            "year": "2014",
+            "publisher": "AACR",
+            "authorList": [
+              "Nicola J. Camp",
+              "Wei-Yu Lin",
+              "Alex Bigelow",
+              "Marina A. Parry",
+              "Tim Mosbruger",
+              "George Burghel",
+              "Venkatesh Rajamanickam",
+              "Sushilaben H. Rigas",
+              "Rachel Cosby",
+              "Dan Connley",
+              "Guoying Wang",
+              "George Tresa",
+              "Rosalie G. Waller",
+              "Lisa A. Cannon-Albright",
+              "Jones Brandt",
+              "Rob Sargent",
+              "Malcolm W. R. Reed",
+              "Angela Cox"
+            ],
+            "joinedAuthorList": "Nicola J. Camp, Wei-Yu Lin, Alex Bigelow, Marina A. Parry, Tim Mosbruger, George Burghel, Venkatesh Rajamanickam, Sushilaben H. Rigas, Rachel Cosby, Dan Connley, Guoying Wang, George Tresa, Rosalie G. Waller, Lisa A. Cannon-Albright, Jones Brandt, Rob Sargent, Malcolm W. R. Reed, and Angela Cox"
+          },
+          "filename": "citation.bib",
+          "lastmod": ""
+        }
+      },
       "2020_guidelines": {
         "talk.url": {
           "url": "/cv/publications/papers/2020_guidelines/talk.url",
@@ -470,16 +568,16 @@
           "extension": "bib",
           "contents": {
             "title": "Guidelines For Pursuing and Revealing Data Abstractions",
-            "author": "Bigelow, Alex and Williams, Katy and Isaacs, Katherine E",
+            "author": "Bigelow, Alex and Williams, Katy and Isaacs, Katherine E.",
             "journal": "IEEE Transactions on Visualization and Computer Graphics",
             "year": "2020",
             "publisher": "IEEE",
             "authorList": [
               "Alex Bigelow",
               "Katy Williams",
-              "Katherine E Isaacs"
+              "Katherine E. Isaacs"
             ],
-            "joinedAuthorList": "Alex Bigelow, Katy Williams, and Katherine E Isaacs"
+            "joinedAuthorList": "Alex Bigelow, Katy Williams, and Katherine E. Isaacs"
           },
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
@@ -535,7 +633,7 @@
           "extension": "bib",
           "contents": {
             "title": "Visualizing a Moving Target: A Design Study on Task Parallel Programs in the Presence of Evolving Data and Concerns",
-            "author": "Williams, Katy and Bigelow, Alex and Isaacs, Kate",
+            "author": "Williams, Katy and Bigelow, Alex and Isaacs, Katherine E.",
             "journal": "IEEE Transactions on Visualization and Computer Graphics",
             "volume": "26",
             "number": "1",
@@ -546,12 +644,58 @@
             "authorList": [
               "Katy Williams",
               "Alex Bigelow",
-              "Kate Isaacs"
+              "Katherine E. Isaacs"
             ],
-            "joinedAuthorList": "Katy Williams, Alex Bigelow, and Kate Isaacs"
+            "joinedAuthorList": "Katy Williams, Alex Bigelow, and Katherine E. Isaacs"
           },
           "filename": "citation.bib",
           "lastmod": "2020-10-05"
+        }
+      },
+      "2022_traveler": {
+        "abstract.txt": {
+          "url": "/cv/publications/papers/2022_traveler/abstract.txt",
+          "path": [
+            "publications",
+            "papers",
+            "2022_traveler"
+          ],
+          "name": "abstract",
+          "extension": "txt",
+          "contents": "Understanding the behavior of software in execution is a key step in identifying and fixing performance issues. This is especially important in high performance computing contexts where even minor performance tweaks can translate into large savings in terms of computational resource use. To aid performance analysis, developers may collect an execution trace - a chronological log of program activity during execution. As traces represent the full history, developers can discover a wide array of possibly previously unknown performance issues, making them an important artifact for exploratory performance analysis. However, interactive trace visualization is difficult due to issues of data size and complexity of meaning. Traces represent nanosecond-level events across many parallel processes, meaning the collected data is often large and difficult to explore. The rise of asynchronous task parallel programming paradigms complicates the relation between events and their probable cause. To address these challenges, we conduct a continuing design study in collaboration with high performance computing researchers. We develop diverse and hierarchical ways to navigate and represent execution trace data in support of their trace analysis tasks. Through an iterative design process, we developed Traveler, an integrated visualization platform for task parallel traces. Traveler provides multiple linked interfaces to help navigate trace data from multiple contexts. We evaluate the utility of Traveler through feedback from users and a case study, finding that integrating multiple modes of navigation in our design supported performance analysis tasks and led to the discovery of previously unknown behavior in a distributed array library.",
+          "filename": "abstract.txt",
+          "lastmod": ""
+        },
+        "citation.bib": {
+          "url": "/cv/publications/papers/2022_traveler/citation.bib",
+          "path": [
+            "publications",
+            "papers",
+            "2022_traveler"
+          ],
+          "name": "citation",
+          "extension": "bib",
+          "contents": {
+            "title": "Traveler: Navigating Task Parallel Traces for Performance Analysis",
+            "author": "Sakin, Sayef Azad and Bigelow, Alex and Tohid, R and Scully-Allison, Connor and Scheidegger, Carlos and Brandt, Steven R. and Taylor, Christopher and Huck, Kevin A. and Kaiser, Hartmut and Isaacs, Katherine E.",
+            "journal": "arXiv preprint arXiv:2208.00109",
+            "year": "2022",
+            "authorList": [
+              "Sayef Azad Sakin",
+              "Alex Bigelow",
+              "R Tohid",
+              "Connor Scully-Allison",
+              "Carlos Scheidegger",
+              "Steven R. Brandt",
+              "Christopher Taylor",
+              "Kevin A. Huck",
+              "Hartmut Kaiser",
+              "Katherine E. Isaacs"
+            ],
+            "joinedAuthorList": "Sayef Azad Sakin, Alex Bigelow, R Tohid, Connor Scully-Allison, Carlos Scheidegger, Steven R. Brandt, Christopher Taylor, Kevin A. Huck, Hartmut Kaiser, and Katherine E. Isaacs"
+          },
+          "filename": "citation.bib",
+          "lastmod": ""
         }
       },
       "2014_avi_reflections": {
@@ -807,7 +951,7 @@
           "extension": "bib",
           "contents": {
             "title": "Discordant Haplotype Sequencing Identifies Functional Variants at the 2q33 Breast Cancer Risk Locus",
-            "author": "Camp, Nicola J and Lin, Wei-Yu and Bigelow, Alex and Burghel, George J and Mosbruger, Timothy L and Parry, Marina A and Waller, Rosalie G and Rigas, Sushilaben H and Tai, Pei-Yi and Berrett, Kristofer and others",
+            "author": "Camp, Nicola J. and Lin, Wei-Yu and Bigelow, Alex and Burghel, George J. and Mosbruger, Timothy L. and Parry, Marina A. and Waller, Rosalie G. and Rigas, Sushilaben H. and Tai, Pei-Yi and Berrett, Kristofer and Rajamanickam, Venkatesh and Cosby, Rachel and Brock, Ian W. and Jones, Brandt and Conneley, Dan and Sargent, Robert and Wang, Guoying and Factor, Rachel E. and Bernard, Philip S. and Cannon-Albright, Lisa A. and Knight, Stacey and Abo, Ryan and Werner, Theresa and Reed, Malcolm W. R. and Gertz, Jason and Cox, Angela",
             "journal": "Cancer research",
             "volume": "76",
             "number": "7",
@@ -815,19 +959,34 @@
             "year": "2016",
             "publisher": "AACR",
             "authorList": [
-              "Nicola J Camp",
+              "Nicola J. Camp",
               "Wei-Yu Lin",
               "Alex Bigelow",
-              "George J Burghel",
-              "Timothy L Mosbruger",
-              "Marina A Parry",
-              "Rosalie G Waller",
-              "Sushilaben H Rigas",
+              "George J. Burghel",
+              "Timothy L. Mosbruger",
+              "Marina A. Parry",
+              "Rosalie G. Waller",
+              "Sushilaben H. Rigas",
               "Pei-Yi Tai",
               "Kristofer Berrett",
-              " others"
+              "Venkatesh Rajamanickam",
+              "Rachel Cosby",
+              "Ian W. Brock",
+              "Brandt Jones",
+              "Dan Conneley",
+              "Robert Sargent",
+              "Guoying Wang",
+              "Rachel E. Factor",
+              "Philip S. Bernard",
+              "Lisa A. Cannon-Albright",
+              "Stacey Knight",
+              "Ryan Abo",
+              "Theresa Werner",
+              "Malcolm W. R. Reed",
+              "Jason Gertz",
+              "Angela Cox"
             ],
-            "joinedAuthorList": "Nicola J Camp, Wei-Yu Lin, Alex Bigelow, George J Burghel, Timothy L Mosbruger, Marina A Parry, Rosalie G Waller, Sushilaben H Rigas, Pei-Yi Tai, Kristofer Berrett, and  others"
+            "joinedAuthorList": "Nicola J. Camp, Wei-Yu Lin, Alex Bigelow, George J. Burghel, Timothy L. Mosbruger, Marina A. Parry, Rosalie G. Waller, Sushilaben H. Rigas, Pei-Yi Tai, Kristofer Berrett, Venkatesh Rajamanickam, Rachel Cosby, Ian W. Brock, Brandt Jones, Dan Conneley, Robert Sargent, Guoying Wang, Rachel E. Factor, Philip S. Bernard, Lisa A. Cannon-Albright, Stacey Knight, Ryan Abo, Theresa Werner, Malcolm W. R. Reed, Jason Gertz, and Angela Cox"
           },
           "filename": "citation.bib",
           "lastmod": "2020-09-27"
@@ -1102,7 +1261,7 @@
           "extension": "bib",
           "contents": {
             "title": "A Bridge Supporting Iteration Between Data Exploration and Data Storytelling",
-            "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and  Meyer, Miriah",
+            "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and Meyer, Miriah",
             "howpublished": "University of Utah School of Computing Poster Competition",
             "year": "2015",
             "authorList": [
@@ -1191,7 +1350,7 @@
           "extension": "bib",
           "contents": {
             "title": "Iterating Between Tools to Create and Edit Visualizations",
-            "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and  Meyer, Miriah",
+            "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and Meyer, Miriah",
             "howpublished": "University of Utah School of Computing Poster Competition",
             "year": "2016",
             "authorList": [
@@ -1230,7 +1389,7 @@
           "extension": "bib",
           "contents": {
             "title": "Reflections on How Designers Design With Data",
-            "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and  Meyer, Miriah",
+            "author": "Bigelow, Alex and Drucker, Steven and Fisher, Danyel and Meyer, Miriah",
             "howpublished": "University of Utah School of Computing Poster Competition",
             "year": "2014",
             "authorList": [
@@ -1778,22 +1937,25 @@
           "name": "citation",
           "extension": "bib",
           "contents": {
-            "title": "Distributed Asynchronous Array Computing with the Jetlag Environment",
-            "author": "Brandt, Steven R. and Hasheminezhad, Bita and  Wu, Nanmiao  and Sakin, Sayef Azad and Bigelow, Alex and Isaacs, Katherine E. and Huck, Kevin and Kaiser, Hartmut",
+            "author": "Brandt, Steven R. and Hasheminezhad, Bita and Wu, Nanmiao and Sakin, Sayef Azad and Bigelow, Alex R. and Isaacs, Katherine E. and Huck, Kevin and Kaiser, Hartmut",
+            "booktitle": "2020 IEEE/ACM 9th Workshop on Python for High-Performance and Scientific Computing (PyHPC)",
+            "title": "Distributed Asynchronous Array Computing with the JetLag Environment",
             "year": "2020",
-            "booktitle": "9th Workshop on Python for High-Perforrmance and Scientific Computing",
-            "note": "to appear",
+            "volume": "",
+            "number": "",
+            "pages": "49-57",
+            "doi": "10.1109/PyHPC51966.2020.00011",
             "authorList": [
               "Steven R. Brandt",
               "Bita Hasheminezhad",
               "Nanmiao Wu",
               "Sayef Azad Sakin",
-              "Alex Bigelow",
+              "Alex R. Bigelow",
               "Katherine E. Isaacs",
               "Kevin Huck",
               "Hartmut Kaiser"
             ],
-            "joinedAuthorList": "Steven R. Brandt, Bita Hasheminezhad, Nanmiao Wu, Sayef Azad Sakin, Alex Bigelow, Katherine E. Isaacs, Kevin Huck, and Hartmut Kaiser"
+            "joinedAuthorList": "Steven R. Brandt, Bita Hasheminezhad, Nanmiao Wu, Sayef Azad Sakin, Alex R. Bigelow, Katherine E. Isaacs, Kevin Huck, and Hartmut Kaiser"
           },
           "filename": "citation.bib",
           "lastmod": "2020-10-16"

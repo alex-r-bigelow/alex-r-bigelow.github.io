@@ -29,20 +29,22 @@ const cvData = {};
 const externalBlogPreviews = {};
 const PRELOAD_FORMATS = ['json', 'url', 'txt', 'bib', 'md'];
 const PARSERS = {
-  json: text => JSON.parse(text),
-  bib: text => {
+  json: (text) => JSON.parse(text),
+  bib: (text) => {
     // For our purposes, .bib files should only have one entry
     const raw = bibtexParse.toJSON(text)[0];
     const result = raw.entryTags;
 
     // We want a prettier author list than the nasty format BibTeX uses:
-    result.authorList = result.author.split(/\s+and\s+/).map(author => {
+    result.authorList = result.author.split(/\s+and\s+/).map((author) => {
       author = author.split(/[\s,]+/);
       return author.slice(1).join(' ') + ' ' + author[0];
     });
     if (result.authorList.length > 2) {
-      result.joinedAuthorList = result.authorList.slice(0, -1).join(', ') +
-        ', and ' + result.authorList[result.authorList.length - 1];
+      result.joinedAuthorList =
+        result.authorList.slice(0, -1).join(', ') +
+        ', and ' +
+        result.authorList[result.authorList.length - 1];
     } else {
       result.joinedAuthorList = result.authorList.join(' and ');
     }
@@ -57,7 +59,7 @@ const PARSERS = {
     }
     return result;
   },
-  md: text => {
+  md: (text) => {
     const result = grayMatter(text);
     result.content = showdownConverter.makeHtml(result.content);
     return result;
@@ -68,8 +70,11 @@ const BASE_URL = 'https://alex-r-bigelow.github.io';
 
 // Grab any file in the blog, cv, or drafts directory, as well as our root
 // files (remove the preceding slash for local file ops)
-const fileList = shell.exec('find blog cv drafts -type f').stdout.trim().split('\n')
-  .concat(pages.hierarchy.root.map(filename => filename.slice(1)));
+const fileList = shell
+  .exec('find blog cv drafts -type f')
+  .stdout.trim()
+  .split('\n')
+  .concat(pages.hierarchy.root.map((filename) => filename.slice(1)));
 
 for (const filename of fileList) {
   if (shell.test('-e', filename)) {
@@ -86,7 +91,7 @@ for (const filename of fileList) {
       details.type = 'root';
       details.dirname = '';
       details.path = location.pathname;
-      details.title = menu.find(d => d.url === location.pathName)?.title;
+      details.title = menu.find((d) => d.url === location.pathName)?.title;
     }
 
     // Blog or draft file?
@@ -150,7 +155,12 @@ for (const filename of fileList) {
       }
       if (!details.lastmod) {
         // Check when the file was last changed
-        details.lastmod = shell.exec(`git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`).stdout.trim() ||
+        details.lastmod =
+          shell
+            .exec(
+              `git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`
+            )
+            .stdout.trim() ||
           shell.exec(`date +%Y-%m-%d -r ${filename}`).stdout.trim();
       }
 
@@ -172,9 +182,28 @@ for (const filename of fileList) {
         if (PARSERS[details.extension]) {
           details.contents = PARSERS[details.extension](details.contents);
         }
+        // Also get a list (similar to authorList) of people from experience reference fields
+        if (
+          details.path[0] === 'experience' &&
+          details.contents?.data?.reference
+        ) {
+          const afterColon = details.contents.data.reference.replace(
+            /^[\s:(?:with)(?:Mentors?)(?:Advisors?)]*/,
+            ''
+          );
+          details.contents.data.referenceList = afterColon
+            .split(',')
+            .map((rawName) => rawName.replace(/^[\s(?:Dr.)]*/, ''))
+            .filter((name) => !name.startsWith('using'));
+        }
       }
       details.filename = `${details.name}.${details.extension}`;
-      details.lastmod = shell.exec(`git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`).stdout.trim() ||
+      details.lastmod =
+        shell
+          .exec(
+            `git log -1 --date=format:%Y-%m-%d --format="%ad" -- ${filename}`
+          )
+          .stdout.trim() ||
         shell.exec(`date +%Y-%m-%d -r ${filename}`).stdout.trim();
       const pathCopy = Array.from(details.path);
       let parent = cvData;
@@ -190,10 +219,12 @@ for (const filename of fileList) {
 
 // Post-processing for blog stuff
 pages.hierarchy.blog.sort((a, b) => {
-  return new Date(pages.details[b].lastmod) - new Date(pages.details[a].lastmod);
+  return (
+    new Date(pages.details[b].lastmod) - new Date(pages.details[a].lastmod)
+  );
 });
 const blogHTMLWrapper = shell.exec('cat blogHTMLWrapper.html').stdout;
-function finalizeBlog (blogPath) {
+function finalizeBlog(blogPath) {
   // Get the details associated with the path
   const details = pages.details[blogPath];
   // Patch on an external preview if it exists
@@ -207,7 +238,10 @@ function finalizeBlog (blogPath) {
       if (details.wrapIndexHTML) {
         contents = eval('`' + blogHTMLWrapper + '`'); // eslint-disable-line no-eval
       }
-      fs.writeFileSync(`${details.type}/${details.dirname}/index.html`, contents);
+      fs.writeFileSync(
+        `${details.type}/${details.dirname}/index.html`,
+        contents
+      );
       if (details.type === 'blog') {
         shell.exec(`git add blog/${details.dirname}/index.html`);
       }

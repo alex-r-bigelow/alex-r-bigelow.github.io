@@ -1,0 +1,65 @@
+@prefix : <tag:alex:bigelow:cv:graph> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+foaf:Person a owl:Class ;
+  rdfs:label "Person" .
+:Award a owl:Class ;
+  rdfs:label "Award" .
+:Extended_Abstract a owl:Class ;
+  rdfs:label "Extended Abstract" ;
+  rdfs:subClassOf :Publication .
+:File a owl:Class ;
+  rdfs:label "File" ;
+  rdfs:subClassOf :Publication_Resource .
+:Link a owl:Class ;
+  rdfs:label "Link" ;
+  rdfs:subClassOf :Publication_Resource .
+:Paper a owl:Class ;
+  rdfs:label "Paper" ;
+  rdfs:subClassOf :Publication .
+:Patent a owl:Class ;
+  rdfs:label "Patent" ;
+  rdfs:subClassOf :Publication .
+:Poster a owl:Class ;
+  rdfs:label "Poster" ;
+  rdfs:subClassOf :Publication .
+:Publication a owl:Class ;
+  rdfs:label "Publication" .
+:Publication_Resource a owl:Class ;
+  rdfs:label "Publication Resource" .
+:Work_Experience a owl:Class ;
+  rdfs:label "Work Experience" .
+
+:collaborated_at a owl:ObjectProperty ;
+  rdfs:label "collaborated at" ;
+  rdfs:domain foaf:Person ;
+  rdfs:range :Work_Experience .
+:collaborated_on a owl:ObjectProperty ;
+  rdfs:label "collaborated on" ;
+  rdfs:domain foaf:Person ;
+  rdfs:range :Publication .
+:has_attachment a owl:ObjectProperty ;
+  rdfs:label "has attachment" ;
+  rdfs:domain :Publication ;
+  rdfs:range :Publication_Resource .
+:won_award a owl:ObjectProperty ;
+  rdfs:label "won award" ;
+  rdfs:domain :Publication ;
+  rdfs:range :Award .
+
+:publication_type a owl:DatatypeProperty ;
+  rdfs:label "publication type" ;
+  rdfs:domain :Publication ;
+  rdfs:range xsd:string .
+:description a owl:DatatypeProperty ;
+  rdfs:label "description" ;
+  rdfs:domain :Award ;
+  rdfs:range xsd:string .
+:name a owl:DatatypeProperty ;
+  rdfs:label "name" ;
+  rdfs:domain foaf:Person ;
+  rdfs:range xsd:string .
