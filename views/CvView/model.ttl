@@ -61,5 +61,13 @@ foaf:Person a owl:Class ;
   rdfs:range xsd:string .
 :name a owl:DatatypeProperty ;
   rdfs:label "name" ;
-  rdfs:domain foaf:Person ;
+  rdfs:domain foaf:Person, :Publication_Resource ;
   rdfs:range xsd:string .
+:url a owl:DatatypeProperty ;
+  rdfs:label "url" ;
+  rdfs:domain :Publication_Resource ;
+  rdfs:range xsd:string .
+:last_modified a owl:DatatypeProperty ;
+  rdfs:label "last modified" ;
+  rdfs:domain :Publication_Resource ;
+  rdfs:range xsd:date .

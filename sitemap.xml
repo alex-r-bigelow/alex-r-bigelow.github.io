@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  <url>
-  <lastmod>2012-05-10</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Installing_pycairo_or_py2cairo_on_OS_X_Lion/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2013-11-13</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Brython_and_Knockout/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2012-01-18</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Getting_PHP_to_run_in_OS_X_Lion/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2013-06-10</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/epstopdf_on_OS_X/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2012-05-15</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/PySide_in_Eclipse/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2013-08-14</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Toshiba_Portege_M200_Linux/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2013-11-14</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/MacFusion_OSXFUSE_and_Mavericks/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2012-10-23</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Adding_to_XCode_Menu/index.html</loc>
+  <lastmod>2012-01-19</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Macfusion_MacFUSE_Lion/index.html</loc>
   </url>
   <url>
   <lastmod>2013-04-19</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/Exporting_video_from_Tableau/index.html</loc>
   </url>
   <url>
-  <lastmod>2013-03-29</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse/index.html</loc>
-  </url>
-  <url>
   <lastmod>2016-03-12</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/LG_e980_Flashing_Guide/index.html</loc>
-  </url>
-  <url>
-  <lastmod>2015-07-06</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Graph_Databases/index.html</loc>
   </url>
   <url>
   <lastmod>2012-03-26</lastmod>
   <loc>https://alex-r-bigelow.github.io/blog/webpy_and_Sessions/index.html</loc>
   </url>
   <url>
-  <lastmod>2012-01-19</lastmod>
-  <loc>https://alex-r-bigelow.github.io/blog/Macfusion_MacFUSE_Lion/index.html</loc>
+  <lastmod>2012-05-10</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Installing_pycairo_or_py2cairo_on_OS_X_Lion/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2013-03-29</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Efficiently_running_a_SimpleHTTPServer_from_Eclipse/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2012-05-15</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/PySide_in_Eclipse/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2013-06-10</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/epstopdf_on_OS_X/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2013-11-14</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/MacFusion_OSXFUSE_and_Mavericks/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2013-11-13</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Brython_and_Knockout/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2015-07-06</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Graph_Databases/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2013-08-14</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Toshiba_Portege_M200_Linux/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2012-10-23</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Adding_to_XCode_Menu/index.html</loc>
+  </url>
+  <url>
+  <lastmod>2012-01-18</lastmod>
+  <loc>https://alex-r-bigelow.github.io/blog/Getting_PHP_to_run_in_OS_X_Lion/index.html</loc>
   </url>
   <url>
   <lastmod>2020-11-27</lastmod>

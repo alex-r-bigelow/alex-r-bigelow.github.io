@@ -40,13 +40,20 @@ const PARSERS = {
       author = author.split(/[\s,]+/);
       return author.slice(1).join(' ') + ' ' + author[0];
     });
+    result.authorLastNames = result.author.split(/\s+and\s+/).map((author) => {
+      author = author.split(/[\s,]+/);
+      return author[0];
+    });
     if (result.authorList.length > 2) {
       result.joinedAuthorList =
         result.authorList.slice(0, -1).join(', ') +
         ', and ' +
         result.authorList[result.authorList.length - 1];
+      result.shortAuthorList = result.authorLastNames.slice(0, -1).join(', ') +
+        ', and ' + result.authorLastNames[result.authorLastNames.length - 1];
     } else {
       result.joinedAuthorList = result.authorList.join(' and ');
+      result.shortAuthorList = result.authorLastNames.join(' and ');
     }
 
     // Fake 'howpublished' field for theses and patents

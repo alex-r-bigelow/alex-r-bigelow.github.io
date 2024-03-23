@@ -20,12 +20,20 @@ FROM JSON {
     },
     "publications": {
       "?publicationType": {
-        "?publicationId": {
+        "?citationKey": {
+          "abstract.txt": {
+            "contents": "?abstractContent",
+          },
           "citation.bib": {
             "contents": {
               "title": "?publicationTitle",
-              "authorList": [ "?coauthorPerson" ]
+              "authorList": [ "?coauthor" ]
             }
+          },
+          "?resourceId" : {
+            "url": "?resourceUrl",
+            "name": "?resourceName",
+            "lastmod": "?lastmod"
           }
         }
       }
@@ -41,7 +49,7 @@ TO {
   ?coaPerson a foaf:Person ;
     rdfs:label ?coaPersonLabel ;
     :collaborated_on ?pub ;
-    :name ?coauthorPerson .
+    :name ?coauthor .
   
   ?pub a :Publication ;
     rdfs:label ?pubTitle ;
@@ -49,18 +57,30 @@ TO {
   
   ?exp a :Work_Experience ;
     rdfs:label ?expTitle .
+  
+  ?res a :Publication_Resource ;
+    rdfs:label ?resLabel ;
+    :url ?resUrl ;
+    :last_modified ?lastModified ;
+    :name ?resName .
 }
 WHERE {
   BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Person_{referencePerson}") AS ?refPerson)
   BIND(xsd:string(?referencePerson) AS ?refPersonLabel)
 
-  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Person_{coauthorPerson}") AS ?coaPerson)
-  BIND(xsd:string(?coauthorPerson) AS ?coaPersonLabel)
+  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Person_{coauthor}") AS ?coaPerson)
+  BIND(xsd:string(?coauthor) AS ?coaPersonLabel)
 
-  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Publication_{publicationId}") AS ?pub)
+  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Publication_{citationKey}") AS ?pub)
   BIND(xsd:string(?publicationTitle) AS ?pubTitle)
   BIND(xsd:string(?publicationType) AS ?pubType)
 
   BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Publication_{experienceId}") AS ?exp)
   BIND(xsd:string(?experienceTitle) AS ?expTitle)
+
+  BIND(TEMPLATE("tag:alex:bigelow:cv:graph:Publication_Resource_{citationKey}_{resourceId}") AS ?res)
+  BIND(xsd:string(?resourceId) AS ?resLabel)
+  BIND(xsd:string(?resourceUrl) AS ?resUrl)
+  BIND(xsd:string(?resourceName) AS ?resName)
+  BIND(xsd:date(?lastmod) AS ?lastModified)
 }

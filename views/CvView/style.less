@@ -1,39 +1,39 @@
 /* eb-garamond-regular - latin */
 @font-face {
-  font-family: "EB Garamond";
+  font-family: 'EB Garamond';
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/eb-garamond-v12-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("fonts/eb-garamond-v12-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("fonts/eb-garamond-v12-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */ url("fonts/eb-garamond-v12-latin-regular.woff")
-      format("woff"),
-    /* Modern Browsers */ url("fonts/eb-garamond-v12-latin-regular.ttf")
-      format("truetype"),
+  src: url('fonts/eb-garamond-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('fonts/eb-garamond-v12-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('fonts/eb-garamond-v12-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */ url('fonts/eb-garamond-v12-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */ url('fonts/eb-garamond-v12-latin-regular.ttf')
+      format('truetype'),
     /* Safari, Android, iOS */
-      url("fonts/eb-garamond-v12-latin-regular.svg#EBGaramond") format("svg"); /* Legacy iOS */
+      url('fonts/eb-garamond-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
 }
 
 /* eb-garamond-smallCaps - latin */
 @font-face {
-  font-family: "EB Garamond SC";
+  font-family: 'EB Garamond SC';
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/eb-garamond-sc-v12-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""),
-    url("fonts/eb-garamond-sc-v12-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("fonts/eb-garamond-sc-v12-latin-regular.woff2")
-      format("woff2"),
+  src: url('fonts/eb-garamond-sc-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('fonts/eb-garamond-sc-v12-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('fonts/eb-garamond-sc-v12-latin-regular.woff2')
+      format('woff2'),
     /* Super Modern Browsers */
-      url("fonts/eb-garamond-sc-v12-latin-regular.woff") format("woff"),
-    /* Modern Browsers */ url("fonts/eb-garamond-sc-v12-latin-regular.ttf")
-      format("truetype"),
+      url('fonts/eb-garamond-sc-v12-latin-regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/eb-garamond-sc-v12-latin-regular.ttf')
+      format('truetype'),
     /* Safari, Android, iOS */
-      url("fonts/eb-garamond-sc-v12-latin-regular.svg#EBGaramond") format("svg"); /* Legacy iOS */
+      url('fonts/eb-garamond-sc-v12-latin-regular.svg#EBGaramond') format('svg'); /* Legacy iOS */
 }
 
 .CV {
@@ -58,7 +58,8 @@
   }
   h5 {
     background-color: var(--background-color-softer);
-    padding: 0.25em;
+    padding: 1em 1em 0.65em 1em;
+    text-align: center;
     font-weight: var(--heavy-font-weight);
   }
   h2 + div h5 {
@@ -74,7 +75,7 @@
       color: var(--accent-color);
       margin-bottom: 0;
       &:before {
-        content: "\2606";
+        content: '\2606';
         position: absolute;
         left: -1em;
         bottom: 0px;
@@ -126,10 +127,10 @@
 .printHelper {
   visibility: hidden;
   h1 {
-    font-family: "EB Garamond SC", serif;
+    font-family: 'EB Garamond SC', serif;
   }
   p {
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
   }
 }
 
@@ -140,24 +141,27 @@
   html,
   body {
     background: white;
-    font-family: "EB Garamond", serif;
+    font-family: 'EB Garamond', serif;
     color: black !important;
     font-size: 12pt;
     overflow: visible;
     height: auto;
     margin: 0;
     padding: 0;
-    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
 
     /* Note to self: uncomment this when debugging print layout */
     width: 8.5in;
   }
+
   .MenuView,
   .TooltipView,
   .hideInPrint {
     display: none !important;
   }
+
   .CV {
+    margin: auto;
     justify-content: space-between;
     & > .column {
       max-width: 24rem;
@@ -168,7 +172,7 @@
     h4,
     h5,
     strong {
-      font-family: "EB Garamond SC", serif;
+      font-family: 'EB Garamond SC', serif;
       page-break-after: avoid;
       margin-bottom: 0;
       margin-top: 0;
@@ -184,9 +188,8 @@
       }
     }
     h5 {
-      letter-spacing: 2pt;
-      background-color: #ccc;
-      color: white;
+      letter-spacing: normal;
+      background-color: #fff;
       padding: 0.1em 0.5em;
       margin-top: 1rem;
     }
@@ -222,6 +225,16 @@
     .booktitle,
     .howpublished {
       font-size: 0.75em;
+    }
+
+    .meta,
+    .reference,
+    .joinedAuthorList {
+      line-height: 1.25em;
+    }
+
+    .title {
+      font-size: 9pt;
     }
 
     .entry {

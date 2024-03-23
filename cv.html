@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less"/>
-  <script type="text/javascript" src="node_modules/less/dist/less.min.js" data-log-level="1"></script>
-  <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
-  <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
-  <script type="module" src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
-  <script type="module">
-    import CvController from './controllers/CvController/CvController.js';
-    window.controller = new CvController();
-  </script>
-</head>
-<body>
-  <div class="CV flexbox-albatross">
-    <div class="column">
-      <div>
-        <h1 style="white-space: nowrap">Alex Bigelow</h1>
-        <div class="contactInfo"></div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less" />
+    <script
+      type="text/javascript"
+      src="node_modules/less/dist/less.min.js"
+      data-log-level="1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/d3/dist/d3.min.js"
+    ></script>
+    <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
+    <script
+      type="module"
+      src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"
+    ></script>
+    <script type="module">
+      import CvController from './controllers/CvController/CvController.js';
+      window.controller = new CvController();
+    </script>
+  </head>
+  <body>
+    <div class="CV flexbox-albatross">
+      <div class="column">
+        <h2>
+          <span class="showInPrint hideInFullPrint">Selected</span>
+          Publications
+        </h2>
+        <div class="pubchunk" data-type="theses">
+          <h5>Theses</h5>
+        </div>
+        <div class="pubchunk" data-type="preprints">
+          <h5>Preprints</h5>
+        </div>
+        <div class="pubchunk" data-type="papers">
+          <h5>Refereed Conference and Journal Papers</h5>
+        </div>
+        <div class="pubchunk" data-type="patents">
+          <h5>Patents</h5>
+        </div>
+        <div class="pubchunk hideInPrint showInFullPrint" data-type="abstracts">
+          <h5>Extended Abstracts</h5>
+        </div>
+        <div class="pubchunk hideInPrint showInFullPrint" data-type="posters">
+          <h5>Posters</h5>
+        </div>
       </div>
 
-      <h2>Experience</h2>
-      <div class="experience">
-        <h5>Employment</h5>
-      </div>
+      <div class="column">
+        <div style="text-align: right;">
+          <h1 style="white-space: nowrap">Alex Bigelow</h1>
+          <div class="contactInfo"></div>
+        </div>
 
-      <div class="service">
-        <h5>Service</h5>
+        <h2>Education</h2>
+        <div class="education">
+          <div class="entry">
+            <h6 class="title">PhD Computing: Data Management and Analysis</h6>
+            <h6 class="date">2019</h6>
+            <ul class="meta">
+              <li class="meta">University of Utah, Salt Lake City, UT</li>
+              <li>Advisor: Dr. Miriah Meyer</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <h6 class="title">B.S. Computer Science</h6>
+            <h6 class="date">2012</h6>
+            <ul class="meta">
+              <li class="meta">University of Utah, Salt Lake City, UT</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Experience</h2>
+        <div class="experience">
+          <h5>Employment</h5>
+        </div>
+
+        <div class="service">
+          <h5>Service</h5>
+        </div>
       </div>
     </div>
-
-    <div class="column">
-      <h2>Education</h2>
-      <div class="education">
-        <div class="entry">
-          <h6 class="title">PhD Computing: Data Management and Analysis</h6>
-          <h6 class="date">2019</h6>
-          <ul class="meta">
-            <li class="meta">University of Utah, Salt Lake City, UT</li>
-            <li>Advisor: Dr. Miriah Meyer</li>
-          </ul>
-        </div>
-        <div class="entry">
-          <h6 class="title">B.S. Computer Science</h6>
-          <h6 class="date">2012</h6>
-          <ul class="meta">
-            <li class="meta">University of Utah, Salt Lake City, UT</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2>
-        <span class="showInPrint hideInFullPrint">Selected</span>
-        Publications
-      </h2>
-      <div class="pubchunk" data-type="theses">
-        <h5>Theses</h5>
-      </div>
-      <div class="pubchunk" data-type="preprints">
-        <h5>Preprints</h5>
-      </div>
-      <div class="pubchunk" data-type="papers">
-        <h5>Refereed Conference and Journal Papers</h5>
-      </div>
-      <div class="pubchunk" data-type="patents">
-        <h5>Patents</h5>
-      </div>
-      <div class="pubchunk hideInPrint showInFullPrint" data-type="abstracts">
-        <h5>Extended Abstracts</h5>
-      </div>
-      <div class="pubchunk hideInPrint showInFullPrint" data-type="posters">
-        <h5>Posters</h5>
-      </div>
+    <div class="footer">click roles or publication titles for more details</div>
+    <div class="printHelper">
+      <!-- sneaky way to force the page to load fonts so that printing doesn't go blank-->
+      <h1>printHelper</h1>
+      <p>printHelper</p>
     </div>
-  </div>
-  <div class="footer">
-    click roles or publication titles for more details
-  </div>
-  <div class="printHelper">
-    <!-- sneaky way to force the page to load fonts so that printing doesn't go blank-->
-    <h1>printHelper</h1>
-    <p>printHelper</p>
-  </div>
-</body>
+  </body>
 </html>

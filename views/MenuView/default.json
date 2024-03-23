@@ -6,7 +6,8 @@
   },
   {
     "url": "/funding.html",
-    "title": "Consulting",
+    "title": "Hire Me!",
+    "forcePrimary": true,
     "icon": "/img/fund.svg",
     "subMenu": [
       {

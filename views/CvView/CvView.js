@@ -9,7 +9,7 @@ class CvView extends uki.View {
     ]);
     super(options);
 
-    window.addEventListener('beforeprint', () => {
+    window.addEventListener('beforeprint', async () => {
       // Programmatically add contact info to a printed version of the CV...
       // really lame version of obfuscation, but this should stop *most* evil
       // spammers
@@ -31,8 +31,10 @@ class CvView extends uki.View {
     });
 
     window.enableFullPrint = () => {
+      window.fullPrintEnabled = true;
       d3.selectAll('.showInFullPrint').classed('hideInPrint', false);
       d3.selectAll('.hideInFullPrint').classed('showInPrint', false);
+      this.render();
     };
   }
 
@@ -40,8 +42,8 @@ class CvView extends uki.View {
     return this.getNamedResource('data');
   }
 
-  async setup () {
-    await super.setup(...arguments);
+  async draw () {
+    await super.draw(...arguments);
 
     for (const pubChunk of this.d3el.selectAll('.pubchunk').nodes()) {
       const pubType = pubChunk.dataset.type;
@@ -96,10 +98,14 @@ class CvView extends uki.View {
       }
     });
 
-    pubsEnter.append('ul').classed('meta', true)
+    pubsEnter.append('ul').classed('meta', true);
+
+    let meta = pubs.select('.meta')
       .selectAll('li')
-      .data(d => this.getPubMetaFields(d)).enter().append('li')
-      .attr('class', d => d.fieldname)
+      .data(d => this.getPubMetaFields(d));
+    const metaEnter = meta.enter().append('li')
+      .attr('class', d => d.fieldname);
+    meta = meta.merge(metaEnter)
       .text(d => d.fieldvalue);
   }
 
@@ -111,15 +117,21 @@ class CvView extends uki.View {
     ].map(fieldnames => {
       for (const fieldname of fieldnames) {
         const bib = pub['citation.bib'].contents;
-        let fieldvalue = bib[fieldname] ||
-          (pub['meta.json'] && pub['meta.json'].contents[fieldname]);
+        const metadata = bib[fieldname] ? bib : pub['meta.json']?.contents || {};
+        let fieldvalue = metadata[fieldname];
         if (fieldvalue) {
-          // Add extra info for some fields:
+          // Add / change extra info for some fields:
           if (fieldname === 'journal' && bib.volume && bib.pages) {
             fieldvalue += ` ${bib.volume}:${bib.pages}`;
           }
           if (fieldname === 'booktitle' && bib.pages) {
             fieldvalue += ` pp. ${bib.pages}`;
+          }
+          if (!window.fullPrintEnabled &&
+              fieldname === 'joinedAuthorList' &&
+              metadata.authorList?.length > 6 &&
+              metadata.shortAuthorList) {
+            fieldvalue = metadata.shortAuthorList;
           }
           return { fieldname, fieldvalue };
         }
@@ -252,8 +264,9 @@ class CvView extends uki.View {
 
         return bTemp - aTemp;
       });
-    const entriesEnter = container.selectAll('.entry')
-      .data(entriesList).enter().append('div').classed('entry', true)
+    let entries = container.selectAll('.entry')
+      .data(entriesList);
+    const entriesEnter = entries.enter().append('div').classed('entry', true)
       .classed('hideInPrint showInFullPrint', d => d?.contents?.data?.hideInPrint);
     entriesEnter.append('h6')
       .classed('title', true)
@@ -261,13 +274,14 @@ class CvView extends uki.View {
     entriesEnter.append('h6')
       .classed('date', true)
       .html(d => this.formatExpTimestamp(d));
+    entries = entries.merge(entriesEnter);
 
     const metaFields = [
       ['meta'],
       ['reference']
     ];
     entriesEnter.append('ul').classed('meta', true);
-    const metaEnter = entriesEnter.select('.meta').selectAll('li')
+    let meta = entries.select('.meta').selectAll('li')
       .data(d => metaFields.map(fieldnames => {
         for (const fieldname of fieldnames) {
           const fieldvalue = d.contents.data[fieldname];
@@ -276,11 +290,16 @@ class CvView extends uki.View {
           }
         }
         return null;
-      }).filter(d => d !== null)).enter().append('li');
-    metaEnter.attr('class', d => d.fieldname)
+      }).filter(d => d !== null));
+    const metaEnter = meta.enter().append('li');
+    metaEnter.attr('class', d => d.fieldname);
+    meta = meta.merge(metaEnter)
       .html(d => {
         if (d.fieldvalue instanceof Array) {
-          return d.fieldvalue.join('<br/>');
+          const breakTag = window.fullPrintEnabled
+            ? '<br/>'
+            : '<span class="showInPrint">,&ensp;</span><br class="hideInPrint"/>';
+          return d.fieldvalue.join(breakTag);
         } else {
           return d.fieldvalue;
         }
