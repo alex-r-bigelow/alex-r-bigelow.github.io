@@ -14,6 +14,12 @@ links:
     - /cv#2014_targeted
 ---
 
-For two years, I developed and experimented with Next-Generation Sequencing processing and analysis tools. We also worked with large pedigrees from the [Utah Population Database](http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/).
+For two years, as non-degree-seeking research support staff, I supported bioinformatics research with a diverse range of tasks, including:
 
-I gained firsthand exposure to large, messy, and heavily nuanced data. We also grappled with task ambiguity—as these were new, rich resources, they presented truly wicked problems: once we could see one pattern in the data, it made us ask questions that needed an entirely different perspective. I was also able to observe the difficulties, potential errors, and lack of standards and support that domain scientists face when trying to work with new kinds of data.
+- Profiling and debugging Java research code, achieving orders-of-magnitute performance improvments
+- Developing, maintaining, and documenting custom bioinformatics scripts
+- Grappling with task ambiguity and challenges w.r.t. best practices that arose at a time when high-throughput genetic sequencing data was in its infancy
+- Improving graph layout algorithms for large pedigrees from the [Utah Population Database](http://healthcare.utah.edu/huntsmancancerinstitute/research/updb/)
+- Fixing custom Java drivers and building custom dialogs to enable printing large pedigrees on specialized large-format plotters, as well as splitting large pedigrees across standard paper sizes for easy reassembly, in ways that accounted for printer margins, etc.
+
+These early experiences with applied bioinformatics informed much of my later research career, including wicked problems that evolve quickly as soon as data can be visualized; the importance of graphic design in research and challenges w.r.t. designing with data; the difficulties, potential errors, and lack of standards that scientists face when trying to work with new kinds of data, and effects that data structure choices can have on the analysis questions that are even considered.

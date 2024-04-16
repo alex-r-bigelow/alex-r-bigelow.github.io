@@ -14,4 +14,4 @@ At Stardog, I helped design, implement ship, and maintain several user-facing ap
 - Stardog Explorer, a simple node-link diagram visualization tool with an accessible (yet very expressive) visual query building interface
 - Stardog Studio, an IDE for writing and editing queries, and managing Stardog databases and virtual graphs
 
-I was also heavily involved in the design and integration of Stardog Voicebox—a Large Language Model-powered chat assistant that translated natural language into SPARQL queries, executed the queries against data in Stardog, and summarized the results with an explainable UX with citations and a visual rendering of the query, that communicated exactly how the AI was able to find its answers.
+I was also heavily involved in the design and integration of Stardog Voicebox—a Large Language Model-powered chat assistant that translates natural language into SPARQL queries, executes the queries against data in Stardog, and summarizes the results with an explainable UX with citations and a visual rendering of the query, that communicate exactly how the AI was able to find its answers.

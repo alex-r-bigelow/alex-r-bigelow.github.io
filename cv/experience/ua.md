@@ -8,4 +8,9 @@ meta:
 reference: 'Advisor: Dr. Katherine E Isaacs'
 ---
 
-As a postdoc, I researched, published, and submitted a grant (that wasn't funded) to study the impacts that different data abstractions can have on visualization design and analysis. I also helped advise two PhD students conducting design studies and building visualization systems for High Performance Computing researchers.
+As a postdoctoral researcher, I researched, published, and submitted a grant (that wasn't funded) to study the impacts that different data abstractions can have on visualization design and analysis.
+
+I was also privileged to work closely with two exceptional PhD students:
+
+- [Katy Williams](https://www.davidson.edu/people/katy-williams)
+- [Sayef Azad Sakin](https://sayefsakin.blogspot.com/p/about-me.html)
