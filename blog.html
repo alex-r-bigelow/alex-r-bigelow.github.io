@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less"/>
-  <script type="text/javascript" src="node_modules/less/dist/less.min.js" data-log-level="1"></script>
-  <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
-  <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
-  <script type="module" src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
-  <script type="module">
-    import BlogController from './controllers/BlogController/BlogController.js';
-    window.controller = new BlogController();
-  </script>
-</head>
-<body>
-  <div class="BlogView">
-    <div class="blogContents">
-      <h1>Blog</h1>
-      <p>
-        This unorganized mess is where I dump informal things that I write.
-        If you're looking for details about my peer-reviewed publications, click
-        on the titles in my <a href="/cv.html">CV</a>.
-      </p>
-      <p>
-        Any opinions here are my own, and are very unlikely to represent those
-        of any past or present employer or research collaborator. Technical
-        guides are <b>probably</b> out of date&mdash;I write them mostly to help
-        myself remember how I did that one thing that one time.
-      </p>
-      <p><small>
-        If the disorder of the list on the left / bottom bothers you, please
-        shoot me an email. Seriously. That might be all it takes to motivate me
-        to add some basic tagging, filtering, etc.
-      </small></p>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less" />
+    <script
+      type="text/javascript"
+      src="node_modules/less/dist/less.min.js"
+      data-log-level="1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/d3/dist/d3.min.js"
+    ></script>
+    <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
+    <script
+      type="module"
+      src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"
+    ></script>
+    <script type="module">
+      import BlogController from './controllers/BlogController/BlogController.js';
+      window.controller = new BlogController();
+    </script>
+  </head>
+  <body>
+    <div class="BlogView">
+      <div class="blogContents">
+        <h1>Blog</h1>
+        <p>
+          This unorganized mess is where I dump reminders to myself about how I
+          did that one thing that one time, that nobody else seemed to have
+          written down.
+        </p>
+        <p>
+          If you're looking for more serious, peer-reviewed writing about
+          slightly more important things, click on the titles in my
+          <a href="/cv.html">CV</a>.
+        </p>
+        <p>
+          Any opinions here are my own, and are very unlikely to represent those
+          of any past or present employer or research collaborator. Technical
+          guides are <b>probably</b> out of date&mdash;again, these are
+          reminders mostly for myself.
+        </p>
+        <p>
+          <small>
+            If the disorder of the list on the left / bottom, or the lack of
+            anything up-to-date or useful here bothers you, please shoot me an
+            email! Seriously. Squeaky wheels are the things that get grease;
+            knowing that anybody is actually poking around in this weird corner
+            of the internet might be all it takes to motivate me to update
+            things, write more frequently, add some basic tagging, filtering,
+            etc.
+          </small>
+        </p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

@@ -5,6 +5,11 @@
   right: 0;
   bottom: 0;
   overflow: hidden;
+  background: linear-gradient(
+    15deg,
+    rgba(0, 0, 0, 0.75),
+    rgba(255, 255, 255, 0) 100%
+  );
   svg {
     position: absolute;
     left: 0;
@@ -16,9 +21,8 @@
     }
     .nodes .node {
       circle {
-        fill: var(--text-color-softer);
+        fill: var(--text-color);
         stroke: none;
-        cursor: pointer;
       }
       &.selected circle {
         fill: var(--text-color-richer);
@@ -26,10 +30,24 @@
       text {
         display: none;
         fill: var(--text-color-softer);
+        user-select: none;
+      }
+      &.selected text {
+        display: block;
+        fill: var(--text-color-richer);
       }
       &:hover text {
         display: block;
       }
     }
+  }
+  .toolbar.MenuView {
+    position: fixed;
+    padding: 1em;
+    right: 0;
+    bottom: 0;
+    top: unset;
+    flex-direction: row;
+    gap: 1em;
   }
 }

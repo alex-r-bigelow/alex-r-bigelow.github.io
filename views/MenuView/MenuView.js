@@ -1,48 +1,59 @@
 /* globals uki */
 class MenuView extends uki.View {
-  constructor (options = {}) {
+  constructor(options = {}) {
     options.resources = options.resources || [];
-    options.resources.push(...[
-      { type: 'less', url: '/views/MenuView/style.less' },
-      { type: 'json', url: '/views/MenuView/default.json', name: 'defaultMenu' }
-    ]);
+    options.resources.push(
+      ...[
+        { type: 'less', url: '/views/MenuView/style.less' },
+        {
+          type: 'json',
+          url: '/views/MenuView/default.json',
+          name: 'defaultMenu'
+        }
+      ]
+    );
     super(options);
 
     this._drawCollapsed = options.drawCollapsed || false;
+    this._collapsedLogo = options.collapsedLogo || '/img/hamburger.svg';
+    this._overrideSpecs = options.overrideSpecs || null;
     this._extraSpecs = options.extraSpecs || [];
   }
 
-  get drawCollapsed () {
+  get drawCollapsed() {
     return this._drawCollapsed;
   }
 
-  set drawCollapsed (value) {
+  set drawCollapsed(value) {
     this._drawCollapsed = value;
     this.render();
   }
 
-  get extraSpecs () {
+  get extraSpecs() {
     return this._extraSpecs;
   }
 
-  set extraSpecs (value) {
+  set extraSpecs(value) {
     this._extraSpecs = value;
     this.render();
   }
 
-  async setup () {
+  async setup() {
     await super.setup(...arguments);
 
     this.d3el.classed('MenuView', true);
   }
 
-  async draw () {
+  async draw() {
     await super.draw(...arguments);
 
-    let menuItems = this.d3el.selectAll('.menuItem')
+    let menuItems = this.d3el
+      .selectAll('.menuItem')
       .data(this.computeMenuSpec());
     menuItems.exit().remove();
-    const menuItemsEnter = menuItems.enter().append('div')
+    const menuItemsEnter = menuItems
+      .enter()
+      .append('div')
       .classed('menuItem', true);
     menuItems = menuItems.merge(menuItemsEnter);
 
@@ -61,13 +72,18 @@ class MenuView extends uki.View {
     });
   }
 
-  computeMenuSpec () {
-    function pageToSpec (page) {
-      let onclick = () => { window.location = page.url; };
+  computeMenuSpec() {
+    function pageToSpec(page) {
+      let onclick =
+        page.onclick ||
+        (() => {
+          window.location = page.url;
+        });
       if (page.mail) {
         onclick = () => {
           // email obfuscation to cut down on spam...
-          const temp = 'mai' + 'lto:' + 'ale' + 'x' + '.' + 'r.big' + 'elow' + '@';
+          const temp =
+            'mai' + 'lto:' + 'ale' + 'x' + '.' + 'r.big' + 'elow' + '@';
           window.location = temp + 'gm' + 'ail.c' + 'om';
         };
       }
@@ -92,20 +108,22 @@ class MenuView extends uki.View {
       return spec;
     }
 
-    const specs = this.getNamedResource('defaultMenu')
+    const specs = (this._overrideSpecs || this.getNamedResource('defaultMenu'))
       .map(pageToSpec)
       .concat(this.extraSpecs);
     if (this.drawCollapsed) {
-      return [{
-        img: '/img/hamburger.svg',
-        onclick: function () {
-          uki.ui.showContextMenu({
-            menuEntries: specs,
-            target: this.d3el,
-            anchor: { x: -1, y: 0 }
-          });
+      return [
+        {
+          img: this._collapsedLogo,
+          onclick: function () {
+            uki.ui.showContextMenu({
+              menuEntries: specs,
+              target: this.d3el,
+              anchor: { x: -1, y: 0 }
+            });
+          }
         }
-      }];
+      ];
     } else {
       return specs;
     }
