@@ -49,7 +49,7 @@ class MenuView extends uki.View {
 
     let menuItems = this.d3el
       .selectAll('.menuItem')
-      .data(this.computeMenuSpec());
+      .data(this.computeMenuSpec(), (spec) => spec.label);
     menuItems.exit().remove();
     const menuItemsEnter = menuItems
       .enter()

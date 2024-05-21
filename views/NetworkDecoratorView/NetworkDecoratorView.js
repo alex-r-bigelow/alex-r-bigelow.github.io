@@ -9,6 +9,13 @@ const BOUNCE_STRENGTH = 2;
 const JITTER_RADIUS = 150;
 const CHARGE_STRENGTH = -250;
 
+function getRandomPosition(center) {
+  return {
+    x: center.x + Math.random() * JITTER_RADIUS - JITTER_RADIUS / 2,
+    y: center.y + Math.random() * JITTER_RADIUS - JITTER_RADIUS / 2
+  };
+}
+
 function getCenter(bounds) {
   // Bottom-left... ish
   return {
@@ -69,6 +76,15 @@ function centerAndBounds() {
   return force;
 }
 
+const simulateMouse = (event) => {
+  const touch = event.originalEvent?.touches[0] || event.changedTouches?.[0];
+  return {
+    x: touch.pageX,
+    y: touch.pageY,
+    preventDefault: event.preventDefault
+  };
+};
+
 class NetworkDecoratorView extends uki.View {
   constructor(options = {}) {
     options.resources = options.resources || [];
@@ -90,43 +106,123 @@ class NetworkDecoratorView extends uki.View {
     super(options);
 
     this.selectedName = null;
+    this.renamedNode = null;
     this.draggedNode = null;
     this.dragOffset = null;
 
     this.toolbar = null;
+    this.renderedLinks = [];
   }
 
   get toolbarMenuSpecs() {
     const specs = [
       {
-        id: 'download',
         label: 'Download',
         img: '/img/download.svg',
         onclick: () => {
-          console.log('todo: download');
+          const hiddenLink = document.createElement('a');
+          hiddenLink.setAttribute(
+            'href',
+            'data:application/json;charset=utf-8,' +
+              encodeURIComponent(JSON.stringify(this.cleanGraph))
+          );
+          hiddenLink.setAttribute('download', 'graph.json');
+          hiddenLink.style.display = 'none';
+          document.body.appendChild(hiddenLink);
+          hiddenLink.click();
+          document.body.removeChild(hiddenLink);
+        }
+      },
+      {
+        label: 'Tips',
+        img: '/img/help.svg',
+        onclick: () => {
+          uki.ui.alert(`\
+<p>
+  To edit links, first select a node:
+</p>
+<ul>
+  <li>Shift-click another node to add a link</li>
+  <li>Ctrl-click another node to remove a link</li>
+</ul>
+<p>
+  Apologies for the simplistic UX in this toy demo; if this were a real app,
+  I wouldn't make you rely on keyboard hacks like this.
+</p>`);
         }
       }
     ];
     if (this.selectedName) {
       specs.unshift({
-        id: 'deleteNode',
+        label: 'Rename Node',
+        img: '/img/pencil.svg',
+        onclick: async () => {
+          const name = await uki.ui.prompt('Node name', this.selectedName, {
+            validate: (newName) =>
+              !this.cleanGraph.nodes.find(
+                ({ name }) => name !== this.selectedName && name === newName
+              )
+          });
+          const index = this.cleanGraph.nodes.findIndex(
+            ({ name }) => name === this.selectedName
+          );
+          if (index === -1) {
+            uki.ui.alert(
+              "Error... er, uhm, I mean... Easter Egg discovered! Please email me to let me know that you found the secret, ... feature ... in which you can't rename a thing that I lost track of!"
+            );
+          } else {
+            this.renamedNode = [this.selectedName, name];
+            this.cleanGraph.links.forEach((link) => {
+              if (link.source === this.selectedName) {
+                link.source = name;
+              }
+              if (link.target === this.selectedName) {
+                link.target = name;
+              }
+            });
+            this.cleanGraph.nodes[index].name = name;
+            this.selectedName = name;
+            this.render();
+          }
+        }
+      });
+      specs.unshift({
         label: 'Delete Node',
         img: '/img/delete.svg',
         onclick: () => {
-          console.log('todo: delete node ');
+          const index = this.cleanGraph.nodes.findIndex(
+            ({ name }) => name === this.selectedName
+          );
+          if (index === -1) {
+            uki.ui.alert(
+              "Error... er, uhm, I mean... Easter Egg discovered! Please email me to let me know that you found the secret, ... feature ... in which you can't delete a thing that I lost track of!"
+            );
+          } else {
+            this.cleanGraph.nodes.splice(index, 1);
+            this.cleanGraph.links = this.cleanGraph.links.filter(
+              (link) =>
+                link.source !== this.selectedName &&
+                link.target !== this.selectedName
+            );
+            this.selectedName = null;
+            this.render();
+          }
         }
       });
     } else {
       specs.unshift({
-        id: 'addNode',
         label: 'Add Node',
         img: '/img/addNode.svg',
-        onclick: () => {
-          console.log('todo: add node ');
+        onclick: async () => {
+          const name = await uki.ui.prompt('Node name', 'New Node', {
+            validate: (newName) =>
+              !this.cleanGraph.nodes.find(({ name }) => name === newName)
+          });
+          this.cleanGraph.nodes.push({ name });
+          this.render();
         }
       });
     }
-    // TODO: link menu
     return specs;
   }
 
@@ -140,7 +236,6 @@ class NetworkDecoratorView extends uki.View {
     this.d3el.select('svg').attr('width', 0).attr('height', 0);
 
     const bounds = this.getBounds();
-    const center = getCenter(bounds);
 
     this.toolbar = new MenuView({
       d3el: this.d3el.select('.toolbar'),
@@ -150,18 +245,6 @@ class NetworkDecoratorView extends uki.View {
     });
 
     this.cleanGraph = this.getNamedResource('data');
-    this.dirtyGraph = {
-      nodes: this.cleanGraph.nodes.map((d) =>
-        Object.assign(
-          {
-            x: center.x + Math.random() * JITTER_RADIUS - JITTER_RADIUS / 2,
-            y: center.y + Math.random() * JITTER_RADIUS - JITTER_RADIUS / 2
-          },
-          d
-        )
-      ),
-      links: this.cleanGraph.links.map((d) => Object.assign({}, d))
-    };
 
     this.simulation = d3
       .forceSimulation([])
@@ -193,25 +276,65 @@ class NetworkDecoratorView extends uki.View {
     const svg = this.d3el.select('svg').attr('width', 0).attr('height', 0);
 
     const bounds = this.getBounds();
+    const center = getCenter(bounds);
 
     svg.attr('width', bounds.width).attr('height', bounds.height);
 
-    this.simulation.nodes(this.dirtyGraph.nodes);
-    this.simulation.force('link').links(this.dirtyGraph.links);
+    const tempAlpha = this.simulation.alpha();
+    this.simulation.alpha(0);
+
+    // d3 pollutes the data that you give to forceSimulation, and expects its
+    // objects to be fairly consistent, or we'll get weird interaction bugs.
+    // Always update its existing nodes / links with new data, but don't let
+    // manipulate our cleanGraph directly:
+    const dirtyNodesByName = Object.fromEntries(
+      (this.simulation.nodes() || []).map((node) => {
+        if (node.name === this.renamedNode?.[0]) {
+          // Ugly hack: renaming a node makes it lose its position information,
+          // in part because d3 uses the anti-pattern mentioned above. This
+          // repairs BOTH nodes and links in the event of a rename
+          node.name = this.renamedNode[1];
+          this.renamedNode = null;
+        }
+        return [node.name, node];
+      })
+    );
+    const dirtyLinksByKey = Object.fromEntries(
+      (this.simulation.force('link').links() || []).map((link) => {
+        return [`${link.source.name}_${link.target.name}`, link];
+      })
+    );
+    const dirtyGraph = {
+      nodes: this.cleanGraph.nodes.map((d) =>
+        Object.assign(dirtyNodesByName[d.name] || getRandomPosition(center), d)
+      ),
+      links: this.cleanGraph.links.map((d) =>
+        Object.assign(dirtyLinksByKey[`${d.source}_${d.target}`] || {}, d)
+      )
+    };
+
+    this.simulation.nodes(dirtyGraph.nodes);
+    this.simulation.force('link').links(dirtyGraph.links);
     this.simulation.force('centerAndBounds').bounds(bounds);
 
-    let links = svg
+    this.renderedLinks = svg
       .select('.links')
       .selectAll('.link')
-      .data(this.dirtyGraph.links, (d) => d.source + '_' + d.target);
-    links.exit().remove();
-    const linksEnter = links.enter().append('path').classed('link', true);
-    links = links.merge(linksEnter);
+      .data(
+        dirtyGraph.links,
+        (d) => (d.source.name || d.source) + '_' + (d.target.name || d.target)
+      );
+    this.renderedLinks.exit().remove();
+    const linksEnter = this.renderedLinks
+      .enter()
+      .append('path')
+      .classed('link', true);
+    this.renderedLinks = this.renderedLinks.merge(linksEnter);
 
     let nodes = svg
       .select('.nodes')
       .selectAll('.node')
-      .data(this.dirtyGraph.nodes, (d) => d.name);
+      .data(dirtyGraph.nodes, (d) => d.name);
     nodes.exit().remove();
     const nodesEnter = nodes.enter().append('g').classed('node', true);
     nodes = nodes.merge(nodesEnter);
@@ -227,18 +350,35 @@ class NetworkDecoratorView extends uki.View {
       .classed('selected', (d) => this.selectedName === d.name)
       .on('mousedown', (event, d) => {
         this.mouseDown(d, bounds, event);
+      })
+      .on('touchstart', (event, d) => {
+        this.mouseDown(d, bounds, simulateMouse(event));
+        event.preventDefault();
       });
     svg
-      .on('mousemove', (event) => this.mouseMove(bounds, event))
-      .on('mouseup', () => this.mouseUp());
+      .on('mousemove', (event) => {
+        this.mouseMove(bounds, event);
+      })
+      .on('touchmove', (event) => {
+        this.mouseMove(bounds, simulateMouse(event));
+        event.preventDefault();
+      })
+      .on('mouseup', (event) => {
+        this.mouseUp(event);
+      })
+      .on('touchend', (event) => {
+        this.mouseUp(simulateMouse(event));
+        event.preventDefault();
+      });
 
     this.simulation.on('tick', () => {
-      links.attr('d', (d) => {
+      this.renderedLinks.attr('d', (d) => {
         return `M${d.source.x},${d.source.y}L${d.target.x},${d.target.y}`;
       });
 
       nodes.attr('transform', (d) => `translate(${d.x},${d.y})`);
     });
+    this.simulation.alpha(tempAlpha);
   }
 
   mouseDown(node, bounds, event) {
@@ -261,11 +401,7 @@ class NetworkDecoratorView extends uki.View {
         createdOrRemovedLink = true;
       }
     }
-    if (createdOrRemovedLink) {
-      this.dirtyGraph.links = this.cleanGraph.links.map((d) =>
-        Object.assign({}, d)
-      );
-    } else {
+    if (!createdOrRemovedLink) {
       // Only select a different node if we didn't create or delete a link
       this.selectedName = node.name;
     }
@@ -281,6 +417,7 @@ class NetworkDecoratorView extends uki.View {
     node.fx = node.x;
     node.fy = node.y;
     this.simulation.alphaTarget(0.025).restart();
+    event.preventDefault();
     this.render();
   }
 
@@ -292,8 +429,10 @@ class NetworkDecoratorView extends uki.View {
       x: event.x - bounds.left,
       y: event.y - bounds.top
     };
+
     this.draggedNode.fx = clickedPoint.x - this.dragOffset.dx;
     this.draggedNode.fy = clickedPoint.y - this.dragOffset.dy;
+
     this.render();
   }
 
