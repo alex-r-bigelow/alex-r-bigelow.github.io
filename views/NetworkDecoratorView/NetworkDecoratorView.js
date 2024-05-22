@@ -6,8 +6,9 @@ const GRAVITY_MULTIPLIER = 0.15;
 const MAX_GRAVITY_ALPHA = 0.0005;
 const LINK_STRENGTH = 0.05;
 const BOUNCE_STRENGTH = 2;
-const JITTER_RADIUS = 150;
-const CHARGE_STRENGTH = -250;
+const JITTER_RADIUS = 50;
+const CHARGE_STRENGTH = -300;
+const PARALLEL_ARC_OFFSET = 1.5;
 
 function getRandomPosition(center) {
   return {
@@ -19,8 +20,8 @@ function getRandomPosition(center) {
 function getCenter(bounds) {
   // Bottom-left... ish
   return {
-    x: Math.min((2 * bounds.width) / 5, 500),
-    y: Math.max(bounds.height / 2, bounds.height - 200)
+    x: Math.min((2 * bounds.width) / 5, 400),
+    y: Math.max(bounds.height / 2, bounds.height - 400)
   };
 }
 
@@ -85,6 +86,44 @@ const simulateMouse = (event) => {
   };
 };
 
+function drawPointyArc(d, offset) {
+  const dx = d.target.x - d.source.x;
+  const dy = d.target.y - d.source.y;
+  const arcRadius =
+    (PARALLEL_ARC_OFFSET * offset * (NODE_RADIUS * dx)) / Math.abs(dx);
+  let theta;
+  let edgePoint;
+
+  if (dx === 0) {
+    theta = dy >= 0 ? Math.PI : -Math.PI;
+    edgePoint = {
+      x: 0,
+      y: NODE_RADIUS / 2
+    };
+  } else {
+    theta =
+      Math.atan((d.target.y - d.source.y) / (d.target.x - d.source.x)) +
+      Math.PI / 2;
+    edgePoint = {
+      x: (NODE_RADIUS / 2) * Math.cos(theta),
+      y: (NODE_RADIUS / 2) * Math.sin(theta)
+    };
+  }
+  const front = {
+    x: d.source.x + edgePoint.x,
+    y: d.source.y + edgePoint.y
+  };
+  const back = {
+    x: d.source.x - edgePoint.x,
+    y: d.source.y - edgePoint.y
+  };
+  const arc = {
+    x: (d.source.x + d.target.x) / 2 + arcRadius * Math.cos(theta),
+    y: (d.source.y + d.target.y) / 2 + arcRadius * Math.sin(theta)
+  };
+  return `M${front.x},${front.y}Q${arc.x},${arc.y},${d.target.x},${d.target.y}Q${arc.x},${arc.y},${back.x},${back.y}Z`;
+}
+
 class NetworkDecoratorView extends uki.View {
   constructor(options = {}) {
     options.resources = options.resources || [];
@@ -109,9 +148,28 @@ class NetworkDecoratorView extends uki.View {
     this.renamedNode = null;
     this.draggedNode = null;
     this.dragOffset = null;
+    this.knownBugs = {};
 
     this.toolbar = null;
     this.renderedLinks = [];
+  }
+
+  showKnownBug(bug) {
+    if (this.knownBugs[bug]) {
+      return;
+    }
+    this.knownBugs[bug] = true;
+    uki.ui.alert(`\
+    <p>
+      Error... er, uhm, I mean... <strong>Easter Egg</strong> discovered, in which ${bug}!
+    </p>
+    <p>
+      If you need* this feature, please consider <a href="/funding.html">hiring me</a> to fix it?
+    </p>
+    <small>
+      *Also, if this verb is relevant at all, both of us may need to stop and consider why. Please reach out!
+    </small>
+  `);
   }
 
   get toolbarMenuSpecs() {
@@ -154,22 +212,46 @@ class NetworkDecoratorView extends uki.View {
     ];
     if (this.selectedName) {
       specs.unshift({
-        label: 'Rename Node',
-        img: '/img/pencil.svg',
-        onclick: async () => {
-          const name = await uki.ui.prompt('Node name', this.selectedName, {
-            validate: (newName) =>
-              !this.cleanGraph.nodes.find(
-                ({ name }) => name !== this.selectedName && name === newName
-              )
-          });
+        label: 'Delete Node',
+        img: '/img/delete.svg',
+        onclick: () => {
           const index = this.cleanGraph.nodes.findIndex(
             ({ name }) => name === this.selectedName
           );
           if (index === -1) {
-            uki.ui.alert(
-              "Error... er, uhm, I mean... Easter Egg discovered! Please email me to let me know that you found the secret, ... feature ... in which you can't rename a thing that I lost track of!"
+            this.showKnownBug("you can't delete a thing that I lost track of");
+          } else {
+            this.cleanGraph.nodes.splice(index, 1);
+            this.cleanGraph.links = this.cleanGraph.links.filter(
+              (link) =>
+                link.source !== this.selectedName &&
+                link.target !== this.selectedName
             );
+            this.selectedName = null;
+            this.render();
+          }
+        }
+      });
+      specs.unshift({
+        label: 'Rename Node',
+        img: '/img/pencil.svg',
+        onclick: async () => {
+          const name = await uki.ui.prompt(
+            'Unique node name:',
+            this.selectedName,
+            {
+              validate: (newName) =>
+                newName &&
+                !this.cleanGraph.nodes.find(
+                  ({ name }) => name !== this.selectedName && name === newName
+                )
+            }
+          );
+          const index = this.cleanGraph.nodes.findIndex(
+            ({ name }) => name === this.selectedName
+          );
+          if (index === -1) {
+            this.showKnownBug("you can't rename a thing that I lost track of");
           } else {
             this.renamedNode = [this.selectedName, name];
             this.cleanGraph.links.forEach((link) => {
@@ -186,40 +268,37 @@ class NetworkDecoratorView extends uki.View {
           }
         }
       });
+    } else {
       specs.unshift({
-        label: 'Delete Node',
+        label: 'Clear Graph',
         img: '/img/delete.svg',
-        onclick: () => {
-          const index = this.cleanGraph.nodes.findIndex(
-            ({ name }) => name === this.selectedName
-          );
-          if (index === -1) {
-            uki.ui.alert(
-              "Error... er, uhm, I mean... Easter Egg discovered! Please email me to let me know that you found the secret, ... feature ... in which you can't delete a thing that I lost track of!"
-            );
-          } else {
-            this.cleanGraph.nodes.splice(index, 1);
-            this.cleanGraph.links = this.cleanGraph.links.filter(
-              (link) =>
-                link.source !== this.selectedName &&
-                link.target !== this.selectedName
-            );
-            this.selectedName = null;
+        onclick: async () => {
+          if (await uki.ui.confirm('Delete everything? 😱')) {
+            this.cleanGraph = {
+              nodes: [],
+              links: []
+            };
             this.render();
           }
         }
       });
-    } else {
       specs.unshift({
         label: 'Add Node',
         img: '/img/addNode.svg',
         onclick: async () => {
-          const name = await uki.ui.prompt('Node name', 'New Node', {
+          const name = await uki.ui.prompt('Unique node name:', 'New Node', {
             validate: (newName) =>
+              newName &&
               !this.cleanGraph.nodes.find(({ name }) => name === newName)
           });
-          this.cleanGraph.nodes.push({ name });
-          this.render();
+          if (name) {
+            this.cleanGraph.nodes.push({
+              name
+            });
+            this.selectedName = name;
+            this.simulation.alpha(0.3).restart();
+            this.render();
+          }
         }
       });
     }
@@ -241,13 +320,14 @@ class NetworkDecoratorView extends uki.View {
       d3el: this.d3el.select('.toolbar'),
       overrideSpecs: [],
       collapsedLogo: '/img/wrench.svg',
-      drawCollapsed: bounds.width < 620
+      drawCollapsed: bounds.width < 1536
     });
 
     this.cleanGraph = this.getNamedResource('data');
 
     this.simulation = d3
       .forceSimulation([])
+      .force('centerAndBounds', centerAndBounds())
       .force(
         'link',
         d3
@@ -256,14 +336,13 @@ class NetworkDecoratorView extends uki.View {
           .strength(LINK_STRENGTH)
       )
       .force('charge', d3.forceManyBody().strength(CHARGE_STRENGTH))
-      .force('centerAndBounds', centerAndBounds())
       .force(
         'collide',
         d3.forceCollide(() => NODE_RADIUS)
       );
 
     d3.select(window).on('resize.NetworkDecoratorView', () => {
-      this.simulation.alphaTarget(0.3).restart();
+      this.simulation.alpha(0.3).restart();
       this.render();
     });
   }
@@ -304,18 +383,35 @@ class NetworkDecoratorView extends uki.View {
         return [`${link.source.name}_${link.target.name}`, link];
       })
     );
+    const linkOffsetsByKey = {};
     const dirtyGraph = {
-      nodes: this.cleanGraph.nodes.map((d) =>
-        Object.assign(dirtyNodesByName[d.name] || getRandomPosition(center), d)
-      ),
-      links: this.cleanGraph.links.map((d) =>
-        Object.assign(dirtyLinksByKey[`${d.source}_${d.target}`] || {}, d)
-      )
+      nodes: this.cleanGraph.nodes.map((node, index) => {
+        if (dirtyNodesByName[node.name]) {
+          Object.assign(dirtyNodesByName[node.name] || {}, node);
+          return dirtyNodesByName[node.name];
+        }
+        return {
+          name: node.name,
+          ...getRandomPosition(center)
+        };
+      }),
+      links: this.cleanGraph.links.map((d, index) => {
+        const baseKey = `${d.source}_${d.target}`;
+        const key = `${baseKey}_${index}`;
+        if (linkOffsetsByKey[baseKey]) {
+          linkOffsetsByKey[key] = linkOffsetsByKey[baseKey] + 1;
+          linkOffsetsByKey[baseKey] += 1;
+        } else {
+          linkOffsetsByKey[baseKey] = 1;
+          linkOffsetsByKey[key] = 1;
+        }
+        return Object.assign(dirtyLinksByKey[key] || {}, d);
+      })
     };
 
     this.simulation.nodes(dirtyGraph.nodes);
-    this.simulation.force('link').links(dirtyGraph.links);
     this.simulation.force('centerAndBounds').bounds(bounds);
+    this.simulation.force('link').links(dirtyGraph.links);
 
     this.renderedLinks = svg
       .select('.links')
@@ -372,8 +468,10 @@ class NetworkDecoratorView extends uki.View {
       });
 
     this.simulation.on('tick', () => {
-      this.renderedLinks.attr('d', (d) => {
-        return `M${d.source.x},${d.source.y}L${d.target.x},${d.target.y}`;
+      this.renderedLinks.attr('d', (d, index) => {
+        const key = `${d.source.name}_${d.target.name}_${index}`;
+        const offset = linkOffsetsByKey[key] || 1;
+        return drawPointyArc(d, offset);
       });
 
       nodes.attr('transform', (d) => `translate(${d.x},${d.y})`);
@@ -382,27 +480,38 @@ class NetworkDecoratorView extends uki.View {
   }
 
   mouseDown(node, bounds, event) {
-    let createdOrRemovedLink = false;
+    let linkEditing = false;
     if (this.selectedName && event.shiftKey) {
-      // Create a link when shift-clicking and a node is already selected
-      this.cleanGraph.links.push({
-        source: this.selectedName,
-        target: node.name
-      });
-      createdOrRemovedLink = true;
+      linkEditing = true;
+      if (this.selectedName === node.name) {
+        this.showKnownBug("you can't create self-links");
+      } else {
+        if (
+          this.cleanGraph.links.find(
+            (link) =>
+              link.source === this.selectedName && link.target === node.name
+          )
+        ) {
+          this.showKnownBug('parallel links ... only kinda work');
+        }
+        // Create a link when shift-clicking and a node is already selected
+        this.cleanGraph.links.push({
+          source: this.selectedName,
+          target: node.name
+        });
+      }
     } else if (this.selectedName && event.ctrlKey) {
+      linkEditing = true;
       const existingLinkIndex = this.cleanGraph.links.findIndex(
         ({ source, target }) =>
-          (source === this.selectedName && target === node.name) ||
-          (source === node.name && target === this.selectedName)
+          source === this.selectedName && target === node.name
       );
       if (existingLinkIndex !== -1) {
         this.cleanGraph.links.splice(existingLinkIndex, 1);
-        createdOrRemovedLink = true;
       }
     }
-    if (!createdOrRemovedLink) {
-      // Only select a different node if we didn't create or delete a link
+    if (!linkEditing) {
+      // Only select a different node if we not in edit mode
       this.selectedName = node.name;
     }
     this.draggedNode = node;

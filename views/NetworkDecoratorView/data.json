@@ -9,22 +9,46 @@
     { "name": "IBM" },
     { "name": "Boston" },
     { "name": "Stardog" },
-    { "name": "Washington DC" },
     { "name": "Graduate Research Assistant" },
-    { "name": "Teaching Assistant (2x)" },
+    { "name": "Teaching Assistant" },
     { "name": "Postdoctoral Researcher" },
     { "name": "Data Science Fellow" },
     { "name": "Arizona Research Bazaar" },
     { "name": "Software Engineer" },
     { "name": "BS CS Degree" },
     { "name": "PhD Computing Degree" },
-    { "name": "Bioinformatics Research Assistant" }
+    { "name": "Bioinformatics Research Assistant" },
+    { "name": "Dude Who (sometimes) Does Free Consulting" },
+    { "name": "Research Intern" }
   ],
   "links": [
     { "source": "Salt Lake City", "target": "University of Utah" },
+    {
+      "source": "University of Utah",
+      "target": "Bioinformatics Research Assistant"
+    },
+    { "source": "University of Utah", "target": "Graduate Research Assistant" },
+    { "source": "University of Utah", "target": "Teaching Assistant" },
+    { "source": "University of Utah", "target": "BS CS Degree" },
+    { "source": "University of Utah", "target": "PhD Computing Degree" },
     { "source": "Salt Lake City", "target": "Clifton Park" },
+    { "source": "Clifton Park", "target": "Kitware" },
     { "source": "Clifton Park", "target": "Salt Lake City" },
+    { "source": "Salt Lake City", "target": "Boston" },
+    { "source": "Boston", "target": "IBM" },
+    { "source": "Boston", "target": "Salt Lake City" },
     { "source": "Salt Lake City", "target": "Tucson" },
-    { "source": "Tucson", "target": "University of Utah" }
+    { "source": "Tucson", "target": "University of Arizona" },
+    { "source": "Tucson", "target": "Arizona Research Bazaar" },
+    { "source": "University of Arizona", "target": "Postdoctoral Researcher" },
+    { "source": "University of Arizona", "target": "Data Science Fellow" },
+    { "source": "Tucson", "target": "Stardog" },
+    { "source": "Stardog", "target": "Software Engineer" },
+    { "source": "Kitware", "target": "Research Intern" },
+    { "source": "IBM", "target": "Research Intern" },
+    {
+      "source": "Arizona Research Bazaar",
+      "target": "Dude Who (sometimes) Does Free Consulting"
+    }
   ]
 }
