@@ -1,96 +1,194 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less"/>
-  <script type="text/javascript" src="node_modules/less/dist/less.min.js" data-log-level="1"></script>
-  <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
-  <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
-  <script type="module" src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
-  <script type="text/javascript" src="node_modules/ga-lite/dist/ga-lite.min.js"></script>
-  <script type="module">
-    import ProjectController from './controllers/ProjectController/ProjectController.js';
-    window.controller = new ProjectController();
-  </script>
-</head>
-<body>
-  <h1>Project Portfolio</h1>
-  <div class="Feed flexbox-albatross">
-    <div>
-      <h4 id="origraph">Origraph</h4>
-      <img class="youtubePlaceholder" data-youtubeid="bSFf2iD4TLI"/>
-      <p>A <a href="https://origraph.github.io">visual tool</a> for modeling data as a network that supports a rich set of network wrangling operations.</p>
-    </div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less" />
+    <script
+      type="text/javascript"
+      src="node_modules/less/dist/less.min.js"
+      data-log-level="1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/d3/dist/d3.min.js"
+    ></script>
+    <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
+    <script
+      type="module"
+      src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/ga-lite/dist/ga-lite.min.js"
+    ></script>
+    <script type="module">
+      import ProjectController from './controllers/ProjectController/ProjectController.js';
+      window.controller = new ProjectController();
+    </script>
+  </head>
+  <body>
+    <h1>Project Portfolio</h1>
+    <div class="Feed flexbox-albatross">
+      <div>
+        <h4 id="stardog-designer">Stardog Designer</h4>
+        <img src="img/stardog-designer.png" />
+        <p>
+          Stardog's core Designer product was directly based on my previous PhD
+          work (see Origraph below); I was closely involved in designing and
+          implementing this product from the ground up, as well as maintaining
+          this project for two years.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="hanpuku">Hanpuku</h4>
-      <img class="youtubePlaceholder" data-youtubeid="eNoDZcs7vVs"/>
-      <p>Hanpuku is a tool for bridging d3.js and Illustrator. You can edit a d3.js visualization with Illustrator, and/or edit an Illustrator document with d3.js.</p>
-    </div>
+      <div>
+        <h4 id="stardog-explorer">Stardog Explorer</h4>
+        <img src="img/stardog-explorer.png" />
+        <p>
+          Although I joined shortly after Stardog's core Explorer product was
+          released, I was responsible for designing and implementing major
+          features (including graph layout improvements that almost made our
+          CEO, Kendall Clark, "eat [his] hat" because he disbelieved that they
+          were real)
+        </p>
+      </div>
 
-    <div>
-      <h4 id="traveler">Traveler</h4>
-      <video controls>
-        <source src="/img/traveler.mp4" type="video/mp4"/>
-        Sorry, your browser doesn't support embedded MP4 videos.
-      </video>
-      <p>A <a href="https://github.com/hdc-arizona/traveler-integrated">visualization system</a> for profiling HPC performance and behavior, specifically for the <a href="https://github.com/STEllAR-GROUP/hpx">HPX</a> and <a href="https://phylanx.stellar-group.org/">Phylanx</a> projects.</p>
-    </div>
+      <div>
+        <h4 id="stardog-studio">Stardog Studio</h4>
+        <img src="img/stardog-studio.jpeg" />
+        <p>
+          I was responsible for maintaing Stardog's core Studio IDE product and
+          associated libraries, keeping a legacy project useful across major
+          company changes.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="wrangling_survey">Data Wrangling Survey</h4>
-      <img class="youtubePlaceholder" data-youtubeid="DhPiHvtgtTI"/>
-      <p>How do people think about their data? Spatially? As a table? As a network? What happens if you introduce a different abstraction? (<a href="https://alex-r-bigelow.github.io/wrangling-survey/Responses.html">interactive survey results</a>)</p>
-    </div>
+      <div>
+        <h4 id="origraph">Origraph</h4>
+        <img class="youtubePlaceholder" data-youtubeid="bSFf2iD4TLI" />
+        <p>
+          A <a href="https://origraph.github.io">visual tool</a> for modeling
+          data as a network that supports a rich set of network wrangling
+          operations.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="ukijs">uki.js</h4>
-      <img src="/img/uki.svg" width="30em"/>
-      <p>
-        A minimal, d3-based Model-View <a href="https://github.com/ukijs/uki">framework</a> for building larger linked view systems.
-      </p>
-    </div>
+      <div>
+        <h4 id="hanpuku">Hanpuku</h4>
+        <img class="youtubePlaceholder" data-youtubeid="eNoDZcs7vVs" />
+        <p>
+          Hanpuku is a tool for bridging d3.js and Illustrator. You can edit a
+          d3.js visualization with Illustrator, and/or edit an Illustrator
+          document with d3.js.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="jacobs_ladder">Jacob's Ladder</h4>
-      <img class="youtubePlaceholder" data-youtubeid="2joyCdBSGKw"/>
-      <p>Jacob's Ladder is a system I built during an internship at IBM for extracting subsets of large graphs.</p>
-    </div>
+      <div>
+        <h4 id="traveler">Traveler</h4>
+        <video controls>
+          <source src="/img/traveler.mp4" type="video/mp4" />
+          Sorry, your browser doesn't support embedded MP4 videos.
+        </video>
+        <p>
+          A
+          <a href="https://github.com/hdc-arizona/traveler-integrated"
+            >visualization system</a
+          >
+          for profiling HPC performance and behavior, specifically for the
+          <a href="https://github.com/STEllAR-GROUP/hpx">HPX</a> and
+          <a href="https://phylanx.stellar-group.org/">Phylanx</a> projects.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="resonant_lab">Resonant Lab</h4>
-      <img class="youtubePlaceholder" data-youtubeid="xvl6bbWLcMo"/>
-      <p><a href="https://resonantlab.kitware.com">Resonant Lab</a> is a system I built during an internship at Kitware to help make various DARPA XDATA projects easier to use.</p>
-    </div>
+      <div>
+        <h4 id="wrangling_survey">Data Wrangling Survey</h4>
+        <img class="youtubePlaceholder" data-youtubeid="DhPiHvtgtTI" />
+        <p>
+          How do people think about their data? Spatially? As a table? As a
+          network? What happens if you introduce a different abstraction? (<a
+            href="https://alex-r-bigelow.github.io/wrangling-survey/Responses.html"
+            >interactive survey results</a
+          >)
+        </p>
+      </div>
 
-    <div>
-      <h4 id="hcw_hosted">HCW HOSTED Housing Map</h4>
-      <img src="/img/hostedBackend.png" width="30em"/>
-      <p>A small project for <a href="https://hcwhosted.org/">HCW HOSTED</a> to help case workers find housing for healthcare workers during the COVID-19 pandemic.</p>
-    </div>
+      <div>
+        <h4 id="ukijs">uki.js</h4>
+        <img src="/img/uki.svg" width="30em" />
+        <p>
+          A minimal, d3-based Model-View
+          <a href="https://github.com/ukijs/uki">framework</a> for building
+          larger linked view systems. Although I haven't been able to maintain
+          it as well as I'd like, it's been used in a few projects, including
+          this website!
+        </p>
+      </div>
 
-    <div>
-      <h4 id="ping_pong_tournament">SCI Ping Pong Tournament Interface</h4>
-      <img src="/img/ping-pong-tournament.png" width="30em"/>
-      <p>An <a href="https://alex-r-bigelow.github.io/ping-pong-tournament/">interactive bracket</a> for an in-house ping pong tournament at the <a href="https://sci.utah.edu/">SCI Institute</a>.</p>
-    </div>
+      <div>
+        <h4 id="jacobs_ladder">Jacob's Ladder</h4>
+        <img class="youtubePlaceholder" data-youtubeid="2joyCdBSGKw" />
+        <p>
+          Jacob's Ladder is a system I built during an internship at IBM for
+          browsing aggregate subsets of large graphs.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="scix_map">SCI X Map</h4>
-      <img src="/img/scix-map.png" width="30em"/>
-      <p>An <a href="https://alex-r-bigelow.github.io/scix-map/">interactive map</a> that was displayed on a touch table for the <a href="https://sci.utah.edu/">2016 SCI Institute Technical Exchange (SCI X)</a>.</p>
-    </div>
+      <div>
+        <h4 id="resonant_lab">Resonant Lab</h4>
+        <img class="youtubePlaceholder" data-youtubeid="xvl6bbWLcMo" />
+        <p>
+          <a href="https://resonantlab.kitware.com">Resonant Lab</a> is a system
+          I built during an internship at Kitware to help make various DARPA
+          XDATA projects easier to use.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="calendar-creator" style="margin-top:0">calendar-creator</h4>
-      <p>A simple, <a href="https://alex-r-bigelow.github.io/calendar-creator/">few-frills interface</a> for creating minimal SVG calendars.</p>
-      <!--img src="images/calendar-creator.png"/-->
-    </div>
+      <div>
+        <h4 id="hcw_hosted">HCW HOSTED Housing Map</h4>
+        <img src="/img/hostedBackend.png" width="30em" />
+        <p>
+          A small project for <a href="https://hcwhosted.org/">HCW HOSTED</a> to
+          help case workers find housing for healthcare workers during the
+          COVID-19 pandemic.
+        </p>
+      </div>
 
-    <div>
-      <h4 id="ev-infinite">ev-infinite</h4>
-      <p>No list like this would be complete without a silly little game. <a href="https://alex-r-bigelow.github.io/ev-infinite/">Mine</a> is a (very work in progress) attempt to make a procedural clone of Escape Velocity.</p>
+      <div>
+        <h4 id="ping_pong_tournament">SCI Ping Pong Tournament Interface</h4>
+        <img src="/img/ping-pong-tournament.png" width="30em" />
+        <p>
+          An
+          <a href="https://alex-r-bigelow.github.io/ping-pong-tournament/"
+            >interactive bracket</a
+          >
+          for an in-house ping pong tournament at the
+          <a href="https://sci.utah.edu/">SCI Institute</a>.
+        </p>
+      </div>
+
+      <div>
+        <h4 id="scix_map">SCI X Map</h4>
+        <img src="/img/scix-map.png" width="30em" />
+        <p>
+          An
+          <a href="https://sciinstitute.github.io/scix-map/">interactive map</a>
+          that was displayed on a touch table for the
+          <a href="https://www.sci.utah.edu/the-institute/scix.html"
+            >2016 SCI Institute Technical Exchange (SCI X)</a
+          >.
+        </p>
+      </div>
+
+      <div>
+        <h4 id="calendar-creator" style="margin-top: 0">calendar-creator</h4>
+        <p>
+          A simple,
+          <a href="https://alex-r-bigelow.github.io/calendar-creator/"
+            >few-frills interface</a
+          >
+          for creating minimal SVG calendars.
+        </p>
+        <!--img src="images/calendar-creator.png"/-->
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

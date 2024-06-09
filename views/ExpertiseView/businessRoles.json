@@ -10,17 +10,17 @@
     "stars": 6
   },
   {
+    "title": "HCI / UX / UI designer, researcher",
+    "description": "I experiment with, plan, test, and analyze the extent to which software (and/or hardware) systems are useful, usable, expressive, learnable, and compatible with real-world workflows",
+    "stars": 6
+  },
+  {
     "title": "Product manager",
     "description": "I identify, document, and communicate diverse stakeholder high-level goals, and how they justify low-level interactive tasks, software features, designs, and data models",
-    "stars": 4
+    "stars": 3
   },
   {
-    "title": "UX designer / researcher",
-    "description": "I experiment with, plan, test, and analyze the extent to which software (and/or hardware) systems are useful, usable, expressive, learnable, and compatible with real-world workflows",
-    "stars": 5
-  },
-  {
-    "title": "Front-end developer",
+    "title": "Front-end software engineer",
     "description": "I build, test, deploy, adapt, and maintain user-facing, interactive software that behaves according to stakeholder needs",
     "stars": 5
   },
@@ -40,7 +40,7 @@
     "stars": 4
   },
   {
-    "title": "Back-end developer",
+    "title": "Back-end software engineer",
     "description": "I build, test, desploy, adapt, and maintain infrastructure that deals with heavy computations, secure data storage and retrieval, communication between users, etc.",
     "stars": 4
   },

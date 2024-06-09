@@ -21,6 +21,7 @@
   { "title": "Rust", "stars": 1 },
   { "title": "Ruby", "stars": 1 },
   { "title": "Swift", "stars": 1 },
+  { "title": "Android SDK", "stars": 1 },
   { "title": "Haskell", "stars": 1 },
   { "title": "Clojure", "stars": 1 },
   { "title": "Go", "stars": 1 },
@@ -34,20 +35,25 @@
   { "title": "JSX (Adobe extensions)", "stars": 4 },
   { "title": "Rollup", "stars": 4 },
   { "title": "Webpack", "stars": 4 },
-  { "title": "Backbone.js", "stars": 4 },
-  { "title": "Knockout.js", "stars": 4 },
-  { "title": "Three.js", "stars": 3 },
+  { "title": "Parcel", "stars": 4 },
+  { "title": "Backbone.js", "stars": 3 },
+  { "title": "Knockout.js", "stars": 3 },
+  { "title": "Three.js", "stars": 2 },
 
   { "title": "WebAssembly", "stars": 1 },
 
   { "title": "Express.js", "stars": 4 },
   { "title": "Jest", "stars": 4 },
   { "title": "Jekyll", "stars": 4 },
+  { "title": "Quarto", "stars": 5 },
+  { "title": "11ty", "stars": 4 },
+
+  { "title": "React Native", "stars": 1 },
 
   { "title": "Skeleton", "stars": 6 },
   { "title": "LESS", "stars": 5 },
   { "title": "Blueprint JS", "stars": 5 },
-  { "title": "Bootstrap", "stars": 4 },
+  { "title": "Bootstrap JS", "stars": 4 },
   { "title": "SASS", "stars": 5 },
   { "title": "Stylus", "stars": 1 },
 
