@@ -63,5 +63,8 @@
   { "title": "FastAPI", "stars": 5 },
   { "title": "Django", "stars": 3 },
   { "title": "Tkinter", "stars": 3 },
-  { "title": "PySide / Qt", "stars": 3 }
+  { "title": "PySide / Qt", "stars": 3 },
+
+  { "title": "ollama", "stars": 2 },
+  { "title": "LlamaIndex", "stars": 1 }
 ]

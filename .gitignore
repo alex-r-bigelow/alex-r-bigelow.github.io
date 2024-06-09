@@ -33,9 +33,3 @@ node_modules/less/*
 !node_modules/less/dist/
 node_modules/less/dist/*
 !node_modules/less/dist/less.min.js
-
-!node_modules/ga-lite/
-node_modules/ga-lite/*
-!node_modules/ga-lite/dist/
-node_modules/ga-lite/dist/*
-!node_modules/ga-lite/dist/ga-lite.min.js

@@ -7,10 +7,10 @@
   },
   "author": "Alex Bigelow",
   "dependencies": {
-    "@ukijs/ui": "^0.2.4",
-    "d3": "^6.3.0",
-    "less": "^3.12.2",
-    "uki": "^0.7.6"
+    "@ukijs/ui": "^0.2.5",
+    "d3": "^7.9.0",
+    "less": "^4.2.0",
+    "uki": "^0.7.9"
   },
   "scripts": {
     "lint": "eslint '**/*.js' --quiet",
@@ -44,18 +44,17 @@
     "trailingComma": "none"
   },
   "devDependencies": {
-    "bibtex-parse-js": "0.0.24",
-    "eslint": "^7.14.0",
-    "eslint-config-semistandard": "^15.0.1",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
+    "bibtex-parse-js": "^0.0.23",
+    "eslint": "^9.4.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-promise": "^6.2.0",
     "eslint-plugin-standard": "^5.0.0",
-    "ga-lite": "^2.1.0",
-    "gray-matter": "^4.0.2",
-    "serve": "^11.3.2",
-    "shelljs": "^0.8.4",
-    "showdown": "^1.9.1"
+    "gray-matter": "^4.0.3",
+    "serve": "^14.2.3",
+    "shelljs": "^0.8.5",
+    "showdown": "^2.1.0"
   }
 }
