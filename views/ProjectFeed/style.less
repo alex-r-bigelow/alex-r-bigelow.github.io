@@ -1,9 +1,15 @@
 .Feed {
   position: relative;
 
-  img, video {
+  & > * {
+    max-width: 50rem;
+  }
+
+  img,
+  video {
     width: 100%;
     min-width: 30rem;
+    max-width: 50rem;
     height: auto;
     padding: 1px;
     background-color: var(--shadow-color);

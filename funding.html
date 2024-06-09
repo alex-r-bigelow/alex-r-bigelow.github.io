@@ -1,134 +1,175 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less"/>
-  <link rel="stylesheet/less" type="text/css" href="styles/fundingStyles.less"/>
-  <script type="text/javascript" src="node_modules/less/dist/less.min.js" data-log-level="1"></script>
-  <script type="text/javascript" src="node_modules/d3/dist/d3.min.js"></script>
-  <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
-  <script type="module" src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"></script>
-  <script type="text/javascript" src="node_modules/ga-lite/dist/ga-lite.min.js"></script>
-  <script type="module">
-    import ConsultingController from './controllers/ConsultingController/ConsultingController.js';
-    window.controller = new ConsultingController();
-  </script>
-</head>
-<body>
-  <div class="fundingChunk jumbotron">
-    <div>
-      <h3 id="consulting">Hire Me!</h3>
-      <p>
-        I am currently on the job market&mdash;if you need to consult a data
-        visualization expert or if you have an employment opportunity that you
-        think might be a good fit, please <a href="m&#97;il&#116;o&#58;a&#108;ex&#46;r&#46;&#98;ig%65low&#37;&#52;&#48;&#37;&#54;&#55;mail&#46;%63om">contact me</a>!
-      </p>
-      <p>
-        If you need informal (free) expert advice about anything on this page, I
-        try to attend <a href="https://researchbazaar.arizona.edu/">Arizona
-        Research Bazaar</a> events as often as I can&mdash;come grab a Hacky
-        Hour beer, and let's chat!
-      </p>
-    </div>
-  </div>
-  <div class="fundingChunk">
-    <div>
-      <h3 id="interests">What I do</h3>
-      <p>I design and build:</p>
-      <ul class="iconList">
-        <li>
-          <img src="/img/application.svg"/>
-          <span>Creative software</span>
-        </li>
-        <li>
-          <img src="/img/dataWrangling.svg"/>
-          <span>Data wrangling tools</span>
-        </li>
-        <li>
-          <img src="/img/visAnalytics.svg"/>
-          <span>Visual analytics systems</span>
-        </li>
-        <li>
-          <img src="/img/webApp.svg"/>
-          <span>Advanced web apps</span>
-        </li>
-      </ul>
-      <p>... but each of the above is easier imagined than done. Doing
-      this kind of work almost always also involves:</p>
-      <ul class="iconList">
-        <li>
-          <img src="/img/brainVsDisk.svg"/>
-          Making fuzzy data or task requirements more crisp
-        </li>
-        <li>
-          <img src="/img/training.svg"/>
-          Providing training for groups or individuals
-        </li>
-        <li>
-          <img src="/img/share.svg"/>
-          Connecting you to other world-class researchers and software
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="fundingChunk">
-    <h3 id="roles">
-      <img src="/img/unicorn.svg"></img>
-      Business roles I can fill
-    </h3>
-    <div class="splitscreen">
-      <div class="anchor">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet/less" type="text/css" href="styles/baseStyles.less" />
+    <link
+      rel="stylesheet/less"
+      type="text/css"
+      href="styles/fundingStyles.less"
+    />
+    <script
+      type="text/javascript"
+      src="node_modules/less/dist/less.min.js"
+      data-log-level="1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/d3/dist/d3.min.js"
+    ></script>
+    <script type="module" src="node_modules/uki/dist/uki.esm.js"></script>
+    <script
+      type="module"
+      src="node_modules/@ukijs/ui/dist/uki-ui.esm.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/ga-lite/dist/ga-lite.min.js"
+    ></script>
+    <script type="module">
+      import ConsultingController from './controllers/ConsultingController/ConsultingController.js';
+      window.controller = new ConsultingController();
+    </script>
+  </head>
+  <body>
+    <div class="fundingChunk jumbotron">
+      <div>
+        <h3 id="consulting">Hire Me!</h3>
         <p>
-          Designing for data is hard&mdash;I've
-          <a href="https://doi.org/10.1145/2598153.2598175">published</a>
-          <a href="https://doi.org/10.1109/TVCG.2016.2598609">several</a>
-          <a href="https://doi.org/10.1109/TVCG.2019.2934285">papers</a>
-          <a href="http://hdc.cs.arizona.edu/papers/infovis_2020_abstractionGuidelines.pdf">about</a>
-          why it's hard! To do it properly, it's really important for me to (1)
-          interact directly with people in your organization that wear very
-          different hats, and (2) pivot frequently between wearing many of these
-          hats myself.
-        <p>This list is a summary of my experience in various roles.</p>
-        <div class="RolesViewLegend"></div>
-      </div>
-      <div class="scrollWrapper">
-        <div class="RolesView scrollContent"></div>
+          I am currently on the job market&mdash;if you need to consult a data
+          visualization expert or if you have an employment opportunity that you
+          think might be a good fit, please
+          <a
+            href="m&#97;il&#116;o&#58;a&#108;ex&#46;r&#46;&#98;ig%65low&#37;&#52;&#48;&#37;&#54;&#55;mail&#46;%63om"
+            >contact me</a
+          >!
+        </p>
+        <p>
+          If you need informal (free) expert advice about anything on this page,
+          I try to attend
+          <a href="https://researchbazaar.arizona.edu/"
+            >Arizona Research Bazaar</a
+          >
+          events as often as I can&mdash;come grab a Hacky Hour beer, and let's
+          chat!
+        </p>
       </div>
     </div>
-  </div>
+    <div class="fundingChunk">
+      <div>
+        <h3 id="interests">What I do</h3>
+        <p>I design and build:</p>
+        <ul class="iconList">
+          <li>
+            <img src="/img/application.svg" />
+            <span>Creative software</span>
+          </li>
+          <li>
+            <img src="/img/dataWrangling.svg" />
+            <span>Data wrangling tools</span>
+          </li>
+          <li>
+            <img src="/img/visAnalytics.svg" />
+            <span>Visual analytics systems</span>
+          </li>
+          <li>
+            <img src="/img/webApp.svg" />
+            <span>Advanced web apps</span>
+          </li>
+        </ul>
+        <p>
+          ... but each of the above is easier imagined than done. Doing this
+          kind of work almost always also involves:
+        </p>
+        <ul class="iconList">
+          <li>
+            <img src="/img/brainVsDisk.svg" />
+            Making fuzzy data or task requirements more crisp
+          </li>
+          <li>
+            <img src="/img/training.svg" />
+            Providing training for groups or individuals
+          </li>
+          <li>
+            <img src="/img/share.svg" />
+            Connecting with other world-class researchers and software
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <!--div class="fundingChunk">
+    <div class="fundingChunk">
+      <h3 id="roles">
+        <img src="/img/unicorn.svg" />
+        Business roles I can fill
+      </h3>
+      <div class="splitscreen">
+        <div class="anchor">
+          <p>
+            Designing for data is hard&mdash;I've
+            <a href="https://doi.org/10.1145/2598153.2598175">published</a>
+            <a href="https://doi.org/10.1109/TVCG.2016.2598609">several</a>
+            <a href="https://doi.org/10.1109/TVCG.2019.2934285">papers</a>
+            <a
+              href="http://hdc.cs.arizona.edu/papers/infovis_2020_abstractionGuidelines.pdf"
+              >about</a
+            >
+            why it's hard! To do it properly, it's really important to listen
+            to, learn from, and develop empathy for people with diverse
+            perspectives.
+          </p>
+          <p>
+            Often, that includes working with people who wear very different
+            hats within an organization (and, sometimes, trying those hats on!);
+            this list is a summary of my current comfort level with various
+            roles.
+          </p>
+          <div class="RolesViewLegend"></div>
+        </div>
+        <div class="scrollWrapper">
+          <div class="RolesView scrollContent"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--div class="fundingChunk">
     <h3 id="creative_software">Creative Software</h3>
   </div-->
 
-  <div class="fundingChunk">
-    <h3 id="expertise">Specific skills</h3>
-    <div class="splitscreen reverse">
-      <div class="anchor">
-        <p>
-          Have a specific technology that you need me to work with?
-          Here's an overview of what I've dealt with in the past, and what I'd
-          like an excuse to learn more about.
-        </p>
-        <p>
-          Is something missing? Want to know more about what I mean by my star
-          ratings? Please
-          <a href="m&#97;il&#116;o&#58;a&#108;ex&#46;r&#46;&#98;ig%65low&#37;&#52;&#48;&#37;&#54;&#55;mail&#46;%63om">contact me</a>!
-        </p>
-        <small><p>
-          (Salty opinion): these lists are never exhaustive, nor do they
-          indicate what a candidate can learn&mdash;this interface could use a
-          redesign, but I don't (yet) really know all that much about what it's
-          like to hire somebody like me. For now, Control (or Command) + F is
-          your friend if you're looking for something specific.
-        </p></small>
-        <div class="ExpertiseViewLegend"></div>
-      </div>
-      <div class="scrollWrapper">
-        <div class="ExpertiseView scrollContent"></div>
+    <div class="fundingChunk">
+      <h3 id="expertise">Specific skills</h3>
+      <div class="splitscreen reverse">
+        <div class="anchor">
+          <p>
+            Have a specific technology that you need me to work with? Here's an
+            overview of what I've dealt with in the past, and what I'd like an
+            excuse to learn more about.
+          </p>
+          <p>
+            Is something missing? Want to know more about what I mean by my star
+            ratings? Please
+            <a
+              href="m&#97;il&#116;o&#58;a&#108;ex&#46;r&#46;&#98;ig%65low&#37;&#52;&#48;&#37;&#54;&#55;mail&#46;%63om"
+              >contact me</a
+            >!
+          </p>
+          <small
+            ><p>
+              (Salty opinion): these lists are never exhaustive, nor do they
+              indicate what a candidate can learn&mdash;this interface could use
+              a redesign. If you're this far down this page, chances are decent
+              that you're considering hiring me&mdash;if so, let me know what
+              sort of interactions you'd like to see here, that would make your
+              job of hiring someone easier! For now, Control (or Command) + F is
+              your friend if you're looking for something specific.
+            </p></small
+          >
+          <div class="ExpertiseViewLegend"></div>
+        </div>
+        <div class="scrollWrapper">
+          <div class="ExpertiseView scrollContent"></div>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
