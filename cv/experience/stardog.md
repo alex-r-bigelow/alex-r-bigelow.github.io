@@ -1,5 +1,5 @@
 ---
-title: Software Engineer
+title: Software Engineer, Visualization Designer
 start: 2021
 stop: 2024
 meta:

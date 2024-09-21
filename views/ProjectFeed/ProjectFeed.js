@@ -1,33 +1,40 @@
 /* globals d3, uki */
 
 class ProjectFeed extends uki.View {
-  constructor (options = {}) {
+  constructor(options = {}) {
     options.resources = options.resources || [];
-    options.resources.push(...[
-      { type: 'less', url: '/views/ProjectFeed/style.less' }
-    ]);
+    options.resources.push(
+      ...[{ type: 'less', url: '/views/ProjectFeed/style.less' }]
+    );
     super(options);
   }
 
-  async setup () {
+  async setup() {
     await super.setup(...arguments);
 
     const self = this;
     self.youtubeVideos = {};
     this.d3el.selectAll('.youtubePlaceholder').each(function () {
       const youTubeID = this.dataset.youtubeid;
+      const startTime = this.dataset.starttime
+        ? `?start=${this.dataset.starttime}`
+        : '';
       self.youtubeVideos[youTubeID] = {};
 
       const placeholder = d3.select(this);
       // Fill in placeholders with high-res images
-      placeholder.attr('src', `http://i.ytimg.com/vi/${youTubeID}/hqdefault.jpg`);
+      placeholder.attr(
+        'src',
+        `http://i.ytimg.com/vi/${youTubeID}/hqdefault.jpg`
+      );
       // Create an (initially hidden) iframe and load the video
-      const iframe = d3.select(placeholder.node().parentNode)
+      const iframe = d3
+        .select(placeholder.node().parentNode)
         .insert('iframe', `[data-youTubeID="${youTubeID}"]`)
         .style('display', 'none')
         .attr('frameborder', '0')
         .attr('allowfullscreen', '')
-        .attr('src', `https://www.youtube.com/embed/${youTubeID}`);
+        .attr('src', `https://www.youtube.com/embed/${youTubeID}${startTime}`);
       // The placeholder will be sized appropriately once the image
       // loads; borrow those dimensions, minus the padding
       placeholder.on('load', () => {
@@ -36,22 +43,19 @@ class ProjectFeed extends uki.View {
       // When the video finally loads, swap it
       iframe.on('load', () => {
         self.youtubeVideos[youTubeID].iframe = iframe;
-        placeholder.style('display', 'none')
-          .style('padding', 0);
+        placeholder.style('display', 'none').style('padding', 0);
         iframe.style('display', null);
         self.render();
       });
     });
   }
 
-  async draw () {
+  async draw() {
     await super.draw(...arguments);
 
     for (const { placeholder, iframe } of Object.values(this.youtubeVideos)) {
       if (placeholder && iframe) {
-        iframe
-          .attr('width', 0)
-          .attr('height', 0);
+        iframe.attr('width', 0).attr('height', 0);
         placeholder.style('display', null);
       }
     }
