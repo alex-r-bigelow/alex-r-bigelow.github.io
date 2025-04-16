@@ -2225,6 +2225,36 @@
       "filename": "resbaz.md",
       "lastmod": "2024-04-16"
     },
+    "semanticPartners.md": {
+      "url": "/cv/experience/semanticPartners.md",
+      "path": [
+        "experience"
+      ],
+      "name": "semanticPartners",
+      "extension": "md",
+      "contents": {
+        "content": "<p>I work with Semantic Partners to help companies ask complex questions of their data, including visualizing Bills of Materials and associated metadata across global manufacturing operations.</p>",
+        "data": {
+          "title": "UX, Visualization Consultant",
+          "start": 2025,
+          "stop": "Present",
+          "meta": [
+            "Semantic Partners",
+            "Malta"
+          ],
+          "reference": "Mentors: Lance Paine, Matteo Casu, Dan Collier",
+          "referenceList": [
+            "Lance Paine",
+            "Matteo Casu",
+            "an Collier"
+          ]
+        },
+        "isEmpty": false,
+        "excerpt": ""
+      },
+      "filename": "semanticPartners.md",
+      "lastmod": "2025-04-16"
+    },
     "stardog.md": {
       "url": "/cv/experience/stardog.md",
       "path": [
@@ -2255,7 +2285,7 @@
         "excerpt": ""
       },
       "filename": "stardog.md",
-      "lastmod": "2024-04-16"
+      "lastmod": "2024-09-21"
     },
     "genepi.md": {
       "url": "/cv/experience/genepi.md",
@@ -2325,7 +2355,7 @@
         "excerpt": ""
       },
       "filename": "ua.md",
-      "lastmod": "2024-04-16"
+      "lastmod": "2024-09-21"
     },
     "ta_1.md": {
       "url": "/cv/experience/ta_1.md",
@@ -2366,7 +2396,7 @@
       "name": "origraph",
       "extension": "md",
       "contents": {
-        "content": "<p>I'm currently working on a startup company / side-hustle, supporting creative data workers' creativity through <a href=\"https://www.origraph.net\">an online hypergraph editor / modeling tool</a>.</p>",
+        "content": "<p>I'm currently working on a startup company, supporting creative data workers' creativity through <a href=\"https://www.origraph.net\">an online hypergraph editor / modeling tool</a>.</p>\n<p>Currently, it's a fairly work-in-progress effort; hopefully there will be more to see / discuss here in a few months!</p>\n<p>If you're considering hiring me, and concerned about how important this might be to me, this project is still absolutely something at the early stages that I'd be happy to sideline as a side-hustle, or simply release as open source.</p>",
         "data": {
           "title": "Founder, CEO, Product Designer",
           "start": 2024,
@@ -2380,7 +2410,7 @@
         "excerpt": ""
       },
       "filename": "origraph.md",
-      "lastmod": "2024-08-28"
+      "lastmod": "2024-09-21"
     },
     "ibm.md": {
       "url": "/cv/experience/ibm.md",

@@ -14,12 +14,15 @@
     { "name": "Postdoctoral Researcher" },
     { "name": "Data Science Fellow" },
     { "name": "Arizona Research Bazaar" },
-    { "name": "Software Engineer" },
+    { "name": "Software Engineer, Visualization Designer" },
     { "name": "BS CS Degree" },
     { "name": "PhD Computing Degree" },
     { "name": "Bioinformatics Research Assistant" },
-    { "name": "Dude Who (sometimes) Does Free Consulting" },
-    { "name": "Research Intern" }
+    { "name": "Visualization, UX, Graph Consultant" },
+    { "name": "Research Intern" },
+    { "name": "Origraph" },
+    { "name": "Founder, CEO" },
+    { "name": "Semantic Partners" }
   ],
   "links": [
     { "source": "Salt Lake City", "target": "University of Utah" },
@@ -43,12 +46,23 @@
     { "source": "University of Arizona", "target": "Postdoctoral Researcher" },
     { "source": "University of Arizona", "target": "Data Science Fellow" },
     { "source": "Tucson", "target": "Stardog" },
-    { "source": "Stardog", "target": "Software Engineer" },
+    {
+      "source": "Stardog",
+      "target": "Software Engineer, Visualization Designer"
+    },
     { "source": "Kitware", "target": "Research Intern" },
     { "source": "IBM", "target": "Research Intern" },
     {
       "source": "Arizona Research Bazaar",
-      "target": "Dude Who (sometimes) Does Free Consulting"
+      "target": "Visualization, UX, Graph Consultant"
+    },
+    { "source": "Tucson", "target": "Origraph" },
+    { "source": "Origraph", "target": "Visualization, UX, Graph Consultant" },
+    { "source": "Origraph", "target": "Founder, CEO" },
+    { "source": "Tucson", "target": "Semantic Partners" },
+    {
+      "source": "Semantic Partners",
+      "target": "Visualization, UX, Graph Consultant"
     }
   ]
 }
